@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link file css -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!--  -->
   <!-- link boostrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -32,7 +35,7 @@
     position: relative;
   }
   </style>
-<!--  -->
+  <!--  -->
 
   <!--  -->
 
@@ -40,9 +43,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!--  -->
-  <!-- link file css -->
-  <link rel="stylesheet" href="./css/style.css">
   <!--  -->
   <!-- link chạy deal ngon mỗi ngày -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
@@ -87,35 +87,22 @@
         <div class="col-2">
           <img src="./img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
         </div>
-        <div class="col-1">
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle btn_danhmuc" type="button" id="dropdownMenu2"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Danh Mục
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><button class="dropdown-item" type="button">Action</button></li>
-              <li><button class="dropdown-item" type="button">Another action</button></li>
-              <li><button class="dropdown-item" type="button">Something else here</button></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-2">
-          <nav class="navbar">
-            <div>
-              <form class="d-flex" style="width:100%;">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
-              </form>
-            </div>
-          </nav>
-        </div>
         <div class="col-2">
           <a href="">
             <button type="button" class="btn btn-success mt-3 btn_dathang">
               <i class="fas fa-phone"></i>&ensp;0123456789
             </button>
           </a>
+        </div>
+        <div class="col-3">
+          <nav class="navbar">
+            <div style="width: 100%;">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+          </nav>
         </div>
         <div class="col-2">
           <a href="">
@@ -142,6 +129,7 @@
           </button>
 
         </div>
+        
       </div>
     </div>
     <div class="nav row">
@@ -159,15 +147,19 @@
     ?>
 
   <?php 
-    require_once "./dienthoai/sanpham.php" 
+    // require_once "./dienthoai/sanpham.php" 
     // require_once "./dienthoai/chitietsanpham.php"
     // require_once "trangchu.php"
     // require_once "./laptop/sanpham.php" 
-    // require_once "./dienthoai/chitietsanpham.php"
+    // require_once "./laptop/chitietsanpham.php"
+    require_once "./smartwatch/sanpham.php" 
+    // require_once "./smartwatch/chitietsanpham.php"
   ?>
 
 
-  <?php require_once "footer.php" ?>
+  <?php 
+  require_once "footer.php" 
+  ?>
 
 </body>
 

@@ -11,7 +11,7 @@
 
           <div class="item active" >
             <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/oppo_reno7.jpg" class="img-responsive center-block"></a>
+              <a href="#"><img src="./img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
               <h4 class="text-center">Oppo reno 7</h4>
               <h5 class="text-center">400.000 VND</h5>
             </div>
@@ -19,7 +19,7 @@
 
           <div class="item">
             <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ss_a33.jpg" class="img-responsive center-block"></a>
+              <a href="#"><img src="./img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
               <h4 class="text-center">Samsung A33</h4>
               <h5 class="text-center">400.000 VND</h5>
             </div>
@@ -27,7 +27,7 @@
 
           <div class="item">
             <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ss_s20.jpg" class="img-responsive center-block"></a>
+              <a href="#"><img src="./img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
               <h4 class="text-center">Samsung s20</h4>
               <h5 class="text-center">400.000 VND</h5>
             </div>
@@ -35,7 +35,7 @@
 
           <div class="item">
             <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/sac_duphong.jpg" class="img-responsive center-block"></a>
+              <a href="#"><img src="./img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
               <h4 class="text-center">CVETNA HALJINA</h4>
               <h5 class="text-center">600.000 VND</h5>
             </div>
@@ -43,7 +43,7 @@
 
           <div class="item">
             <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ss_a32.jpg" class="img-responsive center-block"></a>
+              <a href="#"><img src="./img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
               <h4 class="text-center">MAJICA FOTO</h4>
               <h5 class="text-center">400.000 VND</h5>
             </div>
@@ -51,7 +51,7 @@
 
           <div class="item">
             <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ip_13.jpg" class="img-responsive center-block"></a>
+              <a href="#"><img src="./img/sanpham/ip_13.png" class="img-responsive center-block"></a>
               <h4 class="text-center">MAJICA MAYORAL</h4>
               <h5 class="text-center">400.000 VND</h5>
             </div>
@@ -78,42 +78,42 @@
     <div class="row">
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_s20.jpg" class="d-block w-100">
+          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_a32.jpg" class="d-block w-100">
+          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_a33.jpg" class="d-block w-100">
+          <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/oppo_reno7.jpg" class="d-block w-100">
+          <img src="./img/sanpham/oppo_reno7.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_s20.jpg" class="d-block w-100">
+          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_a32.jpg" class="d-block w-100">
+          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>

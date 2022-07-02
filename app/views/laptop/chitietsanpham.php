@@ -3,14 +3,14 @@
     <div class="verticals ten offset-by-one">
       <ol class="breadcrumb breadcrumb-fill2 style2">
         <li><a href="javascript:void(0);"><i class="fa fa-home"></i></a></li>
-        <li><a href="javascript:void(0);">Điện thoại</a></li>
-        <li><a href="javascript:void(0);">Samsung</a></li>
-        <li class="active">Samsung s20</li>
+        <li><a href="javascript:void(0);">Laptop</a></li>
+        <li><a href="javascript:void(0);">Asus</a></li>
+        <li class="active">Laptop Asus ZenBook UX325EA</li>
       </ol>
     </div>
   </div>
   <div class="chitiet_sanpham_title">
-    <h3 class="fw-bold">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</h3>
+    <h3 class="fw-bold">Laptop Asus ZenBook UX325EA </h3>
   </div>
   <div class="row mt-3">
     <div class="col-7">
@@ -141,47 +141,54 @@
             <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
               style="height: 300px; overflow: auto;">
               <div class="alert alert-dark text-center" role="alert" style="font-size: 18px; font-weight: bold;">
-                Cấu hình Điện thoại Samsung Galaxy S22 Ultra 5G 128GB
+                Cấu hình Laptop Asus ZenBook UX325EA
               </div>
               <p>
               <table class="table table-hover">
                 <tbody>
                   <tr>
-                    <th scope="row">Màn hình: </th>
-                    <td>AMOLED6.43"Full HD+</td>
+                    <th scope="row">CPU: </th>
+                    <td>i51135G72.4GHz</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">RAM:</th>
+                    <td>8GB LPDDR4X (On board)4267 MHz</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ổ cứng:</th>
+                    <td>512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1TB)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Màn hình:</th>
+                    <td>13.3"Full HD (1920 x 1080) OLED</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Card màn hình:</th>
+                    <td>Card tích hợpIntel Iris Xe</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Cổng kết nối:</th>
+                    <td>1 x USB 3.22 x Thunderbolt 4 USB-CHDMI</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Đặc biệt:</th>
+                    <td>Có đèn bàn phím</td>
                   </tr>
                   <tr>
                     <th scope="row">Hệ điều hành:</th>
-                    <td>Android 11</td>
+                    <td>Windows 11 Home SL</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera sau:</th>
-                    <td>Chính 64 MP & Phụ 2 MP, 2 MP</td>
+                    <th scope="row">Thiết kế:</th>
+                    <td>Vỏ kim loại nguyên khối</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera trước:</th>
-                    <td>16 MP</td>
+                    <th scope="row">Kích thước, trọng lượng:</th>
+                    <td>Dài 304.2 mm - Rộng 203 mm - Dày 13.9 mm - Nặng 1.14 kg</td>
                   </tr>
                   <tr>
-                    <th scope="row">Chip:</th>
-                    <td>Snapdragon 695 5G 8 nhân</td>
-                  </tr>
-                  
-                  <tr>
-                    <th scope="row">RAM:</th>
-                    <td>8 GB</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Bộ nhớ trong:</th>
-                    <td>128 GB</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SIM:</th>
-                    <td>2 Nano SIM (SIM 2 chung khe thẻ nhớ)Hỗ trợ 5G</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Pin, Sạc:</th>
-                    <td>4500 mAh33 W</td>
+                    <th scope="row">Thời điểm ra mắt:</th>
+                    <td>2021</td>
                   </tr>
                 </tbody>
               </table>
@@ -190,30 +197,11 @@
           </div>
         </div>
       </div>
-      <div class="chonmau">
-        <form action="">
-          <div class="wrapper">
-            <input type="radio" name="select" id="option-1" checked>
-            <label for="option-1" class="option option-1">
-              <div class="dot"></div>
-              <span>Đỏ</span>
-            </label>
-            <input type="radio" name="select" id="option-2">
-            <label for="option-2" class="option option-2">
-              <div class="dot"></div>
-              <span>Xanh lá</span>
-            </label>
-            <input type="radio" name="select" id="option-3">
-            <label for="option-3" class="option option-3">
-              <div class="dot"></div>
-              <span>Trắng</span>
-            </label>
-          </div>
-          <div class="d-grid gap-2 btn_themgiohang">
-            <button class="btn btn-light" type="button">Thêm vào giỏ hàng</button>
-          </div>
-        </form>
-      </div>
+      <form action="">
+        <div class="d-grid gap-2 btn_themgiohang">
+          <button class="btn btn-light" type="submit">Thêm vào giỏ hàng</button>
+        </div>
+      </form>
       <div class="h_congnghe_item pt-3 pb-3 ps-3">
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">

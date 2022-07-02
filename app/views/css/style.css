@@ -327,24 +327,72 @@ h2::after {
 
 /*  -----------------------------------------------------------------*/
 
-/* --------------------------------------------------------trang sản phẩm */
+/* --------------------------------------------------------trang sản phẩm điện thoại*/
 .btn_loc {
   border: 1px solid #e4dccf !important;
   width: 100%;
 }
 .timkiem_hang{
-  background-color: #d9d9d9;
+  background-color: black;
   border-radius: 10px;
 }
 .btn_hang img {
   background-color: white;
+  width: 75% !important;
+  padding: 5px 20px;
+  border-radius:20px ;
 }
 
 .sanpham_item:hover .sanpham_item_title{
   color: #FF5B00;
 }
 /* ----------------------------------------------------------------------*/
-/*------------------------------------------------------------ trang chi tiết sản phẩm */
+/* -------------------------------------------------------------trang sản phẩm laptop */
+
+.timkiem_sanpham_loai p{
+  color: black;
+}
+.timkiem_sanpham_loai i{
+  font-size: 36px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 15px;
+}
+.timkiem_sanpham_loai i:hover{
+  background-color: #0b4619;
+  color: white;
+}
+.timkiem_sanpham_loai a{
+  font-weight: bold;
+  font-size: 16px;
+}
+.deal_soc{
+  background-color: #FBB454;
+  padding: 30px 50px;
+  border-radius: 10px;
+}
+.deal_soc h1{
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+.deal_soc h1 b{
+  color: white;
+}
+
+/*  */
+/* ---------------------------------------------------------trang sản phẩm smartwatch */
+.smartwatch_thoitrang{
+  background-color: #d9d9d9;
+}
+
+
+/*  */
+
+
+
+/*------------------------------------------------------------ trang chi tiết sản phẩm điện thoại */
 ol {
   list-style: none;
 }
@@ -696,5 +744,6 @@ ul {
   font-size: 14px;
   color: #878787;
 }
+
 
 /*  */
