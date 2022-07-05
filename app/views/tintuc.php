@@ -45,7 +45,7 @@
             <img src="img/24h_congnghe/2.jpg" class="d-block w-100">
             <h4 class="fw-bold"> Mua điện thoại trả góp - Hình thức mua sắm thông minh dành cho sinh viên chớ bỏ lỡ</h4>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -97,40 +97,48 @@
     <div class="col-6 mb-3">
       <div class="row">
         <div class="col-4">
-          <img src="img/24h_congnghe/3.jpg" alt="" class="d-block w-100">
+          <a href="">
+            <img src="img/24h_congnghe/3.jpg" alt="" class="d-block w-100">
+          </a>
         </div>
         <div class="col-8">
-          <h4>Đón tháng mới tậu ngay BeU Active 1, Sporty 1 với giá chỉ từ 990K</h4>
+          <h4 class="fw-bold">Đón tháng mới tậu ngay BeU Active 1, Sporty 1 với giá chỉ từ 990K</h4>
         </div>
       </div>
     </div>
     <div class="col-6 mb-3">
       <div class="row">
         <div class="col-4">
-          <img src="img/24h_congnghe/4.jpg" alt="" class="d-block w-100">
+          <a href="">
+            <img src="img/24h_congnghe/3.jpg" alt="" class="d-block w-100">
+          </a>
         </div>
         <div class="col-8">
-          <h4>Redmi Note 11 giá hiện tại là bao nhiêu? Tham khảo ngay ưu đãi HOT tại TGDĐ</h4>
+          <h4 class="fw-bold">Đón tháng mới tậu ngay BeU Active 1, Sporty 1 với giá chỉ từ 990K</h4>
         </div>
       </div>
     </div>
     <div class="col-6 mb-3">
       <div class="row">
         <div class="col-4">
-          <img src="img/24h_congnghe/3.jpg" alt="" class="d-block w-100">
+          <a href="">
+            <img src="img/24h_congnghe/3.jpg" alt="" class="d-block w-100">
+          </a>
         </div>
         <div class="col-8">
-          <h4>Đón tháng mới tậu ngay BeU Active 1, Sporty 1 với giá chỉ từ 990K</h4>
+          <h4 class="fw-bold">Đón tháng mới tậu ngay BeU Active 1, Sporty 1 với giá chỉ từ 990K</h4>
         </div>
       </div>
     </div>
     <div class="col-6 mb-3">
       <div class="row">
         <div class="col-4">
-          <img src="img/24h_congnghe/4.jpg" alt="" class="d-block w-100">
+          <a href="">
+            <img src="img/24h_congnghe/3.jpg" alt="" class="d-block w-100">
+          </a>
         </div>
         <div class="col-8">
-          <h4>Redmi Note 11 giá hiện tại là bao nhiêu? Tham khảo ngay ưu đãi HOT tại TGDĐ</h4>
+          <h4 class="fw-bold">Đón tháng mới tậu ngay BeU Active 1, Sporty 1 với giá chỉ từ 990K</h4>
         </div>
       </div>
     </div>

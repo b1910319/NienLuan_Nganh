@@ -53,7 +53,7 @@ a {
 }
 /*  */
 
-/* ----------------------------------------main file trang chủ */
+/* ----------------------------------------trang chủ */
 h2 {
   color: #000;
   font-size: 26px;
@@ -65,6 +65,7 @@ h2 {
 }
 h2 b {
   color: #ffc000;
+  font-size: 26px;
 }
 h2::after {
   content: "";
@@ -269,7 +270,14 @@ h2::after {
   font-weight: bold;
 }
 /*  */
+/* deal ngon */
+.deal_ngon{
+  background-color: #F9F3EE;
+  border-radius: 10px;
+}
 
+
+/*  */
 /* sản phẩm điện thoại */
 
 .sanpham_item {

@@ -1,73 +1,76 @@
 <div class=" main container mt-2">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>Deal ngon <b>mỗi ngày</b></h2>
+  <div class="deal_ngon p-4">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Deal ngon <b>mỗi ngày</b></h2>
+      </div>
     </div>
-  </div>
-  <div class="row mt-3 mb-4">
-    <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
-      <div class="carousel carousel-showmanymoveone slide" id="itemslider">
-        <div class="carousel-inner">
+    <div class="row mt-3 mb-4">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+        <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+          <div class="carousel-inner">
 
-          <div class="item active" >
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
-              <h4 class="text-center">Oppo reno 7</h4>
-              <h5 class="text-center">400.000 VND</h5>
+            <div class="item active">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><img src="./img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">Oppo reno 7</h4>
+                <h5 class="text-center">400.000 VND</h5>
+              </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
-              <h4 class="text-center">Samsung A33</h4>
-              <h5 class="text-center">400.000 VND</h5>
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><img src="./img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">Samsung A33</h4>
+                <h5 class="text-center">400.000 VND</h5>
+              </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
-              <h4 class="text-center">Samsung s20</h4>
-              <h5 class="text-center">400.000 VND</h5>
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><img src="./img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">Samsung s20</h4>
+                <h5 class="text-center">400.000 VND</h5>
+              </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
-              <h4 class="text-center">CVETNA HALJINA</h4>
-              <h5 class="text-center">600.000 VND</h5>
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><img src="./img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">CVETNA HALJINA</h4>
+                <h5 class="text-center">600.000 VND</h5>
+              </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
-              <h4 class="text-center">MAJICA FOTO</h4>
-              <h5 class="text-center">400.000 VND</h5>
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><img src="./img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">MAJICA FOTO</h4>
+                <h5 class="text-center">400.000 VND</h5>
+              </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <a href="#"><img src="./img/sanpham/ip_13.png" class="img-responsive center-block"></a>
-              <h4 class="text-center">MAJICA MAYORAL</h4>
-              <h5 class="text-center">400.000 VND</h5>
+            <div class="item">
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <a href="#"><img src="./img/sanpham/ip_13.png" class="img-responsive center-block"></a>
+                <h4 class="text-center">MAJICA MAYORAL</h4>
+                <h5 class="text-center">400.000 VND</h5>
+              </div>
             </div>
-          </div>
 
-        </div>
-        <!-- left,right control -->
-        <div id="slider-control">
-          <a class="left carousel-control" href="#itemslider" data-slide="prev"><i
-              class="fas fa-angle-left icon_arrow"></i></a>
-          <a class="right carousel-control" href="#itemslider" data-slide="next"><i
-              class="fas fa-angle-right icon_arrow"></i></a>
+          </div>
+          <!-- left,right control -->
+          <div id="slider-control">
+            <a class="left carousel-control" href="#itemslider" data-slide="prev"><i
+                class="fas fa-angle-left icon_arrow"></i></a>
+            <a class="right carousel-control" href="#itemslider" data-slide="next"><i
+                class="fas fa-angle-right icon_arrow"></i></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- điện thoại -->
   <div class="sanpham mb-3">
     <div class="row">
@@ -277,119 +280,126 @@
           <div class="spinner-grow text-light" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <span style="font-weight:bold ; color: white; font-size: 25px;">24h CÔNG NGHỆ</span>
+          <span style="font-weight:bold ; color: white; font-size: 20px;">24H CÔNG NGHỆ</span>
         </a>
       </button>
     </div>
-    <div class="h_congnghe_item pt-3 pb-3">
-      <a href="" style="text-decoration: none;" class="text-dark">
-        <div class="row">
-          <div class="col-3">
-            <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+    <div class="row">
+      <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
+        <a href="" style="text-decoration: none;" class="text-dark">
+          <div class="row">
+            <div class="col-3">
+              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+            </div>
+            <div class="col-9">
+              <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
+              <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
+                vừa
+                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
+                tinh
+                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
+                nhu
+                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
+                ASUS
+                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
+              </span>
+            </div>
           </div>
-          <div class="col-9">
-            <h3 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h3>
-            <span class="d-inline-block text-truncate" style="max-width: 800px;">
-              Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-              vừa
-              qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-              tinh
-              tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết nhu
-              cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-              ASUS
-              ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-            </span>
+        </a>
+      </div>
+      <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
+        <a href="" style="text-decoration: none;" class="text-dark">
+          <div class="row">
+            <div class="col-3">
+              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+            </div>
+            <div class="col-9">
+              <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
+              <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
+                vừa
+                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
+                tinh
+                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
+                nhu
+                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
+                ASUS
+                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
+              </span>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-    <div class="h_congnghe_item pt-3 pb-3">
-      <a href="" style="text-decoration: none;" class="text-dark">
-        <div class="row">
-          <div class="col-3">
-            <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+        </a>
+      </div>
+      <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
+        <a href="" style="text-decoration: none;" class="text-dark">
+          <div class="row">
+            <div class="col-3">
+              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+            </div>
+            <div class="col-9">
+              <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
+              <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
+                vừa
+                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
+                tinh
+                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
+                nhu
+                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
+                ASUS
+                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
+              </span>
+            </div>
           </div>
-          <div class="col-9">
-            <h3 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h3>
-            <span class="d-inline-block text-truncate" style="max-width: 800px;">
-              Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-              vừa
-              qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-              tinh
-              tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết nhu
-              cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-              ASUS
-              ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-            </span>
+        </a>
+      </div>
+      <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
+        <a href="" style="text-decoration: none;" class="text-dark">
+          <div class="row">
+            <div class="col-3">
+              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+            </div>
+            <div class="col-9">
+              <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
+              <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
+                vừa
+                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
+                tinh
+                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
+                nhu
+                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
+                ASUS
+                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
+              </span>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-    <div class="h_congnghe_item pt-3 pb-3">
-      <a href="" style="text-decoration: none;" class="text-dark">
-        <div class="row">
-          <div class="col-3">
-            <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+        </a>
+      </div>
+      <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
+        <a href="" style="text-decoration: none;" class="text-dark">
+          <div class="row">
+            <div class="col-3">
+              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+            </div>
+            <div class="col-9">
+              <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
+              <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
+                vừa
+                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
+                tinh
+                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
+                nhu
+                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
+                ASUS
+                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
+              </span>
+            </div>
           </div>
-          <div class="col-9">
-            <h3 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h3>
-            <span class="d-inline-block text-truncate" style="max-width: 800px;">
-              Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-              vừa
-              qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-              tinh
-              tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết nhu
-              cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-              ASUS
-              ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-            </span>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="h_congnghe_item pt-3 pb-3">
-      <a href="" style="text-decoration: none;" class="text-dark">
-        <div class="row">
-          <div class="col-3">
-            <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
-          </div>
-          <div class="col-9">
-            <h3 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h3>
-            <span class="d-inline-block text-truncate" style="max-width: 800px;">
-              Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-              vừa
-              qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-              tinh
-              tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết nhu
-              cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-              ASUS
-              ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-            </span>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="h_congnghe_item pt-3 pb-3" >
-      <a href="" style="text-decoration: none;" class="text-dark">
-        <div class="row">
-          <div class="col-3">
-            <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
-          </div>
-          <div class="col-9">
-            <h3 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h3>
-            <span class="d-inline-block text-truncate" style="max-width: 800px;">
-              Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-              vừa
-              qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-              tinh
-              tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết nhu
-              cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-              ASUS
-              ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-            </span>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
 
   </div>
