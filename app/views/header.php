@@ -129,7 +129,7 @@
           </button>
 
         </div>
-        
+
       </div>
     </div>
     <div class="nav row">
@@ -143,7 +143,7 @@
   </div>
 
   <?php 
-    require_once "slider.php"
+    // require_once "slider.php"
     ?>
 
   <?php 
@@ -152,8 +152,18 @@
     // require_once "trangchu.php"
     // require_once "./laptop/sanpham.php" 
     // require_once "./laptop/chitietsanpham.php"
-    require_once "./smartwatch/sanpham.php" 
+    // require_once "./smartwatch/sanpham.php" 
     // require_once "./smartwatch/chitietsanpham.php"
+    // require_once "./dongho/sanpham.php" 
+    // require_once "./dongho/chitietsanpham.php"
+    // require_once "./maytinhban/sanpham.php" 
+    // require_once "./maytinhban/chitietsanpham.php"
+    // require_once "tintuc.php"
+    // require_once "tradonhang.php"
+    // require_once "lichsudonhang.php"
+    // require_once "lichsudonhang_chitiet.php"
+    // require_once "giohang.php"
+    require_once "timkiem.php"
   ?>
 
 

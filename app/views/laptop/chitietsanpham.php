@@ -92,6 +92,9 @@
           </div>
         </div>
       </div>
+      <div>
+        <img src="img/sanpham/ss_s22_chitiet.jpg" alt="" class="d-block w-100">
+      </div>
       <div class="thongtin_sanpham">
         <div class="">
           <h2 class="py-3 text-center">Thông tin sản phẩm</h2>

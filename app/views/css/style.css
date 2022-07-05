@@ -1,7 +1,9 @@
 a {
   text-decoration: none;
 }
-
+*{
+  font-size: 16px;
+}
 /* style banner */
 .banner,
 .header,
@@ -271,7 +273,8 @@ h2::after {
 /* sản phẩm điện thoại */
 
 .sanpham_item {
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   border-radius: 10px;
 }
 .btn_xemthem {
@@ -499,7 +502,7 @@ ol {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 5px;
-  padding: 20px 15px;
+  /* padding: 0px 15px; */
   /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); */
   /* background: #fff; */
 }
@@ -572,6 +575,7 @@ input[type="radio"] {
   font-weight: bold;
   font-size: 18px;
   padding: 15px 0;
+  margin-top: 20px;
 }
 /* sản phẩm tương tự */
 .sanpham_tuongtu h3{
@@ -582,7 +586,52 @@ input[type="radio"] {
 
 /*  */
 
+
+
 /* --------------------------------------------------------------- */
+/* ---------------------------------------------------------trang sản phầm đồng hồ */
+.dongho_docquyen{
+  background-color: #020C16;
+}
+.dongho_phaidep{
+  background-color: #FFB1BF;
+}
+.dongho_phaimanh {
+  background-color: #05314A;
+}
+.dongho_treem {
+  background-color: #FFBF56;
+}
+
+
+
+/* ------------------------------------------------------------- */
+
+/*------------------------------------------------------------- trang tin tức */
+.tintuc_dm a{
+  text-decoration: none !important;
+  color: black;
+}
+.tintuc_dm:hover button{
+  background-color: #3ec70b;
+  color: white;
+}
+/*-------------------------------------------------------------  */
+/*------------------------------------------------------------ trang lịch sử đơn hàng */
+.btn_chitiet{
+  background-color: #FF5E14 !important;
+}
+/*------------------------------------------------------------  */
+
+/*-------------------------------------------------------------------- trang giỏ hàng */
+.btn_xoa{
+  background-color: red !important;
+}
+.giohang{
+  background-color: #FFF2F2;
+  border-radius: 10px;
+}
+/*--------------------------------------------------------------------  */
 /* footer */
 
 ul {

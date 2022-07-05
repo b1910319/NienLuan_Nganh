@@ -3,14 +3,14 @@
     <div class="verticals ten offset-by-one">
       <ol class="breadcrumb breadcrumb-fill2 style2">
         <li><a href="javascript:void(0);"><i class="fa fa-home"></i></a></li>
-        <li><a href="javascript:void(0);">Điện thoại</a></li>
-        <li><a href="javascript:void(0);">Samsung</a></li>
-        <li class="active">Samsung s20</li>
+        <li><a href="javascript:void(0);">Máy tính để bàn</a></li>
+        <!-- <li><a href="javascript:void(0);">Samsung</a></li>
+        <li class="active">Samsung s20</li> -->
       </ol>
     </div>
   </div>
   <div class="chitiet_sanpham_title">
-    <h3 class="fw-bold">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</h3>
+    <h3 class="fw-bold">iMac 24 inch 2021 4.5K M1/256GB/8GB/7-core GPU (MJVA3SA/A) </h3>
   </div>
   <div class="row mt-3">
     <div class="col-7">
@@ -90,10 +90,15 @@
               <p class="ps-4">Bảo hành chính hãng điện thoại 1 năm tại các trung tâm bảo hành hãng </p>
             </div>
           </div>
+          <div class="row">
+            <div class="col-1">
+              <img src="./img/chitiet_sanpham/4.jpg" class="d-block">
+            </div>
+            <div class="col-11">
+              <p class="ps-4">Giao hàng tận nhà nhanh chóng</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <img src="img/sanpham/ss_s22_chitiet.jpg" alt="" class="d-block w-100">
       </div>
       <div class="thongtin_sanpham">
         <div class="">
@@ -144,47 +149,43 @@
             <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
               style="height: 300px; overflow: auto;">
               <div class="alert alert-dark text-center" role="alert" style="font-size: 18px; font-weight: bold;">
-                Cấu hình Điện thoại Samsung Galaxy S22 Ultra 5G 128GB
+              Cấu hình iMac 24 inch 2021 4.5K M1/256GB/8GB/7-core GPU
               </div>
               <p>
               <table class="table table-hover">
                 <tbody>
                   <tr>
-                    <th scope="row">Màn hình: </th>
-                    <td>AMOLED6.43"Full HD+</td>
+                    <th scope="row">Công nghệ CPU: </th>
+                    <td>Apple M1 8-core</td>
                   </tr>
                   <tr>
-                    <th scope="row">Hệ điều hành:</th>
-                    <td>Android 11</td>
+                    <th scope="row">RAM</th>
+                    <td>8GB</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera sau:</th>
-                    <td>Chính 64 MP & Phụ 2 MP, 2 MP</td>
+                    <th scope="row">Ổ cứng:</th>
+                    <td>256 GB SSD</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera trước:</th>
-                    <td>16 MP</td>
+                    <th scope="row">Màn hình:</th>
+                    <td>24 inch4.5K</td>
                   </tr>
                   <tr>
-                    <th scope="row">Chip:</th>
-                    <td>Snapdragon 695 5G 8 nhân</td>
+                    <th scope="row">Card màn hình:</th>
+                    <td>7-core GPU</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">RAM:</th>
-                    <td>8 GB</td>
+                    <th scope="row">Cổng kết nối:</th>
+                    <td>2 x ThunderboltJack 3.5 mm</td>
                   </tr>
                   <tr>
-                    <th scope="row">Bộ nhớ trong:</th>
-                    <td>128 GB</td>
+                    <th scope="row">Hệ điều hành:</th>
+                    <td>Mac OS</td>
                   </tr>
                   <tr>
-                    <th scope="row">SIM:</th>
-                    <td>2 Nano SIM (SIM 2 chung khe thẻ nhớ)Hỗ trợ 5G</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Pin, Sạc:</th>
-                    <td>4500 mAh33 W</td>
+                    <th scope="row">Kích thước:</th>
+                    <td>Dài 461 mm - Rộng 547 mm - Dày 147 mm - Nặng 4.46 kg</td>
                   </tr>
                 </tbody>
               </table>

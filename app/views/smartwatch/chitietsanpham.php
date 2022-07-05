@@ -3,14 +3,14 @@
     <div class="verticals ten offset-by-one">
       <ol class="breadcrumb breadcrumb-fill2 style2">
         <li><a href="javascript:void(0);"><i class="fa fa-home"></i></a></li>
-        <li><a href="javascript:void(0);">Điện thoại</a></li>
-        <li><a href="javascript:void(0);">Samsung</a></li>
-        <li class="active">Samsung s20</li>
+        <li><a href="javascript:void(0);">Smartwatch</a></li>
+        <!-- <li><a href="javascript:void(0);">Samsung</a></li> -->
+        <li class="active">Apple Watch Series 7 GPS 41mm</li>
       </ol>
     </div>
   </div>
   <div class="chitiet_sanpham_title">
-    <h3 class="fw-bold">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</h3>
+    <h3 class="fw-bold">Apple Watch Series 7 GPS 41mm</h3>
   </div>
   <div class="row mt-3">
     <div class="col-7">
@@ -90,10 +90,15 @@
               <p class="ps-4">Bảo hành chính hãng điện thoại 1 năm tại các trung tâm bảo hành hãng </p>
             </div>
           </div>
+          <div class="row">
+            <div class="col-1">
+              <img src="./img/chitiet_sanpham/4.jpg" class="d-block">
+            </div>
+            <div class="col-11">
+              <p class="ps-4">Giao hàng tận nhà nhanh chóng</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <img src="img/sanpham/ss_s22_chitiet.jpg" alt="" class="d-block w-100">
       </div>
       <div class="thongtin_sanpham">
         <div class="">
@@ -135,8 +140,8 @@
       <div class="chitiet_sanpham_gia">
         <p>20.000.000 d</p>
       </div>
-      <button type="button" class="btn btn-light btn_tragop">Trả góp 0%</button>
-      <button type="button" class="btn btn-success">Mới</button>
+      <!-- <button type="button" class="btn btn-light btn_tragop">Trả góp 0%</button>
+      <button type="button" class="btn btn-success">Mới</button> -->
       <div class="thongso_kythuat">
         <h2 class="py-3 text-center">Thông số kỹ thuật</h2>
         <div class="row py-5 justify-content-center">
@@ -144,47 +149,31 @@
             <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
               style="height: 300px; overflow: auto;">
               <div class="alert alert-dark text-center" role="alert" style="font-size: 18px; font-weight: bold;">
-                Cấu hình Điện thoại Samsung Galaxy S22 Ultra 5G 128GB
+                Cấu hình Apple Watch Series 7 GPS 41mm
               </div>
               <p>
               <table class="table table-hover">
                 <tbody>
                   <tr>
                     <th scope="row">Màn hình: </th>
-                    <td>AMOLED6.43"Full HD+</td>
+                    <td>OLED1.61 inch</td>
                   </tr>
                   <tr>
-                    <th scope="row">Hệ điều hành:</th>
-                    <td>Android 11</td>
+                    <th scope="row">Thời lượng pin:</th>
+                    <td>Khoảng 1.5 ngày</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera sau:</th>
-                    <td>Chính 64 MP & Phụ 2 MP, 2 MP</td>
+                    <th scope="row">Kết nối với hệ điều hành:</th>
+                    <td>iOS bản mới nhất</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera trước:</th>
-                    <td>16 MP</td>
+                    <th scope="row">Mặt:</th>
+                    <td>Ion-X strengthened glass41 mm</td>
                   </tr>
                   <tr>
-                    <th scope="row">Chip:</th>
-                    <td>Snapdragon 695 5G 8 nhân</td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row">RAM:</th>
-                    <td>8 GB</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Bộ nhớ trong:</th>
-                    <td>128 GB</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SIM:</th>
-                    <td>2 Nano SIM (SIM 2 chung khe thẻ nhớ)Hỗ trợ 5G</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Pin, Sạc:</th>
-                    <td>4500 mAh33 W</td>
+                    <th scope="row">Tính năng cho sức khỏe:</th>
+                    <td>Chế độ luyện tậpTheo dõi giấc ngủTính lượng calories tiêu thụTính quãng đường chạyĐiện tâm đồĐo
+                      nhịp timĐo nồng độ oxy (SpO2)Đếm số bước chân</td>
                   </tr>
                 </tbody>
               </table>

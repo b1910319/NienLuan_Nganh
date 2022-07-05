@@ -3,14 +3,14 @@
     <div class="verticals ten offset-by-one">
       <ol class="breadcrumb breadcrumb-fill2 style2">
         <li><a href="javascript:void(0);"><i class="fa fa-home"></i></a></li>
-        <li><a href="javascript:void(0);">Điện thoại</a></li>
-        <li><a href="javascript:void(0);">Samsung</a></li>
-        <li class="active">Samsung s20</li>
+        <li><a href="javascript:void(0);">Đồng hồ</a></li>
+        <li><a href="javascript:void(0);">Phái nữ</a></li>
+        <!-- <li class="active">Laptop Asus ZenBook UX325EA</li> -->
       </ol>
     </div>
   </div>
   <div class="chitiet_sanpham_title">
-    <h3 class="fw-bold">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</h3>
+    <h3 class="fw-bold">Đồng hồ BABY-G 40.3 mm Nữ MSG-C150G-3ADR </h3>
   </div>
   <div class="row mt-3">
     <div class="col-7">
@@ -69,7 +69,7 @@
               <img src="./img/chitiet_sanpham/1.jpg" class="d-block">
             </div>
             <div class="col-11">
-              <p class="ps-4">Hư gì đổi nấy <b>12</b> tháng tại 3192 siêu thị toàn quốc (miễn phí tháng đầu)</p>
+              <p class="ps-4">Bảo hành có cam kết trong <b>12 tháng</b></p>
             </div>
           </div>
           <div class="row">
@@ -87,13 +87,10 @@
               <img src="./img/chitiet_sanpham/3.jpg" class="d-block">
             </div>
             <div class="col-11">
-              <p class="ps-4">Bảo hành chính hãng điện thoại 1 năm tại các trung tâm bảo hành hãng </p>
+              <p class="ps-4">Bảo hành chính hãng <b>5 năm</b> tại các trung tâm bảo hành hãng </p>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <img src="img/sanpham/ss_s22_chitiet.jpg" alt="" class="d-block w-100">
       </div>
       <div class="thongtin_sanpham">
         <div class="">
@@ -144,47 +141,34 @@
             <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
               style="height: 300px; overflow: auto;">
               <div class="alert alert-dark text-center" role="alert" style="font-size: 18px; font-weight: bold;">
-                Cấu hình Điện thoại Samsung Galaxy S22 Ultra 5G 128GB
+                Cấu hình Đồng hồ BABY-G 40.3 mm Nữ MSG-C150G-3ADR
               </div>
               <p>
               <table class="table table-hover">
                 <tbody>
                   <tr>
-                    <th scope="row">Màn hình: </th>
-                    <td>AMOLED6.43"Full HD+</td>
+                    <th scope="row">Đối tượng sử dụng:</th>
+                    <td>Nữ</td>
                   </tr>
                   <tr>
-                    <th scope="row">Hệ điều hành:</th>
-                    <td>Android 11</td>
+                    <th scope="row">Đường kính mặt:</th>
+                    <td>40.3 mm</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera sau:</th>
-                    <td>Chính 64 MP & Phụ 2 MP, 2 MP</td>
+                    <th scope="row">Chất liệu mặt kính:</th>
+                    <td>Kính khoáng Mineral</td>
                   </tr>
                   <tr>
-                    <th scope="row">Camera trước:</th>
-                    <td>16 MP</td>
+                    <th scope="row">Chất liệu dây:</th>
+                    <td>Nhựa</td>
                   </tr>
                   <tr>
-                    <th scope="row">Chip:</th>
-                    <td>Snapdragon 695 5G 8 nhân</td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row">RAM:</th>
-                    <td>8 GB</td>
+                    <th scope="row">Bộ máy:</th>
+                    <td>Pin (Quartz)</td>
                   </tr>
                   <tr>
-                    <th scope="row">Bộ nhớ trong:</th>
-                    <td>128 GB</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SIM:</th>
-                    <td>2 Nano SIM (SIM 2 chung khe thẻ nhớ)Hỗ trợ 5G</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Pin, Sạc:</th>
-                    <td>4500 mAh33 W</td>
+                    <th scope="row">Chống nước:</th>
+                    <td>10 ATM - Tắm, bơi</td>
                   </tr>
                 </tbody>
               </table>
@@ -193,36 +177,11 @@
           </div>
         </div>
       </div>
-      <div class="chonmau">
-        <form action="">
-          <div class="wrapper row">
-            <div class="col-3 mt-1">
-              <input type="radio" name="select" id="option-1" checked>
-              <label for="option-1" class="option option-1">
-                <div class="dot"></div>
-                <span>Đỏ</span>
-              </label>
-            </div>
-            <div class="col-3 mt-1">
-              <input type="radio" name="select" id="option-2">
-              <label for="option-2" class="option option-2">
-                <div class="dot"></div>
-                <span>Xanh lá</span>
-              </label>
-            </div>
-            <div class="col-3 mt-1">
-              <input type="radio" name="select" id="option-3">
-              <label for="option-3" class="option option-3">
-                <div class="dot"></div>
-                <span>Trắng</span>
-              </label>
-            </div>
-          </div>
-          <div class="d-grid gap-2 btn_themgiohang">
-            <button class="btn btn-light" type="button">Thêm vào giỏ hàng</button>
-          </div>
-        </form>
-      </div>
+      <form action="">
+        <div class="d-grid gap-2 btn_themgiohang">
+          <button class="btn btn-light" type="submit">Thêm vào giỏ hàng</button>
+        </div>
+      </form>
       <div class="h_congnghe_item pt-3 pb-3 ps-3">
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
