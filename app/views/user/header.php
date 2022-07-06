@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- link file css -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="app/views/user//css/style.css">
   <!--  -->
   <!-- link boostrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -61,13 +61,13 @@
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./img/banner/banner_1.png" class="d-block giua " alt="...">
+            <img src="app/views/user/img/banner/banner_1.png" class="d-block giua " alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./img/banner/banner_2.png" class="d-block giua" alt="...">
+            <img src="app/views/user/img/banner/banner_2.png" class="d-block giua" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./img/banner/banner_3.png" class="d-block giua" alt="...">
+            <img src="app/views/user/img/banner/banner_3.png" class="d-block giua" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -85,7 +85,7 @@
     <div class="header">
       <div class="row">
         <div class="col-2">
-          <img src="./img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
+          <img src="app/views/user/img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
         </div>
         <div class="col-2">
           <a href="">
@@ -143,13 +143,13 @@
   </div>
 
   <?php 
-    require_once "slider.php"
+    // require_once "slider.php"
     ?>
 
   <?php 
     // require_once "./dienthoai/sanpham.php" 
     // require_once "./dienthoai/chitietsanpham.php"
-    require_once "trangchu.php"
+    // require_once "trangchu.php"
     // require_once "./laptop/sanpham.php" 
     // require_once "./laptop/chitietsanpham.php"
     // require_once "./smartwatch/sanpham.php" 
@@ -168,7 +168,7 @@
 
 
   <?php 
-  require_once "footer.php" 
+  // require_once "footer.php" 
   ?>
 
 </body>

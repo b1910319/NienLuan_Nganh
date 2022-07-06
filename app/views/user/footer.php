@@ -36,7 +36,7 @@
         <div class="col-xl-4 col-lg-4 mb-50">
           <div class="footer-widget">
             <div class="footer-logo">
-              <a href="index.html"><img src="./img/logo/logo.png" class="img-fluid" alt="logo"></a>
+              <a href="index.html"><img src="app/views/user/img/logo/logo.png" class="img-fluid" alt="logo"></a>
             </div>
             <div class="footer-text">
               <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec

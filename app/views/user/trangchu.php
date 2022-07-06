@@ -1,3 +1,17 @@
+<div class="">
+  <p>danh muc san pham</p>
+  <?php
+    foreach($data as $key){
+      echo $key['1'].'<br/>';
+      echo $key['2'].'<br/>';
+      echo $key['3'].'<br/>';
+      echo $key['4'].'<br/>';
+    }
+  ?>
+</div>
+
+
+
 <div class=" main container mt-2">
   <div class="deal_ngon p-4">
     <div class="row">
@@ -12,7 +26,7 @@
 
             <div class="item active">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="./img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="app/views/user/img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
                 <h4 class="text-center">Oppo reno 7</h4>
                 <h5 class="text-center">400.000 VND</h5>
               </div>
@@ -20,7 +34,7 @@
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="./img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="app/views/user/img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
                 <h4 class="text-center">Samsung A33</h4>
                 <h5 class="text-center">400.000 VND</h5>
               </div>
@@ -28,7 +42,7 @@
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="./img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="app/views/user/img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
                 <h4 class="text-center">Samsung s20</h4>
                 <h5 class="text-center">400.000 VND</h5>
               </div>
@@ -36,7 +50,7 @@
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="./img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="app/views/user/img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
                 <h4 class="text-center">CVETNA HALJINA</h4>
                 <h5 class="text-center">600.000 VND</h5>
               </div>
@@ -44,7 +58,7 @@
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="./img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="app/views/user/img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
                 <h4 class="text-center">MAJICA FOTO</h4>
                 <h5 class="text-center">400.000 VND</h5>
               </div>
@@ -52,7 +66,7 @@
 
             <div class="item">
               <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="./img/sanpham/ip_13.png" class="img-responsive center-block"></a>
+                <a href="#"><img src="app/views/user/img/sanpham/ip_13.png" class="img-responsive center-block"></a>
                 <h4 class="text-center">MAJICA MAYORAL</h4>
                 <h5 class="text-center">400.000 VND</h5>
               </div>
@@ -81,42 +95,42 @@
     <div class="row">
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
+          <img src="app/views/user/img/sanpham/ss_s20.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
+          <img src="app/views/user/img/sanpham/ss_a32.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
+          <img src="app/views/user/img/sanpham/ss_a33.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/oppo_reno7.png" class="d-block w-100">
+          <img src="app/views/user/img/sanpham/oppo_reno7.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
+          <img src="app/views/user/img/sanpham/ss_s20.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
       </div>
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
+          <img src="app/views/user/img/sanpham/ss_a32.png" class="d-block w-100">
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
@@ -141,97 +155,97 @@
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#ffa3a3 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Điện thoại</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/dienthoai.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/dienthoai.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#ff94eb ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Bàn phím</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/banphim.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/banphim.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#e0b3ff ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Cáp sạc</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/capsac.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/capsac.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#c6d8fb ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Chuột máy tính</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/chuot_maytinh.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/chuot_maytinh.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#4d91ff ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Đồng hồ thời trang</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/dongho_thoitrang.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/dongho_thoitrang.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3 " style="background-color:#f5d63d ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Đồng hồ thông minh</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/dongho_thongminh.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/dongho_thongminh.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#fda363 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Laptop</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/laptop.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/laptop.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#ff6666 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Loa</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/loa.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/loa.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#d6d6d6 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Màn hình máy tính</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/manghinh_maytinh.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/manghinh_maytinh.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#ffadb6 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Máy tính bộ</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/maytinh_bo.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/maytinh_bo.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#96fdb5 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Ốp lưng</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/oplung.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/oplung.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#6bceff ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Phụ kiện gaming</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/phukien_gaming.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/phukien_gaming.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#d8a8ff ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Sạc dự phòng</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/sac_duphong.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/sac_duphong.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#efc2ff ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Table</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/tablet.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/tablet.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#ff85c0 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Tai nghe</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/tainghe.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/tainghe.png" style="width:90% ;">
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3" style="background-color:#ffbdbd ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Điện thoại</p>
         <a href="">
-          <img class="giua mb-1" src="./img/logo/thietbi_mang.png" style="width:90% ;">
+          <img class="giua mb-1" src="app/views/user/img/logo/thietbi_mang.png" style="width:90% ;">
         </a>
       </div>
 
@@ -249,22 +263,22 @@
     <div class="row mb-3">
       <div class="col-3">
         <a href="">
-          <img src="./img/logo/samsung.png" class="d-block w-100" style="border-radius:15px ;">
+          <img src="app/views/user/img/logo/samsung.png" class="d-block w-100" style="border-radius:15px ;">
         </a>
       </div>
       <div class="col-3">
         <a href="">
-          <img src="./img/logo/asus.png" class="d-block w-100" style="border-radius:15px ;">
+          <img src="app/views/user/img/logo/asus.png" class="d-block w-100" style="border-radius:15px ;">
         </a>
       </div>
       <div class="col-3">
         <a href="">
-          <img src="./img/logo/apple.png" class="d-block w-100" style="border-radius:15px ;">
+          <img src="app/views/user/img/logo/apple.png" class="d-block w-100" style="border-radius:15px ;">
         </a>
       </div>
       <div class="col-3">
         <a href="">
-          <img src="./img/logo/xiaomi.png" class="d-block w-100" style="border-radius:15px ;">
+          <img src="app/views/user/img/logo/xiaomi.png" class="d-block w-100" style="border-radius:15px ;">
         </a>
       </div>
     </div>
@@ -289,7 +303,7 @@
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
             <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+              <img src="app/views/user/img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
             </div>
             <div class="col-9">
               <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
@@ -312,7 +326,7 @@
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
             <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+              <img src="app/views/user/img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
             </div>
             <div class="col-9">
               <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
@@ -335,7 +349,7 @@
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
             <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+              <img src="app/views/user/img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
             </div>
             <div class="col-9">
               <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
@@ -358,7 +372,7 @@
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
             <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+              <img src="app/views/user/img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
             </div>
             <div class="col-9">
               <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
@@ -381,7 +395,7 @@
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
             <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
+              <img src="app/views/user/img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
             </div>
             <div class="col-9">
               <h4 class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</h4>
