@@ -10,7 +10,12 @@
       // }
       require_once "app/views/user/".$filename.".php";
     }
-
+    public function view_admin($filename, $data = false){
+      // if ($data == true){
+      //   extract($data);
+      // }
+      require_once "app/views/admin/".$filename.".php";
+    }
     public function model($filename){
       require_once "app/models/".$filename.".php";
       return new $filename;

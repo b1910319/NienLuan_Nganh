@@ -12,6 +12,8 @@
   <?php
     require_once "./system/lib/main.php";
     require_once "./system/lib/controller.php";
+    require_once "./system/lib/database.php";
+    require_once "./system/lib/model.php";
     require_once "./system/lib/load.php";
     $url = isset ($_GET['url'])? $_GET['url']:NULL;
     
@@ -34,11 +36,12 @@
         }
       }
       
-    }else{
-      require_once "app/controllers/index.php";
-      $index = new index();
-      $index->trangchu();
     }
+    // else{
+    //   require_once "app/controllers/index.php";
+    //   $index = new index();
+    //   $index->trangchu();
+    // }
   ?>
   <?php
     
