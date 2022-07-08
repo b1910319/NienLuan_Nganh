@@ -9,7 +9,6 @@
       $this->load->view_admin("header");
       $this->load->view_admin("leftmenu");
       $this->load->view_admin("trangchu");
-      // $this->load->view_admin("footer");
     }
   }
 ?>

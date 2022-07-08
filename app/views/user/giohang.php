@@ -66,7 +66,7 @@
           <input type="text" class="form-control" placeholder="Họ tên" required minlength="5">
         </div>
         <div class="col-4">
-        <input type="text" class="form-control" placeholder="Số Điện Thoại" maxlength="10" required pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$">
+        <input type="text" class="form-control" placeholder="Số Điện Thoại" required pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" maxlength="10">
         </div>
         <div class="col-4">
           <select class="form-select" style="height:34px ; font-size: 16px;" aria-label="Default select example">

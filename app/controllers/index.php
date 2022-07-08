@@ -5,6 +5,9 @@
       $data = array();
       parent::__construct();
     }
+    public function index(){
+      $this->trangchu();
+    }
     public function trangchu(){
       $this->load->view_user("header");
       $this->load->view_user("slider");

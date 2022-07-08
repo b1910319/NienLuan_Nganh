@@ -19,9 +19,33 @@
       $sql = "INSERT INTO $table ($keys) VALUES ($values)";
       $statement = $this->prepare($sql);
       foreach ($data as $key => $value){
-        $statement->bindParam(":$key", $value);
+        $statement->bindValue(":$key", $value);
       }
       return $statement->execute();
+    }
+    public function update($table, $data, $dieukien){
+      $updateKey = NULL;
+      foreach ($data as $key => $value){
+        //nối các cột cần update lại
+        $updateKey .= "$key=:$key,";
+      }
+      //cắt dấu , cuối hàng
+      $updateKey = rtrim($updateKey, ",");
+      $sql = "UPDATE $table SET $updateKey WHERE $dieukien";
+      $statement = $this->prepare($sql);
+      foreach ($data as $key => $value){
+        $statement->bindValue(":$key", $value);
+      }
+      return $statement->execute();
+    }
+    public function delete ($table, $dieukien, $limit = 1){
+      $sql = "DELETE FROM $table WHERE $dieukien LIMIT $limit";
+      return $this->exec($sql);
+    }
+    public function affectedRows($sql, $dk1, $dk2){
+      $statement = $this->prepare($sql);
+      $statement->execute(array($dk1, $dk2));
+      return $statement->rowCount();
     }
   }
 ?>

@@ -1,0 +1,49 @@
+.title_table{
+  width: 20%;
+}
+.input_table{
+  width: 50%;
+}
+.title_page{
+  font-weight: bold;
+}
+.title_page::after{
+  content: "";
+  width: 100px;
+  position: absolute;
+  /* margin: 0 auto; */
+  height: 5px;
+  background-color: #f15412;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  border-radius: 40px;
+}
+.tr_table{
+  background-color: black;
+  color: white;
+}
+.xoa{
+  color: white;
+  background-color: #ee3500;
+}
+.xoa:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: #ee3500;
+  background-color: white;
+}
+.sua{
+  color: white;
+  background-color: #038018;
+}
+.sua:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: #038018;
+  background-color: white;
+}
+.message{
+  font-weight: bold;
+  color: #9EB23B;
+}

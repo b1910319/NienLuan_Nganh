@@ -16,6 +16,12 @@
       $data = array(':ma_ncc' => $ma_ncc);
       return $this->db->select($sql,$data);
     }
+    public function nhacungcap_update($table, $data, $dieukien){
+      return $this->db->update($table, $data,$dieukien);
+    }
+    public function nhacungcap_delete($table, $dieukien){
+      return $this->db->delete($table, $dieukien);
+    }
   }
 
 ?>

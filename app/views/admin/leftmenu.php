@@ -7,7 +7,7 @@
     <img src="../public/assets\images\users\avatar-1.jpg" alt="" class="avatar-md rounded-circle">
   </div>
   <div class="user-info">
-    <a href="#">Stanley Jones</a>
+    <a href="#">Diểm Trinh</a>
     <p class="text-muted m-0">Administrator</p>
   </div>
 </div>
@@ -17,19 +17,19 @@
 
   <ul class="metismenu" id="side-menu">
 
-    <li class="menu-title">Navigation</li>
+    <li class="menu-title">Menu</li>
 
     <li>
-      <a href="index.html">
+      <a href="../admin/trangchu">
         <i class="ti-home"></i>
-        <span> Dashboard </span>
+        <span> Trang chủ </span>
       </a>
     </li>
 
     <li>
-      <a href="ui-elements.html">
+      <a href="../nhacungcap/nhacungcap">
         <i class="ti-paint-bucket"></i>
-        <span> UI Elements </span>
+        <span> Nhà cung cấp </span>
         <span class="badge badge-primary float-right">11</span>
       </a>
     </li>

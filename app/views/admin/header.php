@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Dashboard | Simple - Responsive Bootstrap 4 Admin Dashboard</title>
+  <title>Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Responsive bootstrap 4 admin template" name="description">
   <meta content="Coderthemes" name="author">
@@ -22,6 +22,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <!--  -->
+<!-- link style css -->
+  <link rel="stylesheet" href="../public/css/styleAdmin.css">
 </head>
 
 <body>
