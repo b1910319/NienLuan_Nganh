@@ -47,5 +47,10 @@
       $statement->execute(array($dk1, $dk2));
       return $statement->rowCount();
     }
+    public function selectNV($sql, $dk1, $dk2){
+      $statement = $this->prepare($sql);
+      $statement->execute(array($dk1, $dk2));
+      return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
   }
 ?>

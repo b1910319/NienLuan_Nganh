@@ -10,6 +10,10 @@
       $this->dangnhap();
     }
     public function dangnhap(){
+      session::init();
+      if(session::get('dangnhap') == true){
+        header("Location:".BASE_URL."admin/index");
+      }
       $this->load->view_admin("dangnhap");
     }
     public function nhanvien_dangnhap(){
@@ -21,8 +25,19 @@
       if($conut == 0 ){
         header("Location:".BASE_URL."dangnhap");
       }else{
-        header("Location:".BASE_URL."admin/trangchu");
+        $result = $nhanvienM->get_dangnhap($table, $user_nv, $pass_nv);
+        session::init();
+        session::set('dangnhap',true);
+        session::set('ten_nv', $result[0]['ten_nv']);
+        session::set('ma_nv', $result[0]['ma_nv']);
+        session::set('user_nv', $result[0]['user_nv']);
+        header("Location:".BASE_URL."admin/index");
       }
+    }
+    public function nhanvien_dangxuat(){
+      session::init();
+      session::destroy();
+      header("Location:".BASE_URL."dangnhap");
     }
   }
 ?>

@@ -8,19 +8,22 @@
       return $this->db->insert($table, $data);
     }
     public function nhacungcap_list($table){
-      $sql = "SELECT * FROM $table";
+      $sql = "SELECT * FROM $table ORDER BY ma_ncc desc";
       return $this->db->select($sql);
     }
-    public function nhacungcap_ma($table, $ma_ncc){
-      $sql = "SELECT * FROM $table where ma_ncc = :ma_ncc";
-      $data = array(':ma_ncc' => $ma_ncc);
-      return $this->db->select($sql,$data);
+    public function nhacungcap_ma($table, $dieukien){
+      $sql = "SELECT * FROM $table where $dieukien";
+      return $this->db->select($sql);
     }
     public function nhacungcap_update($table, $data, $dieukien){
       return $this->db->update($table, $data,$dieukien);
     }
     public function nhacungcap_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
+    }
+    public function nhacungcap_timkiem($table, $dieukien){
+      $sql = "SELECT * FROM $table where $dieukien";
+      return $this->db->select($sql);
     }
   }
 
