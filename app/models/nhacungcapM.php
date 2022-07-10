@@ -25,6 +25,9 @@
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);
     }
+    //ví dụ thống kê
+    // public function tong (){
+    //   $sql = "SELECT gia, ngay, SUM(gia) AS tonggia FROM test GROUP BY ngay";
+    //   return $this->db->select($sql);
+    // }
   }
-
-?>

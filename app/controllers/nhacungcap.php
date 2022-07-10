@@ -29,7 +29,7 @@
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table = 'nhacungcap';
       $data ['nhacungcap'] = $nhacungcapM->nhacungcap_list($table);
-      $this->load->view_admin("nhacungcap", $data);
+      $this->load->view_admin("nhacungcap/nhacungcap", $data); 
     }
     public function nhacungcap_edit($ma_ncc){
       session::init();
@@ -39,7 +39,7 @@
       $data['nhacungcap_ma'] = $nhacungcapM->nhacungcap_ma($table, $dieukien);
       $this->load->view_admin("header");
       $this->load->view_admin("leftmenu");
-      $this->load->view_admin("nhacungcap_edit", $data);
+      $this->load->view_admin("nhacungcap/nhacungcap_edit", $data);
     }
     public function nhacungcap_update($ma_ncc){
       $nhacungcapM = $this->load->model('nhacungcapM');
@@ -74,7 +74,15 @@
       $tukhoa = $_POST['tukhoa'];
       $dieukien = "nhacungcap.ten_ncc LIKE '%$tukhoa%'" ;
       $data ['nhacungcap_timkiem'] = $nhacungcapM->nhacungcap_timkiem($table, $dieukien);
-      $this->load->view_admin("nhacungcap_timkiem", $data);
+      $this->load->view_admin("nhacungcap/nhacungcap_timkiem", $data);
     }
+
+
+    //ví dụ thống kê
+    // public function tong (){
+    //   $nhacungcapM = $this->load->model('nhacungcapM');
+    //   $data ['tong1'] = $nhacungcapM->tong();
+    //   $this->load->view_admin("test", $data); 
+    // }
   }
 ?>

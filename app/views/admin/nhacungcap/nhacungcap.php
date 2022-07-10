@@ -97,6 +97,7 @@
               </tr>
             <?php
           }
+          echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.'</p>';
         ?>
       </tbody>
     </table>

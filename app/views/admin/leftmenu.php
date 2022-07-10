@@ -12,8 +12,8 @@
           if(session::get('dangnhap') == true){
             $ten_nv = session::get('ten_nv');
             ?>
-              <a href="#"><?php echo $ten_nv ?></a>
-            <?php
+        <a href="#"><?php echo $ten_nv ?></a>
+        <?php
           }
         ?>
         <p class="text-muted m-0"><a href="<?php echo BASE_URL ?>dangnhap/nhanvien_dangxuat">Đăng
@@ -38,10 +38,48 @@
           <a href="<?php echo BASE_URL ?>nhacungcap/nhacungcap">
             <i class="ti-paint-bucket"></i>
             <span> Nhà cung cấp </span>
-            <span class="badge badge-primary float-right">11</span>
+            <span class="badge badge-primary float-right"></span>
           </a>
         </li>
 
+        <li>
+          <a href="<?php echo BASE_URL ?>mau/mau">
+            <i class=" fas fa-solid fa-eye-dropper"></i>
+            <span> Màu </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);">
+            <i class="ti-menu-alt"></i>
+            <span> Danh mục </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="nav-second-level nav" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);" aria-expanded="false">Danh mục sản phẩm
+                <span class="menu-arrow"></span>
+              </a>
+              <ul class="nav-third-level nav" aria-expanded="false">
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham">Thêm danh mục</a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">Level 2.2</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc">
+                <span> Danh mục tin tức </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li>
           <a href="javascript: void(0);">
             <i class="ti-light-bulb"></i>
