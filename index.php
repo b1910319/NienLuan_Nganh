@@ -10,15 +10,16 @@
 
 <body>
   <?php
-    spl_autoload_register(function($class){
-      require_once "system/lib/".$class.".php";
-    });
+    // spl_autoload_register(function($class){
+    //   require_once "system/lib/".$class.".php";
+    // });
+    require_once "system/lib/session.php";
     require_once "app/config/config.php";
-    // require_once "system/lib/main.php";
-    // require_once "system/lib/controller.php";
-    // require_once "system/lib/database.php";
-    // require_once "system/lib/model.php";
-    // require_once "system/lib/load.php";
+    require_once "system/lib/main.php";
+    require_once "system/lib/controller.php";
+    require_once "system/lib/database.php";
+    require_once "system/lib/model.php";
+    require_once "system/lib/load.php";
     $main = new main();
   ?>
 </body>

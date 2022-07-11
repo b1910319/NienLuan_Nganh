@@ -11,6 +11,10 @@
       $sql = "SELECT * FROM $table ORDER BY ma_dm desc";
       return $this->db->select($sql);
     }
+    public function danhmuc_sanpham_limit($table){
+      $sql = "SELECT * FROM $table ORDER BY ma_dm ASC LIMIT 6";
+      return $this->db->select($sql);
+    }
     public function danhmuc_sanpham_ma($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 11, 2022 lúc 07:45 AM
+-- Thời gian đã tạo: Th7 11, 2022 lúc 10:07 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -169,6 +169,52 @@ CREATE TABLE `nhanvien` (
 INSERT INTO `nhanvien` (`ma_nv`, `ten_nv`, `user_nv`, `pass_nv`, `sdt_nv`, `diachi_nv`) VALUES
 (1, 'Lê Diểm Trinh', 'ldtrinh', '6141bcafae02e2b1e6110f7f0c238ce7', '0824955654', 'Tam Bình, Vĩnh Long');
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `thuonghieu`
+--
+
+CREATE TABLE `thuonghieu` (
+  `ma_th` int(10) NOT NULL,
+  `ten_th` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo_th` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh_th` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' '
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `thuonghieu`
+--
+
+INSERT INTO `thuonghieu` (`ma_th`, `ten_th`, `logo_th`, `hinh_th`) VALUES
+(7, 'Iphone', '3547225908 . logo_iphone.png', '3547225908 . iphone.png'),
+(8, 'Samsung', 'e8e30de4b4 . logo_samsung.png', 'e8e30de4b4 . samsung.png'),
+(10, 'Lenove', '46fda4ebf9 . logo_lenovo.png', '46fda4ebf9 . lenovo.png'),
+(11, 'Oppo', '87f961a74a . logo_oppo.jpg', '87f961a74a . '),
+(12, 'Xiaomi', '0d02b17674 . logo_xiaomi.png', '0d02b17674 . '),
+(13, 'Vivo', 'cfc0bdc6d5 . logo_vivo.png', 'cfc0bdc6d5 . '),
+(14, 'Realme', 'c92d970e28 . logo_realme.png', 'c92d970e28 . '),
+(15, 'Nokia', '65a47a420a . logo_nokia.jpg', '65a47a420a . '),
+(16, 'Macbook', 'be01c71a97 . logo_macbook.png', 'e9596252ae . macbook.jpg'),
+(17, 'Asus', '7bc56fd131 . logo_asus.png', '7bc56fd131 . '),
+(18, 'Hp', '06f57abbca . logo_hp.png', '53f1be4e7d . hp.jpg'),
+(19, 'Acer', '2e521ea9f8 . logo_acer.png', '2e521ea9f8 . '),
+(20, 'Dell', '9dd98d6f79 . logo_dell.png', '9dd98d6f79 . '),
+(21, 'MSI', 'e0b06e5483 . logo_msi.png', 'e0b06e5483 . '),
+(22, 'LG', '58b19a15b5 . logo_lg.png', '58b19a15b5 . '),
+(23, 'Gigabyte', 'd8a7071dbc . logo_gigabyte.png', 'd8a7071dbc . '),
+(24, 'Intel', 'ba031f3f10 . logo_itel.jpg', 'ba031f3f10 . '),
+(25, 'Chuwi', 'b58673a34b . logo_chuwi.png', 'b58673a34b . '),
+(26, 'Ipad', '9d5d8a3de2 . logo_ipad.jpg', '9d5d8a3de2 . '),
+(27, 'Masstel', '2502a833ca . logo_masstel.png', '2502a833ca . '),
+(28, 'Huawei', '6a61cf1e12 . logo_huawei.jpg', '6a61cf1e12 . '),
+(29, 'Watch', '9b3af1fcec . logo_watch.png', '9b3af1fcec . '),
+(30, 'Garmin', '91a1cbac40 . logo_garmin.png', '91a1cbac40 . '),
+(31, 'Befit', 'fa7ca4fe81 . logo_befit.png', 'fa7ca4fe81 . '),
+(32, 'Kiddcare', '906975fb61 . logo_kidcare.png', '906975fb61 . '),
+(33, 'Amazfit', '807237f61f . logo_amazfit.png', '807237f61f . '),
+(34, 'Apple', 'ad2e9926e6 . logo_apple.png', 'ad2e9926e6 . ');
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -210,6 +256,12 @@ ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`ma_nv`);
 
 --
+-- Chỉ mục cho bảng `thuonghieu`
+--
+ALTER TABLE `thuonghieu`
+  ADD PRIMARY KEY (`ma_th`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -248,6 +300,12 @@ ALTER TABLE `nhacungcap`
 --
 ALTER TABLE `nhanvien`
   MODIFY `ma_nv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `thuonghieu`
+--
+ALTER TABLE `thuonghieu`
+  MODIFY `ma_th` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

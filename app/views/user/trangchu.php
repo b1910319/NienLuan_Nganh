@@ -141,11 +141,24 @@
   <div class="danhmuc_noibat">
     <div class="row">
       <div class="col-md-12 mb-4">
-        <h2>danh mục<b>nổi bật</b></h2>
+        <h2>danh mục <b>nổi bật</b></h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-1 danhmuc_noibat_item mt-3"
+      <?php
+        foreach ($data['danhmuc_sanpham'] as $key => $dm){
+          ?>
+            <div class="col-1 danhmuc_noibat_item mt-3"
+              style="background-color:<?php echo $dm['mamau_dm'] ?> ; margin-right: 15px;">
+              <p class="text-center mt-2 danhmuc_noibat_item_title"><?php echo $dm['ten_dm'] ?></p>
+              <a href="">
+                <img class="giua mb-1" src="<?php echo BASE_URL ?>public/uploads/danhmuc/<?php echo $dm['hinh_dm'] ?>" style="width:90% ;">
+              </a>
+            </div>
+          <?php
+        }
+      ?>
+      <!-- <div class="col-1 danhmuc_noibat_item mt-3"
         style="background-color:#ffa3a3 ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Điện thoại</p>
         <a href="">
@@ -247,7 +260,7 @@
         <a href="">
           <img class="giua mb-1" src="app/views/user/img/logo/tainghe.png" style="width:90% ;">
         </a>
-      </div>
+      </div> -->
 
     </div>
   </div>

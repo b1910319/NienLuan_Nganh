@@ -133,12 +133,13 @@
       </div>
     </div>
     <div class="nav row">
-      <div class="col-2 mb-3 nav_a"><a href="">Điện thoại</a></div>
-      <div class="col-2 mb-3 nav_a"><a href="">Laptop</a></div>
-      <div class="col-2 mb-3 nav_a"><a href="">Table</a></div>
-      <div class="col-2 mb-3 nav_a"><a href="">Smartwatch</a></div>
-      <div class="col-2 mb-3 nav_a"><a href="">Đồng hồ</a></div>
-      <div class="col-2 mb-3 nav_a"><a href="">Máy tính để bàn</a></div>
+      <?php
+        foreach ($data['danhmuc_sanpham_limit'] as $key => $dm){
+          ?>
+            <div class="col-2 mb-3 nav_a"><a href=""><?php echo $dm['ten_dm'] ?></a></div>
+          <?php
+        }
+      ?>
     </div>
   </div>
 </body>

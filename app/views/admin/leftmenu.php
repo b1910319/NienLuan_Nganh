@@ -89,6 +89,13 @@
           </a>
         </li>
         <li>
+          <a href="<?php echo BASE_URL ?>thuonghieu/thuonghieu">
+            <i class="fa-solid fa-registered"></i>
+            <span> Thương hiệu </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+        <li>
           <a href="javascript: void(0);">
             <i class="ti-light-bulb"></i>
             <span> Components </span>

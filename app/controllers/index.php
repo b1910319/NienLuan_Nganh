@@ -9,9 +9,13 @@
       $this->trangchu();
     }
     public function trangchu(){
-      $this->load->view_user("header");
+      $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+      $table = 'danhmuc_sanpham';
+      $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table);
+      $this->load->view_user("header", $data);
       $this->load->view_user("slider");
-      $this->load->view_user("trangchu");
+      $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table);
+      $this->load->view_user("trangchu",$data);
       $this->load->view_user("footer");
     }
   }
