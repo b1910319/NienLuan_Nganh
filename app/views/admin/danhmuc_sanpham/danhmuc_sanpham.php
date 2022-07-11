@@ -44,7 +44,7 @@
           Thông tin danh mục
         </div>
         <div class="col-6">
-          <form class="d-flex" action="<?php echo BASE_URL ?>nhacungcap/nhacungcap_timkiem" method="POST">
+          <form class="d-flex" action="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham_timkiem" method="POST">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tukhoa">
             <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
           </form>

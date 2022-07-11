@@ -1,11 +1,4 @@
-<?php
-    foreach($data['nhacungcap'] as $key => $value){
-      echo $value['ten_ncc'].'<br/>';
-    }
-    // foreach($data['nhacungcap_ma'] as $key => $value){
-    //   echo $value['ten_ncc'].'<br/>';
-    // }
-  ?>
+
 <div class=" main container mt-2">
   <div class="deal_ngon p-4">
     <div class="row">
@@ -227,13 +220,6 @@
         </a>
       </div>
       <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#96fdb5 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Ốp lưng</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/oplung.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
         style="background-color:#6bceff ; margin-right: 15px;">
         <p class="text-center mt-2 danhmuc_noibat_item_title">Phụ kiện gaming</p>
         <a href="">
@@ -260,13 +246,6 @@
         <p class="text-center mt-2 danhmuc_noibat_item_title">Tai nghe</p>
         <a href="">
           <img class="giua mb-1" src="app/views/user/img/logo/tainghe.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#ffbdbd ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Điện thoại</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/thietbi_mang.png" style="width:90% ;">
         </a>
       </div>
 

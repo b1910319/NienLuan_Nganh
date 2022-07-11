@@ -64,7 +64,8 @@
               <ul class="nav-third-level nav" aria-expanded="false">
                 <li>
                   <a href="javascript: void(0);">
-                    <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham">Thêm danh mục</a>
+                    <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham">Thêm danh
+                      mục</a>
                   </a>
                 </li>
                 <li>
@@ -79,6 +80,13 @@
               </a>
             </li>
           </ul>
+        </li>
+        <li>
+          <a href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham">
+            <i class="fas fa-solid fa-layer-group"></i>
+            <span> Loại sản phẩm </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
         </li>
         <li>
           <a href="javascript: void(0);">

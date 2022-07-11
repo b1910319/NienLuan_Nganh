@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 10, 2022 lúc 08:03 AM
+-- Thời gian đã tạo: Th7 11, 2022 lúc 07:45 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -34,6 +34,25 @@ CREATE TABLE `danhmuc_sanpham` (
   `hinh_dm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `danhmuc_sanpham`
+--
+
+INSERT INTO `danhmuc_sanpham` (`ma_dm`, `ten_dm`, `mamau_dm`, `hinh_dm`) VALUES
+(8, 'Điện thoại', '#ffa3a3', '9937ae7311 . dienthoai.png'),
+(9, 'Laptop', '#fda363', '4567f6c00d . laptop.png'),
+(10, 'Table', '#efc2ff', '0c54023865 . tablet.png'),
+(11, 'Smartwatch', '#f5d63d', '1c434f6ece . dongho_thongminh.png'),
+(12, 'Đồng hồ', '#4d91ff', '5dc2572585 . dongho_thoitrang.png'),
+(13, 'Máy tính để bàn', '#ffadb6', 'e575b5c338 . maytinh_bo.png'),
+(14, 'Bàn phím', '#ff94eb', '2ed97c14cb . banphim.png'),
+(15, 'Cáp sạc', '#e0b3ff', '3a2da9b676 . capsac.png'),
+(16, 'Chuột máy tính', '#c6d8fb', 'd828debf5e . chuot_maytinh.png'),
+(17, 'Loa', '#ff6666', '7416d9faf4 . loa.png'),
+(18, 'Màn hình máy tính', '#d6d6d6', '2a3959c2ad . manghinh_maytinh.png'),
+(19, 'Sạc dự phòng', '#d8a8ff', '0766e0c0c4 . sac_duphong.png'),
+(20, 'Tai nghe', '#ff85c0', '5b11cf922b . tainghe.png');
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +73,36 @@ INSERT INTO `danhmuc_tintuc` (`ma_dmtt`, `ten_dmtt`) VALUES
 (2, 'Tư vấn'),
 (3, 'Stories'),
 (4, 'Laptop');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `loai_sanpham`
+--
+
+CREATE TABLE `loai_sanpham` (
+  `ma_lsp` int(10) NOT NULL,
+  `ma_dm` int(10) NOT NULL,
+  `ten_lsp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon_lsp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `loai_sanpham`
+--
+
+INSERT INTO `loai_sanpham` (`ma_lsp`, `ma_dm`, `ten_lsp`, `icon_lsp`) VALUES
+(11, 9, 'Deal sốc', '<i class=\"fas fa-solid fa-fire\"></i>'),
+(12, 9, 'Gaming', '<i class=\"fas fa-solid fa-gamepad\"></i>'),
+(15, 9, 'Học tập, Văn phòng', '<i class=\"fa-solid fa-chalkboard-user\"></i>'),
+(16, 9, 'Đồ hoạ, Kỹ thuật', '<i class=\"fa-solid fa-compass-drafting\"></i>'),
+(17, 9, 'Mỏng, Nhẹ', '<i class=\"fa-solid fa-feather\"></i>'),
+(18, 9, 'Cao cấp, Sang trọng', '<i class=\"fa-solid fa-gem\"></i>'),
+(19, 11, 'Thời trang', '<i class=\"fa-solid fa-wand-magic-sparkles\"></i>'),
+(20, 11, 'Tiện ích', '<i class=\"fa-solid fa-heart-pulse\"></i>'),
+(21, 11, 'Thể thao', '<i class=\"fa-solid fa-person-biking\"></i>'),
+(22, 11, 'Trẻ em', '<i class=\"fa-solid fa-children\"></i>'),
+(23, 11, 'Phụ kiện', '<i class=\"fa-solid fa-paperclip\"></i>');
 
 -- --------------------------------------------------------
 
@@ -137,6 +186,12 @@ ALTER TABLE `danhmuc_tintuc`
   ADD PRIMARY KEY (`ma_dmtt`);
 
 --
+-- Chỉ mục cho bảng `loai_sanpham`
+--
+ALTER TABLE `loai_sanpham`
+  ADD PRIMARY KEY (`ma_lsp`);
+
+--
 -- Chỉ mục cho bảng `mau`
 --
 ALTER TABLE `mau`
@@ -162,13 +217,19 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_sanpham`
-  MODIFY `ma_dm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ma_dm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc_tintuc`
 --
 ALTER TABLE `danhmuc_tintuc`
   MODIFY `ma_dmtt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `loai_sanpham`
+--
+ALTER TABLE `loai_sanpham`
+  MODIFY `ma_lsp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `mau`

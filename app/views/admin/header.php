@@ -10,6 +10,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- App favicon -->
   <link rel="shortcut icon" href="<?php echo BASE_URL ?>public/assets\images\favicon.ico">
+  <!-- link icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--  -->
+  <!--  -->
   <!-- App css -->
   <link href="<?php echo BASE_URL ?>public/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css"
     id="bootstrap-stylesheet">

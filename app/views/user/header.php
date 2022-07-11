@@ -61,13 +61,13 @@
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="app/views/user/img/banner/banner_1.png" class="d-block giua " alt="...">
+            <img src="<?php echo BASE_URL ?>public/img/banner/banner_1.png" class="d-block giua " alt="...">
           </div>
           <div class="carousel-item">
-            <img src="app/views/user/img/banner/banner_2.png" class="d-block giua" alt="...">
+            <img src="<?php echo BASE_URL ?>public/img/banner/banner_2.png" class="d-block giua" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="app/views/user/img/banner/banner_3.png" class="d-block giua" alt="...">
+            <img src="<?php echo BASE_URL ?>public/img/banner/banner_3.png" class="d-block giua" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -85,7 +85,7 @@
     <div class="header">
       <div class="row">
         <div class="col-2">
-          <img src="app/views/user/img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
+          <img src="<?php echo BASE_URL ?>public/img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
         </div>
         <div class="col-2">
           <a href="">
@@ -141,36 +141,6 @@
       <div class="col-2 mb-3 nav_a"><a href="">Máy tính để bàn</a></div>
     </div>
   </div>
-
-  <?php 
-    // require_once "slider.php"
-    ?>
-
-  <?php 
-    // require_once "./dienthoai/sanpham.php" 
-    // require_once "./dienthoai/chitietsanpham.php"
-    // require_once "trangchu.php"
-    // require_once "./laptop/sanpham.php" 
-    // require_once "./laptop/chitietsanpham.php"
-    // require_once "./smartwatch/sanpham.php" 
-    // require_once "./smartwatch/chitietsanpham.php"
-    // require_once "./dongho/sanpham.php" 
-    // require_once "./dongho/chitietsanpham.php"
-    // require_once "./maytinhban/sanpham.php" 
-    // require_once "./maytinhban/chitietsanpham.php"
-    // require_once "tintuc.php"
-    // require_once "tradonhang.php"
-    // require_once "lichsudonhang.php"
-    // require_once "lichsudonhang_chitiet.php"
-    // require_once "giohang.php"
-    // require_once "timkiem.php"
-  ?>
-
-
-  <?php 
-  // require_once "footer.php" 
-  ?>
-
 </body>
 
 </html>
