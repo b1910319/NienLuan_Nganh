@@ -22,6 +22,8 @@ class danhmuc_sanpham extends controller
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';
     $ten_dm = $_POST['ten_dm'];
+    $ghichu = $danhmuc_sanphamM ->convert_name($ten_dm);
+    $ghichu_dm = strtolower($ghichu);
     $mamau_dm = $_POST['mamau_dm'];
     $hinh_dm = $_FILES['hinh_dm']['name'];
     $file_temp = $_FILES['hinh_dm']['tmp_name'];
@@ -32,6 +34,7 @@ class danhmuc_sanpham extends controller
     move_uploaded_file($file_temp, $uploaded_image);
     $data = array(
       'ten_dm' => $ten_dm,
+      'ghichu_dm' => $ghichu_dm,
       'mamau_dm' => $mamau_dm,
       'hinh_dm' => $unique_image
     );
@@ -53,6 +56,8 @@ class danhmuc_sanpham extends controller
     $table = 'danhmuc_sanpham';
     $dieukien = "danhmuc_sanpham.ma_dm='$ma_dm'" ;
     $ten_dm = $_POST['ten_dm'];
+    $ghichu = $danhmuc_sanphamM ->convert_name($ten_dm);
+    $ghichu_dm = strtolower($ghichu);
     $mamau_dm = $_POST['mamau_dm'];
 
     $hinh_dm = $_FILES['hinh_dm']['name'];
@@ -70,6 +75,7 @@ class danhmuc_sanpham extends controller
       }
       $data = array(
         'ten_dm' => $ten_dm,
+        'ghichu_dm' => $ghichu_dm,
         'mamau_dm' => $mamau_dm,
         'hinh_dm' => $unique_image
       );
@@ -77,6 +83,7 @@ class danhmuc_sanpham extends controller
     }else{
       $data = array(
         'ten_dm' => $ten_dm,
+        'ghichu_dm' => $ghichu_dm,
         'mamau_dm' => $mamau_dm
       );
     }

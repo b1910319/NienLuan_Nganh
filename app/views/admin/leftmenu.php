@@ -69,7 +69,9 @@
                   </a>
                 </li>
                 <li>
-                  <a href="javascript: void(0);">Level 2.2</a>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">Danh mục _ Thương hiệu</a>
+                  </a>
                 </li>
               </ul>
             </li>

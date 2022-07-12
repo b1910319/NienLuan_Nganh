@@ -54,7 +54,9 @@
 
 
 </head>
-
+<?php
+  // require_once "system/lib/database.php";
+?>
 <body>
   <div class="container-fuild sticky-top">
     <div class="banner">
@@ -136,7 +138,7 @@
       <?php
         foreach ($data['danhmuc_sanpham_limit'] as $key => $dm){
           ?>
-            <div class="col-2 mb-3 nav_a"><a href=""><?php echo $dm['ten_dm'] ?></a></div>
+            <div class="col-2 mb-3 nav_a"><a href="<?php echo $dm['ghichu_dm'] ?>/sanpham"><?php echo $dm['ten_dm'] ?></a></div>
           <?php
         }
       ?>

@@ -151,7 +151,7 @@
             <div class="col-1 danhmuc_noibat_item mt-3"
               style="background-color:<?php echo $dm['mamau_dm'] ?> ; margin-right: 15px;">
               <p class="text-center mt-2 danhmuc_noibat_item_title"><?php echo $dm['ten_dm'] ?></p>
-              <a href="">
+              <a href="<?php echo $dm['ghichu_dm'] ?>/sanpham">
                 <img class="giua mb-1" src="<?php echo BASE_URL ?>public/uploads/danhmuc/<?php echo $dm['hinh_dm'] ?>" style="width:90% ;">
               </a>
             </div>
