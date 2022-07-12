@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 11, 2022 lúc 10:07 AM
+-- Thời gian đã tạo: Th7 12, 2022 lúc 09:10 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `danhmuc_sanpham` (
   `ma_dm` int(10) NOT NULL,
   `ten_dm` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ghichu_dm` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
   `mamau_dm` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hinh_dm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -38,20 +39,67 @@ CREATE TABLE `danhmuc_sanpham` (
 -- Đang đổ dữ liệu cho bảng `danhmuc_sanpham`
 --
 
-INSERT INTO `danhmuc_sanpham` (`ma_dm`, `ten_dm`, `mamau_dm`, `hinh_dm`) VALUES
-(8, 'Điện thoại', '#ffa3a3', '9937ae7311 . dienthoai.png'),
-(9, 'Laptop', '#fda363', '4567f6c00d . laptop.png'),
-(10, 'Table', '#efc2ff', '0c54023865 . tablet.png'),
-(11, 'Smartwatch', '#f5d63d', '1c434f6ece . dongho_thongminh.png'),
-(12, 'Đồng hồ', '#4d91ff', '5dc2572585 . dongho_thoitrang.png'),
-(13, 'Máy tính để bàn', '#ffadb6', 'e575b5c338 . maytinh_bo.png'),
-(14, 'Bàn phím', '#ff94eb', '2ed97c14cb . banphim.png'),
-(15, 'Cáp sạc', '#e0b3ff', '3a2da9b676 . capsac.png'),
-(16, 'Chuột máy tính', '#c6d8fb', 'd828debf5e . chuot_maytinh.png'),
-(17, 'Loa', '#ff6666', '7416d9faf4 . loa.png'),
-(18, 'Màn hình máy tính', '#d6d6d6', '2a3959c2ad . manghinh_maytinh.png'),
-(19, 'Sạc dự phòng', '#d8a8ff', '0766e0c0c4 . sac_duphong.png'),
-(20, 'Tai nghe', '#ff85c0', '5b11cf922b . tainghe.png');
+INSERT INTO `danhmuc_sanpham` (`ma_dm`, `ten_dm`, `ghichu_dm`, `mamau_dm`, `hinh_dm`) VALUES
+(8, 'Điện thoại', ' dienthoai', '#ffa3a3', '9937ae7311 . dienthoai.png'),
+(9, 'Laptop', ' laptop', '#fda363', '4567f6c00d . laptop.png'),
+(10, 'Table', ' table', '#efc2ff', '0c54023865 . tablet.png'),
+(11, 'Smartwatch', 'smartwatch', '#f5d63d', '1c434f6ece . dongho_thongminh.png'),
+(12, 'Đồng hồ', ' dongho', '#4d91ff', '5dc2572585 . dongho_thoitrang.png'),
+(13, 'Máy tính để bàn', ' maytinhdeban', '#ffadb6', 'e575b5c338 . maytinh_bo.png'),
+(14, 'Bàn phím', ' banphim', '#ff94eb', '2ed97c14cb . banphim.png'),
+(15, 'Cáp sạc', ' capsac', '#e0b3ff', '3a2da9b676 . capsac.png'),
+(16, 'Chuột máy tính', ' chuot', '#c6d8fb', 'd828debf5e . chuot_maytinh.png'),
+(17, 'Loa', ' loa', '#ff6666', '7416d9faf4 . loa.png'),
+(18, 'Màn hình máy tính', ' manhinhmaytinh', '#d6d6d6', '2a3959c2ad . manghinh_maytinh.png'),
+(19, 'Sạc dự phòng', ' sacduphong', '#d8a8ff', '0766e0c0c4 . sac_duphong.png'),
+(20, 'Tai nghe', 'tainghe', '#ff85c0', '5b11cf922b . tainghe.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `danhmuc_thuonghieu`
+--
+
+CREATE TABLE `danhmuc_thuonghieu` (
+  `ma_dm` int(10) NOT NULL,
+  `ma_th` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `danhmuc_thuonghieu`
+--
+
+INSERT INTO `danhmuc_thuonghieu` (`ma_dm`, `ma_th`) VALUES
+(8, 7),
+(8, 8),
+(8, 11),
+(8, 12),
+(8, 13),
+(8, 14),
+(8, 15),
+(8, 24),
+(8, 27),
+(9, 16),
+(9, 17),
+(9, 18),
+(9, 10),
+(9, 19),
+(9, 20),
+(9, 22),
+(9, 23),
+(9, 24),
+(9, 25),
+(10, 26),
+(10, 8),
+(10, 12),
+(10, 10),
+(10, 27),
+(10, 15),
+(10, 28),
+(18, 18),
+(18, 34),
+(18, 17),
+(18, 10);
 
 -- --------------------------------------------------------
 
@@ -84,7 +132,7 @@ CREATE TABLE `loai_sanpham` (
   `ma_lsp` int(10) NOT NULL,
   `ma_dm` int(10) NOT NULL,
   `ten_lsp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon_lsp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `icon_lsp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -122,8 +170,7 @@ CREATE TABLE `mau` (
 INSERT INTO `mau` (`ma_m`, `ten_m`) VALUES
 (1, 'Trắng'),
 (2, 'Đen'),
-(3, 'Tím'),
-(4, 'Xanh Lá');
+(3, 'Tím');
 
 -- --------------------------------------------------------
 
@@ -190,12 +237,12 @@ INSERT INTO `thuonghieu` (`ma_th`, `ten_th`, `logo_th`, `hinh_th`) VALUES
 (7, 'Iphone', '3547225908 . logo_iphone.png', '3547225908 . iphone.png'),
 (8, 'Samsung', 'e8e30de4b4 . logo_samsung.png', 'e8e30de4b4 . samsung.png'),
 (10, 'Lenove', '46fda4ebf9 . logo_lenovo.png', '46fda4ebf9 . lenovo.png'),
-(11, 'Oppo', '87f961a74a . logo_oppo.jpg', '87f961a74a . '),
+(11, 'Macbook', 'be01c71a97 . logo_macbook.png', 'e9596252ae . macbook.jpg'),
 (12, 'Xiaomi', '0d02b17674 . logo_xiaomi.png', '0d02b17674 . '),
 (13, 'Vivo', 'cfc0bdc6d5 . logo_vivo.png', 'cfc0bdc6d5 . '),
 (14, 'Realme', 'c92d970e28 . logo_realme.png', 'c92d970e28 . '),
 (15, 'Nokia', '65a47a420a . logo_nokia.jpg', '65a47a420a . '),
-(16, 'Macbook', 'be01c71a97 . logo_macbook.png', 'e9596252ae . macbook.jpg'),
+(16, 'Oppo', '87f961a74a . logo_oppo.jpg', '87f961a74a . '),
 (17, 'Asus', '7bc56fd131 . logo_asus.png', '7bc56fd131 . '),
 (18, 'Hp', '06f57abbca . logo_hp.png', '53f1be4e7d . hp.jpg'),
 (19, 'Acer', '2e521ea9f8 . logo_acer.png', '2e521ea9f8 . '),
@@ -269,7 +316,7 @@ ALTER TABLE `thuonghieu`
 -- AUTO_INCREMENT cho bảng `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_sanpham`
-  MODIFY `ma_dm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ma_dm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc_tintuc`
@@ -287,13 +334,13 @@ ALTER TABLE `loai_sanpham`
 -- AUTO_INCREMENT cho bảng `mau`
 --
 ALTER TABLE `mau`
-  MODIFY `ma_m` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ma_m` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `nhacungcap`
 --
 ALTER TABLE `nhacungcap`
-  MODIFY `ma_ncc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ma_ncc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `nhanvien`
@@ -305,7 +352,7 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
-  MODIFY `ma_th` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `ma_th` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

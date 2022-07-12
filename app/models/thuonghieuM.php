@@ -11,6 +11,10 @@
       $sql = "SELECT * FROM $table ORDER BY ma_th desc";
       return $this->db->select($sql);
     }
+    public function thuonghieu_limit($table){
+      $sql = "SELECT * FROM $table  LIMIT 4";
+      return $this->db->select($sql);
+    }
     public function thuonghieu_ma($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

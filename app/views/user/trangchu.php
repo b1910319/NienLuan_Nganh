@@ -1,4 +1,3 @@
-
 <div class=" main container mt-2">
   <div class="deal_ngon p-4">
     <div class="row">
@@ -148,120 +147,18 @@
       <?php
         foreach ($data['danhmuc_sanpham'] as $key => $dm){
           ?>
-            <div class="col-1 danhmuc_noibat_item mt-3"
-              style="background-color:<?php echo $dm['mamau_dm'] ?> ; margin-right: 15px;">
-              <p class="text-center mt-2 danhmuc_noibat_item_title"><?php echo $dm['ten_dm'] ?></p>
-              <a href="<?php echo $dm['ghichu_dm'] ?>/sanpham">
-                <img class="giua mb-1" src="<?php echo BASE_URL ?>public/uploads/danhmuc/<?php echo $dm['hinh_dm'] ?>" style="width:90% ;">
-              </a>
-            </div>
-          <?php
+      <div class="col-1 danhmuc_noibat_item mt-3"
+        style="background-color:<?php echo $dm['mamau_dm'] ?> ; margin-right: 15px;">
+        <p class="text-center mt-2 danhmuc_noibat_item_title"><?php echo $dm['ten_dm'] ?></p>
+        <a href="<?php echo $dm['ghichu_dm'] ?>/sanpham">
+          <img class="giua mb-1"
+            src="<?php echo BASE_URL ?>public/uploads/danhmuc/<?php echo $dm['hinh_dm'] ?>"
+            style="width:90% ;">
+        </a>
+      </div>
+      <?php
         }
       ?>
-      <!-- <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#ffa3a3 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Điện thoại</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/dienthoai.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#ff94eb ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Bàn phím</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/banphim.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#e0b3ff ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Cáp sạc</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/capsac.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#c6d8fb ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Chuột máy tính</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/chuot_maytinh.png"
-            style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#4d91ff ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Đồng hồ thời trang</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/dongho_thoitrang.png"
-            style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3 "
-        style="background-color:#f5d63d ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Đồng hồ thông minh</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/dongho_thongminh.png"
-            style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#fda363 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Laptop</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/laptop.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#ff6666 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Loa</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/loa.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#d6d6d6 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Màn hình máy tính</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/manghinh_maytinh.png"
-            style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#ffadb6 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Máy tính bộ</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/maytinh_bo.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#6bceff ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Phụ kiện gaming</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/phukien_gaming.png"
-            style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#d8a8ff ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Sạc dự phòng</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/sac_duphong.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#efc2ff ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Table</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/tablet.png" style="width:90% ;">
-        </a>
-      </div>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:#ff85c0 ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title">Tai nghe</p>
-        <a href="">
-          <img class="giua mb-1" src="app/views/user/img/logo/tainghe.png" style="width:90% ;">
-        </a>
-      </div> -->
-
     </div>
   </div>
 
@@ -274,7 +171,19 @@
       </div>
     </div>
     <div class="row mb-3">
-      <div class="col-3">
+      <?php
+        foreach ($data['thuonghieu'] as $key => $th){
+          ?>
+            <div class="col-3">
+              <a href="">
+                <img src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['hinh_th'] ?>" class="d-block w-100"
+                  style="border-radius:15px ;">
+              </a>
+            </div>
+          <?php
+        }
+      ?>
+      <!-- <div class="col-3">
         <a href="">
           <img src="app/views/user/img/logo/samsung.png" class="d-block w-100"
             style="border-radius:15px ;">
@@ -297,7 +206,7 @@
           <img src="app/views/user/img/logo/xiaomi.png" class="d-block w-100"
             style="border-radius:15px ;">
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 
