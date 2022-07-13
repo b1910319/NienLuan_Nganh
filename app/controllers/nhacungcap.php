@@ -27,8 +27,8 @@
       $this->load->view_admin("header");
       $this->load->view_admin("leftmenu");
       $nhacungcapM = $this->load->model('nhacungcapM');
-      $table = 'nhacungcap';
-      $data ['nhacungcap'] = $nhacungcapM->nhacungcap_list($table);
+      $table_ncc = 'nhacungcap';
+      $data ['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
       $this->load->view_admin("nhacungcap/nhacungcap", $data); 
     }
     public function nhacungcap_edit($ma_ncc){

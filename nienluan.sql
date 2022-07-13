@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 12, 2022 lúc 09:10 AM
+-- Thời gian đã tạo: Th7 13, 2022 lúc 10:47 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -206,15 +206,47 @@ CREATE TABLE `nhanvien` (
   `user_nv` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pass_nv` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sdt_nv` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `diachi_nv` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `diachi_nv` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngayvao` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nhanvien`
 --
 
-INSERT INTO `nhanvien` (`ma_nv`, `ten_nv`, `user_nv`, `pass_nv`, `sdt_nv`, `diachi_nv`) VALUES
-(1, 'Lê Diểm Trinh', 'ldtrinh', '6141bcafae02e2b1e6110f7f0c238ce7', '0824955654', 'Tam Bình, Vĩnh Long');
+INSERT INTO `nhanvien` (`ma_nv`, `ten_nv`, `user_nv`, `pass_nv`, `sdt_nv`, `diachi_nv`, `ngayvao`) VALUES
+(4, 'Lê Diểm Trinh', 'ldtrinh', '6141bcafae02e2b1e6110f7f0c238ce7', '0124512457', 'Phú Lộc, Tam Bình, Vĩnh Long', '2022-07-13'),
+(5, 'Lê Thị Diễm Hằng', 'ltdhang', 'a1bc3146fd531764ef30961866aa53f9', '0124575135', 'Phú Lộc, Tam Bình, Vĩnh Long', '2022-07-13');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `sanpham`
+--
+
+CREATE TABLE `sanpham` (
+  `ma_sp` int(10) NOT NULL,
+  `ma_th` int(10) NOT NULL,
+  `ma_lsp` int(10) NOT NULL,
+  `ma_ncc` int(10) NOT NULL,
+  `ma_dm` int(10) NOT NULL,
+  `ma_nv` int(10) NOT NULL,
+  `ten_sp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gia_sp` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `soluong_sp` int(11) NOT NULL,
+  `hinh_sp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinhchitiet_sp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thongtin_sp` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tinhtrang_sp` int(2) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `sanpham`
+--
+
+INSERT INTO `sanpham` (`ma_sp`, `ma_th`, `ma_lsp`, `ma_ncc`, `ma_dm`, `ma_nv`, `ten_sp`, `gia_sp`, `soluong_sp`, `hinh_sp`, `hinhchitiet_sp`, `thongtin_sp`, `tinhtrang_sp`) VALUES
+(6, 17, 21, 2, 19, 4, 'trinhle', '555555555', 7777, '781d66fc10 . banner_dongho_treem.jpg', '4d06ca1589 . banner_3.png', '<p>hhhhhhhhhhhh</p>\r\n', 2),
+(7, 18, 15, 2, 11, 4, 'ggggg', '5555', 777, '08b5a43b51 . banner_smartwatch_thethao.png', '08b5a43b51 . banner_smartwatch_tienich.png', '<p>uuuuuuuuuuuuu</p>\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -303,6 +335,12 @@ ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`ma_nv`);
 
 --
+-- Chỉ mục cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  ADD PRIMARY KEY (`ma_sp`);
+
+--
 -- Chỉ mục cho bảng `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
@@ -328,7 +366,7 @@ ALTER TABLE `danhmuc_tintuc`
 -- AUTO_INCREMENT cho bảng `loai_sanpham`
 --
 ALTER TABLE `loai_sanpham`
-  MODIFY `ma_lsp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ma_lsp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `mau`
@@ -346,13 +384,19 @@ ALTER TABLE `nhacungcap`
 -- AUTO_INCREMENT cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `ma_nv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ma_nv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  MODIFY `ma_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
-  MODIFY `ma_th` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `ma_th` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

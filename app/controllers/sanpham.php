@@ -1,11 +1,283 @@
 <?php
-  class sanpham extends controller{
-    public function __construct()
-    {
-      // parent::__construct();
-    }
-    public function chitiet_sanpham(){
-      echo 'chi tiet san pham';
-    }
+class sanpham extends controller
+{
+  public function __construct()
+  {
+    $data = array();
+    $thongbao = array();
+    parent::__construct();
   }
-?>
+  public function sanpham()
+  {
+    session::init();
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    // danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    // thương hiệu sản phẩm
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
+    $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+    // loại sản phẩm
+    $loai_sanphamM = $this->load->model('loai_sanphamM');
+    $table_lsp = 'loai_sanpham';
+    $data['loai_sanpham'] = $loai_sanphamM->loai_sanpham_list($table_lsp, $table_dm);
+    // nhà cung cấp
+    $nhacungcapM = $this->load->model('nhacungcapM');
+    $table_ncc = 'nhacungcap';
+    $data['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
+    // nhân viên
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    // sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham_list($table_sp, $table_dm, $table_nv, $table_ncc, $table_lsp, $table_th);
+    $this->load->view_admin("sanpham/sanpham", $data);
+  }
+  public function sanpham_insert()
+  {
+    session::init();
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $ten_sp = $_POST['ten_sp'];
+    $gia_sp = $_POST['gia_sp'];
+    $soluong_sp = $_POST['soluong_sp'];
+    $thongtin_sp = $_POST['thongtin_sp'];
+    $tinhtrang_sp = $_POST['tinhtrang_sp'];
+    $ma_dm = $_POST['ma_dm'];
+    $ma_ncc = $_POST['ma_ncc'];
+    $ma_lsp = $_POST['ma_lsp'];
+    $ma_th = $_POST['ma_th'];
+
+    $hinh_sp = $_FILES['hinh_sp']['name'];
+    $file_temp_hinh = $_FILES['hinh_sp']['tmp_name'];
+    $div_hinh = explode(' . ', $hinh_sp);
+    $file_ext_hinh = strtolower(end($div_hinh));
+    $unique_image_hinh = substr(md5(time()), 0, 10) . ' . ' . $file_ext_hinh;
+    $uploaded_image_hinh = "public/uploads/sanpham/" . $unique_image_hinh;
+    move_uploaded_file($file_temp_hinh, $uploaded_image_hinh);
+
+    $hinhchitiet_sp = $_FILES['hinhchitiet_sp']['name'];
+    $file_temp = $_FILES['hinhchitiet_sp']['tmp_name'];
+    $div = explode(' . ', $hinhchitiet_sp);
+    $file_ext = strtolower(end($div));
+    $unique_image = substr(md5(time()), 0, 10) . ' . ' . $file_ext;
+    $uploaded_image = "public/uploads/sanpham/" . $unique_image;
+    move_uploaded_file($file_temp, $uploaded_image);
+    if($_SESSION['dangnhap'] == true){
+      $ma_nv = session::get('ma_nv');
+    }
+    $data = array(
+      'ten_sp' => $ten_sp,
+      'gia_sp' => $gia_sp,
+      'soluong_sp' => $soluong_sp,
+      'thongtin_sp' => $thongtin_sp,
+      'tinhtrang_sp' => $tinhtrang_sp,
+      'ma_dm' => $ma_dm,
+      'ma_ncc' => $ma_ncc,
+      'ma_lsp' => $ma_lsp,
+      'ma_th' => $ma_th,
+      'ma_nv' => $ma_nv,
+      'hinh_sp' => $unique_image_hinh,
+      'hinhchitiet_sp' => $unique_image
+    );
+    $result = $sanphamM->sanpham_insert($table_sp, $data);
+    header("Location:" . BASE_URL . "sanpham/sanpham");
+  }
+  public function sanpham_edit($ma_sp){
+    session::init();
+    // danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    // thương hiệu sản phẩm
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
+    $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+    // loại sản phẩm
+    $loai_sanphamM = $this->load->model('loai_sanphamM');
+    $table_lsp = 'loai_sanpham';
+    $data['loai_sanpham'] = $loai_sanphamM->loai_sanpham_list($table_lsp, $table_dm);
+    // nhà cung cấp
+    $nhacungcapM = $this->load->model('nhacungcapM');
+    $table_ncc = 'nhacungcap';
+    $data['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $dieukien = "sanpham.ma_sp='$ma_sp'" ;
+    $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien);
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    $this->load->view_admin("sanpham/sanpham_edit", $data);
+  }
+  public function sanpham_update($ma_sp){
+    session::init();
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $dieukien = "sanpham.ma_sp='$ma_sp'" ;
+    $ten_sp = $_POST['ten_sp'];
+    $gia_sp = $_POST['gia_sp'];
+    $soluong_sp = $_POST['soluong_sp'];
+    $thongtin_sp = $_POST['thongtin_sp'];
+    $tinhtrang_sp = $_POST['tinhtrang_sp'];
+    $ma_dm = $_POST['ma_dm'];
+    $ma_ncc = $_POST['ma_ncc'];
+    $ma_lsp = $_POST['ma_lsp'];
+    $ma_th = $_POST['ma_th'];
+    // Hình sản phầm
+    $hinh_sp = $_FILES['hinh_sp']['name'];
+    $file_temp_hinh = $_FILES['hinh_sp']['tmp_name'];
+    $div_hinh = explode(' . ', $hinh_sp);
+    $file_ext_hinh = strtolower(end($div_hinh));
+    $unique_image_hinh = substr(md5(time()), 0, 10) . ' . ' . $file_ext_hinh;
+    $uploaded_image_hinh = "public/uploads/sanpham/" . $unique_image_hinh;
+    move_uploaded_file($file_temp_hinh, $uploaded_image_hinh);
+    // Hình chi tiết sản phẩm
+    $hinhchitiet_sp = $_FILES['hinhchitiet_sp']['name'];
+    $file_temp = $_FILES['hinhchitiet_sp']['tmp_name'];
+    $div = explode(' . ', $hinhchitiet_sp);
+    $file_ext = strtolower(end($div));
+    $unique_image = substr(md5(time()), 0, 10) . ' . ' . $file_ext;
+    $uploaded_image = "public/uploads/sanpham/" . $unique_image;
+    move_uploaded_file($file_temp, $uploaded_image);
+    if($_SESSION['dangnhap'] == true){
+      $ma_nv = session::get('ma_nv');
+    }
+    if($hinh_sp && $hinhchitiet_sp){
+      $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien);
+      foreach ($data['sanpham_ma'] as $key => $sp){
+        if($sp['hinh_sp'] && $sp['hinhchitiet_sp']){
+          unlink("public/uploads/sanpham/".$sp['hinh_sp']);
+          unlink("public/uploads/sanpham/".$sp['hinhchitiet_sp']);
+        }
+      }
+      $data = array(
+        'ten_sp' => $ten_sp,
+        'gia_sp' => $gia_sp,
+        'soluong_sp' => $soluong_sp,
+        'thongtin_sp' => $thongtin_sp,
+        'tinhtrang_sp' => $tinhtrang_sp,
+        'ma_dm' => $ma_dm,
+        'ma_ncc' => $ma_ncc,
+        'ma_lsp' => $ma_lsp,
+        'ma_th' => $ma_th,
+        'ma_nv' => $ma_nv,
+        'hinh_sp' => $unique_image_hinh,
+        'hinhchitiet_sp' => $unique_image
+      );
+      move_uploaded_file($file_temp_hinh, $uploaded_image_hinh);
+      move_uploaded_file($file_temp, $uploaded_image);
+    }else if($hinh_sp){
+      $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien);
+      foreach ($data['sanpham_ma'] as $key => $sp){
+        if($sp['hinh_sp']){
+          unlink("public/uploads/sanpham/".$sp['hinh_sp']);
+        }
+      }
+      $data = array(
+        'ten_sp' => $ten_sp,
+        'gia_sp' => $gia_sp,
+        'soluong_sp' => $soluong_sp,
+        'thongtin_sp' => $thongtin_sp,
+        'tinhtrang_sp' => $tinhtrang_sp,
+        'ma_dm' => $ma_dm,
+        'ma_ncc' => $ma_ncc,
+        'ma_lsp' => $ma_lsp,
+        'ma_th' => $ma_th,
+        'ma_nv' => $ma_nv,
+        'hinh_sp' => $unique_image_hinh
+      );
+      move_uploaded_file($file_temp_hinh, $uploaded_image_hinh);
+    }else if($hinhchitiet_sp){
+      $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien);
+      foreach ($data['sanpham_ma'] as $key => $sp){
+        if($sp['hinhchitiet_sp']){
+          unlink("public/uploads/sanpham/".$sp['hinhchitiet_sp']);
+        }
+      }
+      $data = array(
+        'ten_sp' => $ten_sp,
+        'gia_sp' => $gia_sp,
+        'soluong_sp' => $soluong_sp,
+        'thongtin_sp' => $thongtin_sp,
+        'tinhtrang_sp' => $tinhtrang_sp,
+        'ma_dm' => $ma_dm,
+        'ma_ncc' => $ma_ncc,
+        'ma_lsp' => $ma_lsp,
+        'ma_th' => $ma_th,
+        'ma_nv' => $ma_nv,
+        'hinhchitiet_sp' => $unique_image
+      );
+      move_uploaded_file($file_temp, $uploaded_image);
+    }else{
+      $data = array(
+        'ten_sp' => $ten_sp,
+        'gia_sp' => $gia_sp,
+        'soluong_sp' => $soluong_sp,
+        'thongtin_sp' => $thongtin_sp,
+        'tinhtrang_sp' => $tinhtrang_sp,
+        'ma_dm' => $ma_dm,
+        'ma_ncc' => $ma_ncc,
+        'ma_lsp' => $ma_lsp,
+        'ma_th' => $ma_th,
+        'ma_nv' => $ma_nv
+      );
+    }
+    $result = $sanphamM->sanpham_update($table_sp, $data, $dieukien);
+    header("Location:".BASE_URL."sanpham/sanpham");
+  }
+  public function sanpham_delete($ma_sp){
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $dieukien = "sanpham.ma_sp='$ma_sp'" ;
+    if($ma_sp){
+      $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien);
+      foreach ($data['sanpham_ma'] as $key => $sp){
+        if($sp['hinh_sp'] && $sp['hinhchitiet_sp']){
+          unlink("public/uploads/sanpham/".$sp['hinh_sp']);
+          unlink("public/uploads/sanpham/".$sp['hinhchitiet_sp']);
+        }
+      }
+    }
+    $result = $sanphamM->sanpham_delete($table_sp, $dieukien);
+    header("Location:" . BASE_URL . "sanpham/sanpham");
+  }
+  public function sanpham_timkiem(){
+    session::init();
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    // danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    // thương hiệu sản phẩm
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
+    // loại sản phẩm
+    $loai_sanphamM = $this->load->model('loai_sanphamM');
+    $table_lsp = 'loai_sanpham';
+    $data['loai_sanpham'] = $loai_sanphamM->loai_sanpham_list($table_lsp, $table_dm);
+    // nhà cung cấp
+    $nhacungcapM = $this->load->model('nhacungcapM');
+    $table_ncc = 'nhacungcap';
+    $data['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
+    // nhân viên
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    $data['nhanvien'] = $nhanvienM->nhanvien_list($table_nv);
+    // sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $tukhoa = $_POST['tukhoa'];
+    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+    $data ['sanpham_timkiem'] = $sanphamM->sanpham_timkiem($table_sp, $dieukien);
+    $this->load->view_admin("sanpham/sanpham_timkiem", $data);
+  }
+}

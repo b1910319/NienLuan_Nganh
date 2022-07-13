@@ -6,11 +6,11 @@ class index extends controller
     $data = array();
     parent::__construct();
   }
+  // public function index()
+  // {
+  //   $this->trangchu();
+  // }
   public function index()
-  {
-    $this->trangchu();
-  }
-  public function trangchu()
   {
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';

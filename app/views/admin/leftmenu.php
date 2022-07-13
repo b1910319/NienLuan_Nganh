@@ -33,7 +33,13 @@
             <span> Trang chủ </span>
           </a>
         </li>
-
+        <li>
+          <a href="<?php echo BASE_URL ?>nhanvien/nhanvien">
+          <i class="fa-solid fa-users"></i>
+            <span> Nhân viên </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
         <li>
           <a href="<?php echo BASE_URL ?>nhacungcap/nhacungcap">
             <i class="ti-paint-bucket"></i>
@@ -70,7 +76,8 @@
                 </li>
                 <li>
                   <a href="javascript: void(0);">
-                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">Danh mục _ Thương hiệu</a>
+                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">Danh mục _
+                      Thương hiệu</a>
                   </a>
                 </li>
               </ul>
@@ -97,20 +104,133 @@
             <span class="badge badge-primary float-right"></span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="javascript: void(0);">
-            <i class="ti-light-bulb"></i>
-            <span> Components </span>
+            <i class="fa-solid fa-mobile"></i>
+            <span> Sản phẩm </span>
             <span class="menu-arrow"></span>
           </a>
-          <ul class="nav-second-level" aria-expanded="false">
-            <li><a href="components-range-slider.html">Range Slider</a></li>
-            <li><a href="components-alerts.html">Alerts</a></li>
-            <li><a href="components-icons.html">Icons</a></li>
-            <li><a href="components-widgets.html">Widgets</a></li>
+          <ul class="nav-second-level nav" aria-expanded="false">
+            <li>
+              <a href="javascript: void(0);">
+                <a href="">
+                  Thêm sản phẩm
+                </a>
+              </a>
+            </li>
+            <li>
+              <a href="javascript: void(0);" aria-expanded="false">Chi tiết - sản phẩm
+                <span class="menu-arrow"></span>
+              </a>
+              <ul class="nav-third-level nav" aria-expanded="false">
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="">
+                    Điện thoại - Table
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="">
+                      Laptop
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="">
+                      Smartwatch
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="">
+                    Đồng hồ
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="">
+                      Máy tính để bàn
+                    </a>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li> -->
+        <li>
+          <a href="javascript: void(0);">
+            <i class="fa-solid fa-mobile"></i>
+            <span> Sản phẩm </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="nav-second-level nav" aria-expanded="false">
+            <li>
+              <a href="<?php echo BASE_URL ?>sanpham/sanpham">
+                <span> Thêm sản phẩm </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript: void(0);" aria-expanded="false">Chi tiết - Sản phẩm
+                <span class="menu-arrow"></span>
+              </a>
+              <ul class="nav-third-level nav" aria-expanded="false">
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham">
+                    Điện Thoại - Table
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">
+                      Laptop
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">
+                      Smartwatch
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">
+                    Đồng hồ
+                    </a>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: void(0);">
+                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">
+                      Máy tính để bàn
+                    </a>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc">
+                <span> Hình - Sản phẩm </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc">
+                <span> Màu - Sản phẩm </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
           </ul>
         </li>
-
         <li>
           <a href="typography.html">
             <i class="ti-spray"></i>
