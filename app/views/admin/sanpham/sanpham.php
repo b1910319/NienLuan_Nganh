@@ -166,17 +166,17 @@
           <td style="width: 5%;">
             <?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></td>
           <td style="width: 5%;"><?php echo $sp['soluong_sp'] ?></td>
-          <td style="width: 15%;">
+          <td style="width: 20%;">
             <div class="row ">
               <div class="col-md-12">
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
+                    Danh mục sản phẩm: <?php echo $sp['ten_dm'] ?> <br>
                     Thương hiệu: <?php echo $sp['ten_th'] ?> <br>
                     Loại sản phẩm: <?php echo $sp['ten_lsp'] ?> <br>
                     Nhà cung cấp: <?php echo $sp['ten_ncc'] ?> <br>
-                    Danh mục sản phẩm: <?php echo $sp['ten_dm'] ?> <br>
-                    Nhân viên: <?php echo $sp['ten_nv'] ?>
+                    Nhân viên: <?php echo $sp['ten_nv'] ?> <br>
                     Tình trạng sản phẩm: 
                     <?php
                       if($sp['tinhtrang_sp'] == 1){
@@ -192,8 +192,8 @@
               </div>
             </div>
           </td>
-          <td style="width: 20%;">
-            <img style="width: 30%;"
+          <td style="width: 15%;">
+            <img style="width: 40%;"
               src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
               alt="">
           </td>

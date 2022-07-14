@@ -15,10 +15,10 @@
       $sql = "SELECT * FROM $table_sp ORDER BY ma_sp desc";
       return $this->db->select($sql);
     }
-    // public function thuonghieu_limit($table){
-    //   $sql = "SELECT * FROM $table  LIMIT 4";
-    //   return $this->db->select($sql);
-    // }
+    public function sanpham_ma_dm($table, $dieukien){
+      $sql = "SELECT * FROM $table  WHERE $dieukien";
+      return $this->db->select($sql);
+    }
     public function sanpham_ma($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

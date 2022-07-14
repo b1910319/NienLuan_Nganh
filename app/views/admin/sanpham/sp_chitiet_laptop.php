@@ -1,16 +1,16 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông tin chi tiết: Điện thoại - Table
+      Thêm thông tin chi tiết: Laptop
     </div>
-    <form action="<?php echo BASE_URL ?>sanpham/sp_chitiet_insert" method="POST" autocomplete="off">
+    <form action="<?php echo BASE_URL ?>sanpham/sp_chitiet_laptop_insert" method="POST" autocomplete="off">
       <table class="table">
         <tbody>
         <tr>
             <th scope="row">Sản phẩm: </th>
             <td class="was-validated">
               <select class="custom-select input_table" id="gender2" name="ma_sp">
-                <option>Chọn sản phâm</option>
+                <option>Chọn sản phẩm</option>
                 <?php
                   foreach ($data['sanpham_ma_dm'] as $key => $sp) {
                     ?>
@@ -22,9 +22,39 @@
             </td>
           </tr>
           <tr>
+            <th scope="row" class="title_table">CPU: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="cpu">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="title_table">RAM: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="ram">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="title_table">Ổ cứng: </th>
+            <td class="was-validated">
+              <textarea name="rom" id="" cols="20" rows="6" class='form-control input_table' style="resize: none;" required ></textarea>
+            </td>
+          </tr>
+          <tr>
             <th scope="row" class="title_table">Màn hình: </th>
             <td class="was-validated">
               <input type='text' class='form-control input_table' required name="manhinh">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="title_table">Card màn hình: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="card_manhinh">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="title_table">Cổng kết nối: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="cong_ketnoi">
             </td>
           </tr>
           <tr>
@@ -34,62 +64,21 @@
             </td>
           </tr>
           <tr>
-            <th scope="row" class="title_table">Camera trước: </th>
+            <th scope="row" class="title_table">Thiết kế: </th>
             <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="camera_truoc">
+              <input type='text' class='form-control input_table' required name="thietke">
             </td>
           </tr>
           <tr>
-            <th scope="row" class="title_table">Camera sau: </th>
+            <th scope="row" class="title_table">Kích thước, trọng lượng: </th>
             <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="camera_sau">
+              <input type='text' class='form-control input_table' required name="kichthuoc">
             </td>
           </tr>
           <tr>
-            <th scope="row" class="title_table">Chip: </th>
+            <th scope="row" class="title_table">Thời điểm ra mắt: </th>
             <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="chip">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">RAM</th>
-            <td class="was-validated">
-              <select class="custom-select input_table" id="gender2" name="ram">
-                <option>Chọn</option>
-                <option value="2">2GB</option>
-                <option value="3">3GB</option>
-                <option value="4">4GB</option>
-                <option value="6">6GB</option>
-                <option value="8">8GB</option>
-                <option value="12">12GB</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Bộ nhớ trong</th>
-            <td class="was-validated">
-              <select class="custom-select input_table" id="gender2" name="rom">
-                <option>Chọn</option>
-                <option value="8">8GB</option>
-                <option value="16">16GB</option>
-                <option value="32">32GB</option>
-                <option value="64">64GB</option>
-                <option value="128">128GB</option>
-                <option value="256">256GB</option>
-                <option value="512">512GB</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="title_table">SIM: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="sim">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" class="title_table">Pin, sạc: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="pin">
+              <input type='text' class='form-control input_table' required name="thoidiem_ramat">
             </td>
           </tr>
           <tr>
@@ -108,10 +97,10 @@
     <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
-          Thông tin chi tiết: Điện thoại - Table
+          Thông tin chi tiết: Laptop
         </div>
         <div class="col-6">
-          <form class="d-flex" action="<?php echo BASE_URL ?>sanpham/sp_chitiet_timkiem"
+          <form class="d-flex" action="<?php echo BASE_URL ?>sanpham/sp_chitiet_laptop_timkiem"
             method="POST">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
               name="tukhoa">
@@ -133,7 +122,7 @@
       <tbody>
         <?php
         $i = 0;
-        foreach ($data['sp_chitiet_list'] as $key => $ctsp) {
+        foreach ($data['sp_chitiet_laptop_list'] as $key => $ctsp) {
           $i++;
           ?>
         <tr>
@@ -145,28 +134,29 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
+                    CPU: <?php echo $ctsp['cpu'] ?> <br>
+                    RAM: <?php echo $ctsp['ram'] ?> <br>
+                    Ổ cứng: <?php echo $ctsp['rom'] ?> <br>
                     Màn hình: <?php echo $ctsp['manhinh'] ?> <br>
+                    Card màn hình: <?php echo $ctsp['card_manhinh'] ?> <br>
+                    Cổng kết nối: <?php echo $ctsp['cong_ketnoi'] ?> <br>
                     Hệ điều hành: <?php echo $ctsp['hedieuhanh'] ?> <br>
-                    Camera trước: <?php echo $ctsp['camera_truoc'] ?> <br>
-                    Camera sau: <?php echo $ctsp['camera_sau'] ?> <br>
-                    Chip: <?php echo $ctsp['chip'] ?> <br>
-                    RAM: <?php echo $ctsp['ram'].'GB' ?> <br>
-                    Bộ nhớ trong: <?php echo $ctsp['rom'].'GB' ?> <br>
-                    SIM: <?php echo $ctsp['sim'] ?> <br>
-                    Pin, sạc: <?php echo $ctsp['pin'] ?> <br>
+                    Thiết kế: <?php echo $ctsp['thietke'] ?> <br>
+                    Kích thước, trọng lượng: <?php echo $ctsp['kichthuoc'] ?> <br>
+                    Thời điểm ra mắt: <?php echo $ctsp['thoidiem_ramat'] ?> <br>
                   </p>
                 </div>
               </div>
             </div>
           </td>
           <td style="width: 15%;">
-            <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet_edit/<?php echo $ctsp['ma_ctsp'] ?>">
+            <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet_laptop_edit/<?php echo $ctsp['ma_ctsp'] ?>">
               <button type="button" class="btn sua">
                 <i class="fas fa-edit"></i>
               </button>
             </a>
             <a onclick="return confirm('Bạn có muốn xóa sản phẩm <?php echo $ctsp['ten_sp'] ?> không?')"
-              href="<?php echo BASE_URL ?>sanpham/sp_chitiet_delete/<?php echo $ctsp['ma_ctsp'] ?>">
+              href="<?php echo BASE_URL ?>sanpham/sp_chitiet_laptop_delete/<?php echo $ctsp['ma_ctsp'] ?>">
               <button type="button" class="btn xoa">
                 <i class="fas fa-trash-alt"></i>
               </button>

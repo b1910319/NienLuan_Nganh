@@ -7,8 +7,8 @@
     public function sp_chitiet_insert($table_ctsp, $data){
       return $this->db->insert($table_ctsp, $data);
     }
-    public function sp_chitiet_list($table_sp, $table_ctsp){
-      $sql = "SELECT * FROM $table_sp join $table_ctsp on $table_sp.ma_sp = $table_ctsp.ma_sp ORDER BY $table_ctsp.ma_ctsp desc";
+    public function sp_chitiet_list($table_sp, $table_ctsp, $dieukien){
+      $sql = "SELECT * FROM $table_sp join $table_ctsp on $table_sp.ma_sp = $table_ctsp.ma_sp WHERE $dieukien ORDER BY $table_ctsp.ma_ctsp desc";
       return $this->db->select($sql);
     }
     // // public function thuonghieu_limit($table){

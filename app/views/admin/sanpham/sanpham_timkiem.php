@@ -43,12 +43,21 @@
           <td style="width: 5%;">
             <?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></td>
           <td style="width: 5%;"><?php echo $sp['soluong_sp'] ?></td>
-          <td style="width: 15%;">
+          <td style="width: 20%;">
             <div class="row ">
               <div class="col-md-12">
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
+                    Danh mục sản phẩm: 
+                    <?php 
+                      foreach($data['danhmuc_sanpham'] as $key => $dm){
+                        if ($sp['ma_dm'] == $dm['ma_dm']){
+                          echo $dm['ten_dm'];
+                        }
+                      }
+                      
+                    ?> <br>
                     Thương hiệu: 
                     <?php 
                       foreach($data['thuonghieu'] as $key => $th){
@@ -72,15 +81,6 @@
                       foreach($data['nhacungcap'] as $key => $ncc){
                         if ($sp['ma_ncc'] == $ncc['ma_ncc']){
                           echo $ncc['ten_ncc'];
-                        }
-                      }
-                      
-                    ?> <br>
-                    Danh mục sản phẩm: 
-                    <?php 
-                      foreach($data['danhmuc_sanpham'] as $key => $dm){
-                        if ($sp['ma_dm'] == $dm['ma_dm']){
-                          echo $dm['ten_dm'];
                         }
                       }
                       
@@ -109,8 +109,8 @@
               </div>
             </div>
           </td>
-          <td style="width: 20%;">
-            <img style="width: 30%;"
+          <td style="width: 15%;">
+            <img style="width: 40%;"
               src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
               alt="">
           </td>
