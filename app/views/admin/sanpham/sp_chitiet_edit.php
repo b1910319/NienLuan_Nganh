@@ -253,7 +253,7 @@
                 <tr>
                   <td></td>
                   <td>
-                  <button type="submit" class="btn btn-outline-success font-weight-bold"
+                    <button type="submit" class="btn btn-outline-success font-weight-bold"
                       name="update_ncc">
                       <i class="fas fa-edit"></i>
                       Cập nhật
