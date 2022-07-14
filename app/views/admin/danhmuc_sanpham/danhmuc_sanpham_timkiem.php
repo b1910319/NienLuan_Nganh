@@ -1,44 +1,6 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông tin danh mục
-    </div>
-    <form action="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham_insert" method="POST"
-      autocomplete="off" enctype="multipart/form-data">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row" class="title_table">Tên: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_dm">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Mã màu: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="mamau_dm">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Hình: </th>
-            <td class="was-validated">
-              <input type='file' name="hinh_dm">
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button type="submit" class="btn btn-outline-success font-weight-bold"
-                name="insert_dm">
-                <i class="fas fa-plus-square"></i>
-                Thêm
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
           <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham">

@@ -1,53 +1,6 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông tin loại sản phẩm
-    </div>
-    <form action="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham_insert" method="POST"
-      autocomplete="off">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row" class="title_table">Tên: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_lsp">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Danh mục: </th>
-            <td class="was-validated">
-              <select class="custom-select input_table" id="gender2" name="ma_dm">
-                <option >Chọn danh mục</option>
-                <?php
-                  foreach ($data['danhmuc_sanpham'] as $key => $dm){
-                    ?>
-                      <option value="<?php echo $dm['ma_dm'] ?>"><?php echo $dm['ten_dm'] ?></option>
-                    <?php
-                  }
-                ?>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Icon: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="icon_lsp">
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button type="submit" class="btn btn-outline-success font-weight-bold"
-                name="insert_lsp">
-                <i class="fas fa-plus-square"></i>
-                Thêm
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
           <a href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham">

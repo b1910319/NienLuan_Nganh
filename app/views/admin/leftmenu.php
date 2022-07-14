@@ -182,7 +182,7 @@
               <ul class="nav-third-level nav" aria-expanded="false">
                 <li>
                   <a href="javascript: void(0);">
-                    <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham">
+                    <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet">
                     Điện Thoại - Table
                     </a>
                   </a>

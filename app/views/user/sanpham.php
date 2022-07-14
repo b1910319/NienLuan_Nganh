@@ -119,7 +119,7 @@
           <li>
             <a class="dropdown-item" href="#">32GB</a>
           </li>
-          <li>
+          <li> 
             <hr class="dropdown-divider">
           </li>
           <li>

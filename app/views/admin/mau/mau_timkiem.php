@@ -1,32 +1,6 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông tin màu
-    </div>
-    <form action="<?php echo BASE_URL ?>mau/mau_insert" method="POST"
-      autocomplete="off">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row" class="title_table">Tên: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_m">
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button type="submit" class="btn btn-outline-success font-weight-bold"
-                name="insert_m">
-                <i class="fas fa-plus-square"></i>
-                Thêm
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
           <a href="<?php echo BASE_URL ?>mau/mau">

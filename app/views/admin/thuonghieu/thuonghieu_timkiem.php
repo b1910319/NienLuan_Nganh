@@ -1,44 +1,6 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông tin thương hiệu
-    </div>
-    <form action="<?php echo BASE_URL ?>thuonghieu/thuonghieu_insert" method="POST"
-      autocomplete="off" enctype="multipart/form-data">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row" class="title_table">Tên: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_th">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Logo: </th>
-            <td class="was-validated">
-              <input type='file' name="logo_th">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Hình: </th>
-            <td class="was-validated">
-              <input type='file' name="hinh_th">
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button type="submit" class="btn btn-outline-success font-weight-bold"
-                name="insert_th">
-                <i class="fas fa-plus-square"></i>
-                Thêm
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
           <a href="<?php echo BASE_URL ?>thuonghieu/thuonghieu">

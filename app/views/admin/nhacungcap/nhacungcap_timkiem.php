@@ -1,52 +1,6 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông tin nhà cung cấp
-    </div>
-    <form action="<?php echo BASE_URL ?>nhacungcap/nhacungcap_insert" method="POST"
-      autocomplete="off">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row" class="title_table">Tên: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_ncc">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Địa chỉ: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="diachi_ncc">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Sô điện thoại: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required
-                pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$"
-                maxlength="10" name="sdt_ncc">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Email: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="email_ncc">
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button type="submit" class="btn btn-outline-success font-weight-bold"
-                name="insert_ncc">
-                <i class="fas fa-plus-square"></i>
-                Thêm
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
           <a href="<?php echo BASE_URL ?>nhacungcap/nhacungcap">

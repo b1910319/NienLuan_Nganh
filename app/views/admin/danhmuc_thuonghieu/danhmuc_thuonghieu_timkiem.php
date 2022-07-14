@@ -3,13 +3,13 @@
     <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
-          <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc">
+          <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">
             <i class="fas fa-solid fa-caret-left"></i>&ensp;
           </a>
-          Thông tin danh mục
+          Thông tin danh mục - thương hiệu
         </div>
         <div class="col-6">
-          <form class="d-flex" action="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_timkiem"
+          <form class="d-flex" action="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_timkiem"
             method="POST">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
               name="tukhoa">
@@ -23,30 +23,29 @@
       <thead>
         <tr class="tr_table">
           <th scope="col">STT</th>
-          <th scope="col">Mã danh mục</th>
-          <th scope="col">Tên danh mục</th>
+          <th scope="col">Danh mục</th>
+          <th scope="col">Thương hiệu</th>
           <th scope="col">Quản lý</th>
         </tr>
       </thead>
       <tbody>
         <?php
           $i=0;
-          foreach($data['danhmuc_tintuc_timkiem'] as $key => $dmtt){
+          foreach($data['danhmuc_thuonghieu_timkiem'] as $key => $dmth){
             $i++;
             ?>
         <tr>
-          <th scope="row"><?php echo $i ?></th>
-          <td><?php echo $dmtt['ma_dmtt'] ?></td>
-          <td><?php echo $dmtt['ten_dmtt'] ?></td>
-          <td>
-            <a
-              href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_edit/<?php echo $dmtt['ma_dmtt'] ?>">
+          <th scope="row" style="width:10% ;"><?php echo $i ?></th>
+          <td style="width:30% ;"> <?php echo $dmth['ten_dm'] ?></td>
+          <td style="width:30% ;"><?php echo $dmth['ten_th'] ?></td>
+          <td style="width:30% ;">
+            <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_edit/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
               <button type="button" class="btn sua">
                 <i class="fas fa-edit"></i>
               </button>
             </a>
-            <a onclick="return confirm('Bạn có muốn xóa <?php echo $dmtt['ten_dmtt'] ?> không?')"
-              href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_delete/<?php echo $dmtt['ma_dmtt'] ?>">
+            <a onclick="return confirm('Bạn có muốn xóa thương hiệu <?php echo $dmth['ten_th'] ?> thuộc danh mục <?php echo $dmth['ten_dm'] ?> không?')"
+              href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_delete/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
               <button type="button" class="btn xoa">
                 <i class="fas fa-trash-alt"></i>
               </button>

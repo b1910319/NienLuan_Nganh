@@ -280,4 +280,113 @@ class sanpham extends controller
     $data ['sanpham_timkiem'] = $sanphamM->sanpham_timkiem($table_sp, $dieukien);
     $this->load->view_admin("sanpham/sanpham_timkiem", $data);
   }
+
+
+
+  //chi tiết sản phẩm
+  public function sp_chitiet(){
+    session::init();
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    $data ['sp_chitiet_list'] = $chitiet_sanphamM->sp_chitiet_list($table_sp, $table_ctsp);
+    $this->load->view_admin("sanpham/sp_chitiet",$data);
+  }
+  public function sp_chitiet_insert(){
+    session::init();
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    $ma_sp = $_POST['ma_sp'];
+    $manhinh = $_POST['manhinh'];
+    $hedieuhanh = $_POST['hedieuhanh'];
+    $camera_truoc = $_POST['camera_truoc'];
+    $camera_sau = $_POST['camera_sau'];
+    $chip = $_POST['chip'];
+    $ram = $_POST['ram'];
+    $rom = $_POST['rom'];
+    $sim = $_POST['sim'];
+    $pin = $_POST['pin'];
+    $data = array(
+      'ma_sp' => $ma_sp,
+      'manhinh' => $manhinh,
+      'hedieuhanh' => $hedieuhanh,
+      'camera_sau'=> $camera_sau,
+      'camera_truoc'=> $camera_truoc,
+      'chip' => $chip,
+      'ram' => $ram,
+      'rom'=> $rom,
+      'sim'=> $sim,
+      'pin' => $pin
+    );
+    $result = $chitiet_sanphamM->sp_chitiet_insert($table_ctsp, $data);
+    header("Location:" . BASE_URL . "sanpham/sp_chitiet");
+  }
+  public function sp_chitiet_edit($ma_ctsp){
+    session::init();
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'" ;
+    $data['sp_chitiet_ma'] = $chitiet_sanphamM->sp_chitiet_ma($table_ctsp, $dieukien);
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    $this->load->view_admin("sanpham/sp_chitiet_edit", $data);
+  }
+  public function sp_chitiet_update($ma_ctsp){
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'" ;
+    $ma_sp = $_POST['ma_sp'];
+    $manhinh = $_POST['manhinh'];
+    $hedieuhanh = $_POST['hedieuhanh'];
+    $camera_truoc = $_POST['camera_truoc'];
+    $camera_sau = $_POST['camera_sau'];
+    $chip = $_POST['chip'];
+    $ram = $_POST['ram'];
+    $rom = $_POST['rom'];
+    $sim = $_POST['sim'];
+    $pin = $_POST['pin'];
+    $data = array(
+      'ma_sp' => $ma_sp,
+      'manhinh' => $manhinh,
+      'hedieuhanh' => $hedieuhanh,
+      'camera_sau'=> $camera_sau,
+      'camera_truoc'=> $camera_truoc,
+      'chip' => $chip,
+      'ram' => $ram,
+      'rom'=> $rom,
+      'sim'=> $sim,
+      'pin' => $pin
+    );
+    $result = $chitiet_sanphamM->sp_chitiet_update($table_ctsp, $data, $dieukien);
+    header("Location:" . BASE_URL . "sanpham/sp_chitiet");
+  }
+  public function sp_chitiet_timkiem(){
+    session::init();
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    $tukhoa = $_POST['tukhoa'];
+    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+    $data ['sp_chitiet_timkiem'] = $chitiet_sanphamM->sp_chitiet_timkiem($table_sp, $table_ctsp, $dieukien);
+    $this->load->view_admin("sanpham/sp_chitiet_timkiem",$data);
+  }
+  public function sp_chitiet_delete($ma_ctsp){
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'" ;
+    $result = $chitiet_sanphamM->sp_chitiet_delete($table_ctsp, $dieukien);
+    header("Location:" . BASE_URL . "sanpham/sp_chitiet");
+  }
 }
