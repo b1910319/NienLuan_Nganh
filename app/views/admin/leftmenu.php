@@ -218,7 +218,7 @@
               </ul>
             </li>
             <li>
-              <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc">
+              <a href="<?php echo BASE_URL ?>sanpham/hinh">
                 <span> Hình - Sản phẩm </span>
                 <span class="badge badge-primary float-right"></span>
               </a>

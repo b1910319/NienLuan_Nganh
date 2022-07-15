@@ -838,4 +838,121 @@ class sanpham extends controller
     $result = $chitiet_sanphamM->sp_chitiet_delete($table_ctsp, $dieukien);
     header("Location:" . BASE_URL . "sanpham/sp_chitiet_maytinh");
   }
+
+
+
+  //hình sản phẩm
+  public function hinh()
+  {
+    session::init();
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    // sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    //hình
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $data['hinh'] = $hinhM->hinh_list($table_h, $table_sp);
+    $this->load->view_admin("sanpham/hinh", $data);
+  }
+  public function hinh_insert()
+  {
+    session::init();
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $ma_sp = $_POST['ma_sp'];
+    $hinh = $_FILES['hinh']['name'];
+    $file_temp = $_FILES['hinh']['tmp_name'];
+    $div = explode(' . ', $hinh);
+    $file_ext = strtolower(end($div));
+    $unique_image = substr(md5(time()), 0, 10) . ' . ' . $file_ext;
+    $uploaded_image = "public/uploads/hinh_chitiet/" . $unique_image;
+    move_uploaded_file($file_temp, $uploaded_image);
+    $data = array(
+      'ma_sp' => $ma_sp,
+      'hinh' => $unique_image
+    );
+    $result = $hinhM->hinh_insert($table_h, $data);
+    header("Location:" . BASE_URL . "sanpham/hinh");
+  }
+  public function hinh_edit($ma_h){
+    session::init();
+    // sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    //hình
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $dieukien = "hinh.ma_h='$ma_h'" ;
+    $data['hinh_ma'] = $hinhM->hinh_ma($table_h, $dieukien);
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    $this->load->view_admin("sanpham/hinh_edit", $data);
+  }
+  public function hinh_update($ma_h){
+    session::init();
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $dieukien = "hinh.ma_h='$ma_h'" ;
+    $ma_sp = $_POST['ma_sp'];
+
+    $hinh = $_FILES['hinh']['name'];
+    $file_temp = $_FILES['hinh']['tmp_name'];
+    $div = explode(' . ', $hinh);
+    $file_ext = strtolower(end($div));
+    $unique_image = substr(md5(time()), 0, 10) . ' . ' . $file_ext;
+    $uploaded_image = "public/uploads/hinh_chitiet/" . $unique_image;
+    if($hinh){
+      $data['hinh_ma'] = $hinhM->hinh_ma($table_h, $dieukien);
+      foreach ($data['hinh_ma'] as $key => $h){
+        if($h['hinh']){
+          unlink("public/uploads/hinh_chitiet/".$h['hinh']);
+        }
+      }
+      $data = array(
+        'ma_sp' => $ma_sp,
+        'hinh' => $unique_image
+      );
+      move_uploaded_file($file_temp, $uploaded_image);
+    }else{
+      $data = array(
+        'ma_sp' => $ma_sp
+      );
+    }
+    $result = $hinhM->hinh_update($table_h, $data, $dieukien);
+    header("Location:".BASE_URL."sanpham/hinh");
+  }
+  public function hinh_delete($ma_h){
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $dieukien = "hinh.ma_h='$ma_h'" ;
+    if($ma_h){
+      $data['hinh_ma'] = $hinhM->hinh_ma($table_h, $dieukien);
+      foreach ($data['hinh_ma'] as $key => $h){
+        if($h['hinh']){
+          unlink("public/uploads/hinh_chitiet/".$h['hinh']);
+        }
+      }
+    }
+    $result = $hinhM->hinh_delete($table_h, $dieukien);
+    header("Location:" . BASE_URL . "sanpham/hinh");
+  }
+  public function hinh_timkiem(){
+    session::init();
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    // sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    //hinh
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $tukhoa = $_POST['tukhoa'];
+    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+    $data ['hinh_timkiem'] = $hinhM->hinh_timkiem($table_sp, $table_h, $dieukien);
+    $this->load->view_admin("sanpham/hinh_timkiem", $data);
+  }
 }

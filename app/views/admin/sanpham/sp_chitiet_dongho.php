@@ -6,7 +6,7 @@
     <form action="<?php echo BASE_URL ?>sanpham/sp_chitiet_dongho_insert" method="POST" autocomplete="off">
       <table class="table">
         <tbody>
-        <tr>
+          <tr>
             <th scope="row">Sản phẩm: </th>
             <td class="was-validated">
               <select class="custom-select input_table" id="gender2" name="ma_sp">
