@@ -210,7 +210,7 @@
                 </li>
                 <li>
                   <a href="javascript: void(0);">
-                    <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu">
+                    <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet_maytinh">
                       Máy tính để bàn
                     </a>
                   </a>
