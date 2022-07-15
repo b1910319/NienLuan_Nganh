@@ -955,4 +955,98 @@ class sanpham extends controller
     $data ['hinh_timkiem'] = $hinhM->hinh_timkiem($table_sp, $table_h, $dieukien);
     $this->load->view_admin("sanpham/hinh_timkiem", $data);
   }
+
+  //màu của sản phẩm
+  public function mau_sanpham()
+  {
+    session::init();
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    //màu
+    $mauM = $this->load->model('mauM');
+    $table_m = 'mau';
+    $data ['mau'] = $mauM->mau_list($table_m);
+
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    $data['mau_sanpham_list'] = $mau_sanphamM->mau_sanpham_list($table_sp, $table_m, $table_msp);
+    $this->load->view_admin("sanpham/mau_sanpham", $data);
+  }
+  public function mau_sanpham_insert(){
+    session::init();
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    $ma_sp = $_POST['ma_sp'];
+    $ma_m = $_POST['ma_m'];
+    $data = array(
+      'ma_sp' => $ma_sp,
+      'ma_m' => $ma_m
+    );
+    $result = $mau_sanphamM->mau_sanpham_insert($table_msp, $data);
+    header("Location:".BASE_URL."sanpham/mau_sanpham");
+  }
+  public function mau_sanpham_edit($ma_sp, $ma_m){
+    session::init();
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'" ;
+
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    //màu
+    $mauM = $this->load->model('mauM');
+    $table_m = 'mau';
+    $data ['mau'] = $mauM->mau_list($table_m);
+
+    $data['mau_sanpham_ma'] = $mau_sanphamM->mau_sanpham_ma($table_msp, $dieukien);
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    $this->load->view_admin("sanpham/mau_sanpham_edit", $data);
+  }
+  public function mau_sanpham_update($ma_sp, $ma_m){
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'" ;
+    $ma_sp = $_POST['ma_sp'];
+    $ma_m = $_POST['ma_m'];
+    $data = array(
+      'ma_sp' => $ma_sp,
+      'ma_m' => $ma_m
+    );
+    $result = $mau_sanphamM->mau_sanpham_update($table_msp, $data, $dieukien);
+    header("Location:".BASE_URL."sanpham/mau_sanpham");
+  }
+  public function mau_sanpham_delete($ma_sp, $ma_m){
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'" ;
+    $result = $mau_sanphamM->mau_sanpham_delete($table_msp, $dieukien);
+    header("Location:".BASE_URL."sanpham/mau_sanpham");
+  }
+  public function mau_sanpham_timkiem(){
+    session::init();
+    $this->load->view_admin("header");
+    $this->load->view_admin("leftmenu");
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    //màu
+    $mauM = $this->load->model('mauM');
+    $table_m = 'mau';
+    //màu sản phẩm
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+
+    $tukhoa = $_POST['tukhoa'];
+    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+
+    $data ['mau_sanpham_timkiem'] = $mau_sanphamM->mau_sanpham_timkiem($table_sp, $table_msp, $table_m, $dieukien);
+    $this->load->view_admin("sanpham/mau_sanpham_timkiem", $data);
+  }
 }

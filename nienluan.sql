@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 13, 2022 lúc 10:47 AM
+-- Thời gian đã tạo: Th7 15, 2022 lúc 09:39 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -20,6 +20,55 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `nienluan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chitiet_sanpham`
+--
+
+CREATE TABLE `chitiet_sanpham` (
+  `ma_ctsp` int(10) NOT NULL,
+  `ma_sp` int(10) NOT NULL,
+  `camera_truoc` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `camera_sau` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `card_manhinh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `chatlieu_day` int(10) NOT NULL DEFAULT 0,
+  `chatlieu_kinh` int(10) NOT NULL DEFAULT 0,
+  `chip` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `chongnuoc` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `cong_ketnoi` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `congnghe_cpu` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `cpu` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `dat_biet` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `doituong_sudung` int(10) NOT NULL DEFAULT 0,
+  `duongkinh_mat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `hedieuhanh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `kichthuoc` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `manhinh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `mat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `rom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `pin` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `ram` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `sim` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `thietke` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `thoidiem_ramat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `thoiluong_pin` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `tinhnang_suckhoe` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' '
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitiet_sanpham`
+--
+
+INSERT INTO `chitiet_sanpham` (`ma_ctsp`, `ma_sp`, `camera_truoc`, `camera_sau`, `card_manhinh`, `chatlieu_day`, `chatlieu_kinh`, `chip`, `chongnuoc`, `cong_ketnoi`, `congnghe_cpu`, `cpu`, `dat_biet`, `doituong_sudung`, `duongkinh_mat`, `hedieuhanh`, `kichthuoc`, `manhinh`, `mat`, `rom`, `pin`, `ram`, `sim`, `thietke`, `thoidiem_ramat`, `thoiluong_pin`, `tinhnang_suckhoe`) VALUES
+(2, 6, 'dffff', 'ffffffgh', ' ', 0, 0, 'ghjh', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'ssss', ' ', 'dđ', ' ', '256', 'hhhh', '3', 'ffff', ' ', ' ', ' ', ' '),
+(3, 7, 'yiuiu', 'yuyu', ' ', 0, 0, 'etrrtry', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'lklk;', ' ', 'ghgkj', ' ', '256', 'rtry', '3', 'trytu', ' ', ' ', ' ', ' '),
+(5, 8, ' ', ' ', 'Card tích hợpIntel UHD', 0, 0, ' ', ' ', '1 x USB 2.02 x USB 3.2HDMIJack tai nghe 3.5 mm', ' ', 'i310110U2.1GHz', ' ', 0, ' ', 'Windows 11 Home SL', 'Dài 362.2 mm - Rộng 253.4 mm - Dày 19.9 mm - Nặng 1.7 kg', '15.6', ' ', '256 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1TB (2280) / 512GB (2242))Hỗ trợ thêm 1 khe cắm HDD SATA (nâng cấp tối đa 1TB)', ' ', '4 GBDDR4 (On board 4GB +1 khe rời)2666 MHz', ' ', 'Vỏ nhựa', '2001', ' ', ' '),
+(7, 9, ' ', ' ', 'asfd', 0, 0, ' ', ' ', 'sdfd', ' ', 'cgbv', ' ', 0, ' ', 'asfd', 'gfghg', 'dfgd', ' ', 'dgfdg', ' ', 'fhfgh', ' ', 'sdf', 'tytu', ' ', ' '),
+(8, 10, ' ', ' ', ' ', 0, 0, ' ', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'dfg', ' ', 'fg', 'sdg', '0', ' ', '0', ' ', ' ', ' ', 'fg', 'sdfg'),
+(10, 11, ' ', ' ', ' ', 0, 0, ' ', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'trinh', ' ', 'trinhle', 'trinh', '0', ' ', '0', ' ', ' ', ' ', 'trinh', 'trinhle'),
+(13, 12, ' ', ' ', 'Intel Iris Xe', 0, 0, ' ', ' ', '2 x USB 2.02 x USB 3.2HDMILAN (RJ45)', 'i51135G72.40 GHz', ' ', ' ', 0, ' ', 'Windows 10 Home SL', 'Dài 541 mm - Rộng 185 mm - Dày 433 mm - Nặng 6.81 kg', '23.8 inchFull HD', ' ', '256', ' ', '8', ' ', ' ', ' ', ' ', ' ');
 
 -- --------------------------------------------------------
 
@@ -125,6 +174,26 @@ INSERT INTO `danhmuc_tintuc` (`ma_dmtt`, `ten_dmtt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `hinh`
+--
+
+CREATE TABLE `hinh` (
+  `ma_h` int(10) NOT NULL,
+  `ma_sp` int(10) NOT NULL,
+  `hinh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hinh`
+--
+
+INSERT INTO `hinh` (`ma_h`, `ma_sp`, `hinh`) VALUES
+(1, 6, '66a237d4d1 . banner_laptop_dohoa.jpg'),
+(3, 8, '97597cdbcf . banner_laptop_caocap.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `loai_sanpham`
 --
 
@@ -171,6 +240,26 @@ INSERT INTO `mau` (`ma_m`, `ten_m`) VALUES
 (1, 'Trắng'),
 (2, 'Đen'),
 (3, 'Tím');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `mau_sanpham`
+--
+
+CREATE TABLE `mau_sanpham` (
+  `ma_sp` int(10) NOT NULL,
+  `ma_m` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `mau_sanpham`
+--
+
+INSERT INTO `mau_sanpham` (`ma_sp`, `ma_m`) VALUES
+(11, 3),
+(6, 2),
+(10, 2);
 
 -- --------------------------------------------------------
 
@@ -245,8 +334,14 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`ma_sp`, `ma_th`, `ma_lsp`, `ma_ncc`, `ma_dm`, `ma_nv`, `ten_sp`, `gia_sp`, `soluong_sp`, `hinh_sp`, `hinhchitiet_sp`, `thongtin_sp`, `tinhtrang_sp`) VALUES
-(6, 17, 21, 2, 19, 4, 'trinhle', '555555555', 7777, '781d66fc10 . banner_dongho_treem.jpg', '4d06ca1589 . banner_3.png', '<p>hhhhhhhhhhhh</p>\r\n', 2),
-(7, 18, 15, 2, 11, 4, 'ggggg', '5555', 777, '08b5a43b51 . banner_smartwatch_thethao.png', '08b5a43b51 . banner_smartwatch_tienich.png', '<p>uuuuuuuuuuuuu</p>\r\n', 1);
+(6, 17, 21, 2, 8, 4, 'trinhle', '555555555', 7777, '781d66fc10 . banner_dongho_treem.jpg', '4d06ca1589 . banner_3.png', '<p>hhhhhhhhhhhh</p>\r\n', 2),
+(7, 18, 15, 2, 8, 4, 'ggggg', '5555', 777, '08b5a43b51 . banner_smartwatch_thethao.png', '08b5a43b51 . banner_smartwatch_tienich.png', '<p>uuuuuuuuuuuuu</p>\r\n', 1),
+(8, 17, 18, 2, 9, 4, 'hang', '555555', 222, '6338046d1f . banner_laptop_caocap.jpg', '6338046d1f . banner_smartwatch_treem.png', '<p>ffffffffff</p>\r\n', 2),
+(9, 16, 22, 2, 9, 4, 'a', '4556', 86898, '2a0458a819 . banner_smartwatch_phukien.png', '2a0458a819 . banner_smartwatch_thethao.png', '<p>tyhtg</p>\r\n', 2),
+(10, 18, 15, 2, 11, 4, 'b', '5', 46, 'abc57d8786 . banner_laptop_caocap.jpg', 'abc57d8786 . banner_laptop_dohoa.jpg', '<p>tty</p>\r\n', 2),
+(11, 18, 21, 1, 11, 4, 'c', '555', 444, 'e1e7c78edc . banner_laptop_dohoa.jpg', 'e1e7c78edc . banner_laptop_gaming.jpg', '<p>cbfhg</p>\r\n', 1),
+(12, 18, 22, 2, 13, 4, 'd', '6767', 565, '922081f5e0 . banner_laptop_mong.jpg', '922081f5e0 . banner_smartwatch_thoitrang.png', '<p>4fhfg</p>\r\n', 1),
+(13, 15, 21, 2, 13, 4, 'f', '67', 57, '3323717e85 . banner_dongho_docquyen.jpg', '3323717e85 . banner_dongho_phaidep.png', '<p>dfgfhfg</p>\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -299,6 +394,12 @@ INSERT INTO `thuonghieu` (`ma_th`, `ten_th`, `logo_th`, `hinh_th`) VALUES
 --
 
 --
+-- Chỉ mục cho bảng `chitiet_sanpham`
+--
+ALTER TABLE `chitiet_sanpham`
+  ADD PRIMARY KEY (`ma_ctsp`);
+
+--
 -- Chỉ mục cho bảng `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_sanpham`
@@ -309,6 +410,12 @@ ALTER TABLE `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_tintuc`
   ADD PRIMARY KEY (`ma_dmtt`);
+
+--
+-- Chỉ mục cho bảng `hinh`
+--
+ALTER TABLE `hinh`
+  ADD PRIMARY KEY (`ma_h`);
 
 --
 -- Chỉ mục cho bảng `loai_sanpham`
@@ -351,6 +458,12 @@ ALTER TABLE `thuonghieu`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `chitiet_sanpham`
+--
+ALTER TABLE `chitiet_sanpham`
+  MODIFY `ma_ctsp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT cho bảng `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_sanpham`
@@ -361,6 +474,12 @@ ALTER TABLE `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_tintuc`
   MODIFY `ma_dmtt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT cho bảng `hinh`
+--
+ALTER TABLE `hinh`
+  MODIFY `ma_h` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `loai_sanpham`
@@ -390,7 +509,7 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ma_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ma_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `thuonghieu`
