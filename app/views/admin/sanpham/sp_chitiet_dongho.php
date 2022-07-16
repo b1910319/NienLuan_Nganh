@@ -124,7 +124,7 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    Đối tượng sử dụng: 
+                    <b>Đối tượng sử dụng:</b>  
                       <?php 
                         if($ctsp['doituong_sudung'] == 1){
                           echo 'Nữ';
@@ -132,8 +132,8 @@
                           echo 'Nam';
                         }
                       ?> <br>
-                    Đường kính mặt: <?php echo $ctsp['duongkinh_mat'] ?> <br>
-                    Chất liệu mặt kính: 
+                    <b>Đường kính mặt:</b>  <?php echo $ctsp['duongkinh_mat'] ?> <br>
+                    <b>Chất liệu mặt kính:</b> 
                     <?php
                       if($ctsp['chatlieu_kinh'] == 1){
                         echo 'Kính Sapphire';
@@ -143,7 +143,7 @@
                         echo 'Nhựa Resin';
                       }
                     ?> <br>
-                    Chất liệu dây: 
+                    <b>Chất liệu dây:</b> 
                     <?php 
                       if($ctsp['chatlieu_day'] == 1){
                         echo 'Da thật';
@@ -165,7 +165,7 @@
                         echo 'Nhựa';
                       }
                     ?> <br>
-                    Chống nước: <?php echo $ctsp['chongnuoc'] ?> <br>
+                    <b>Chống nước:</b> <?php echo $ctsp['chongnuoc'] ?> <br>
                   </p>
                 </div>
               </div>

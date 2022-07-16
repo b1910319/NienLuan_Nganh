@@ -52,6 +52,12 @@
             </td>
           </tr>
           <tr>
+            <th scope="row" class="title_table">Bộ sản phẩm: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="bo_sanpham">
+            </td>
+          </tr>
+          <tr>
             <td></td>
             <td>
               <button type="submit" class="btn btn-outline-success font-weight-bold"
@@ -104,11 +110,12 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    Màn hình: <?php echo $ctsp['manhinh'] ?> <br>
-                    Thời lượng pin: <?php echo $ctsp['thoiluong_pin'] ?> <br>
-                    Kết nối hệ điều hành: <?php echo $ctsp['hedieuhanh'] ?> <br>
-                    Mặt: <?php echo $ctsp['mat'] ?> <br>
-                    Tính năng cho sức khoẻ: <?php echo $ctsp['tinhnang_suckhoe'] ?> <br>
+                    <b>Màn hình:</b>  <?php echo $ctsp['manhinh'] ?> <br>
+                    <b>Thời lượng pin:</b> <?php echo $ctsp['thoiluong_pin'] ?> <br>
+                    <b>Kết nối hệ điều hành:</b> <?php echo $ctsp['hedieuhanh'] ?> <br>
+                    <b>Mặt:</b> <?php echo $ctsp['mat'] ?> <br>
+                    <b>Tính năng cho sức khoẻ:</b> <?php echo $ctsp['tinhnang_suckhoe'] ?> <br>
+                    <b>Bộ sản phẩm:</b> <?php echo $ctsp['bo_sanpham'] ?> <br>
                   </p>
                 </div>
               </div>

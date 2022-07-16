@@ -79,6 +79,12 @@
             </td>
           </tr>
           <tr>
+            <th scope="row" class="title_table">Bộ sản phẩm chuẩn: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="bo_sanpham">
+            </td>
+          </tr>
+          <tr>
             <td></td>
             <td>
               <button type="submit" class="btn btn-outline-success font-weight-bold"
@@ -131,14 +137,15 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    Công nghệ CPU: <?php echo $ctsp['congnghe_cpu'] ?> <br>
-                    RAM: <?php echo $ctsp['ram'].'GB' ?> <br>
-                    Ổ cứng: <?php echo 'SSD '.$ctsp['rom'].'GB' ?> <br>
-                    Màn hình: <?php echo $ctsp['manhinh'] ?> <br>
-                    Card màn hình: <?php echo $ctsp['card_manhinh'] ?> <br>
-                    Cổng kết nối: <?php echo $ctsp['cong_ketnoi'] ?> <br>
-                    Hệ điều hành: <?php echo $ctsp['hedieuhanh']?> <br>
-                    Kích thước: <?php echo $ctsp['kichthuoc'] ?>
+                    <b> Công nghệ CPU:</b> <?php echo $ctsp['congnghe_cpu'] ?> <br>
+                    <b>RAM:</b> <?php echo $ctsp['ram'].'GB' ?> <br>
+                    <b>Ổ cứng:</b> <?php echo 'SSD '.$ctsp['rom'].'GB' ?> <br>
+                    <b>Màn hình:</b> <?php echo $ctsp['manhinh'] ?> <br>
+                    <b>Card màn hình:</b> <?php echo $ctsp['card_manhinh'] ?> <br>
+                    <b>Cổng kết nối:</b> <?php echo $ctsp['cong_ketnoi'] ?> <br>
+                    <b>Hệ điều hành:</b> <?php echo $ctsp['hedieuhanh']?> <br>
+                    <b>Kích thước:</b> <?php echo $ctsp['kichthuoc'] ?> <br>
+                    <b>Bộ sản phẩm chuẩn:</b> <?php echo $ctsp['bo_sanpham'] ?> <br>
                   </p>
                 </div>
               </div>

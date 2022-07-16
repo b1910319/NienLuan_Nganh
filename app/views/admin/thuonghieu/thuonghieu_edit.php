@@ -16,7 +16,7 @@
                 <tr>
                   <th scope="row" class="title_table">Tên: </th>
                   <td class="was-validated">
-                    <input type='text' class='form-control input_table' required name="ten_th" value="<?php echo $th['ten_th'] ?>">
+                    <input type='text' class='form-control input_table' required autofocus name="ten_th" value="<?php echo $th['ten_th'] ?>">
                   </td>
                 </tr>
                 <tr>

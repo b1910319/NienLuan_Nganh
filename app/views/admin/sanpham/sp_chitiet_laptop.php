@@ -82,6 +82,12 @@
             </td>
           </tr>
           <tr>
+            <th scope="row" class="title_table">Bộ sản phẩm: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="bo_sanpham">
+            </td>
+          </tr>
+          <tr>
             <td></td>
             <td>
               <button type="submit" class="btn btn-outline-success font-weight-bold"
@@ -134,16 +140,17 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    CPU: <?php echo $ctsp['cpu'] ?> <br>
-                    RAM: <?php echo $ctsp['ram'] ?> <br>
-                    Ổ cứng: <?php echo $ctsp['rom'] ?> <br>
-                    Màn hình: <?php echo $ctsp['manhinh'] ?> <br>
-                    Card màn hình: <?php echo $ctsp['card_manhinh'] ?> <br>
-                    Cổng kết nối: <?php echo $ctsp['cong_ketnoi'] ?> <br>
-                    Hệ điều hành: <?php echo $ctsp['hedieuhanh'] ?> <br>
-                    Thiết kế: <?php echo $ctsp['thietke'] ?> <br>
-                    Kích thước, trọng lượng: <?php echo $ctsp['kichthuoc'] ?> <br>
-                    Thời điểm ra mắt: <?php echo $ctsp['thoidiem_ramat'] ?> <br>
+                    <b>CPU:</b> <?php echo $ctsp['cpu'] ?> <br>
+                    <b>RAM:</b>  <?php echo $ctsp['ram'] ?> <br>
+                    <b>Ổ cứng:</b>  <?php echo $ctsp['rom'] ?> <br>
+                    <b>Màn hình:</b>  <?php echo $ctsp['manhinh'] ?> <br>
+                    <b>Card màn hình:</b>  <?php echo $ctsp['card_manhinh'] ?> <br>
+                    <b>Cổng kết nối:</b>  <?php echo $ctsp['cong_ketnoi'] ?> <br>
+                    <b>Hệ điều hành:</b>  <?php echo $ctsp['hedieuhanh'] ?> <br>
+                    <b>Thiết kế:</b>  <?php echo $ctsp['thietke'] ?> <br>
+                    <b>Kích thước, trọng lượng:</b>  <?php echo $ctsp['kichthuoc'] ?> <br>
+                    <b>Thời điểm ra mắt:</b>  <?php echo $ctsp['thoidiem_ramat'] ?> <br> 
+                    <b>Bộ sản phẩm:</b>  <?php echo $ctsp['bo_sanpham'] ?>
                   </p>
                 </div>
               </div>

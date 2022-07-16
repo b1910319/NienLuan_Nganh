@@ -8,6 +8,10 @@
       return $this->db->insert($table, $data);
     }
     public function mau_list($table){
+      $sql = "SELECT * FROM $table ORDER BY ten_m ASC";
+      return $this->db->select($sql);
+    }
+    public function mau($table){
       $sql = "SELECT * FROM $table ORDER BY ma_m desc";
       return $this->db->select($sql);
     }

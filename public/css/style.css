@@ -272,10 +272,12 @@ h2::after {
 /*  */
 /* deal ngon */
 .deal_ngon{
-  background-color: #F9F3EE;
+  background-color: #DFE8CC;
   border-radius: 10px;
 }
-
+.gia{
+  color: #D0021C;
+}
 
 /*  */
 /* sản phẩm điện thoại */
@@ -300,6 +302,7 @@ h2::after {
 }
 .sanpham_gia {
   font-size: 17px;
+  color: #D0021C;
 }
 .sanpham_gia::after {
   content: "";

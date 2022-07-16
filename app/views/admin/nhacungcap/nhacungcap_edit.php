@@ -13,7 +13,7 @@
                 <tr>
                   <th scope="row" class="title_table">Tên: </th>
                   <td class="was-validated">
-                    <input type='text' class='form-control input_table' required name="ten_ncc" value="<?php echo $ncc['ten_ncc'] ?>">
+                    <input type='text' class='form-control input_table' required autofocus name="ten_ncc" value="<?php echo $ncc['ten_ncc'] ?>">
                   </td>
                 </tr>
                 <tr>

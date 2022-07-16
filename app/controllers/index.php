@@ -6,21 +6,27 @@ class index extends controller
     $data = array();
     parent::__construct();
   }
-  // public function index()
-  // {
-  //   $this->trangchu();
-  // }
   public function index()
   {
+    //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
-    $table = 'danhmuc_sanpham';
-    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table);
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+
     $this->load->view_user("header", $data);
     $this->load->view_user("slider");
-    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table);
+    //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
-    $table = 'thuonghieu';
-    $data['thuonghieu'] = $thuonghieuM->thuonghieu_limit($table);
+    $table_th = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_limit($table_th);
+
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham_limit1'] = $sanphamM->sanpham_limit1($table_sp);
+    $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp);
+    $data['sanpham_dt_limit'] = $sanphamM->sanpham_dt_limit($table_sp);
     $this->load->view_user("trangchu", $data);
     $this->load->view_user("footer");
   }

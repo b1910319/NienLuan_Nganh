@@ -15,8 +15,20 @@
       $sql = "SELECT * FROM $table_sp ORDER BY ma_sp desc";
       return $this->db->select($sql);
     }
+    public function sanpham_limit1($table_sp){
+      $sql = "SELECT * FROM $table_sp LIMIT 1";
+      return $this->db->select($sql);
+    }
+    public function sanpham_limit($table_sp){
+      $sql = "SELECT * FROM $table_sp LIMIT 1,6";
+      return $this->db->select($sql);
+    }
+    public function sanpham_dt_limit($table_sp){
+      $sql = "SELECT * FROM $table_sp WHERE ma_dm = 8 ORDER BY ma_sp desc LIMIT 12";
+      return $this->db->select($sql);
+    }
     public function sanpham_ma_dm($table, $dieukien){
-      $sql = "SELECT * FROM $table  WHERE $dieukien";
+      $sql = "SELECT * FROM $table  WHERE $dieukien ORDER BY ma_sp desc ";
       return $this->db->select($sql);
     }
     public function sanpham_ma($table, $dieukien){

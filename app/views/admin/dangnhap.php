@@ -14,7 +14,7 @@
     <h2>Đăng nhập</h2>
     <form action="<?php echo BASE_URL ?>dangnhap/nhanvien_dangnhap" method="POST" autocomplete="off">
       <div class="user-box">
-        <input type="text" name="user_nv" required="">
+        <input type="text" name="user_nv" required="" autofocus>
         <label>Username</label>
       </div>
       <div class="user-box">

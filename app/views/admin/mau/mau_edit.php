@@ -13,7 +13,7 @@
                 <tr>
                   <th scope="row" class="title_table">Tên: </th>
                   <td class="was-validated">
-                    <input type='text' class='form-control input_table' required name="ten_m" value="<?php echo $m['ten_m'] ?>">
+                    <input type='text' class='form-control input_table' required autofocus name="ten_m" value="<?php echo $m['ten_m'] ?>">
                   </td>
                 </tr>
                 <tr>

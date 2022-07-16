@@ -5,65 +5,36 @@
         <h2>Deal ngon <b>mỗi ngày</b></h2>
       </div>
     </div>
-    <div class="row mt-3 mb-4">
-      <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+    <div class="row mt-3 mb-4" >
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-4" >
         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
           <div class="carousel-inner">
-
-            <div class="item active">
-              <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="app/views/user/img/sanpham/oppo_reno7.png"
-                    class="img-responsive center-block"></a>
-                <h4 class="text-center">Oppo reno 7</h4>
-                <h5 class="text-center">400.000 VND</h5>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="app/views/user/img/sanpham/ss_a33.png"
-                    class="img-responsive center-block"></a>
-                <h4 class="text-center">Samsung A33</h4>
-                <h5 class="text-center">400.000 VND</h5>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="app/views/user/img/sanpham/ss_s20.png"
-                    class="img-responsive center-block"></a>
-                <h4 class="text-center">Samsung s20</h4>
-                <h5 class="text-center">400.000 VND</h5>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="app/views/user/img/sanpham/sac_duphong.png"
-                    class="img-responsive center-block"></a>
-                <h4 class="text-center">CVETNA HALJINA</h4>
-                <h5 class="text-center">600.000 VND</h5>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="app/views/user/img/sanpham/ss_a32.png"
-                    class="img-responsive center-block"></a>
-                <h4 class="text-center">MAJICA FOTO</h4>
-                <h5 class="text-center">400.000 VND</h5>
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="col-xs-12 col-sm-6 col-md-2">
-                <a href="#"><img src="app/views/user/img/sanpham/ip_13.png"
-                    class="img-responsive center-block"></a>
-                <h4 class="text-center">MAJICA MAYORAL</h4>
-                <h5 class="text-center">400.000 VND</h5>
-              </div>
-            </div>
-
+            <?php
+              foreach ($data['sanpham_limit1'] as $key => $sp){
+                ?>
+                  <div class="item active">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="#"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+              foreach ($data['sanpham_limit'] as $key => $sp){
+                ?>
+                  <div class="item">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="#"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+            ?>
           </div>
           <!-- left,right control -->
           <div id="slider-control">
@@ -85,7 +56,20 @@
       </div>
     </div>
     <div class="row">
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+      <?php
+        foreach ($data['sanpham_dt_limit'] as $key => $sp){
+          ?>
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+              <a href="">
+                <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
+              </a>
+              <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+              <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
+            </div>
+          <?php
+        }
+      ?>
+      <!-- <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
           <img src="app/views/user/img/sanpham/ss_s20.png" class="d-block w-100">
         </a>
@@ -126,7 +110,7 @@
         </a>
         <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
         <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
+      </div> -->
 
     </div>
     <div style=" text-align: center;">

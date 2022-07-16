@@ -10,7 +10,7 @@
           <tr>
             <th scope="row" class="title_table">Tên: </th>
             <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_m">
+              <input type='text' class='form-control input_table' autofocus required name="ten_m">
             </td>
           </tr>
           <tr>

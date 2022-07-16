@@ -43,15 +43,16 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    Màn hình: <?php echo $ctsp['manhinh'] ?> <br>
-                    Hệ điều hành: <?php echo $ctsp['hedieuhanh'] ?> <br>
-                    Camera trước: <?php echo $ctsp['camera_truoc'] ?> <br>
-                    Camera sau: <?php echo $ctsp['camera_sau'] ?> <br>
-                    Chip: <?php echo $ctsp['chip'] ?> <br>
-                    RAM: <?php echo $ctsp['ram'].'GB' ?> <br>
-                    Bộ nhớ trong: <?php echo $ctsp['rom'].'GB' ?> <br>
-                    SIM: <?php echo $ctsp['sim'] ?> <br>
-                    Pin, sạc: <?php echo $ctsp['pin'] ?> <br>
+                    <b>Màn hình:</b>  <?php echo $ctsp['manhinh'] ?> <br>
+                    <b>Hệ điều hành:</b> <?php echo $ctsp['hedieuhanh'] ?> <br>
+                    <b>Camera trước:</b> <?php echo $ctsp['camera_truoc'] ?> <br>
+                    <b>Camera sau:</b> <?php echo $ctsp['camera_sau'] ?> <br>
+                    <b>Chip:</b> <?php echo $ctsp['chip'] ?> <br>
+                    <b>RAM:</b> <?php echo $ctsp['ram'].'GB' ?> <br>
+                    <b>Bộ nhớ trong:</b> <?php echo $ctsp['rom'].'GB' ?> <br>
+                    <b>SIM:</b> <?php echo $ctsp['sim'] ?> <br>
+                    <b>Pin, sạc:</b> <?php echo $ctsp['pin'] ?> <br>
+                    <b>Bộ sản phẩm:</b> <?php echo $ctsp['bo_sanpham'] ?> <br>
                   </p>
                 </div>
               </div>

@@ -312,6 +312,7 @@ class sanpham extends controller
     $hedieuhanh = $_POST['hedieuhanh'];
     $camera_truoc = $_POST['camera_truoc'];
     $camera_sau = $_POST['camera_sau'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $chip = $_POST['chip'];
     $ram = $_POST['ram'];
     $rom = $_POST['rom'];
@@ -323,6 +324,7 @@ class sanpham extends controller
       'hedieuhanh' => $hedieuhanh,
       'camera_sau' => $camera_sau,
       'camera_truoc' => $camera_truoc,
+      'bo_sanpham' => $bo_sanpham,
       'chip' => $chip,
       'ram' => $ram,
       'rom' => $rom,
@@ -359,6 +361,7 @@ class sanpham extends controller
     $hedieuhanh = $_POST['hedieuhanh'];
     $camera_truoc = $_POST['camera_truoc'];
     $camera_sau = $_POST['camera_sau'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $chip = $_POST['chip'];
     $ram = $_POST['ram'];
     $rom = $_POST['rom'];
@@ -370,6 +373,7 @@ class sanpham extends controller
       'hedieuhanh' => $hedieuhanh,
       'camera_sau' => $camera_sau,
       'camera_truoc' => $camera_truoc,
+      'bo_sanpham' => $bo_sanpham,
       'chip' => $chip,
       'ram' => $ram,
       'rom' => $rom,
@@ -435,6 +439,7 @@ class sanpham extends controller
     $thietke = $_POST['thietke'];
     $kichthuoc = $_POST['kichthuoc'];
     $thoidiem_ramat = $_POST['thoidiem_ramat'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $data = array(
       'ma_sp' => $ma_sp,
       'cpu' => $cpu,
@@ -446,6 +451,7 @@ class sanpham extends controller
       'cong_ketnoi' => $cong_ketnoi,
       'thietke' => $thietke,
       'kichthuoc' => $kichthuoc,
+      'bo_sanpham' => $bo_sanpham,
       'thoidiem_ramat' => $thoidiem_ramat
     );
     $result = $chitiet_sanphamM->sp_chitiet_insert($table_ctsp, $data);
@@ -480,11 +486,12 @@ class sanpham extends controller
     $rom = $_POST['rom'];
     $manhinh = $_POST['manhinh'];
     $card_manhinh = $_POST['card_manhinh'];
-    $cong_ketnoi = $_POST['cong_ketnoi'];
+    $cong_ketnoi = $_POST['cong_ketnoi']; 
     $hedieuhanh = $_POST['hedieuhanh'];
     $thietke = $_POST['thietke'];
     $kichthuoc = $_POST['kichthuoc'];
     $thoidiem_ramat = $_POST['thoidiem_ramat'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $data = array(
       'ma_sp' => $ma_sp,
       'cpu' => $cpu,
@@ -496,6 +503,7 @@ class sanpham extends controller
       'cong_ketnoi' => $cong_ketnoi,
       'thietke' => $thietke,
       'kichthuoc' => $kichthuoc,
+      'bo_sanpham' => $bo_sanpham,
       'thoidiem_ramat' => $thoidiem_ramat
     );
     $result = $chitiet_sanphamM->sp_chitiet_update($table_ctsp, $data, $dieukien);
@@ -551,12 +559,14 @@ class sanpham extends controller
     $hedieuhanh = $_POST['hedieuhanh'];
     $mat = $_POST['mat'];
     $tinhnang_suckhoe = $_POST['tinhnang_suckhoe'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $data = array(
       'ma_sp' => $ma_sp,
       'manhinh' => $manhinh,
       'thoiluong_pin' => $thoiluong_pin,
       'hedieuhanh' => $hedieuhanh,
       'mat' => $mat,
+      'bo_sanpham' => $bo_sanpham,
       'tinhnang_suckhoe' => $tinhnang_suckhoe
     );
     $result = $chitiet_sanphamM->sp_chitiet_insert($table_ctsp, $data);
@@ -591,12 +601,14 @@ class sanpham extends controller
     $hedieuhanh = $_POST['hedieuhanh'];
     $mat = $_POST['mat'];
     $tinhnang_suckhoe = $_POST['tinhnang_suckhoe'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $data = array(
       'ma_sp' => $ma_sp,
       'manhinh' => $manhinh,
       'thoiluong_pin' => $thoiluong_pin,
       'hedieuhanh' => $hedieuhanh,
       'mat' => $mat,
+      'bo_sanpham' => $bo_sanpham,
       'tinhnang_suckhoe' => $tinhnang_suckhoe
     );
     $result = $chitiet_sanphamM->sp_chitiet_update($table_ctsp, $data, $dieukien);
@@ -756,6 +768,7 @@ class sanpham extends controller
     $cong_ketnoi = $_POST['cong_ketnoi'];
     $hedieuhanh = $_POST['hedieuhanh'];
     $kichthuoc = $_POST['kichthuoc'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $data = array(
       'ma_sp' => $ma_sp,
       'congnghe_cpu' => $congnghe_cpu,
@@ -765,6 +778,7 @@ class sanpham extends controller
       'card_manhinh' => $card_manhinh,
       'cong_ketnoi' => $cong_ketnoi,
       'hedieuhanh' => $hedieuhanh,
+      'bo_sanpham' => $bo_sanpham,
       'kichthuoc' => $kichthuoc
     );
     $result = $chitiet_sanphamM->sp_chitiet_insert($table_ctsp, $data);
@@ -801,6 +815,7 @@ class sanpham extends controller
     $cong_ketnoi = $_POST['cong_ketnoi'];
     $hedieuhanh = $_POST['hedieuhanh'];
     $kichthuoc = $_POST['kichthuoc'];
+    $bo_sanpham = $_POST['bo_sanpham'];
     $data = array(
       'ma_sp' => $ma_sp,
       'congnghe_cpu' => $congnghe_cpu,
@@ -810,6 +825,7 @@ class sanpham extends controller
       'card_manhinh' => $card_manhinh,
       'cong_ketnoi' => $cong_ketnoi,
       'hedieuhanh' => $hedieuhanh,
+      'bo_sanpham' => $bo_sanpham,
       'kichthuoc' => $kichthuoc
     );
     $result = $chitiet_sanphamM->sp_chitiet_update($table_ctsp, $data, $dieukien);

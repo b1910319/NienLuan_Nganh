@@ -12,7 +12,7 @@
       $this->load->view_admin("leftmenu");
       $mauM = $this->load->model('mauM');
       $table = 'mau';
-      $data ['mau'] = $mauM->mau_list($table);
+      $data ['mau'] = $mauM->mau($table);
       $this->load->view_admin("mau/mau", $data); 
     }
     public function mau_insert(){

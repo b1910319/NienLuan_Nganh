@@ -8,7 +8,7 @@
       return $this->db->insert($table, $data);
     }
     public function mau_sanpham_list($table_sp, $table_m, $table_msp){
-      $sql = "SELECT * FROM $table_msp join $table_sp on $table_msp.ma_sp = $table_sp.ma_sp join $table_m on $table_msp.ma_m = $table_m.ma_m ";
+      $sql = "SELECT * FROM $table_msp join $table_sp on $table_msp.ma_sp = $table_sp.ma_sp join $table_m on $table_msp.ma_m = $table_m.ma_m order by $table_sp.ma_sp DESC ";
       return $this->db->select($sql);
     }
     public function mau_sanpham_ma($table, $dieukien){

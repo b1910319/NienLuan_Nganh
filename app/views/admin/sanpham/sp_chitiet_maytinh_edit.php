@@ -136,6 +136,12 @@
                   </td>
                 </tr>
                 <tr>
+                  <th scope="row" class="title_table">Bộ sản phẩm chuẩn: </th>
+                  <td class="was-validated">
+                    <input type='text' class='form-control input_table' required name="bo_sanpham" value="<?php echo $ctsp['bo_sanpham'] ?>">
+                  </td>
+                </tr>
+                <tr>
                   <td></td>
                   <td>
                     <button type="submit" class="btn btn-outline-success font-weight-bold" name="update">

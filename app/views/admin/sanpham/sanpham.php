@@ -10,7 +10,7 @@
           <tr>
             <th scope="row" class="title_table">Tên: </th>
             <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="ten_sp">
+              <input type='text' class='form-control input_table' autofocus required name="ten_sp">
             </td>
           </tr>
           <tr>
@@ -172,12 +172,12 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    Danh mục sản phẩm: <?php echo $sp['ten_dm'] ?> <br>
-                    Thương hiệu: <?php echo $sp['ten_th'] ?> <br>
-                    Loại sản phẩm: <?php echo $sp['ten_lsp'] ?> <br>
-                    Nhà cung cấp: <?php echo $sp['ten_ncc'] ?> <br>
-                    Nhân viên: <?php echo $sp['ten_nv'] ?> <br>
-                    Tình trạng sản phẩm: 
+                    <b> Danh mục sản phẩm:</b> <?php echo $sp['ten_dm'] ?> <br>
+                    <b>Thương hiệu:</b> <?php echo $sp['ten_th'] ?> <br>
+                    <b>Loại sản phẩm:</b> <?php echo $sp['ten_lsp'] ?> <br>
+                    <b>Nhà cung cấp:</b> <?php echo $sp['ten_ncc'] ?> <br>
+                    <b>Nhân viên:</b> <?php echo $sp['ten_nv'] ?> <br>
+                    <b>Tình trạng sản phẩm:</b> 
                     <?php
                       if($sp['tinhtrang_sp'] == 1){
                         echo 'Sản phẩm mới ra mắt';

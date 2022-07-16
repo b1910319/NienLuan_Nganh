@@ -49,7 +49,7 @@
                 <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                   style="height: 100px; overflow: auto;">
                   <p>
-                    Danh mục sản phẩm: 
+                    <b>Danh mục sản phẩm:</b>  
                     <?php 
                       foreach($data['danhmuc_sanpham'] as $key => $dm){
                         if ($sp['ma_dm'] == $dm['ma_dm']){
@@ -58,7 +58,7 @@
                       }
                       
                     ?> <br>
-                    Thương hiệu: 
+                    <b>Thương hiệu:</b> 
                     <?php 
                       foreach($data['thuonghieu'] as $key => $th){
                         if ($sp['ma_th'] == $th['ma_th']){
@@ -67,7 +67,7 @@
                       }
                       
                     ?> <br>
-                    Loại sản phẩm: 
+                    <b>Loại sản phẩm:</b> 
                     <?php 
                       foreach($data['loai_sanpham'] as $key => $lsp){
                         if ($sp['ma_lsp'] == $lsp['ma_lsp']){
@@ -76,7 +76,7 @@
                       }
                       
                     ?> <br>
-                    Nhà cung cấp: 
+                    <b>Nhà cung cấp:</b> 
                     <?php 
                       foreach($data['nhacungcap'] as $key => $ncc){
                         if ($sp['ma_ncc'] == $ncc['ma_ncc']){
@@ -85,7 +85,7 @@
                       }
                       
                     ?> <br>
-                    Nhân viên: 
+                    <b>Nhân viên:</b> 
                     <?php 
                       foreach($data['nhanvien'] as $key => $nv){
                         if ($sp['ma_nv'] == $nv['ma_nv']){
@@ -94,7 +94,7 @@
                       }
                       
                     ?> <br>
-                    Tình trạng sản phẩm: 
+                    <b>Tình trạng sản phẩm:</b> 
                     <?php
                       if($sp['tinhtrang_sp'] == 1){
                         echo 'Sản phẩm mới ra mắt';
