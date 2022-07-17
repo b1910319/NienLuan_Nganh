@@ -24,8 +24,8 @@ class index extends controller
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
-    $data['sanpham_limit1'] = $sanphamM->sanpham_limit1($table_sp);
-    $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp);
+    $data['sanpham_limit1'] = $sanphamM->sanpham_limit1($table_sp, $table_dm);
+    $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp,$table_dm);
     $data['sanpham_dt_limit'] = $sanphamM->sanpham_dt_limit($table_sp);
     $this->load->view_user("trangchu", $data);
     $this->load->view_user("footer");

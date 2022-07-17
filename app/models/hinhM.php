@@ -25,4 +25,8 @@
       $sql = "SELECT * FROM $table_h join $table_sp on $table_h.ma_sp = $table_sp.ma_sp where $dieukien";
       return $this->db->select($sql);
     }
+    public function hinh_limit1($table, $dieukien){
+      $sql = "SELECT * FROM $table where $dieukien LIMIT 1";
+      return $this->db->select($sql);
+    }
   }

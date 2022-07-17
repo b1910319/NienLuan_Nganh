@@ -14,7 +14,7 @@
                 ?>
                   <div class="item active">
                     <div class="col-xs-12 col-sm-6 col-md-2">
-                      <a href="#"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                       <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
@@ -26,7 +26,7 @@
                 ?>
                   <div class="item">
                     <div class="col-xs-12 col-sm-6 col-md-2">
-                      <a href="#"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                       <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
@@ -60,7 +60,7 @@
         foreach ($data['sanpham_dt_limit'] as $key => $sp){
           ?>
             <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-              <a href="">
+              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
@@ -69,49 +69,6 @@
           <?php
         }
       ?>
-      <!-- <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="app/views/user/img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="app/views/user/img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="app/views/user/img/sanpham/ss_a33.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="app/views/user/img/sanpham/oppo_reno7.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="app/views/user/img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="app/views/user/img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div> -->
-
     </div>
     <div style=" text-align: center;">
       <a href="">

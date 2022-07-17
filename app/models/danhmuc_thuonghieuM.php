@@ -25,4 +25,8 @@
       $sql = "SELECT * FROM $table_dmth join $table_dm on $table_dmth.ma_dm = $table_dm.ma_dm join $table_th on $table_dmth.ma_th = $table_th.ma_th where $dieukien";
       return $this->db->select($sql);
     }
+    public function thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien){
+      $sql = "SELECT * FROM $table_dmth join $table_dm on $table_dmth.ma_dm = $table_dm.ma_dm join $table_th on $table_dmth.ma_th = $table_th.ma_th WHERE $dieukien";
+      return $this->db->select($sql);
+    }
   }

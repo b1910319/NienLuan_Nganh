@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- link file css -->
-  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/style.css">
   <!--  -->
   <!-- link boostrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,7 +87,9 @@
     <div class="header">
       <div class="row">
         <div class="col-2">
-          <img src="<?php echo BASE_URL ?>public/img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
+          <a href="<?php echo BASE_URL ?>index/index">
+            <img src="<?php echo BASE_URL ?>public/img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
+          </a>
         </div>
         <div class="col-2">
           <a href="">
@@ -138,7 +140,7 @@
       <?php
         foreach ($data['danhmuc_sanpham_limit'] as $key => $dm){
           ?>
-            <div class="col-2 mb-3 nav_a"><a href="<?php echo $dm['ghichu_dm'] ?>/sanpham"><?php echo $dm['ten_dm'] ?></a></div>
+            <div class="col-2 mb-3 nav_a"><a href="<?php echo BASE_URL ?><?php echo $dm['ghichu_dm']?>/sanpham/<?php echo $dm['ma_dm'] ?>"><?php echo $dm['ten_dm'] ?></a></div>
           <?php
         }
       ?>
