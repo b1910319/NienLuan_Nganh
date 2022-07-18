@@ -27,7 +27,7 @@
     }
     //usre
     public function Umau_sanpham_ma ($table_msp, $table_m, $dieukien2){
-      $sql = "SELECT * FROM $table_msp join $table_m on $table_msp.ma_m = $table_m.ma_m where $dieukien2 limit 3";
+      $sql = "SELECT * FROM $table_msp join $table_m on $table_msp.ma_m = $table_m.ma_m where $dieukien2";
       return $this->db->select($sql);
     }
   }

@@ -116,7 +116,7 @@
           </a>
         </div>
         <div class="col-2">
-          <a href="">
+          <a href="<?php echo BASE_URL ?>giohang/giohang">
             <button class="btn btn-success btn_giohang mt-3" type="submit"><i
                 class="fas fa-cart-arrow-down"></i>&ensp;Giỏ
               hàng</button>

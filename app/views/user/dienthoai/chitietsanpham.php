@@ -169,51 +169,34 @@
           <?php
         }
       ?>
-      <div class="chonmau">
-        <form action="">
-          <div class="wrapper row">
-            <?php
-              $i=0;
-              foreach ($data['mau_sanpham_ma'] as $key => $msp){
-                $i++;
-                ?>
-                  <div class="col-3 mt-1">
-                    <input type="radio" name="select" id="option-<?php echo $i ?>" >
-                    <label for="option-<?php echo $i ?>" class="option option-<?php echo $i ?>">
-                      <div class="dot"></div>
-                      <span><?php echo $msp['ten_m'] ?></span>
-                    </label>
-                  </div>
-                <?php
-              }
-            ?>
-            <!-- <div class="col-3 mt-1">
-              <input type="radio" name="select" id="option-1" checked>
-              <label for="option-1" class="option option-1">
-                <div class="dot"></div>
-                <span>Đỏ</span>
-              </label>
+      <?php
+        foreach ($data['sanpham_ma'] as $key => $sp){
+          ?>
+            <div class="chonmau">
+              <form action="<?php echo BASE_URL ?>giohang/giohang_insert" method="POST">
+                <input type="hidden" value="1" name="soluong_dat">
+                <input type="hidden" value="<?php echo $sp['ma_sp'] ?>" name="ma_sp">
+                <div class="">
+                  <select class="form-select" aria-label="Default select example" style="height: 40px; font-size: 15px;" name="ma_m">
+                    <?php
+                      $i=0;
+                      foreach ($data['mau_sanpham_ma'] as $key => $msp){
+                        $i++;
+                        ?>
+                          <option value="<?php echo $msp['ma_m'] ?>"><?php echo $msp['ten_m'] ?></option>
+                        <?php
+                      }
+                    ?>
+                  </select>
+                </div>
+                <div class="d-grid gap-2 btn_themgiohang">
+                  <button class="btn btn-light" type="submit">Thêm vào giỏ hàng</button>
+                </div>
+              </form>
             </div>
-            <div class="col-3 mt-1">
-              <input type="radio" name="select" id="option-2">
-              <label for="option-2" class="option option-2">
-                <div class="dot"></div>
-                <span>Xanh lá</span>
-              </label>
-            </div>
-            <div class="col-3 mt-1">
-              <input type="radio" name="select" id="option-3">
-              <label for="option-3" class="option option-3">
-                <div class="dot"></div>
-                <span>Trắng</span>
-              </label>
-            </div> -->
-          </div>
-          <div class="d-grid gap-2 btn_themgiohang">
-            <button class="btn btn-light" type="button">Thêm vào giỏ hàng</button>
-          </div>
-        </form>
-      </div>
+          <?php
+        }
+      ?>
       <div class="h_congnghe_item pt-3 pb-3 ps-3">
         <a href="" style="text-decoration: none;" class="text-dark">
           <div class="row">
