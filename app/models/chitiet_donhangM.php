@@ -4,9 +4,9 @@
     {
       parent::__construct();
     }
-    // public function danhmuc_tintuc_insert($table, $data){
-    //   return $this->db->insert($table, $data);
-    // }
+    public function chitiet_donhang_insert($table, $data){
+      return $this->db->insert($table, $data);
+    }
     // public function danhmuc_tintuc_list($table){
     //   $sql = "SELECT * FROM $table ORDER BY ma_dmtt desc";
     //   return $this->db->select($sql);

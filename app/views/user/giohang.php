@@ -116,17 +116,30 @@
           </table>
         </div>
         <div class="mb-4">
-          <form action="">
+          <form action="<?php echo BASE_URL ?>donhang/dathang" method="POST" autocomplete="off">
+            <?php
+              $tong = 0;
+              foreach($_SESSION['giohang'] as $key => $gh){
+                foreach($data['sanpham'] as $key => $sp){
+                  if($gh['ma_sp'] == $sp['ma_sp']){
+                    $tong = $tong + ( $sp['gia_sp'] * $gh['soluong_dat'] );
+                  }
+                }
+              }
+              ?>
+                <input type="hidden" name="tonggia_dh" value="<?php echo $tong ?>">
+              <?php
+            ?>
             <p class="fw-bold">THÔNG TIN KHÁCH HÀNG</p>
             <div class="row">
               <div class="col-4">
-                <input type="text" class="form-control" placeholder="Họ tên" required minlength="5">
+                <input type="text" name="ten_k" class="form-control" placeholder="Họ tên" autofocus required minlength="5">
               </div>
               <div class="col-4">
-              <input type="text" class="form-control" placeholder="Số Điện Thoại" required pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" maxlength="10">
+              <input type="text" name="sdt_k" class="form-control" placeholder="Số Điện Thoại" required pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" maxlength="10">
               </div>
               <div class="col-4">
-                <select class="form-select" style="height:34px ; font-size: 16px;" aria-label="Default select example">
+                <select name="gioitinh_k" class="form-select" style="height:34px ; font-size: 16px;" aria-label="Default select example">
                   <option >Giới tính</option>
                   <option value="1">Nam</option>
                   <option value="2">Nữ</option>
@@ -135,7 +148,7 @@
             </div>
             <div class="row mt-3">
               <div class="col-12">
-                <input type="text" class="form-control" placeholder="Địa chỉ" required minlength="10">
+                <input name="diachi_k" type="text" class="form-control" placeholder="Địa chỉ" required minlength="10">
               </div>
             </div>
             <div class="d-flex justify-content-center mt-4">

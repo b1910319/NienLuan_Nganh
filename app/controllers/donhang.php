@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
   class donhang extends controller{
     public function __construct()
     {
@@ -6,67 +7,52 @@
       $thongbao = array();
       parent::__construct();
     }
-    // public function donhang(){
-    //   session::init();
-    //   //danh mục sản phẩm
-    //   $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
-    //   $table_dm = 'danhmuc_sanpham';
-    //   $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
-    //   $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    public function dathang(){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      //chi tiết đơn hàng
+      $table_ctdh = 'chitiet_donhang';
+      $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+      $ten_k = $_POST['ten_k'];
+      $sdt_k = $_POST['sdt_k'];
+      $gioitinh_k = $_POST['gioitinh_k'];
+      $diachi_k = $_POST['diachi_k'];
+      $ma_dh = rand(0,999999);
+      $tonggia_dh = $_POST['tonggia_dh'];
 
-    //   $this->load->view_user("header", $data);
-    //   // $this->load->view_user("slider");
-    //   $this->load->view_user("giohang");
-    //   $this->load->view_user("footer"); 
-    // }
-    // public function danhmuc_tintuc_insert(){
-    //   $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
-    //   $table = 'danhmuc_tintuc';
-    //   $ten_dmtt = $_POST['ten_dmtt'];
-    //   $data = array(
-    //     'ten_dmtt' => $ten_dmtt
-    //   );
-    //   $result = $danhmuc_tintucM->danhmuc_tintuc_insert($table, $data);
-    //   header("Location:".BASE_URL."danhmuc_tintuc/danhmuc_tintuc");
-    // }
-    // public function danhmuc_tintuc_edit($ma_dmtt){
-    //   session::init();
-    //   $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
-    //   $table = 'danhmuc_tintuc';
-    //   $dieukien = "danhmuc_tintuc.ma_dmtt='$ma_dmtt'" ;
-    //   $data['danhmuc_tintuc_ma'] = $danhmuc_tintucM->danhmuc_tintuc_ma($table, $dieukien);
-    //   $this->load->view_admin("header");
-    //   $this->load->view_admin("leftmenu");
-    //   $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc_edit", $data);
-    // }
-    // public function danhmuc_tintuc_update($ma_dmtt){
-    //   $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
-    //   $table = 'danhmuc_tintuc';
-    //   $dieukien = "danhmuc_tintuc.ma_dmtt='$ma_dmtt'" ;
-    //   $ten_dmtt = $_POST['ten_dmtt'];
-    //   $data = array(
-    //     'ten_dmtt' => $ten_dmtt
-    //   );
-    //   $result = $danhmuc_tintucM->danhmuc_tintuc_update($table, $data, $dieukien);
-    //   header("Location:".BASE_URL."danhmuc_tintuc/danhmuc_tintuc");
-    // }
-    // public function danhmuc_tintuc_delete($ma_dmtt){
-    //   $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
-    //   $table = 'danhmuc_tintuc';
-    //   $dieukien = "danhmuc_tintuc.ma_dmtt='$ma_dmtt'" ;
-    //   $result = $danhmuc_tintucM->danhmuc_tintuc_delete($table, $dieukien);
-    //   header("Location:".BASE_URL."danhmuc_tintuc/danhmuc_tintuc");
-    // }
-    // public function danhmuc_tintuc_timkiem(){
-    //   session::init();
-    //   $this->load->view_admin("header");
-    //   $this->load->view_admin("leftmenu");
-    //   $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
-    //   $table = 'danhmuc_tintuc';
-    //   $tukhoa = $_POST['tukhoa'];
-    //   $dieukien = "danhmuc_tintuc.ten_dmtt LIKE '%$tukhoa%'" ;
-    //   $data ['danhmuc_tintuc_timkiem'] = $danhmuc_tintucM->danhmuc_tintuc_timkiem($table, $dieukien);
-    //   $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc_timkiem", $data);
-    // }
+      date_default_timezone_set('Asia/Ho_Chi_Minh');
+      $ngaylap_dh = date("d/m/Y");
+      $giolap_dh = date("h:i:sa");
+      $thoigian_bh = Carbon::now('Asia/Ho_Chi_Minh');
+      $thoigian_bh = $thoigian_bh->addYears(1);
+      $data_dh = array(
+        'ma_dh' => $ma_dh,
+        'ten_k' => $ten_k,
+        'sdt_k' => $sdt_k,
+        'gioitinh_k' => $gioitinh_k,
+        'diachi_k' => $diachi_k,
+        'tonggia_dh' => $tonggia_dh,
+        'ngaylap_dh' => $ngaylap_dh,
+        'giolap_dh' => $giolap_dh
+      );
+      $result_dh = $donhangM->donhang_insert($table_dh, $data_dh);
+      if(session::get("giohang") == true){
+        foreach (session::get("giohang") as $key => $gh){
+          $data_ctdh = array(
+            'ma_dh' => $ma_dh,
+            'ma_sp' => $gh['ma_sp'],
+            'soluong_dat' => $gh['soluong_dat'],
+            'thoigian_bh' => $thoigian_bh,
+            'ma_m' => $gh['ma_m']
+          );
+          $result_ctdh = $chitiet_donhangM->chitiet_donhang_insert($table_ctdh, $data_ctdh);
+        }
+        unset($_SESSION['giohang']);
+      }
+      header("Location:".BASE_URL."giohang/giohang");
+    }
+    
   }
 ?>

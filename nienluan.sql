@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 17, 2022 lúc 08:49 AM
+-- Thời gian đã tạo: Th7 18, 2022 lúc 09:59 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `nienluan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chitiet_donhang`
+--
+
+CREATE TABLE `chitiet_donhang` (
+  `ma_sp` int(10) NOT NULL,
+  `ma_dh` int(10) NOT NULL,
+  `soluong_dat` int(10) NOT NULL,
+  `thoigian_bh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ma_m` int(10) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitiet_donhang`
+--
+
+INSERT INTO `chitiet_donhang` (`ma_sp`, `ma_dh`, `soluong_dat`, `thoigian_bh`, `ma_m`) VALUES
+(20, 574996, 1, '2023-07-18 14:47:00', 7),
+(27, 574996, 2, '2023-07-18 14:47:00', 16);
 
 -- --------------------------------------------------------
 
@@ -173,6 +195,31 @@ INSERT INTO `danhmuc_tintuc` (`ma_dmtt`, `ten_dmtt`) VALUES
 (2, 'Tư vấn'),
 (3, 'Stories'),
 (4, 'Laptop');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `donhang`
+--
+
+CREATE TABLE `donhang` (
+  `ma_dh` int(11) NOT NULL,
+  `ten_k` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sdt_k` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gioitinh_k` int(2) NOT NULL,
+  `diachi_k` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tonggia_dh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngaylap_dh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `giolap_dh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tinhtrang_dh` int(2) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `donhang`
+--
+
+INSERT INTO `donhang` (`ma_dh`, `ten_k`, `sdt_k`, `gioitinh_k`, `diachi_k`, `tonggia_dh`, `ngaylap_dh`, `giolap_dh`, `tinhtrang_dh`) VALUES
+(574996, 'Lê Diểm Trinh', '0824955654', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '67970000', '18/07/2022', '02:47:00pm', 0);
 
 -- --------------------------------------------------------
 
@@ -702,6 +749,12 @@ INSERT INTO `thuonghieu` (`ma_th`, `ten_th`, `logo_th`, `hinh_th`) VALUES
 --
 
 --
+-- Chỉ mục cho bảng `chitiet_donhang`
+--
+ALTER TABLE `chitiet_donhang`
+  ADD PRIMARY KEY (`ma_sp`,`ma_dh`);
+
+--
 -- Chỉ mục cho bảng `chitiet_sanpham`
 --
 ALTER TABLE `chitiet_sanpham`
@@ -718,6 +771,12 @@ ALTER TABLE `danhmuc_sanpham`
 --
 ALTER TABLE `danhmuc_tintuc`
   ADD PRIMARY KEY (`ma_dmtt`);
+
+--
+-- Chỉ mục cho bảng `donhang`
+--
+ALTER TABLE `donhang`
+  ADD PRIMARY KEY (`ma_dh`);
 
 --
 -- Chỉ mục cho bảng `hinh`

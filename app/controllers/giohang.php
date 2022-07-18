@@ -78,16 +78,5 @@
       }
       
     }
-    // public function danhmuc_tintuc_timkiem(){
-    //   session::init();
-    //   $this->load->view_admin("header");
-    //   $this->load->view_admin("leftmenu");
-    //   $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
-    //   $table = 'danhmuc_tintuc';
-    //   $tukhoa = $_POST['tukhoa'];
-    //   $dieukien = "danhmuc_tintuc.ten_dmtt LIKE '%$tukhoa%'" ;
-    //   $data ['danhmuc_tintuc_timkiem'] = $danhmuc_tintucM->danhmuc_tintuc_timkiem($table, $dieukien);
-    //   $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc_timkiem", $data);
-    // }
   }
 ?>
