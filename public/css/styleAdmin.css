@@ -47,3 +47,33 @@
   font-weight: bold;
   color: #9EB23B;
 }
+.vanchuyen{
+  color: white;
+  background-color: #003865;
+}
+.vanchuyen:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: #003865;
+  background-color: white;
+}
+.danhan{
+  color: white;
+  background-color: #F7EC09;
+}
+.danhan:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: #F7EC09;
+  background-color: white;
+}
+.moi{
+  color: white;
+  background-color: red;
+}
+.moi:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: red;
+  background-color: white;
+}

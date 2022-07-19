@@ -7,8 +7,45 @@ use Carbon\Carbon;
       $thongbao = array();
       parent::__construct();
     }
+    //admin
+    public function donhang(){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+
+      $this->load->view_admin("header");
+      $this->load->view_admin("leftmenu");
+      $data['donhang_all'] = $donhangM->donhang_list($table_dh);
+      $this->load->view_admin("donhang/donhang_all", $data);
+    }
+    public function chitiet_donhang($ma_dh){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      //chi tiết đơn hàng
+      $table_ctdh = 'chitiet_donhang';
+      $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+      //sản phẩm
+      $sanphamM = $this->load->model('sanphamM');
+      $table_sp = 'sanpham';
+      //màu
+      $mauM = $this->load->model('mauM');
+      $table_m = 'mau';
+      $dieukien = "chitiet_donhang.ma_dh = '$ma_dh' ";
+      $this->load->view_admin("header");
+      $this->load->view_admin("leftmenu");
+      $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien);
+      $this->load->view_admin("donhang/chitiet_donhang", $data);
+    }
+
+    //user
     public function dathang(){
       session::init();
+      //sản phẩm
+      $sanphamM = $this->load->model('sanphamM');
+      $table_sp = 'sanpham';
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
@@ -48,6 +85,18 @@ use Carbon\Carbon;
             'ma_m' => $gh['ma_m']
           );
           $result_ctdh = $chitiet_donhangM->chitiet_donhang_insert($table_ctdh, $data_ctdh);
+          //update số lượng trong bảng sản phẩm
+          $ma_sp = $gh['ma_sp'];
+          $dieukien_update = "sanpham.ma_sp = '$ma_sp'";
+          $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien_update);
+          foreach ($data['sanpham_ma'] as $key => $sp){
+            $soluong_sp = $sp['soluong_sp'] - $gh['soluong_dat'];
+            $data_update = array(
+              'soluong_sp' => $soluong_sp
+            );
+            $update_soluong_sp = $sanphamM-> sanpham_update($table_sp, $data_update, $dieukien_update);
+          }
+          
         }
         unset($_SESSION['giohang']);
       }

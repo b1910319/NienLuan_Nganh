@@ -232,12 +232,19 @@
           </ul>
         </li>
         <li>
-          <a href="typography.html">
-            <i class="ti-spray"></i>
-            <span> Typography </span>
+          <a href="javascript: void(0);">
+            <i class="fas fa-cart-arrow-down"></i>
+            <span> Đơn hàng </span>
+            <span class="menu-arrow"></span>
           </a>
+          <ul class="nav-second-level" aria-expanded="false">
+            <li><a href="pages-login.html">Thêm đơn hàng</a></li>
+            <li><a href="<?php echo BASE_URL ?>/donhang/donhang">Tất cả đơn hàng</a></li>
+            <li><a href="pages-forget-password.html">Đơn hàng mới</a></li>
+            <li><a href="pages-lock-screen.html">Đơn hàng đang vận chuyển</a></li>
+            <li><a href="pages-blank.html">Đơn hàng đã giao</a></li>
+          </ul>
         </li>
-
         <li>
           <a href="javascript: void(0);">
             <i class="ti-pencil-alt"></i>

@@ -7,10 +7,10 @@
     public function donhang_insert($table, $data){
       return $this->db->insert($table, $data);
     }
-    // public function danhmuc_tintuc_list($table){
-    //   $sql = "SELECT * FROM $table ORDER BY ma_dmtt desc";
-    //   return $this->db->select($sql);
-    // }
+    public function donhang_list($table){
+      $sql = "SELECT * FROM $table ORDER BY ngaylap_dh desc, giolap_dh desc";
+      return $this->db->select($sql);
+    }
     public function donhang_ma($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);
