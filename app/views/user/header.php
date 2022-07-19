@@ -98,16 +98,18 @@
             </button>
           </a>
         </div>
+        <!-- tìm kiếm -->
         <div class="col-3">
           <nav class="navbar">
             <div style="width: 100%;">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="d-flex" method="POST" action="<?php echo BASE_URL ?>index/timkiem_sp">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tukhoa">
                 <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
               </form>
             </div>
           </nav>
         </div>
+        <!--  -->
         <div class="col-2">
           <a href="">
             <button class="btn btn-success btn_tradonhang mt-3" type="submit"><i class="fas fa-history"></i>&ensp;Lịch

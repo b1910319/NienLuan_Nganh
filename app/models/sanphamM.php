@@ -50,4 +50,8 @@
       $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm join $table_ctsp on $table_ctsp.ma_sp = $table_sp.ma_sp join $table_msp on $table_msp.ma_sp = $table_sp.ma_sp join $table_th on $table_sp.ma_th = $table_th.ma_th join $table_lsp on $table_sp.ma_lsp = $table_lsp.ma_lsp join $table_hsp on $table_sp.ma_sp = $table_hsp.ma_sp where $dieukien LIMIT 1";
       return $this->db->select($sql);
     }
+    public function Usanpham_timkiem($table_sp, $table_dm, $dieukien){
+      $sql ="SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm WHERE $dieukien ";
+      return $this->db->select($sql);
+    }
   }
