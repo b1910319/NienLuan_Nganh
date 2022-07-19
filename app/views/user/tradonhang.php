@@ -1,14 +1,14 @@
 <div class="container tra_donhang">
   <div class="row">
     <div class="col-6">
-      <img src="img/sanpham/1.jpg" class="center-block w-100" alt="">
+      <img src="<?php echo BASE_URL ?>public/img/sanpham/1.jpg" class="center-block w-100" alt="">
     </div>
     <div class="col-6">
-      <form action="">
+      <form action="<?php echo BASE_URL ?>index/lichsu_donhang" method="POST">
         <h3 class="text-center fw-bold">Tra cứu thông tin đơn hàng</h3>
-        <input type="text" style="border-radius:15px ;" class="form-control mt-4" placeholder="Nhập số điện thoại mua hàng">
+        <input type="text" style="border-radius:15px ;" class="form-control mt-4" placeholder="Nhập số điện thoại mua hàng" name="sdt_k">
         <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-success mt-4">Tiếp tục</button>
+          <button type="submit" class="btn btn-success mt-4">Tra cứu</button>
         </div>
       </form>
     </div>

@@ -102,6 +102,5 @@ use Carbon\Carbon;
       }
       header("Location:".BASE_URL."giohang/giohang");
     }
-    
   }
 ?>

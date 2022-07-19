@@ -630,7 +630,8 @@ input[type="radio"] {
 /*-------------------------------------------------------------  */
 /*------------------------------------------------------------ trang lịch sử đơn hàng */
 .btn_chitiet{
-  background-color: #FF5E14 !important;
+  background-color: #038018 !important;
+  border: 2px solid #038018 !important;
 }
 /*------------------------------------------------------------  */
 
@@ -652,14 +653,35 @@ input[type="radio"] {
   color: #ee3500;
   background-color: white;
 }
-.sua{
+
+.vanchuyen{
   color: white;
-  background-color: #038018;
+  background-color: #003865;
 }
-.sua:hover{
+.vanchuyen:hover{
   font-weight: bold; 
   border: 1px solid white;
-  color: #038018;
+  color: #003865;
+  background-color: white;
+}
+.danhan{
+  color: white;
+  background-color: #F7EC09;
+}
+.danhan:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: #F7EC09;
+  background-color: white;
+}
+.moi{
+  color: white;
+  background-color: red;
+}
+.moi:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: red;
   background-color: white;
 }
 /*--------------------------------------------------------------------  */

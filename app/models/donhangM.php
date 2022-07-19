@@ -15,6 +15,10 @@
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);
     }
+    public function donhang_sdt($table_dh, $dieukien){
+      $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc, giolap_dh desc ";
+      return $this->db->select($sql);
+    }
     // public function danhmuc_tintuc_update($table, $data, $dieukien){
     //   return $this->db->update($table, $data,$dieukien);
     // }

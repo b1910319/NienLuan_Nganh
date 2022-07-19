@@ -48,4 +48,30 @@ class index extends controller
     $this->load->view_user("timkiem",$data);
     $this->load->view_user("footer");
   }
+  public function tra_donhang(){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+    $this->load->view_user("tradonhang");
+    $this->load->view_user("footer");
+  }
+  public function lichsu_donhang(){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+    $sdt_k = $_POST['sdt_k'];
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = "donhang.sdt_k = '$sdt_k' ";
+    $data['donhang_sdt'] = $donhangM->donhang_sdt($table_dh, $dieukien);
+    $this->load->view_user("lichsudonhang", $data);
+    $this->load->view_user("footer");
+  }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 19, 2022 lúc 06:22 AM
+-- Thời gian đã tạo: Th7 19, 2022 lúc 08:05 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -226,7 +226,7 @@ CREATE TABLE `donhang` (
 
 INSERT INTO `donhang` (`ma_dh`, `ten_k`, `sdt_k`, `gioitinh_k`, `diachi_k`, `tonggia_dh`, `ngaylap_dh`, `giolap_dh`, `tinhtrang_dh`) VALUES
 (56153, 'Lê Diểm Trinh', '0824955654', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '25580000', '19/07/2022', '10:25:36am', 0),
-(90854, 'Lê Thị Diểm Hằng', '0824955654', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '48770000', '19/07/2022', '10:08:27am', 0),
+(90854, 'Lê Thị Diểm Hằng', '0983531918', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '48770000', '19/07/2022', '10:08:27am', 0),
 (181085, 'Lê Diểm Trinh', '0824955654', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '48280000', '19/07/2022', '11:05:15am', 0),
 (507985, 'Lê Diểm Trinh', '0824955654', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '27590000', '19/07/2022', '10:09:47am', 0),
 (574996, 'Lê Diểm Trinh', '0824955654', 2, 'Phú Lộc, Tam Bình, Vĩnh Long', '67970000', '18/07/2022', '02:47:00pm', 0);

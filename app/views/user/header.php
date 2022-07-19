@@ -5,9 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- link file css -->
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/style.css">
-  <!--  -->
   <!-- link boostrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -21,6 +18,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
     id="bootstrap-css">
+  <!-- link file css -->
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/style.css">
+  <!--  -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
@@ -111,7 +111,7 @@
         </div>
         <!--  -->
         <div class="col-2">
-          <a href="">
+          <a href="<?php echo BASE_URL ?>index/tra_donhang">
             <button class="btn btn-success btn_tradonhang mt-3" type="submit"><i class="fas fa-history"></i>&ensp;Lịch
               sử đơn
               hàng</button>
