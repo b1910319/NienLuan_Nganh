@@ -34,15 +34,15 @@
             </td>
           </tr>
           <tr>
-            <th scope="row" class="title_table">Camera trước: </th>
-            <td class="was-validated">
-              <input type='text' class='form-control input_table' required name="camera_truoc">
-            </td>
-          </tr>
-          <tr>
             <th scope="row" class="title_table">Camera sau: </th>
             <td class="was-validated">
               <input type='text' class='form-control input_table' required name="camera_sau">
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="title_table">Camera trước: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' required name="camera_truoc">
             </td>
           </tr>
           <tr>

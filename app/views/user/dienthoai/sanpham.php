@@ -156,7 +156,7 @@
       foreach ($data['thuonghieu_ma_dm'] as $key => $dmth){
         ?>
           <div class="col-2 p-3 p-3 btn_hang">
-            <a href="">
+            <a href="<?php echo BASE_URL ?>dienthoai/timkiem_thuonghieu/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
               <img src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $dmth['logo_th'] ?>" class="d-block w-100">
             </a>
           </div>
