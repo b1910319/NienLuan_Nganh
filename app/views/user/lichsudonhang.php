@@ -46,7 +46,7 @@
                   <?php
                     if($dh['tinhtrang_dh'] == 0){
                       ?>
-                        <a onclick="return confirm('Bạn có muốn xóa nhân viên  không?')" href="">
+                        <a onclick="return confirm('Bạn có muốn xóa nhân viên  không?')" href="<?php echo BASE_URL ?>index/huy/<?php echo $dh['ma_dh'] ?>">
                           <button type="button" class="btn xoa">
                             <i class="fa-solid fa-ban"></i>
                           </button>
@@ -54,9 +54,12 @@
                       <?php
                     } else if($dh['tinhtrang_dh'] == 1){
                       ?>
-                        <a href="">
-                          <button type="button" class="btn vanchuyen">
-                            <i class="fa-solid fa-truck-fast"></i>
+                        <button type="button" class="btn vanchuyen">
+                          <i class="fa-solid fa-truck-fast"></i>
+                        </button>
+                        <a href="<?php echo BASE_URL ?>index/danhan/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn danhan">
+                            <i class="fa-solid fa-check-to-slot"></i>
                           </button>
                         </a>
                       <?php
@@ -76,6 +79,7 @@
               </tr>
             <?php
           }
+          echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.' đơn hàng'.'</p>';
         ?>
         <!-- <tr style="color: red ; font-weight: bold ;">
           <th scope="row">1</th>

@@ -1,7 +1,7 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Tất cả đơn hàng
+    Đơn đang vận chuyển
     </div>
     <table class="table table-hover">
       <thead>
@@ -16,7 +16,7 @@
       <tbody>
         <?php
           $i = 0;
-          foreach ($data['donhang_all'] as $key => $dh){
+          foreach ($data['donhang_dangvanchuyen'] as $key => $dh){
             $i ++;
             ?>
               <tr>

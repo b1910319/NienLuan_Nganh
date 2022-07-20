@@ -15,7 +15,16 @@ use Carbon\Carbon;
       $donhangM = $this->load->model('donhangM');
 
       $this->load->view_admin("header");
-      $this->load->view_admin("leftmenu");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
       $data['donhang_all'] = $donhangM->donhang_list($table_dh);
       $this->load->view_admin("donhang/donhang_all", $data);
     }
@@ -35,11 +44,109 @@ use Carbon\Carbon;
       $table_m = 'mau';
       $dieukien = "chitiet_donhang.ma_dh = '$ma_dh' ";
       $this->load->view_admin("header");
-      $this->load->view_admin("leftmenu");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+
+      $this->load->view_admin("header");
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
       $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien);
       $this->load->view_admin("donhang/chitiet_donhang", $data);
     }
+    public function xuly($ma_dh){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = "donhang.ma_dh = '$ma_dh'";
+      $data = array(
+        'tinhtrang_dh' => '1'
+      );
+      $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
+      header("Location:".BASE_URL."donhang/donhang");
+    }
+    public function xuly_m($ma_dh){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = "donhang.ma_dh = '$ma_dh'";
+      $data = array(
+        'tinhtrang_dh' => '1'
+      );
+      $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
+      header("Location:".BASE_URL."donhang/donhang_moi");
+    }
+    public function huy ($ma_dh){
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = "donhang.ma_dh = '$ma_dh'";
+      $result = $donhangM->donhang_delete($table_dh, $dieukien);
+      header("Location:".BASE_URL."donhang/donhang");
+    }
+    public function huy_m ($ma_dh){
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = "donhang.ma_dh = '$ma_dh'";
+      $result = $donhangM->donhang_delete($table_dh, $dieukien);
+      header("Location:".BASE_URL."donhang/donhang_moi");
+    }
+    public function donhang_moi(){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
 
+      $this->load->view_admin("header");
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      $this->load->view_admin("donhang/donhang_moi", $data);
+    }
+    public function donhang_dangvanchuyen(){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+
+      $this->load->view_admin("header");
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      $this->load->view_admin("donhang/donhang_dangvanchuyen", $data);
+    }
+    public function donhang_dagiao(){
+      session::init();
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+
+      $this->load->view_admin("header");
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      $this->load->view_admin("donhang/donhang_dangvanchuyen", $data);
+    }
     //user
     public function dathang(){
       session::init();

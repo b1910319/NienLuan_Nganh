@@ -74,4 +74,24 @@ class index extends controller
     $this->load->view_user("lichsudonhang", $data);
     $this->load->view_user("footer");
   }
+  public function huy($ma_dh){
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = "donhang.ma_dh = '$ma_dh'";
+    $result = $donhangM->donhang_delete($table_dh, $dieukien);
+    header("Location:".BASE_URL."index/tra_donhang");
+  }
+  public function danhan($ma_dh){
+    session::init();
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = "donhang.ma_dh = '$ma_dh'";
+    $data = array(
+      'tinhtrang_dh' => '2'
+    );
+    $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
+    header("Location:".BASE_URL."index/tra_donhang");
+  }
 }

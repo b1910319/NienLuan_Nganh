@@ -48,6 +48,11 @@
               </tr>
             <?php
           }
+          ?>
+            <tr>
+              <td colspan="5" class="text-center" style="font-weight: bold; color:#EF5B0C ;" > Tổng: <?php echo number_format($ctdh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>'  ?></td>
+            </tr>
+          <?php
         ?>
       </tbody>
     </table>

@@ -9,7 +9,16 @@
     public function danhmuc_tintuc(){
       session::init();
       $this->load->view_admin("header");
-      $this->load->view_admin("leftmenu");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $data ['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table);
@@ -32,7 +41,16 @@
       $dieukien = "danhmuc_tintuc.ma_dmtt='$ma_dmtt'" ;
       $data['danhmuc_tintuc_ma'] = $danhmuc_tintucM->danhmuc_tintuc_ma($table, $dieukien);
       $this->load->view_admin("header");
-      $this->load->view_admin("leftmenu");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
       $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc_edit", $data);
     }
     public function danhmuc_tintuc_update($ma_dmtt){
@@ -56,7 +74,16 @@
     public function danhmuc_tintuc_timkiem(){
       session::init();
       $this->load->view_admin("header");
-      $this->load->view_admin("leftmenu");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $tukhoa = $_POST['tukhoa'];

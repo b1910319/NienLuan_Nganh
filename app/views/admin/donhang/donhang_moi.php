@@ -1,7 +1,7 @@
 <div id="wrapper">
   <div class="content-page">
     <div class="alert alert-success title_page" role="alert">
-      Tất cả đơn hàng
+      Đơn hàng mới
     </div>
     <table class="table table-hover">
       <thead>
@@ -16,7 +16,7 @@
       <tbody>
         <?php
           $i = 0;
-          foreach ($data['donhang_all'] as $key => $dh){
+          foreach ($data['donhang_moi'] as $key => $dh){
             $i ++;
             ?>
               <tr>
@@ -56,12 +56,12 @@
                   <?php
                     if($dh['tinhtrang_dh'] == 0){
                       ?>
-                        <a href="<?php echo BASE_URL ?>donhang/xuly/<?php echo $dh['ma_dh'] ?>">
+                        <a href="<?php echo BASE_URL ?>donhang/xuly_m/<?php echo $dh['ma_dh'] ?>">
                           <button type="button" class="btn moi">
                             <i class="fa-solid fa-circle-plus"></i>
                           </button>
                         </a>
-                        <a onclick="return confirm('Bạn có muốn huỷ đơn hàng không?')" href="<?php echo BASE_URL ?>donhang/huy/<?php echo $dh['ma_dh'] ?>">
+                        <a onclick="return confirm('Bạn có muốn huỷ đơn hàng không?')" href="<?php echo BASE_URL ?>donhang/huy_m/<?php echo $dh['ma_dh'] ?>">
                           <button type="button" class="btn xoa">
                             <i class="fa-solid fa-ban"></i>
                           </button>

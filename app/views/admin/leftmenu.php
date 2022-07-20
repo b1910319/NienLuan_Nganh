@@ -232,17 +232,59 @@
           </ul>
         </li>
         <li>
-          <a href="javascript: void(0);">
+          <?php
+            $i = 0;
+            foreach ($data['donhang_moi'] as $key => $dh){
+              $i ++;
+            }
+            ?>
+              <a href="javascript: void(0);">
+                <i class="fas fa-cart-arrow-down"></i>
+                <span class="badge badge-danger float-right"><?php echo $i ?></span>
+                <span> Đơn hàng </span>
+              </a>
+            <?php
+          ?>
+          <!-- <a href="javascript: void(0);">
             <i class="fas fa-cart-arrow-down"></i>
             <span> Đơn hàng </span>
             <span class="menu-arrow"></span>
-          </a>
+          </a> -->
           <ul class="nav-second-level" aria-expanded="false">
-            <li><a href="pages-login.html">Thêm đơn hàng</a></li>
             <li><a href="<?php echo BASE_URL ?>/donhang/donhang">Tất cả đơn hàng</a></li>
-            <li><a href="pages-forget-password.html">Đơn hàng mới</a></li>
-            <li><a href="pages-lock-screen.html">Đơn hàng đang vận chuyển</a></li>
-            <li><a href="pages-blank.html">Đơn hàng đã giao</a></li>
+            <?php
+              $i = 0;
+              foreach ($data['donhang_moi'] as $key => $dh){
+                $i ++;
+              }
+              ?>
+                <li>
+                  <a href="<?php echo BASE_URL ?>/donhang/donhang_moi">Đơn hàng mới <span class="badge badge-danger float-right"><?php echo $i ?></span></a>
+                </li>
+              <?php
+            ?>
+            <?php
+              $i = 0;
+              foreach ($data['donhang_dangvanchuyen'] as $key => $dh){
+                $i ++;
+              }
+              ?>
+                <li>
+                  <a href="<?php echo BASE_URL ?>/donhang/donhang_dangvanchuyen">Đơn hàng đang vận chuyển <span class="badge badge-info float-right"><?php echo $i ?></span></a>
+                </li>
+              <?php
+            ?>
+            <?php
+              $i = 0;
+              foreach ($data['donhang_dagiao'] as $key => $dh){
+                $i ++;
+              }
+              ?>
+                <li>
+                  <a href="<?php echo BASE_URL ?>/donhang/donhang_dagiao">Đơn hàng đã giao <span class="badge badge-warning float-right"><?php echo $i ?></span></a>
+                </li>
+              <?php
+            ?>
           </ul>
         </li>
         <li>

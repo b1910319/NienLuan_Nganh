@@ -21,10 +21,10 @@
                 <div class="row">
                   <div class="col-xl-3 col-sm-6 widget-inline-box">
                     <div class="text-center p-3">
-                      <h2 class="mt-2"><i
-                          class="text-primary mdi mdi-access-point-network mr-2"></i> <b>8954</b>
+                      <h2 class="mt-2">
+                        <i class="text-primary mdi mdi-access-point-network mr-2"></i> <b>8954</b>
                       </h2>
-                      <p class="text-muted mb-0">Lifetime total sales</p>
+                      <p class="text-muted mb-0">Tổng số đơn hàng</p>
                     </div>
                   </div>
 

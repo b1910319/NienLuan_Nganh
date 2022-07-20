@@ -11,10 +11,19 @@ class thuonghieu extends controller
   {
     session::init();
     $this->load->view_admin("header");
-    $this->load->view_admin("leftmenu");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu", $data);
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
-    $data ['thuonghieu'] = $thuonghieuM->thuonghieu_list($table);
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table);
     $this->load->view_admin("thuonghieu/thuonghieu", $data);
   }
   public function thuonghieu_insert()
@@ -47,20 +56,31 @@ class thuonghieu extends controller
     $result = $thuonghieuM->thuonghieu_insert($table, $data);
     header("Location:" . BASE_URL . "thuonghieu/thuonghieu");
   }
-  public function thuonghieu_edit($ma_th){
+  public function thuonghieu_edit($ma_th)
+  {
     session::init();
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
-    $dieukien = "thuonghieu.ma_th='$ma_th'" ;
-    $data['thuonghieu_ma'] = $thuonghieuM->thuonghieu_ma($table, $dieukien);
+    $dieukien = "thuonghieu.ma_th='$ma_th'";
     $this->load->view_admin("header");
-    $this->load->view_admin("leftmenu");
+    $data['thuonghieu_ma'] = $thuonghieuM->thuonghieu_ma($table, $dieukien);
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu", $data);
     $this->load->view_admin("thuonghieu/thuonghieu_edit", $data);
   }
-  public function thuonghieu_update($ma_th){
+  public function thuonghieu_update($ma_th)
+  {
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
-    $dieukien = "thuonghieu.ma_th='$ma_th'" ;
+    $dieukien = "thuonghieu.ma_th='$ma_th'";
     $ten_th = $_POST['ten_th'];
 
     $logo_th = $_FILES['logo_th']['name'];
@@ -78,12 +98,12 @@ class thuonghieu extends controller
     $unique_image = substr(md5(time()), 0, 10) . ' . ' . $file_ext;
     $uploaded_image = "public/uploads/thuonghieu/" . $unique_image;
     move_uploaded_file($file_temp, $uploaded_image);
-    if($hinh_th && $logo_th){
+    if ($hinh_th && $logo_th) {
       $data['thuonghieu_ma'] = $thuonghieuM->thuonghieu_ma($table, $dieukien);
-      foreach ($data['thuonghieu_ma'] as $key => $th){
-        if($th['hinh_th'] && $th['logo_th']){
-          unlink("public/uploads/thuonghieu/".$th['hinh_th']);
-          unlink("public/uploads/thuonghieu/".$th['logo_th']);
+      foreach ($data['thuonghieu_ma'] as $key => $th) {
+        if ($th['hinh_th'] && $th['logo_th']) {
+          unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
+          unlink("public/uploads/thuonghieu/" . $th['logo_th']);
         }
       }
       $data = array(
@@ -93,11 +113,11 @@ class thuonghieu extends controller
       );
       move_uploaded_file($file_temp_logo, $uploaded_image_logo);
       move_uploaded_file($file_temp, $uploaded_image);
-    }else if($hinh_th){
+    } else if ($hinh_th) {
       $data['thuonghieu_ma'] = $thuonghieuM->thuonghieu_ma($table, $dieukien);
-      foreach ($data['thuonghieu_ma'] as $key => $th){
-        if($th['hinh_th']){
-          unlink("public/uploads/thuonghieu/".$th['hinh_th']);
+      foreach ($data['thuonghieu_ma'] as $key => $th) {
+        if ($th['hinh_th']) {
+          unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
         }
       }
       $data = array(
@@ -105,11 +125,11 @@ class thuonghieu extends controller
         'hinh_th' => $unique_image
       );
       move_uploaded_file($file_temp, $uploaded_image);
-    }else if($logo_th){
+    } else if ($logo_th) {
       $data['thuonghieu_ma'] = $thuonghieuM->thuonghieu_ma($table, $dieukien);
-      foreach ($data['thuonghieu_ma'] as $key => $th){
-        if($th['logo_th']){
-          unlink("public/uploads/thuonghieu/".$th['logo_th']);
+      foreach ($data['thuonghieu_ma'] as $key => $th) {
+        if ($th['logo_th']) {
+          unlink("public/uploads/thuonghieu/" . $th['logo_th']);
         }
       }
       $data = array(
@@ -117,39 +137,50 @@ class thuonghieu extends controller
         'logo_th' => $unique_image_logo
       );
       move_uploaded_file($file_temp_logo, $uploaded_image_logo);
-    }else{
+    } else {
       $data = array(
         'ten_th' => $ten_th
       );
     }
     $result = $thuonghieuM->thuonghieu_update($table, $data, $dieukien);
-    header("Location:".BASE_URL."thuonghieu/thuonghieu");
+    header("Location:" . BASE_URL . "thuonghieu/thuonghieu");
   }
-  public function thuonghieu_delete($ma_th){
+  public function thuonghieu_delete($ma_th)
+  {
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
-    $dieukien = "thuonghieu.ma_th='$ma_th'" ;
-    if($ma_th){
+    $dieukien = "thuonghieu.ma_th='$ma_th'";
+    if ($ma_th) {
       $data['thuonghieu_ma'] = $thuonghieuM->thuonghieu_ma($table, $dieukien);
-      foreach ($data['thuonghieu_ma'] as $key => $th){
-        if($th['logo_th'] && $th['hinh_th']){
-          unlink("public/uploads/thuonghieu/".$th['logo_th']);
-          unlink("public/uploads/thuonghieu/".$th['hinh_th']);
+      foreach ($data['thuonghieu_ma'] as $key => $th) {
+        if ($th['logo_th'] && $th['hinh_th']) {
+          unlink("public/uploads/thuonghieu/" . $th['logo_th']);
+          unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
         }
       }
     }
     $result = $thuonghieuM->thuonghieu_delete($table, $dieukien);
     header("Location:" . BASE_URL . "thuonghieu/thuonghieu");
   }
-  public function thuonghieu_timkiem(){
+  public function thuonghieu_timkiem()
+  {
     session::init();
     $this->load->view_admin("header");
-    $this->load->view_admin("leftmenu");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu", $data);
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
     $tukhoa = $_POST['tukhoa'];
-    $dieukien = "thuonghieu.ten_th LIKE '%$tukhoa%'" ;
-    $data ['thuonghieu_timkiem'] = $thuonghieuM->thuonghieu_timkiem($table, $dieukien);
+    $dieukien = "thuonghieu.ten_th LIKE '%$tukhoa%'";
+    $data['thuonghieu_timkiem'] = $thuonghieuM->thuonghieu_timkiem($table, $dieukien);
     $this->load->view_admin("thuonghieu/thuonghieu_timkiem", $data);
   }
 }
