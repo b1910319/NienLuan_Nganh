@@ -21,7 +21,12 @@
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
-      $this->load->view_admin("trangchu");
+      //tổng số đơn hàng
+      $data['donhang'] = $donhangM ->donhang_list($table_dh);
+      //doanh thu hôm nay
+      $ngay = date("d/m/Y");
+      $data['doanhthu_homnay'] = $donhangM->doanhthu_homnay ($table_dh, $ngay);
+      $this->load->view_admin("trangchu", $data);
     }
   }
 ?>

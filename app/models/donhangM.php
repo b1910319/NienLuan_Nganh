@@ -29,6 +29,10 @@
       $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc, giolap_dh desc ";
       return $this->db->select($sql);
     }
+    public function doanhthu_homnay ($table_dh, $ngay){
+      $sql = "SELECT ngaylap_dh, tonggia_dh , SUM(tonggia_dh) AS tong FROM $table_dh WHERE $table_dh.ngaylap_dh = '$ngay'";
+      return $this->db->select($sql);
+    }
     // public function danhmuc_tintuc_timkiem($table, $dieukien){
     //   $sql = "SELECT * FROM $table where $dieukien";
     //   return $this->db->select($sql);

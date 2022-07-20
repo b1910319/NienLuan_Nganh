@@ -19,38 +19,54 @@
             <div>
               <div class="card-box widget-inline">
                 <div class="row">
-                  <div class="col-xl-3 col-sm-6 widget-inline-box">
+                  <div class="col-xl-4 col-sm-6 widget-inline-box">
                     <div class="text-center p-3">
                       <h2 class="mt-2">
-                        <i class="text-primary mdi mdi-access-point-network mr-2"></i> <b>8954</b>
+                        <i class="text-primary mdi mdi-access-point-network mr-2"></i> 
+                        <?php
+                          $i=0;
+                          foreach ($data['donhang'] as $key => $dh){
+                            $i ++;
+                          }
+                          ?>
+                            <b><?php echo $i ?></b>
+                          <?php
+                        ?>
                       </h2>
                       <p class="text-muted mb-0">Tổng số đơn hàng</p>
                     </div>
                   </div>
 
-                  <div class="col-xl-3 col-sm-6 widget-inline-box">
+                  <div class="col-xl-4 col-sm-6 widget-inline-box">
                     <div class="text-center p-3">
-                      <h2 class="mt-2"><i class="text-teal mdi mdi-airplay mr-2"></i> <b>7841</b>
+                      <h2 class="mt-2"><i class="text-teal mdi mdi-airplay mr-2"></i> 
+                      <?php
+                        foreach ($data['doanhthu_homnay'] as $key => $dt){
+                          ?>
+                            <b><?php echo number_format($dt['tong'], 0, ',', '.') . ' <sup>đ</sup>' ?></b>
+                          <?php
+                        }
+                      ?>
                       </h2>
-                      <p class="text-muted mb-0">Income amounts</p>
+                      <p class="text-muted mb-0">Doanh thu hôm nay</p>
                     </div>
                   </div>
 
-                  <div class="col-xl-3 col-sm-6 widget-inline-box">
+                  <!-- <div class="col-xl-4 col-sm-6 widget-inline-box">
                     <div class="text-center p-3">
                       <h2 class="mt-2"><i class="text-info mdi mdi-black-mesa mr-2"></i>
                         <b>6521</b>
                       </h2>
                       <p class="text-muted mb-0">Total users</p>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <div class="col-xl-3 col-sm-6">
+                  <div class="col-xl-4 col-sm-6">
                     <div class="text-center p-3">
                       <h2 class="mt-2"><i class="text-danger mdi mdi-cellphone-link mr-2"></i>
                         <b>325</b>
                       </h2>
-                      <p class="text-muted mb-0">Total visits</p>
+                      <p class="text-muted mb-0">Tổng số sản phẩm</p>
                     </div>
                   </div>
 
