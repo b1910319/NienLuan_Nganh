@@ -49,6 +49,24 @@
       $data['soluong_nam'] = $donhangM->soluong_nam($table_dh, $table_sp, $table_ctdh);
       $data['tongtien_nam'] = $donhangM->tongtien_nam($table_dh);
       $data['count_sp_nam'] = $donhangM->count_sp_nam($table_dh, $table_ctdh, $table_sp);
+      //sản phẩm có số lượng còn lại ít
+      $dieukien_soluong = "soluong_sp < 50";
+      //danh mục sản phẩm
+      $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+      $table_dm = 'danhmuc_sanpham';
+      //nhân viên
+      $nhanvienM = $this->load->model('nhanvienM');
+      $table_nv = 'nhanvien';
+      //nhà cung cấp
+      $nhacungcapM = $this->load->model('nhacungcapM');
+      $table_ncc = 'nhacungcap';
+      //loại sản phẩm
+      $loai_sanphamM = $this->load->model('loai_sanphamM');
+      $table_lsp = 'loai_sanpham';
+      //thương hiệu
+      $thuonghieuM = $this->load->model('thuonghieuM');
+      $table_th = 'thuonghieu';
+      $data['sanpham_soluong_min'] = $sanphamM->sanpham_soluong($table_sp, $table_dm, $table_nv, $table_ncc, $table_lsp, $table_th, $dieukien_soluong);
       $this->load->view_admin("trangchu", $data);
     }
     public function sanpham_banngay_timkiem(){

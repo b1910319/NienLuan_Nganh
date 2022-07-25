@@ -34,7 +34,7 @@
             <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
               data-offset="20" style="height: 300px; overflow: auto;">
               <p>
-              <table class="table">
+              <table class="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">STT</th>
@@ -57,6 +57,9 @@
                         </tr>
                       <?php
                     }
+                    ?>
+                      <p style="color: #E04D01 ;">Tổng: <b><?php echo $i ?></b> sản phẩm bán được trong ngày <b><?php  echo $count['ngaylap_dh']?></b></p>
+                    <?php
                   ?>
                 </tbody>
               </table>

@@ -52,7 +52,7 @@
         );
         $_SESSION['giohang'][] = $giohang;
       }
-      header("Location:".BASE_URL.'giohang/giohang');
+      header("Location:".BASE_URL.'index/index');
     }
     public function giohang_update($ma_sp){
       session::init();
