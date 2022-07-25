@@ -156,9 +156,65 @@
             </div>
           </div>
         </div>
+        <div class="alert alert-success title_page" role="alert">
+          <div class="row">
+            <div class="col-8 mt-2">
+              Sản phẩm theo tháng
+            </div>
+            <div class="col-4">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banthang_timkiem">
+                <div class="app-search-box">
+                  <div class="input-group">
+                    <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                      <button class="btn btn-success" type="submit">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-12">
+            <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
+              data-offset="20" style="height: 300px; overflow: auto;">
+              <p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Tháng lập đơn hàng</th>
+                    <th scope="col">Số lượng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    $i=0;
+                    foreach ($data['count_sp_thang'] as $key => $count){
+                      $i++;
+                      ?>
+                        <tr>
+                          <th scope="row"><?php echo $i ?></th>
+                          <td><?php echo $count['ten_sp'] ?></td>
+                          <td><?php echo $count['thanglap_dh'] ?></td>
+                          <td><?php echo $count['soluong'] ?></td>
+                        </tr>
+                      <?php
+                    }
+                  ?>
+                </tbody>
+              </table>
+              </p>
+            </div>
+          </div>
+        </div>
         <!--  -->
         <!-- thống kê theo năm -->
-        <div class="row">
+        <div class="row mt-3">
           <div class="col-lg-6">
             <div class="card-box">
               <h5 class="mt-0 font-14">Số lượng bán theo năm</h5>
@@ -169,6 +225,62 @@
             <div class="card-box">
               <h5 class="mt-0 font-14">Doanh thu theo năm</h5>
               <div id="myfirstchart_nam" style="height: 250px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-success title_page" role="alert">
+          <div class="row">
+            <div class="col-8 mt-2">
+              Sản phẩm theo năm
+            </div>
+            <div class="col-4">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_bannam_timkiem">
+                <div class="app-search-box">
+                  <div class="input-group">
+                    <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                      <button class="btn btn-success" type="submit">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-12">
+            <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
+              data-offset="20" style="height: 300px; overflow: auto;">
+              <p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Năm lập đơn hàng</th>
+                    <th scope="col">Số lượng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    $i=0;
+                    foreach ($data['count_sp_nam'] as $key => $count){
+                      $i++;
+                      ?>
+                        <tr>
+                          <th scope="row"><?php echo $i ?></th>
+                          <td><?php echo $count['ten_sp'] ?></td>
+                          <td><?php echo $count['namlap_dh'] ?></td>
+                          <td><?php echo $count['soluong'] ?></td>
+                        </tr>
+                      <?php
+                    }
+                  ?>
+                </tbody>
+              </table>
+              </p>
             </div>
           </div>
         </div>

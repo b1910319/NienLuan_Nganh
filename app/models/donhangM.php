@@ -63,8 +63,17 @@ use Carbon\Carbon;
       $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp  GROUP BY $table_ctdh.ma_sp, $table_dh.ngaylap_dh ORDER BY $table_dh.ngaylap_dh desc , soluong desc ";
       return $this->db->select($sql);
     }
-    public function sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien){
-      $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp WHERE $dieukien  GROUP BY $table_ctdh.ma_sp, $table_dh.ngaylap_dh ORDER BY $table_dh.ngaylap_dh desc , soluong desc ";
+    public function count_sp_thang($table_dh, $table_ctdh, $table_sp){
+      $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp  GROUP BY $table_ctdh.ma_sp, $table_dh.thanglap_dh ORDER BY $table_dh.thanglap_dh desc , soluong desc ";
+      return $this->db->select($sql);
+    }
+    public function count_sp_nam($table_dh, $table_ctdh, $table_sp){
+      $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp  GROUP BY $table_ctdh.ma_sp, $table_dh.namlap_dh ORDER BY $table_dh.namlap_dh desc , soluong desc ";
+      return $this->db->select($sql);
+    }
+
+    public function sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien, $order, $group){
+      $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp WHERE $dieukien  GROUP BY $group ORDER BY $order desc , soluong desc ";
       return $this->db->select($sql);
     }
 
