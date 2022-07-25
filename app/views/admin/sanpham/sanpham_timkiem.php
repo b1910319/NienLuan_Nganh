@@ -1,5 +1,5 @@
 <div id="wrapper">
-  <div class="content-page">
+  <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">

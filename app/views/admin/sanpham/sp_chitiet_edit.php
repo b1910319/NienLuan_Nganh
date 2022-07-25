@@ -1,10 +1,10 @@
 <div id="wrapper">
-  <div class="content-page">
+  <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
       <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet">
         <i class="fas fa-solid fa-caret-left"></i>&ensp;
       </a>
-      Thêm thông tin chi tiết: Điện thoại - Table
+      Cập nhật thông tin chi tiết: Điện thoại - Table
     </div>
     <?php
       foreach ($data['sp_chitiet_ma'] as $key => $ctsp){

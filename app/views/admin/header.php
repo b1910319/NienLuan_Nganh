@@ -5,8 +5,6 @@
   <meta charset="utf-8">
   <title>Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="Responsive bootstrap 4 admin template" name="description">
-  <meta content="Coderthemes" name="author">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- App favicon -->
   <link rel="shortcut icon" href="<?php echo BASE_URL ?>public/assets\images\favicon.ico">

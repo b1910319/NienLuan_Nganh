@@ -1,5 +1,5 @@
 <div id="wrapper">
-  <div class="content-page">
+  <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
       Tất cả đơn hàng
     </div>

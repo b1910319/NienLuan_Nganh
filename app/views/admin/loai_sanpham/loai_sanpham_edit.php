@@ -1,6 +1,9 @@
 <div id="wrapper">
-  <div class="content-page">
+  <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
+      <a href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham">
+        <i class="fas fa-solid fa-caret-left"></i>&ensp;
+      </a>
       Cập nhật thông tin loại sản phẩm
     </div>
     <?php

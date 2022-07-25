@@ -66,7 +66,8 @@ class index extends controller
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
     $sdt_k = $_POST['sdt_k'];
-    //đơn hàng
+    // echo $sdt_k;
+    // đơn hàng
     $table_dh = "donhang";
     $donhangM = $this->load->model('donhangM');
     $dieukien = "donhang.sdt_k = '$sdt_k' ";

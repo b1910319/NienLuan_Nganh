@@ -49,8 +49,8 @@ use Carbon\Carbon;
       $donhangM = $this->load->model('donhangM');
 
       $this->load->view_admin("header");
-      $dieukien = 'donhang.tinhtrang_dh = 0';
-      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_m = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien_m);
       $dieukien_vc = 'donhang.tinhtrang_dh = 1';
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
@@ -171,6 +171,9 @@ use Carbon\Carbon;
       $giolap_dh = date("h:i:sa");
       $thoigian_bh = Carbon::now('Asia/Ho_Chi_Minh');
       $thoigian_bh = $thoigian_bh->addYears(1);
+      $date = Carbon::now('Asia/Ho_Chi_Minh');
+      $thanglap_dh = $date->month.'/'.$date->year;
+      $namlap_dh = $date->year;
       $data_dh = array(
         'ma_dh' => $ma_dh,
         'ten_k' => $ten_k,
@@ -179,6 +182,8 @@ use Carbon\Carbon;
         'diachi_k' => $diachi_k,
         'tonggia_dh' => $tonggia_dh,
         'ngaylap_dh' => $ngaylap_dh,
+        'thanglap_dh' => $thanglap_dh,
+        'namlap_dh' => $namlap_dh,
         'giolap_dh' => $giolap_dh
       );
       $result_dh = $donhangM->donhang_insert($table_dh, $data_dh);
