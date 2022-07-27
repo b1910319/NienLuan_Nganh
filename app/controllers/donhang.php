@@ -145,7 +145,7 @@ use Carbon\Carbon;
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
-      $this->load->view_admin("donhang/donhang_dangvanchuyen", $data);
+      $this->load->view_admin("donhang/donhang_dagiao", $data);
     }
     //user
     public function dathang(){

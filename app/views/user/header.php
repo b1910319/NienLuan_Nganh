@@ -102,7 +102,7 @@
         <div class="col-3">
           <nav class="navbar">
             <div style="width: 100%;">
-              <form class="d-flex" method="POST" action="<?php echo BASE_URL ?>index/timkiem_sp">
+              <form class="d-flex" method="POST" action="<?php echo BASE_URL ?>index/timkiem_sp" autocomplete="off">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tukhoa">
                 <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
               </form>
@@ -142,7 +142,11 @@
       <?php
         foreach ($data['danhmuc_sanpham_limit'] as $key => $dm){
           ?>
-            <div class="col-2 mb-3 nav_a"><a href="<?php echo BASE_URL ?><?php echo $dm['ghichu_dm']?>/sanpham/<?php echo $dm['ma_dm'] ?>"><?php echo $dm['ten_dm'] ?></a></div>
+            <div class="col-2 mb-3 nav_a">
+              <a href="<?php echo BASE_URL ?><?php echo $dm['ghichu_dm']?>/sanpham/<?php echo $dm['ma_dm'] ?>">
+                <?php echo $dm['ten_dm'] ?>
+              </a>
+            </div>
           <?php
         }
       ?>

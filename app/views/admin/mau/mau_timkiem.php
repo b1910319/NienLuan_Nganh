@@ -33,7 +33,7 @@
             ?>
               <tr>
                 <th scope="row"><?php echo $i ?></th>
-                <td><?php echo $m['ma_m'] ?></td>
+                <td><?php echo $m['mau'] ?></td>
                 <td><?php echo $m['ten_m'] ?></td>
                 <td>
                   <a href="<?php echo BASE_URL ?>mau/mau_edit/<?php echo $m['ma_m'] ?>">

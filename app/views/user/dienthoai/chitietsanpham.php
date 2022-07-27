@@ -177,20 +177,38 @@
                 <input type="hidden" value="1" name="soluong_dat">
                 <input type="hidden" value="<?php echo $sp['ma_sp'] ?>" name="ma_sp">
                 <div class="">
-                  <select class="form-select" aria-label="Default select example" style="height: 40px; font-size: 15px;" name="ma_m">
-                    <?php
-                      $i=0;
-                      foreach ($data['mau_sanpham_ma'] as $key => $msp){
-                        $i++;
-                        ?>
-                          <option value="<?php echo $msp['ma_m'] ?>"><?php echo $msp['ten_m'] ?></option>
-                        <?php
-                      }
-                    ?>
-                  </select>
+                  <div class="l-container">
+                      <!-- 	Select	 -->
+                      <div class="select-control">
+                        <span class="select-control__title">Màu của sản phẩm</span>
+                        <select class="select" id="js-select" name="ma_m">
+                          <?php
+                            $i=0;
+                            foreach ($data['mau_sanpham_ma'] as $key => $msp){
+                              $i++;
+                              ?>
+                                <option class="select__item" value="<?php echo $msp['ma_m'] ?>"><?php echo $msp['ten_m'] ?></option>
+                                
+                              <?php
+                            }
+                          ?>
+                        </select>
+                      </div>
+                  </div>
                 </div>
                 <div class="d-grid gap-2 btn_themgiohang">
-                  <button class="btn btn-light" type="submit">Thêm vào giỏ hàng</button>
+                  <?php
+                    if ($sp['soluong_sp'] > 0){
+                      ?>
+                        <!-- <button class="btn btn-light" type="submit">Thêm vào giỏ hàng</button> -->
+                        <button class="btn5-hover btn5">Thêm vào giỏ hàng</Button>
+                      <?php
+                    }else{
+                      ?>
+                        <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Sản phẩm hết hàng</button>
+                      <?php
+                    }
+                  ?>
                 </div>
               </form>
             </div>
@@ -287,7 +305,36 @@
   </div>
   <div class="row sanpham_tuongtu">
     <h3 class="pb-2">Sản phẩm tương tự</h3>
-    <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+    <?php
+      foreach ($data['sanpham_tuongtu'] as $key => $sp){
+        ?>
+          <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+              <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
+            </a>
+            <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+            <div class="row tex-center ms-2">
+            <?php
+              $ma_sp = $sp['ma_sp'];
+              $con = mysqli_connect('localhost', 'root', '', 'nienluan');
+              $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
+              while ($row = mysqli_fetch_assoc($result)) {
+                  $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
+                  $arr[$row['ma_m']]['mau'] = $row['mau'];
+                  ?>
+                    <div class="col-2">
+                      <span  style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
+                    </div>
+                  <?php
+              }
+            ?>
+            </div>
+            <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
+          </div>
+        <?php
+      }
+    ?>
+    <!-- <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
       <a href="">
         <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
       </a>
@@ -307,7 +354,32 @@
       </a>
       <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
       <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-    </div>
+    </div> -->
   </div>
+  <script>
+    const print = console.log
 
+const getSelectedOption = function (selectEl) {
+	const selectedOptionCurrent = selectEl.options[selectEl.selectedIndex]
+	renderText(selectedOptionCurrent.textContent)
+}
+
+const getSelect = function () {
+	const selectEl = document.getElementById('js-select')
+	
+	selectEl.addEventListener('change', function (e) {
+		const selectElCurrent = e.target
+		getSelectedOption(selectElCurrent)
+	})
+}
+
+
+const renderText = function (text) {
+	const spanEl = document.getElementById('js-text')
+	spanEl.textContent = text
+}
+
+
+getSelect()
+  </script>
 </div>

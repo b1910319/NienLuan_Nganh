@@ -20,6 +20,12 @@
                   </td>
                 </tr>
                 <tr>
+                  <th scope="row" class="title_table">Mã màu: </th>
+                  <td class="was-validated">
+                    <input type='text' class='form-control input_table' required autofocus name="mau" value="<?php echo $m['mau'] ?>">
+                  </td>
+                </tr>
+                <tr>
                   <td></td>
                   <td>
                     <button type="submit" class="btn btn-outline-success font-weight-bold"

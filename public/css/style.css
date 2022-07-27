@@ -315,6 +315,7 @@ h2::after {
   right: 0;
   bottom: 5px;
   border-radius: 40px;
+  padding-bottom: 3px;
 }
 .sanpham_item:hover span {
   border: 2px solid #ffc000;
@@ -504,98 +505,110 @@ ol {
   color: #f15412;
 }
 
-/* chọn màu sản phầm */
-
-.wrapper {
-  display: flex;
-  height: 70px;
-  /* width: 400px; */
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 5px;
-  /* padding: 0px 15px; */
-  /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); */
-  /* background: #fff; */
-}
-.wrapper .option {
-  height: 100%;
+.btn5-hover {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 0 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  padding: 0 10px;
-  transition: all 0.3s ease;
-  background: #fff;
-  border: 2px solid #d9d9d9;
-}
-.wrapper .option .dot {
-  height: 20px;
-  width: 20px;
-  background: #d9d9d9;
-  position: relative;
-  border-radius: 50%;
-}
-.wrapper .option .dot::before {
-  position: absolute;
-  content: "";
-  top: 4px;
-  left: 4px;
-  width: 12px;
-  height: 12px;
-  background: #3ec70b;
-  border-radius: 50%;
-  opacity: 0;
-  transform: scale(1.5);
-  transition: all 0.3s ease-in-out;
-}
-input[type="radio"] {
-  display: none;
-}
-#option-1:checked:checked ~ .option-1,
-#option-2:checked:checked ~ .option-2,
-#option-3:checked:checked ~ .option-3 {
-  border-color: #116530;
-  background: #116530;
-}
-#option-1:checked:checked ~ .option-1 .dot,
-#option-2:checked:checked ~ .option-2 .dot,
-#option-3:checked:checked ~ .option-3 .dot {
-  background: #fff;
-}
-#option-1:checked:checked ~ .option-1 .dot::before,
-#option-2:checked:checked ~ .option-2 .dot::before,
-#option-3:checked:checked ~ .option-3 .dot::before {
-  opacity: 1;
-  transform: scale(1);
-}
-.wrapper .option span {
-  font-size: 15px;
-  columns: #808080;
-}
-#option-1:checked:checked ~ .option-1 span,
-#option-2:checked:checked ~ .option-2 span,
-#option-3:checked:checked ~ .option-3 span {
+  font-size: 16px;
+  font-weight: 600;
   color: #fff;
+  cursor: pointer;
+  /* margin: 20px; */
+  margin-bottom: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
-.btn_themgiohang button{
-  background-color: #ffc000;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 15px 0;
-  margin-top: 20px;
+
+.btn5-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
-/* sản phẩm tương tự */
-.sanpham_tuongtu h3{
-  border-bottom: 2px solid #f15412;
-  font-size: 25px;
-  font-weight: bold;
+
+.btn5-hover:focus {
+  outline: none;
 }
+
+.btn5-hover.btn5 {
+    background-image: linear-gradient(
+      to right,
+      #60d366,
+      #1a651c,
+      #45cc4d,
+      #16511a
+    );
+    box-shadow: 0 4px 15px 0 #16511a;
+  }
+
+
+
+  .title {
+		text-transform: uppercase;
+	}
+
+
+/*--------------------------*\
+	$utilitys
+\*--------------------------*/
+.box-shadow {
+	box-shadow: rgba(68, 68, 68, 0.2) 0 .4em .8em
+}
+.center-content {
+	text-align: center;
+}
+.l-container {
+	padding: 1em;
+	max-width: 1024px;
+}
+
+
+/*--------------------------*\
+/* chọn màu sản phầm */
+.select-control {
+	border-radius: .5rem;
+	margin-bottom: 1em;
+	padding: 1em;
+	text-align: center;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f5ffbb;
+	font-weight: bold;
+}
+
+.select {
+	border: none;
+	border-radius: .25rem;
+	padding: .2em;
+	color: white;
+	background-color: #FF9F29;
+	cursor: pointer;
+
+	width: 30%;
+}
+	.select:focus {
+		outline: .14rem solid white;
+	}
+	.select__item {
+		padding: 1em;
+		color: white;
+		background-color: #FF9F29;
+		text-align: left;
+  
+	}
+	.select__item:focus {
+		outline: none;
+	}
+
 
 /*  */
+
 
 
 
@@ -684,8 +697,28 @@ input[type="radio"] {
   color: red;
   background-color: white;
 }
-/*--------------------------------------------------------------------  */
-/* footer */
+/*-------------------------------------------------------  */
+/* ------------------------------------------chuyên trang thương hiệu */
+/* samsung */
+.ctth_dm  a{
+  color: #000;
+  font-weight: bold;
+}
+.ctth_dm  a:hover{
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid #038018; 
+}
+
+
+/*  */
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* ---------------------------------------------------------footer */
 
 ul {
   margin: 0px;

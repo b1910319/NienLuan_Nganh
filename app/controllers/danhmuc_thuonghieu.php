@@ -19,7 +19,7 @@ class danhmuc_thuonghieu extends controller
     $dieukien_vc = 'donhang.tinhtrang_dh = 1';
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
     $this->load->view_admin("leftmenu", $data);
     $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
     $table_dm = 'danhmuc_sanpham';
@@ -105,7 +105,7 @@ class danhmuc_thuonghieu extends controller
     $dieukien_vc = 'donhang.tinhtrang_dh = 1';
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
     $this->load->view_admin("leftmenu", $data);
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table_dmth = 'danhmuc_thuonghieu';

@@ -33,7 +33,7 @@ class dienthoai extends controller
     $this->load->view_user("dienthoai/sanpham", $data);
     $this->load->view_user("footer");
   }
-  public function chitiet_sanpham($ma_sp)
+  public function chitiet_sanpham($ma_sp, $ma_th, $ma_dm)
   {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
@@ -64,6 +64,10 @@ class dienthoai extends controller
 
     $dieukien = "sanpham.ma_sp = '$ma_sp'";
     $data['sanpham_ma'] = $sanphamM->Usanpham_ma($table_sp, $table_dm, $table_ctsp, $table_msp, $table_th, $table_lsp, $table_hsp, $dieukien);
+    //sản phẩm tương tự
+    $dieukien_sp_tuongtu = "sanpham.ma_th = '$ma_th' AND sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_tuongtu'] = $sanphamM->Usanpham_tuongtu($table_sp, $dieukien_sp_tuongtu);
+    
     $dieukien1 = "hinh.ma_sp = '$ma_sp'";
 
     $data['hinh_limit1'] = $hinhM->hinh_limit1($table_hsp, $dieukien1);

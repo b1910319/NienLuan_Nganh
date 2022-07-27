@@ -28,10 +28,15 @@ class thuonghieu extends controller
   }
   public function thuonghieu_insert()
   {
+    //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
     $ten_th = $_POST['ten_th'];
-
+    $ghichu = $danhmuc_sanphamM->convert_name($ten_th);
+    $ghichu_th = strtolower($ghichu);
     $logo_th = $_FILES['logo_th']['name'];
     $file_temp_logo = $_FILES['logo_th']['tmp_name'];
     $div_logo = explode(' . ', $logo_th);
@@ -50,6 +55,7 @@ class thuonghieu extends controller
 
     $data = array(
       'ten_th' => $ten_th,
+      'ghichu_th' => $ghichu_th,
       'logo_th' => $unique_image_logo,
       'hinh_th' => $unique_image
     );
@@ -78,11 +84,16 @@ class thuonghieu extends controller
   }
   public function thuonghieu_update($ma_th)
   {
+    //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
     $dieukien = "thuonghieu.ma_th='$ma_th'";
     $ten_th = $_POST['ten_th'];
-
+    $ghichu = $danhmuc_sanphamM->convert_name($ten_th);
+    $ghichu_th = strtolower($ghichu);
     $logo_th = $_FILES['logo_th']['name'];
     $file_temp_logo = $_FILES['logo_th']['tmp_name'];
     $div_logo = explode(' . ', $logo_th);
@@ -108,6 +119,7 @@ class thuonghieu extends controller
       }
       $data = array(
         'ten_th' => $ten_th,
+        'ghichu_th' => $ghichu_th,
         'logo_th' => $unique_image_logo,
         'hinh_th' => $unique_image
       );

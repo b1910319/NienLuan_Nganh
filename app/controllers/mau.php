@@ -28,8 +28,10 @@
       $mauM = $this->load->model('mauM');
       $table = 'mau';
       $ten_m = $_POST['ten_m'];
+      $mau = $_POST['mau'];
       $data = array(
-        'ten_m' => $ten_m
+        'ten_m' => $ten_m,
+        'mau' => $mau
       );
       $result = $mauM->mau_insert($table, $data);
       header("Location:".BASE_URL."mau/mau");
@@ -58,8 +60,10 @@
       $table = 'mau';
       $dieukien = "mau.ma_m='$ma_m'" ;
       $ten_m = $_POST['ten_m'];
+      $mau = $_POST['mau'];
       $data = array(
-        'ten_m' => $ten_m
+        'ten_m' => $ten_m,
+        'mau' => $mau
       );
       $result = $mauM->mau_update($table, $data, $dieukien);
       header("Location:".BASE_URL."mau/mau");

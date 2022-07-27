@@ -14,6 +14,12 @@
             </td>
           </tr>
           <tr>
+            <th scope="row" class="title_table">Mã màu: </th>
+            <td class="was-validated">
+              <input type='text' class='form-control input_table' autofocus required name="mau">
+            </td>
+          </tr>
+          <tr>
             <td></td>
             <td>
               <button type="submit" class="btn btn-outline-success font-weight-bold"
@@ -56,7 +62,7 @@
             ?>
               <tr>
                 <th scope="row"><?php echo $i ?></th>
-                <td><?php echo $m['ma_m'] ?></td>
+                <td><?php echo $m['mau'] ?></td>
                 <td><?php echo $m['ten_m'] ?></td>
                 <td>
                   <a href="<?php echo BASE_URL ?>mau/mau_edit/<?php echo $m['ma_m'] ?>">

@@ -14,7 +14,7 @@
                 ?>
                   <div class="item active">
                     <div class="col-xs-12 col-sm-6 col-md-2">
-                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                       <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
@@ -26,7 +26,7 @@
                 ?>
                   <div class="item">
                     <div class="col-xs-12 col-sm-6 col-md-2">
-                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                       <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
@@ -60,10 +60,26 @@
         foreach ($data['sanpham_dt_limit'] as $key => $sp){
           ?>
             <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>">
+              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+              <div class="row tex-center ms-2">
+              <?php
+                $ma_sp = $sp['ma_sp'];
+                $con = mysqli_connect('localhost', 'root', '', 'nienluan');
+                $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
+                    $arr[$row['ma_m']]['mau'] = $row['mau'];
+                    ?>
+                      <div class="col-2">
+                        <span  style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
+                      </div>
+                    <?php
+                }
+              ?>
+              </div>
               <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
             </div>
           <?php
@@ -88,16 +104,16 @@
       <?php
         foreach ($data['danhmuc_sanpham'] as $key => $dm){
           ?>
-      <div class="col-1 danhmuc_noibat_item mt-3"
-        style="background-color:<?php echo $dm['mamau_dm'] ?> ; margin-right: 15px;">
-        <p class="text-center mt-2 danhmuc_noibat_item_title"><?php echo $dm['ten_dm'] ?></p>
-        <a href="<?php echo $dm['ghichu_dm'] ?>/sanpham">
-          <img class="giua mb-1"
-            src="<?php echo BASE_URL ?>public/uploads/danhmuc/<?php echo $dm['hinh_dm'] ?>"
-            style="width:90% ;">
-        </a>
-      </div>
-      <?php
+            <div class="col-1 danhmuc_noibat_item mt-3"
+              style="background-color:<?php echo $dm['mamau_dm'] ?> ; margin-right: 15px;">
+              <p class="text-center mt-2 danhmuc_noibat_item_title"><?php echo $dm['ten_dm'] ?></p>
+              <a href="<?php echo BASE_URL ?><?php echo $dm['ghichu_dm']?>/sanpham/<?php echo $dm['ma_dm'] ?>">
+                <img class="giua mb-1"
+                  src="<?php echo BASE_URL ?>public/uploads/danhmuc/<?php echo $dm['hinh_dm'] ?>"
+                  style="width:90% ;">
+              </a>
+            </div>
+          <?php
         }
       ?>
     </div>
@@ -116,7 +132,7 @@
         foreach ($data['thuonghieu'] as $key => $th){
           ?>
             <div class="col-3">
-              <a href="">
+              <a href="<?php echo BASE_URL ?>chuyentrang_thuonghieu/<?php echo $th['ghichu_th']  ?>/<?php echo $th['ma_th'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['hinh_th'] ?>" class="d-block w-100"
                   style="border-radius:15px ;">
               </a>
@@ -124,30 +140,6 @@
           <?php
         }
       ?>
-      <!-- <div class="col-3">
-        <a href="">
-          <img src="app/views/user/img/logo/samsung.png" class="d-block w-100"
-            style="border-radius:15px ;">
-        </a>
-      </div>
-      <div class="col-3">
-        <a href="">
-          <img src="app/views/user/img/logo/asus.png" class="d-block w-100"
-            style="border-radius:15px ;">
-        </a>
-      </div>
-      <div class="col-3">
-        <a href="">
-          <img src="app/views/user/img/logo/apple.png" class="d-block w-100"
-            style="border-radius:15px ;">
-        </a>
-      </div>
-      <div class="col-3">
-        <a href="">
-          <img src="app/views/user/img/logo/xiaomi.png" class="d-block w-100"
-            style="border-radius:15px ;">
-        </a>
-      </div> -->
     </div>
   </div>
 
