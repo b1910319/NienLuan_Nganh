@@ -71,7 +71,30 @@ class index extends controller
     $donhangM = $this->load->model('donhangM');
     $dieukien = "donhang.sdt_k = '$sdt_k' ";
     $data['donhang_sdt'] = $donhangM->donhang_sdt($table_dh, $dieukien);
-    $this->load->view_user("lichsudonhang", $data);
+    $this->load->view_user("lichsu_donhang/lichsudonhang", $data);
+    $this->load->view_user("footer");
+  }
+  public function lichsudonhang_chitiet($ma_dh){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+    //chi tiết đơn hàng
+    $table_ctdh = 'chitiet_donhang';
+    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    // sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $mauM = $this->load->model('mauM');
+    $table_m = 'mau';
+    $dieukien1 = "donhang.ma_dh = '$ma_dh'";
+    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien1);
+    $this->load->view_user("lichsu_donhang/lichsudonhang_chitiet", $data);
     $this->load->view_user("footer");
   }
   public function huy($ma_dh){

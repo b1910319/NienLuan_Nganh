@@ -14,6 +14,7 @@
         <tr class="table-dark">
           <th scope="col">STT</th>
           <th scope="col">Thời gian đặt hàng</th>
+          <th scope="col">Mã đơn hàng</th>
           <th scope="col">Tổng giá</th>
           <th scope="col">Quản lý</th>
         </tr>
@@ -36,9 +37,10 @@
                 ?> ; font-weight: bold ;">
                 <th scope="row"><?php echo $i ?></th>
                 <td><?php echo $dh['ngaylap_dh'].' '.$dh['giolap_dh'] ?></td>
+                <td><?php echo $dh['ma_dh'] ?></td>
                 <td><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
                 <td>
-                  <a href="">
+                  <a href="<?php echo BASE_URL ?>index/lichsudonhang_chitiet/<?php echo $dh['ma_dh'] ?>">
                     <button type="button" class="btn btn-warning btn_chitiet" >
                       <i class="fa-solid fa-circle-info"></i>
                     </button>
@@ -67,51 +69,12 @@
                       echo '';
                     }
                   ?>
-                  <!-- <a href="">
-                    <button type="button" class="btn btn-warning btn_chitiet" >
-                      <i class="fa-solid fa-circle-info"></i>
-                    </button>
-                  </a>
-                  <a href="">
-                    <button type="button" class="btn btn-success">Đã nhận</button>
-                  </a> -->
                 </td>
               </tr>
             <?php
           }
           echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.' đơn hàng'.'</p>';
         ?>
-        <!-- <tr style="color: red ; font-weight: bold ;">
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>
-            <a href="">
-              <button type="button" class="btn btn-warning btn_chitiet" >
-                <i class="fa-solid fa-circle-info"></i>
-              </button>
-            </a>
-            <a href="">
-              <button type="button" class="btn btn-success">Đã nhận</button>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>
-            <a href="">
-              <button type="button" class="btn btn-warning btn_chitiet">
-                <i class="fa-solid fa-circle-info"></i>
-              </button>
-            </a>
-            <a href="">
-              <button type="button" class="btn btn-success">Đã nhận</button>
-            </a>
-          </td>
-        </tr> -->
-
       </tbody>
     </table>
   </div>

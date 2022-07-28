@@ -33,6 +33,12 @@ class chuyentrang_thuonghieu extends controller
     //hiển thị điện thoại
     $dieukien2 = "sanpham.ma_dm = 8 AND sanpham.ma_th = '$ma_th'";
     $data['sanpham_ctth'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien2);
+    //hiển thị table
+    $dieukien3 = "sanpham.ma_dm = 10 AND sanpham.ma_th = '$ma_th'";
+    $data['sanpham_ctth_table'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien3);
+    //hiển thị smartwatch
+    $dieukien4 = "sanpham.ma_dm = 11 AND sanpham.ma_th = '$ma_th'";
+    $data['sanpham_ctth_smartwatch'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien4);
     $this->load->view_user("header", $data);
     $this->load->view_user("chuyentrang_thuonghieu/samsung", $data);
   }
