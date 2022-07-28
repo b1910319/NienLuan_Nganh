@@ -59,37 +59,37 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">2GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_ram/2">2GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">3GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_ram/3">3GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">4GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_ram/4">4GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">6GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_ram/6">6GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">8GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_ram/8">8GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">12GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_ram/12">12GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -105,43 +105,43 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">8GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/8">8GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">16GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/16">16GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">32GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/32">32GB</a>
           </li>
           <li> 
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">64GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/64">64GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">128GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/128">128GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">256GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/256">256GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">512GB</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_rom/512">512GB</a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -149,7 +149,6 @@
         </ul>
       </div>
     </div>
-
   </div>
   <div class="row mb-4 timkiem_hang ">
     <?php

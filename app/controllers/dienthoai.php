@@ -177,4 +177,74 @@ class dienthoai extends controller
     $this->load->view_user("dienthoai/timkiem_docquyen", $data);
     $this->load->view_user("footer");
   }
+  public function timkiem_ram($ram){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+
+    //thương hiệu
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    //danh mục - thương hiệu
+    $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+    $table_dmth = 'danhmuc_thuonghieu';
+    $ma_dm = '8';
+    $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
+    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
+    // 
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    //chi tiết sản phẩm
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+
+    $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.ram = '$ram'";
+    $data['sanpham_ma_dm_ram'] = $sanphamM->sanpham_ma_dm_GB($table_sp, $table_ctsp, $dieukien1);
+    $this->load->view_user("dienthoai/header_dienthoai", $data);
+    $this->load->view_user("dienthoai/timkiem_ram", $data);
+    $this->load->view_user("footer");
+  }
+  public function timkiem_rom($rom){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+
+    //thương hiệu
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    //danh mục - thương hiệu
+    $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+    $table_dmth = 'danhmuc_thuonghieu';
+    $ma_dm = '8';
+    $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
+    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
+    // 
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    //chi tiết sản phẩm
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+
+    $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.rom = '$rom'";
+    $data['sanpham_ma_dm_rom'] = $sanphamM->sanpham_ma_dm_GB($table_sp, $table_ctsp, $dieukien1);
+    $this->load->view_user("dienthoai/header_dienthoai", $data);
+    $this->load->view_user("dienthoai/timkiem_rom", $data);
+    $this->load->view_user("footer");
+  }
 }

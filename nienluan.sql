@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 28, 2022 lúc 04:55 AM
+-- Thời gian đã tạo: Th7 28, 2022 lúc 06:52 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -96,7 +96,7 @@ CREATE TABLE `chitiet_sanpham` (
   `mat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
   `rom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `pin` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
-  `ram` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `ram` int(10) NOT NULL DEFAULT 0,
   `sim` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
   `thietke` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
   `thoidiem_ramat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
@@ -110,19 +110,19 @@ CREATE TABLE `chitiet_sanpham` (
 --
 
 INSERT INTO `chitiet_sanpham` (`ma_ctsp`, `ma_sp`, `camera_truoc`, `camera_sau`, `card_manhinh`, `chatlieu_day`, `chatlieu_kinh`, `chip`, `chongnuoc`, `cong_ketnoi`, `congnghe_cpu`, `cpu`, `dat_biet`, `doituong_sudung`, `duongkinh_mat`, `hedieuhanh`, `kichthuoc`, `manhinh`, `mat`, `rom`, `pin`, `ram`, `sim`, `thietke`, `thoidiem_ramat`, `thoiluong_pin`, `tinhnang_suckhoe`, `bo_sanpham`) VALUES
-(15, 20, '12 MP', '2 camera 12 MP', ' ', 0, 0, 'Apple A13 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'IPS LCD6.1', ' ', '64', '3110 mAh18 W', '4', '1 Nano SIM & 1 eSIMHỗ trợ 4G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
-(16, 21, ' ', ' ', 'Card tích hợpIntel UHD', 0, 0, ' ', ' ', '1 x USB 2.02 x USB 3.2HDMIJack tai nghe 3.5 mm', ' ', 'i310110U2.1GHz', ' ', 0, ' ', 'Windows 11 Home SL', 'Dài 362.2 mm - Rộng 253.4 mm - Dày 19.9 mm - Nặng 1.7 kg', '15.6\"Full HD (1920 x 1080)', ' ', '256 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1TB (2280) / 512GB (2242))Hỗ trợ thêm 1 khe cắm HDD SATA (nâng cấp tối đa 1TB)', ' ', '4 GBDDR4 (On board 4GB +1 khe rời)2666 MHz', ' ', 'Vỏ nhựa', '2022', ' ', ' ', 'Sách hướng dẫn, Sạc Laptop Lenovo, Thùng máy'),
-(17, 22, '12 MP', 'Chính 13 MP & Phụ 6 MP', ' ', 0, 0, 'Snapdragon 8 Gen 1', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', '11\"LTPS', ' ', '128', '8000 mAh45 W', '8', '1 Nano SIM', ' ', ' ', ' ', ' ', 'Sách hướng dẫn, Bút cảm ứng, Cây lấy sim, Hộp máy, Cáp Type C - Type C'),
-(18, 23, ' ', ' ', ' ', 0, 0, ' ', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android dùng Google Mobile Service', ' ', 'SUPER AMOLED1.2 inch', 'Kính cường lực Gorrilla Glass Dx+40 mm', '0', ' ', '0', ' ', ' ', ' ', 'Khoảng 1.5 ngày', 'Theo dõi giấc ngủĐiện tâm đồĐo huyết ápĐo nhịp timĐo nồng độ oxy (SpO2)Đếm số bước chân', 'Hộp, Đồng hồ, Sách hướng dẫn, Đế sạc rời'),
-(19, 24, ' ', ' ', ' ', 2, 1, ' ', '5 ATM - Đi mưa, tắm', ' ', ' ', ' ', ' ', 2, '42 mm', ' ', ' ', ' ', ' ', '0', ' ', '0', ' ', ' ', ' ', ' ', ' ', ''),
-(20, 25, ' ', ' ', 'Intel Iris Xe', 0, 0, ' ', ' ', '2 x USB 2.02 x USB 3.2HDMILAN (RJ45)', 'i51135G72.40 GHz', ' ', ' ', 0, ' ', 'Windows 10 Home SL', 'Dài 541 mm - Rộng 185 mm - Dày 433 mm - Nặng 6.81 kg', '23.8 inchFull HD', ' ', '256', ' ', '8', ' ', ' ', ' ', ' ', ' ', 'Chuột ( Không dây ) , Bàn phím ( Không dây ) , Adapter sạc, Dây nguồn, Sách hướng dẫn'),
-(21, 26, '12 MP', '3 camera 12 MP', ' ', 0, 0, 'Apple A15 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'OLED6.7\"Super Retina XDR', ' ', '128', '4352 mAh20 W', '6', '1 Nano SIM & 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
-(22, 27, '12 MP', '3 camera 12 MP', ' ', 0, 0, 'Apple A15 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'OLED6.1\"Super Retina XDR', ' ', '128', '3095 mAh20 W', '6', '1 Nano SIM & 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
-(23, 28, ' 12 MP', ' 2 camera 12 MP', ' ', 0, 0, 'Apple A14 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'OLED6.1\"Super Retina XDR', ' ', '64', '2815 mAh20 W', '4', '1 Nano SIM & 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
-(24, 29, '40 MP', 'Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP', ' ', 0, 0, 'Snapdragon 8 Gen 1', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', 'Dynamic AMOLED 2X6.8', ' ', '128', '5000 mAh45 W', '8', '2 Nano SIM hoặc 1 Nano SIM + 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Bút cảm ứng, Cây lấy sim, Cáp Type C'),
-(25, 30, '10 MP & 4 MP', '3 camera 12 MP', ' ', 0, 0, 'Snapdragon 888', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 11', ' ', 'Dynamic AMOLED 2XChính 7.6\" & Phụ 6.2\"Full HD+', ' ', '256', '4400 mAh25 W', '12', '2 Nano SIM hoặc 1 Nano SIM + 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C '),
-(26, 0, '10 MP', ' Chính 50 MP & Phụ 12 MP, 10 MP', ' ', 0, 0, 'Snapdragon 8 Gen 1', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', 'Dynamic AMOLED 2X6.1\"Full HD+', ' ', '128', '3700 mAh25 W', '8', '2 Nano SIM hoặc 1 Nano SIM + 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C'),
-(27, 32, '8 MP', 'Chính 50 MP & Phụ 5 MP, 2 MP, 2 MP', ' ', 0, 0, ' Exynos 1280', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', 'TFT LCD6.6\"Full HD+', ' ', '128', '5000 mAh25 W', '6', '2 Nano SIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Cáp Type C, Cây lấy sim, Hộp, Sách hướng dẫn');
+(15, 20, '12 MP', '2 camera 12 MP', ' ', 0, 0, 'Apple A13 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'IPS LCD6.1', ' ', '64', '3110 mAh18 W', 4, '1 Nano SIM & 1 eSIMHỗ trợ 4G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
+(16, 21, ' ', ' ', 'Card tích hợpIntel UHD', 0, 0, ' ', ' ', '1 x USB 2.02 x USB 3.2HDMIJack tai nghe 3.5 mm', ' ', 'i310110U2.1GHz', ' ', 0, ' ', 'Windows 11 Home SL', 'Dài 362.2 mm - Rộng 253.4 mm - Dày 19.9 mm - Nặng 1.7 kg', '15.6\"Full HD (1920 x 1080)', ' ', '256 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1TB (2280) / 512GB (2242))Hỗ trợ thêm 1 khe cắm HDD SATA (nâng cấp tối đa 1TB)', ' ', 4, ' ', 'Vỏ nhựa', '2022', ' ', ' ', 'Sách hướng dẫn, Sạc Laptop Lenovo, Thùng máy'),
+(17, 22, '12 MP', 'Chính 13 MP & Phụ 6 MP', ' ', 0, 0, 'Snapdragon 8 Gen 1', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', '11\"LTPS', ' ', '128', '8000 mAh45 W', 8, '1 Nano SIM', ' ', ' ', ' ', ' ', 'Sách hướng dẫn, Bút cảm ứng, Cây lấy sim, Hộp máy, Cáp Type C - Type C'),
+(18, 23, ' ', ' ', ' ', 0, 0, ' ', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android dùng Google Mobile Service', ' ', 'SUPER AMOLED1.2 inch', 'Kính cường lực Gorrilla Glass Dx+40 mm', '0', ' ', 0, ' ', ' ', ' ', 'Khoảng 1.5 ngày', 'Theo dõi giấc ngủĐiện tâm đồĐo huyết ápĐo nhịp timĐo nồng độ oxy (SpO2)Đếm số bước chân', 'Hộp, Đồng hồ, Sách hướng dẫn, Đế sạc rời'),
+(19, 24, ' ', ' ', ' ', 2, 1, ' ', '5 ATM - Đi mưa, tắm', ' ', ' ', ' ', ' ', 2, '42 mm', ' ', ' ', ' ', ' ', '0', ' ', 0, ' ', ' ', ' ', ' ', ' ', ''),
+(20, 25, ' ', ' ', 'Intel Iris Xe', 0, 0, ' ', ' ', '2 x USB 2.02 x USB 3.2HDMILAN (RJ45)', 'i51135G72.40 GHz', ' ', ' ', 0, ' ', 'Windows 10 Home SL', 'Dài 541 mm - Rộng 185 mm - Dày 433 mm - Nặng 6.81 kg', '23.8 inchFull HD', ' ', '256', ' ', 8, ' ', ' ', ' ', ' ', ' ', 'Chuột ( Không dây ) , Bàn phím ( Không dây ) , Adapter sạc, Dây nguồn, Sách hướng dẫn'),
+(21, 26, '12 MP', '3 camera 12 MP', ' ', 0, 0, 'Apple A15 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'OLED6.7\"Super Retina XDR', ' ', '128', '4352 mAh20 W', 6, '1 Nano SIM & 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
+(22, 27, '12 MP', '3 camera 12 MP', ' ', 0, 0, 'Apple A15 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'OLED6.1\"Super Retina XDR', ' ', '128', '3095 mAh20 W', 6, '1 Nano SIM & 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
+(23, 28, ' 12 MP', ' 2 camera 12 MP', ' ', 0, 0, 'Apple A14 Bionic', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'iOS 15', ' ', 'OLED6.1\"Super Retina XDR', ' ', '64', '2815 mAh20 W', 4, '1 Nano SIM & 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Lightning - Type C'),
+(24, 29, '40 MP', 'Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP', ' ', 0, 0, 'Snapdragon 8 Gen 1', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', 'Dynamic AMOLED 2X6.8', ' ', '128', '5000 mAh45 W', 8, '2 Nano SIM hoặc 1 Nano SIM + 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Bút cảm ứng, Cây lấy sim, Cáp Type C'),
+(25, 30, '10 MP & 4 MP', '3 camera 12 MP', ' ', 0, 0, 'Snapdragon 888', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 11', ' ', 'Dynamic AMOLED 2XChính 7.6\" & Phụ 6.2\"Full HD+', ' ', '256', '4400 mAh25 W', 12, '2 Nano SIM hoặc 1 Nano SIM + 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C '),
+(26, 0, '10 MP', ' Chính 50 MP & Phụ 12 MP, 10 MP', ' ', 0, 0, 'Snapdragon 8 Gen 1', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', 'Dynamic AMOLED 2X6.1\"Full HD+', ' ', '128', '3700 mAh25 W', 8, '2 Nano SIM hoặc 1 Nano SIM + 1 eSIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C'),
+(27, 32, '8 MP', 'Chính 50 MP & Phụ 5 MP, 2 MP, 2 MP', ' ', 0, 0, ' Exynos 1280', ' ', ' ', ' ', ' ', ' ', 0, ' ', 'Android 12', ' ', 'TFT LCD6.6\"Full HD+', ' ', '128', '5000 mAh25 W', 6, '2 Nano SIMHỗ trợ 5G', ' ', ' ', ' ', ' ', 'Cáp Type C, Cây lấy sim, Hộp, Sách hướng dẫn');
 
 -- --------------------------------------------------------
 

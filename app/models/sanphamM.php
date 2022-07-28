@@ -62,6 +62,10 @@
       $sql = "SELECT * FROM $table_sp  where $dieukien ";
       return $this->db->select($sql);
     }
+    public function sanpham_ma_dm_GB($table_sp, $table_ctsp, $dieukien){
+      $sql = "SELECT * FROM $table_sp join $table_ctsp on $table_sp.ma_sp = $table_ctsp.ma_sp WHERE $dieukien  ";
+      return $this->db->select($sql);
+    }
     // public function sanpham_ctth($table_sp, $table_msp, $dieukien){
     //   $sql = "SELECT * FROM $table_msp join $table_sp on $table_msp.ma_sp = $table_sp.ma_sp  where $dieukien";
     //   return $this->db->select($sql);
