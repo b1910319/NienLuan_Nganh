@@ -1,5 +1,5 @@
 <div class="list_sanpham mt-4 container">
-  <p class="fw-bold">Điện thoại có BỘ NHỚ TRONG là:  
+  <p class="fw-bold">Điện thoại có BỘ NHỚ TRONG  
     <?php
       foreach ($data['sanpham_ma_dm_rom'] as $key => $sp){
         echo  $sp['rom'].' GB';

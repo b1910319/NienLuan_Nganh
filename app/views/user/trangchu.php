@@ -63,7 +63,7 @@
               <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
-              <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+              <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
               <div class="row tex-center ms-2">
               <?php
                 $ma_sp = $sp['ma_sp'];

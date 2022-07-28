@@ -1,110 +1,10 @@
 <div class="list_sanpham mt-4 container">
-  <div class="row mb-4 timkiem_hang ">
-    <div class="col-2 p-3 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_macbook.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_asus.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_hp.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_lenovo.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_acer.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_dell.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_lg.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_gigabyte.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_intel.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_chuwi.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_msi.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="img/logo/logo_surface.png" class="d-block w-100">
-      </a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2 timkiem_sanpham_loai " style="text-align: center ;">
-      <a href="#deal_soc" style="  text-decoration: none;">
-        <i class="fa-solid fa-fire"></i> <br>
-        <p class="mt-2">Deal sốc</p>
-      </a>
-    </div>
-    <div class="col-2 timkiem_sanpham_loai " style="text-align: center ;">
-      <a href="#laptop_gaming" style="  text-decoration: none;">
-        <i class="fa-solid fa-gamepad"></i> <br>
-        <p class="mt-2">Gaming</p>
-      </a>
-    </div>
-    <div class="col-2 timkiem_sanpham_loai " style="text-align: center ;">
-      <a href="#laptop_hoctap" style="  text-decoration: none;">
-        <i class="fa-solid fa-chalkboard-user"></i> <br>
-        <p class="mt-2">Học tập, Văn phòng</p>
-      </a>
-    </div>
-    <div class="col-2 timkiem_sanpham_loai " style="text-align: center ;">
-      <a href="#laptop_dohoa" style="  text-decoration: none;">
-        <i class="fa-solid fa-compass-drafting"></i> <br>
-        <p class="mt-2">Đồ học, Kỹ thuật</p>
-      </a>
-    </div>
-    <div class="col-2 timkiem_sanpham_loai " style="text-align: center ;">
-      <a href="#laptop_mong" style="  text-decoration: none;">
-        <i class="fa-solid fa-feather"></i> <br>
-        <p class="mt-2">Mỏng nhẹ</p>
-      </a>
-    </div>
-    <div class="col-2 timkiem_sanpham_loai " style="text-align: center ;">
-      <a href="#laptop_caocap" style="  text-decoration: none;">
-        <i class="fa-solid fa-gem"></i> <br>
-        <p class="mt-2">Cao cấp, Sang trọng</p>
-      </a>
-    </div>
-  </div>
-  <div class="deal_soc mt-4" id="deal_soc">
+  <div class="deal_soc mt-4" id="dealsoc">
     <h1>DEAL SỐC <b>GIẢM TỚI 10.000.000đ</b></h1>
     <div class="row mt-3 mb-4">
       <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
-          <div class="carousel-inner">
+          <!-- <div class="carousel-inner">
 
             <div class="item active">
               <div class="col-xs-12 col-sm-6 col-md-2">
@@ -154,6 +54,34 @@
               </div>
             </div>
 
+          </div> -->
+          <div class="carousel-inner">
+            <?php
+              foreach ($data['sanpham_deal1'] as $key => $sp){
+                ?>
+                  <div class="item active">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+              foreach ($data['sanpham_deal'] as $key => $sp){
+                ?>
+                  <div class="item">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+            ?>
           </div>
           <!-- left,right control -->
           <div id="slider-control">
@@ -166,8 +94,76 @@
       </div>
     </div>
   </div>
-  <div class="laptop_gaming mt-4" id="laptop_gaming">
-    <img src="img/banner/banner_laptop_gaming.jpg" class="d-block w-100 mb-3">
+  <div class="laptop_gaming mt-4" id="gaming">
+    <img src="<?php echo BASE_URL ?>public/img/banner/banner_laptop_gaming.jpg" class="d-block w-100 mb-3">
+    <div class="row mb-5">
+      <?php
+        foreach ($data['sanpham_gaming'] as $key => $sp){
+          ?>
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+                <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
+              </a>
+              <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
+              <div class="row tex-center ms-2">
+              <?php
+                $ma_sp = $sp['ma_sp'];
+                $con = mysqli_connect('localhost', 'root', '', 'nienluan');
+                $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
+                    $arr[$row['ma_m']]['mau'] = $row['mau'];
+                    ?>
+                      <div class="col-2">
+                        <span  style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
+                      </div>
+                    <?php
+                }
+              ?>
+              </div>
+              <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
+            </div>
+          <?php
+        }
+      ?>
+    </div>
+  </div>
+  <div class="laptop_hoctap mt-4" id="hoctapvanphong">
+    <img src="<?php echo BASE_URL ?>public/img/banner/banner_laptop_hoctap.jpg" class="d-block w-100 mb-3">
+    <div class="row mb-5">
+    <?php
+        foreach ($data['sanpham_hoctap'] as $key => $sp){
+          ?>
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+                <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
+              </a>
+              <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
+              <div class="row tex-center ms-2">
+              <?php
+                $ma_sp = $sp['ma_sp'];
+                $con = mysqli_connect('localhost', 'root', '', 'nienluan');
+                $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
+                    $arr[$row['ma_m']]['mau'] = $row['mau'];
+                    ?>
+                      <div class="col-2">
+                        <span  style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
+                      </div>
+                    <?php
+                }
+              ?>
+              </div>
+              <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
+            </div>
+          <?php
+        }
+      ?>
+    </div>
+  </div>
+  <div class="laptop_dohoa mt-4" id="dohoakythuat">
+    <img src="<?php echo BASE_URL ?>public/img/banner/banner_laptop_dohoa.jpg" class="d-block w-100 mb-3">
     <div class="row mb-5">
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
@@ -256,8 +252,8 @@
 
     </div>
   </div>
-  <div class="laptop_hoctap mt-4" id="laptop_hoctap">
-    <img src="img/banner/banner_laptop_hoctap.jpg" class="d-block w-100 mb-3">
+  <div class="laptop_mong mt-4" id="mongnhe">
+    <img src="<?php echo BASE_URL ?>public/img/banner/banner_laptop_mong.jpg" class="d-block w-100 mb-3">
     <div class="row mb-5">
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">
@@ -346,188 +342,8 @@
 
     </div>
   </div>
-  <div class="laptop_dohoa mt-4" id="laptop_dohoa">
-    <img src="img/banner/banner_laptop_dohoa.jpg" class="d-block w-100 mb-3">
-    <div class="row mb-5">
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/oppo_reno7.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center fw-b sanpham_item_titleold mt-3">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-
-    </div>
-  </div>
-  <div class="laptop_mong mt-4" id="laptop_mong">
-    <img src="img/banner/banner_laptop_mong.jpg" class="d-block w-100 mb-3">
-    <div class="row mb-5">
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/oppo_reno7.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center fw-b sanpham_item_titleold mt-3">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_s20.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a32.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-      <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-        <a href="">
-          <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-        </a>
-        <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-        <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-      </div>
-
-    </div>
-  </div>
-  <div class="laptop_caocap mt-4" id="laptop_caocap">
-    <img src="img/banner/banner_laptop_caocap.jpg" class="d-block w-100 mb-3">
+  <div class="laptop_caocap mt-4" id="caocapsangtrong">
+    <img src="<?php echo BASE_URL ?>public/img/banner/banner_laptop_caocap.jpg" class="d-block w-100 mb-3">
     <div class="row mb-5">
       <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
         <a href="">

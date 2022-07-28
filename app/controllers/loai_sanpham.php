@@ -31,11 +31,15 @@
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table = 'loai_sanpham';
       $ten_lsp = $_POST['ten_lsp'];
+      $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+      $ghichu = $danhmuc_sanphamM->convert_name($ten_lsp);
+      $ghichu_lsp = strtolower($ghichu);
       $ma_dm = $_POST['ma_dm'];
       $icon_lsp = $_POST['icon_lsp'];
       $data = array(
         'ma_dm' => $ma_dm,
         'ten_lsp' => $ten_lsp,
+        'ghichu_lsp' => $ghichu_lsp,
         'icon_lsp' => $icon_lsp
       );
       $result = $loai_sanphamM->loai_sanpham_insert($table, $data);
@@ -68,9 +72,13 @@
       $table = 'loai_sanpham';
       $dieukien = "loai_sanpham.ma_lsp='$ma_lsp'" ;
       $ten_lsp = $_POST['ten_lsp'];
+      $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+      $ghichu = $danhmuc_sanphamM->convert_name($ten_lsp);
+      $ghichu_lsp = strtolower($ghichu);
       $ma_dm = $_POST['ma_dm'];
       $data = array(
         'ma_dm' => $ma_dm,
+        'ghichu_lsp' => $ghichu_lsp,
         'ten_lsp' => $ten_lsp
       );
       $result = $loai_sanphamM->loai_sanpham_update($table, $data, $dieukien);

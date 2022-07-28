@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-4">
   <div class="row">
     <div class="col-8">
       <img style="width:25% ;" src="<?php echo BASE_URL ?>public/img/chuyentrang_thuonghieu/samsung/samsung2021.png" alt="">

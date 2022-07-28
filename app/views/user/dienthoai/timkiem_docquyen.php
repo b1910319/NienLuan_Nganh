@@ -1,5 +1,5 @@
 <div class="list_sanpham mt-4 container">
-  <p>Sản phẩm độc quyền
+  <p class="fw-bold">Sản phẩm độc quyền
   </p>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">

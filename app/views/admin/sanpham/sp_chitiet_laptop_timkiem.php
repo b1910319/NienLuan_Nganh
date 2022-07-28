@@ -3,7 +3,7 @@
     <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
-          <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet">
+          <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet_laptop">
             <i class="fas fa-solid fa-caret-left"></i>&ensp;
           </a>
           Thông tin chi tiết: Laptop

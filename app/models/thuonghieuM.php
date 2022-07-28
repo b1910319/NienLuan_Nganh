@@ -8,7 +8,7 @@
       return $this->db->insert($table, $data);
     }
     public function thuonghieu_list($table){
-      $sql = "SELECT * FROM $table ORDER BY ma_th desc";
+      $sql = "SELECT * FROM $table ORDER BY ten_th ASC";
       return $this->db->select($sql);
     }
     public function thuonghieu_limit($table){

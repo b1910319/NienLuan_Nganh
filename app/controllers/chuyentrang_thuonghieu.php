@@ -41,5 +41,6 @@ class chuyentrang_thuonghieu extends controller
     $data['sanpham_ctth_smartwatch'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien4);
     $this->load->view_user("header", $data);
     $this->load->view_user("chuyentrang_thuonghieu/samsung", $data);
+    $this->load->view_user("footer");
   }
 }

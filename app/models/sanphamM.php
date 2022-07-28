@@ -66,8 +66,12 @@
       $sql = "SELECT * FROM $table_sp join $table_ctsp on $table_sp.ma_sp = $table_ctsp.ma_sp WHERE $dieukien  ";
       return $this->db->select($sql);
     }
-    // public function sanpham_ctth($table_sp, $table_msp, $dieukien){
-    //   $sql = "SELECT * FROM $table_msp join $table_sp on $table_msp.ma_sp = $table_sp.ma_sp  where $dieukien";
-    //   return $this->db->select($sql);
-    // }
+    public function sanpham_deal1($table_sp, $table_dm, $dieukien){
+      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm where $dieukien order by $table_sp.ma_sp desc limit 1";
+      return $this->db->select($sql);
+    }
+    public function sanpham_deal($table_sp, $table_dm, $dieukien){
+      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm where $dieukien";
+      return $this->db->select($sql);
+    }
   }

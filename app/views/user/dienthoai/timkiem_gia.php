@@ -1,5 +1,5 @@
 <div class="list_sanpham mt-4 container">
-  <p>Kết quả tìm kiếm theo giá
+  <p class="fw-bold">Kết quả tìm kiếm theo giá
   </p>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
