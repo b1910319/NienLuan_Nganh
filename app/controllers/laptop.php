@@ -39,6 +39,12 @@ class laptop extends controller
     $data['sanpham_gaming'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien3);
     $dieukien4 = "sanpham.ma_lsp = '15' and sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_hoctap'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien4);
+    $dieukien5 = "sanpham.ma_lsp = '16' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_dohoa'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien5);
+    $dieukien6 = "sanpham.ma_lsp = '17' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_nhe'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien6);
+    $dieukien7 = "sanpham.ma_lsp = '18' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_sangtrong'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien7);
     $this->load->view_user("laptop/header_laptop", $data);
     $this->load->view_user("laptop/sanpham", $data);
     $this->load->view_user("footer");
