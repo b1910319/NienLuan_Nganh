@@ -30,6 +30,7 @@ class dienthoai extends controller
     $table_sp = 'sanpham';
     $dieukien = "sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_ma_dm'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien);
+    $this->load->view_user("dienthoai/header_dienthoai", $data);
     $this->load->view_user("dienthoai/sanpham", $data);
     $this->load->view_user("footer");
   }
@@ -108,7 +109,7 @@ class dienthoai extends controller
     $dieukien = "sanpham.ma_dm = '$ma_dm' && sanpham.ma_th = '$ma_th'";
     $data['sanpham_ma_dm_th'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien);
 
-
+    $this->load->view_user("dienthoai/header_dienthoai", $data);
     $this->load->view_user("dienthoai/timkiem_thuonghieu", $data);
     $this->load->view_user("footer");
   }
@@ -141,7 +142,39 @@ class dienthoai extends controller
     $end = $end.'000000';
     $dieukien1 = "sanpham.gia_sp BETWEEN '$start' AND '$end' AND sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_ma_dm_gia'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien1);
+    $this->load->view_user("dienthoai/header_dienthoai", $data);
     $this->load->view_user("dienthoai/timkiem_gia", $data);
+    $this->load->view_user("footer");
+  }
+  public function timkiem_docquyen(){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $this->load->view_user("header", $data);
+
+    //thương hiệu
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    //danh mục - thương hiệu
+    $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+    $table_dmth = 'danhmuc_thuonghieu';
+    $ma_dm = '8';
+    $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
+    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
+    // 
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND sanpham.tinhtrang_sp = 2";
+    $data['sanpham_ma_dm_docquyen'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien1);
+    $this->load->view_user("dienthoai/header_dienthoai", $data);
+    $this->load->view_user("dienthoai/timkiem_docquyen", $data);
     $this->load->view_user("footer");
   }
 }
