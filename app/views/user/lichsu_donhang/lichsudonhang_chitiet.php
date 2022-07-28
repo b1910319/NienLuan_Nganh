@@ -13,7 +13,7 @@
   <div class="mt-3">
   <table class="table table-hover">
       <thead>
-        <tr class="tr_table">
+        <tr  class="table-dark">
           <th scope="col">STT</th>
           <th scope="col">Thông tin sản phẩm</th>
           <th scope="col">Số lượng đặt</th>

@@ -116,7 +116,7 @@
                 <div class="col-md-12">
                   <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                     style="height: 350px; overflow: auto;">
-                    <div class="alert alert-dark text-center" role="alert" style="font-size: 18px; font-weight: bold;">
+                    <div class="alert alert-info text-center" role="alert" style="font-size: 18px; font-weight: bold;">
                       Cấu hình Điện thoại: <?php echo $sp['ten_sp'] ?>
                     </div>
                     <p>

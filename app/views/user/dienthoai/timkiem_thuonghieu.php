@@ -8,37 +8,37 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">Dưới 2 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_gia/0/2">Dưới 2 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 2 triệu - 4 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_gia/2/4">Từ 2 triệu - 4 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 4 triệu - 7 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_gia/4/7">Từ 4 triệu - 7 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 7 triệu - 13 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_gia/7/13">Từ 7 triệu - 13 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 13 triệu - 20 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_gia/13/20">Từ 13 triệu - 20 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Trên 20 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dienthoai/timkiem_gia/20/100">Trên 20 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">

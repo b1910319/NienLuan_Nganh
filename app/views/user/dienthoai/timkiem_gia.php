@@ -164,10 +164,12 @@
       }
     ?>
   </div>
+  <p>Kết quả tìm kiếm theo giá
+  </p>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php
-        foreach ($data['sanpham_ma_dm'] as $key => $sp){
+        foreach ($data['sanpham_ma_dm_gia'] as $key => $sp){
           ?>
             <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
               <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
