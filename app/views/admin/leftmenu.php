@@ -104,64 +104,6 @@
             <span class="badge badge-primary float-right"></span>
           </a>
         </li>
-        <!-- <li>
-          <a href="javascript: void(0);">
-            <i class="fa-solid fa-mobile"></i>
-            <span> Sản phẩm </span>
-            <span class="menu-arrow"></span>
-          </a>
-          <ul class="nav-second-level nav" aria-expanded="false">
-            <li>
-              <a href="javascript: void(0);">
-                <a href="">
-                  Thêm sản phẩm
-                </a>
-              </a>
-            </li>
-            <li>
-              <a href="javascript: void(0);" aria-expanded="false">Chi tiết - sản phẩm
-                <span class="menu-arrow"></span>
-              </a>
-              <ul class="nav-third-level nav" aria-expanded="false">
-                <li>
-                  <a href="javascript: void(0);">
-                    <a href="">
-                    Điện thoại - Table
-                    </a>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript: void(0);">
-                    <a href="">
-                      Laptop
-                    </a>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript: void(0);">
-                    <a href="">
-                      Smartwatch
-                    </a>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript: void(0);">
-                    <a href="">
-                    Đồng hồ
-                    </a>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript: void(0);">
-                    <a href="">
-                      Máy tính để bàn
-                    </a>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li> -->
         <li>
           <a href="javascript: void(0);">
             <i class="fa-solid fa-mobile"></i>
@@ -245,11 +187,6 @@
               </a>
             <?php
           ?>
-          <!-- <a href="javascript: void(0);">
-            <i class="fas fa-cart-arrow-down"></i>
-            <span> Đơn hàng </span>
-            <span class="menu-arrow"></span>
-          </a> -->
           <ul class="nav-second-level" aria-expanded="false">
             <li><a href="<?php echo BASE_URL ?>/donhang/donhang">Tất cả đơn hàng</a></li>
             <?php
@@ -288,6 +225,13 @@
           </ul>
         </li>
         <li>
+          <a href="<?php echo BASE_URL ?>tintuc/tintuc">
+            <i class="fa-solid fa-newspaper"></i>
+            <span> Tin tức </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+        <!-- <li>
           <a href="javascript: void(0);">
             <i class="ti-pencil-alt"></i>
             <span> Forms </span>
@@ -400,7 +344,7 @@
               </ul>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
 
     </div>

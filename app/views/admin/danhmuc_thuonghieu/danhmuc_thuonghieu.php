@@ -1,7 +1,7 @@
 <div id="wrapper">
   <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
-      Thêm thông danh mục - thương hiệu
+      Thêm thông tin danh mục - thương hiệu
     </div>
     <form action="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_insert" method="POST"
       autocomplete="off">

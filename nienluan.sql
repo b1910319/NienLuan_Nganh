@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 29, 2022 lúc 06:04 AM
+-- Thời gian đã tạo: Th7 29, 2022 lúc 08:25 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -1191,6 +1191,29 @@ INSERT INTO `thuonghieu` (`ma_th`, `ten_th`, `ghichu_th`, `logo_th`, `hinh_th`) 
 (34, 'Apple', 'apple', 'ad2e9926e6 . logo_apple.png', 'ad2e9926e6 . '),
 (122, 'MVW', 'mvw', 'ff46b3f204 . ', 'ff46b3f204 . ');
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tintuc`
+--
+
+CREATE TABLE `tintuc` (
+  `ma_tt` int(10) NOT NULL,
+  `ma_nv` int(10) NOT NULL,
+  `ma_th` int(10) NOT NULL,
+  `ma_dmtt` int(10) NOT NULL,
+  `ten_tt` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh_tt` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `noidung_tt` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tintuc`
+--
+
+INSERT INTO `tintuc` (`ma_tt`, `ma_nv`, `ma_th`, `ma_dmtt`, `ten_tt`, `hinh_tt`, `noidung_tt`) VALUES
+(7, 4, 12, 3, 'Điện thoại Xiaomi giá rẻ chưa tới 4 triệu có pin 5.000 mAh, bộ nhớ trong 128GB', '7b143fda21 . 1.jpg', '<h2><strong>Kh&ocirc;ng hề n&oacute;i đi&ecirc;u đ&acirc;u, với mức gi&aacute; chỉ dưới 4 triệu đồng, bạn đ&atilde; c&oacute; thể sở hữu điện thoại c&oacute;&nbsp;pin 5.000 mAh, bộ nhớ trong 128GB thật đ&oacute;. Phải c&acirc;n nhắc về chiếc&nbsp;<a href=\"https://www.thegioididong.com/dtdd\" target=\"_blank\" title=\"Tham khảo thêm smartphone tại Thegioididong.com\" type=\"Tham khảo thêm smartphone tại Thegioididong.com\">điện thoại</a>&nbsp;gi&aacute; rẻ nhưng sở hữu nhiều t&iacute;nh năng hiện đại, th&ocirc;ng số cực chất từ nh&agrave;&nbsp;<a href=\"https://www.thegioididong.com/dtdd-xiaomi\" target=\"_blank\" title=\"Xiaomi\" type=\"Xiaomi\">Xiaomi</a>&nbsp;nha bạn ơi. Xem ngay mức gi&aacute; khiến bạn phải bất ngờ v&igrave; qu&aacute; l&agrave; rẻ đi!</strong></h2>\r\n\r\n<p><strong>Thời gian khuyến m&atilde;i:</strong>&nbsp;Đến 31/07/2022.</p>\r\n\r\n<p><strong>Lưu &yacute;</strong></p>\r\n\r\n<ul>\r\n	<li>Khuyến m&atilde;i c&oacute; thể kết th&uacute;c sớm trước thời hạn nếu hết số lượng sản phẩm.</li>\r\n	<li>&Ocirc; sản phẩm chưa hiển thị ưu đ&atilde;i ch&iacute;nh x&aacute;c, để hiện ưu đ&atilde;i ch&iacute;nh x&aacute;c, kh&aacute;ch cần bấm&nbsp;<strong>Xem chi tiết.</strong></li>\r\n</ul>\r\n\r\n<p>Trong ph&acirc;n kh&uacute;c điện thoại gi&aacute; rẻ,&nbsp;<a href=\"https://www.thegioididong.com/dtdd/xiaomi-redmi-10c-128gb\" target=\"_blank\" title=\"Điện thoại Xiaomi Redmi 10C 128GB\" type=\"Điện thoại Xiaomi Redmi 10C 128GB\">Xiaomi Redmi 10C 128GB</a>&nbsp;ra đời với n&acirc;ng cấp đ&aacute;ng kể. Điện thoại c&oacute; khả năng chụp ảnh tốt với camera 50 MP, sắc n&eacute;t, trang bị nhiều t&iacute;nh năng l&agrave;m đẹp th&ocirc;ng minh cho camera trước, bạn thoải m&aacute;i tự tin selfie hay call video c&ugrave;ng bạn b&egrave;.</p>\r\n\r\n<p>Điện thoại xử l&yacute; mượt m&agrave; cho mọi t&aacute;c vụ cơ bản h&agrave;ng ng&agrave;y,&nbsp;RAM 4 GB gi&uacute;p đa nhiệm tương đối mượt m&agrave;, bộ nhớ trong 128 GB mang lại kh&ocirc;ng gian lưu trữ lớn. Đặc biệt, với&nbsp;vi&ecirc;n pin 5.000 mAh, thời gian sử dụng li&ecirc;n tục đến 8 giờ, gi&uacute;p bạn thoải m&aacute;i d&ugrave;ng điện thoại cả ng&agrave;y m&agrave; kh&ocirc;ng qu&aacute; lo lắng vấn đề hết pin giữa chừng.</p>\r\n\r\n<p>Bạn đ&atilde; bất ngờ về chiếc điện thoại gi&aacute; rẻ nh&agrave; Xiaomi n&agrave;y chưa? Nếu qu&aacute; th&iacute;ch rồi th&igrave; tậu về liền tay n&agrave;o!</p>\r\n\r\n<p>C&ograve;n qu&aacute; nhiều deal sốc kh&aacute;c đang chờ bạn trong th&aacute;ng 7 n&agrave;y, click ngay n&uacute;t cam b&ecirc;n dưới nh&eacute;!</p>\r\n');
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -1268,6 +1291,12 @@ ALTER TABLE `thuonghieu`
   ADD PRIMARY KEY (`ma_th`);
 
 --
+-- Chỉ mục cho bảng `tintuc`
+--
+ALTER TABLE `tintuc`
+  ADD PRIMARY KEY (`ma_tt`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -1330,6 +1359,12 @@ ALTER TABLE `sanpham`
 --
 ALTER TABLE `thuonghieu`
   MODIFY `ma_th` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+
+--
+-- AUTO_INCREMENT cho bảng `tintuc`
+--
+ALTER TABLE `tintuc`
+  MODIFY `ma_tt` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -24,7 +24,7 @@
                   <td class="was-validated">
                     <input type='file' name="logo_th">
                     <p>
-                    <img style="width: 10%;" src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['logo_th'] ?>" alt="">
+                      <img style="width: 10%;" src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['logo_th'] ?>" alt="">
                     </p>
                   </td>
                 </tr>
