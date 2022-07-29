@@ -25,6 +25,10 @@
       $sql = "SELECT * FROM $table_tt join $table_nv on $table_tt.ma_nv = $table_nv.ma_nv join $table_th on $table_tt.ma_th = $table_th.ma_th join $table_dmtt on $table_tt.ma_dmtt = $table_dmtt.ma_dmtt WHERE $dieukien ORDER BY ma_tt desc";
       return $this->db->select($sql);
     }
+    public function tintuc_limit($table_tt, $table_th, $table_dmtt, $limit){
+      $sql = "SELECT * FROM $table_tt join $table_th on $table_tt.ma_th = $table_th.ma_th join $table_dmtt on $table_tt.ma_dmtt = $table_dmtt.ma_dmtt LIMIT $limit";
+      return $this->db->select($sql);
+    }
     // public function hinh_limit1($table, $dieukien){
     //   $sql = "SELECT * FROM $table where $dieukien LIMIT 1";
     //   return $this->db->select($sql);

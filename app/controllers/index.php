@@ -27,6 +27,15 @@ class index extends controller
     $data['sanpham_limit1'] = $sanphamM->sanpham_limit1($table_sp, $table_dm);
     $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp,$table_dm);
     $data['sanpham_dt_limit'] = $sanphamM->sanpham_dt_limit($table_sp);
+
+    //tin tức
+    $tintucM = $this->load->model('tintucM');
+    $table_tt = 'tintuc';
+    $limit = 6;
+    //danh mục tin tức
+    $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
+    $table_dmtt = 'danhmuc_tintuc';
+    $data['tintuc_limit'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
     $this->load->view_user("trangchu", $data);
     $this->load->view_user("footer");
   }
@@ -116,5 +125,41 @@ class index extends controller
     );
     $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
     header("Location:".BASE_URL."index/tra_donhang");
+  }
+  public function tintuc(){
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+
+    $this->load->view_user("header", $data);
+    //danh mục tin tức
+    $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
+    $table_dmtt = 'danhmuc_tintuc';
+    $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
+     // tin tức
+    $tintucM = $this->load->model('tintucM');
+    $table_tt = 'tintuc';
+     //thương hiệu
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    //tin tức limit 
+    $limit1 = 1;
+    $data['tintuc_limit1'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit1);
+    $limit2 = '1,2';
+    $data['tintuc_limit2'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit2);
+    $limit4 = '3,7';
+    $data['tintuc_limit4'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit4);
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    // danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
+    $table_dm = 'danhmuc_sanpham';
+    $limit=4;
+    $data['sanpham'] = $sanphamM->Usanpham_limit($table_sp,$table_dm, $limit);
+    $this->load->view_user("tintuc/tintuc", $data);
+    $this->load->view_user("footer");
   }
 }

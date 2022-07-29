@@ -112,9 +112,7 @@
         <!--  -->
         <div class="col-2">
           <a href="<?php echo BASE_URL ?>index/tra_donhang">
-            <button class="btn btn-success btn_tradonhang mt-3" type="submit"><i class="fas fa-history"></i>&ensp;Lịch
-              sử đơn
-              hàng</button>
+            <button class="btn btn-success btn_tradonhang mt-3" type="submit"><i class="fas fa-history"></i>&ensp;Lịch sử đơn hàng</button>
           </a>
         </div>
         <div class="col-2">
@@ -126,7 +124,7 @@
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-light mt-3">
-            <a href="">
+            <a href="<?php echo BASE_URL ?>index/tintuc">
               <div class="spinner-grow text-danger" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>

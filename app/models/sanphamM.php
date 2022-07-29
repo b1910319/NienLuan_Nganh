@@ -74,4 +74,8 @@
       $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm where $dieukien";
       return $this->db->select($sql);
     }
+    public function Usanpham_limit($table_sp,$table_dm, $limit){
+      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm LIMIT $limit";
+      return $this->db->select($sql);
+    }
   }
