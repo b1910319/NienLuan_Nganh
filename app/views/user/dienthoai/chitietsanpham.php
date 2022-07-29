@@ -334,52 +334,31 @@
         <?php
       }
     ?>
-    <!-- <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-      <a href="">
-        <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-      </a>
-      <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-      <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-    </div>
-    <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-      <a href="">
-        <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-      </a>
-      <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-      <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-    </div>
-    <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-      <a href="">
-        <img src="./img/sanpham/ss_a33.png" class="d-block w-100">
-      </a>
-      <p class="text-center mt-3 sanpham_item_title">Samsung s20</p>
-      <p class="fw-bold text-center mt-2 sanpham_gia">20.000.000 d</p>
-    </div> -->
   </div>
-  <script>
+  <!-- <script>
     const print = console.log
 
-const getSelectedOption = function (selectEl) {
-	const selectedOptionCurrent = selectEl.options[selectEl.selectedIndex]
-	renderText(selectedOptionCurrent.textContent)
-}
+    const getSelectedOption = function (selectEl) {
+      const selectedOptionCurrent = selectEl.options[selectEl.selectedIndex]
+      renderText(selectedOptionCurrent.textContent)
+    }
 
-const getSelect = function () {
-	const selectEl = document.getElementById('js-select')
-	
-	selectEl.addEventListener('change', function (e) {
-		const selectElCurrent = e.target
-		getSelectedOption(selectElCurrent)
-	})
-}
-
-
-const renderText = function (text) {
-	const spanEl = document.getElementById('js-text')
-	spanEl.textContent = text
-}
+    const getSelect = function () {
+      const selectEl = document.getElementById('js-select')
+      
+      selectEl.addEventListener('change', function (e) {
+        const selectElCurrent = e.target
+        getSelectedOption(selectElCurrent)
+      })
+    }
 
 
-getSelect()
-  </script>
+    const renderText = function (text) {
+      const spanEl = document.getElementById('js-text')
+      spanEl.textContent = text
+    }
+
+
+    getSelect()
+  </script> -->
 </div>

@@ -20,7 +20,7 @@
       return $this->db->select($sql);
     }
     public function sanpham_limit($table_sp, $table_dm){
-      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm LIMIT 1,6";
+      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm LIMIT 1,8";
       return $this->db->select($sql);
     }
     public function sanpham_dt_limit($table_sp){

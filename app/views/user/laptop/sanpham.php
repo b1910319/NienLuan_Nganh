@@ -238,7 +238,7 @@
   </script>
   <!--  -->
   <!-- chuyên trang thương hiệu -->
-  <div class="chuyentrang_thuonghieu">
+  <!-- <div class="chuyentrang_thuonghieu">
     <div class="row">
       <div class="col-md-12 mb-4 mt-2">
         <h2 class="gachchan"><b>chuyên trang thương hiệu</b></h2>
@@ -266,7 +266,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!--  -->
 </div>
