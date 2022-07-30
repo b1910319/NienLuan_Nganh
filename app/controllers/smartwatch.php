@@ -1,5 +1,5 @@
 <?php
-class laptop extends controller
+class smartwatch extends controller
 {
   public function __construct()
   {
@@ -35,18 +35,16 @@ class laptop extends controller
     $dieukien2 = "sanpham.ma_lsp = '11' and sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_deal1'] = $sanphamM->sanpham_deal1($table_sp,$table_dm, $dieukien2);
     $data['sanpham_deal'] = $sanphamM->sanpham_deal($table_sp, $table_dm, $dieukien2);
-    $dieukien3 = "sanpham.ma_lsp = '12' and sanpham.ma_dm = '$ma_dm'";
-    $data['sanpham_gaming'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien3);
-    $dieukien4 = "sanpham.ma_lsp = '15' and sanpham.ma_dm = '$ma_dm'";
-    $data['sanpham_hoctap'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien4);
-    $dieukien5 = "sanpham.ma_lsp = '16' and sanpham.ma_dm = '$ma_dm'";
-    $data['sanpham_dohoa'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien5);
-    $dieukien6 = "sanpham.ma_lsp = '17' and sanpham.ma_dm = '$ma_dm'";
-    $data['sanpham_nhe'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien6);
-    $dieukien7 = "sanpham.ma_lsp = '18' and sanpham.ma_dm = '$ma_dm'";
-    $data['sanpham_sangtrong'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien7);
-    $this->load->view_user("laptop/header_laptop", $data);
-    $this->load->view_user("laptop/sanpham", $data);
+    $dieukien3 = "sanpham.ma_lsp = '19' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_thoitrang'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien3);
+    $dieukien4 = "sanpham.ma_lsp = '20' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_tienich'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien4);
+    $dieukien5 = "sanpham.ma_lsp = '21' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_thethao'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien5);
+    $dieukien6 = "sanpham.ma_lsp = '22' and sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_treem'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien6);
+    $this->load->view_user("smartwatch/header_smartwatch", $data);
+    $this->load->view_user("smartwatch/sanpham", $data);
     $this->load->view_user("footer");
   }
   public function chitiet_sanpham($ma_sp, $ma_th, $ma_dm)
@@ -93,7 +91,7 @@ class laptop extends controller
     $dieukien2 = "mau_sanpham.ma_sp = '$ma_sp'";
     $data['mau_sanpham_ma'] = $mau_sanphamM->Umau_sanpham_ma($table_msp, $table_m, $dieukien2);
 
-    $this->load->view_user("laptop/chitietsanpham", $data);
+    $this->load->view_user("smartwatch/chitietsanpham", $data);
     $this->load->view_user("footer");
   }
   public function timkiem_thuonghieu($ma_dm, $ma_th)
@@ -128,8 +126,8 @@ class laptop extends controller
     $dieukien = "sanpham.ma_dm = '$ma_dm' && sanpham.ma_th = '$ma_th'";
     $data['sanpham_ma_dm_th'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien);
 
-    $this->load->view_user("laptop/header_laptop", $data);
-    $this->load->view_user("laptop/timkiem_thuonghieu", $data);
+    $this->load->view_user("smartwatch/header_smartwatch", $data);
+    $this->load->view_user("smartwatch/timkiem_thuonghieu", $data);
     $this->load->view_user("footer");
   }
 }
