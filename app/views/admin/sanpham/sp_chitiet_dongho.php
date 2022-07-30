@@ -28,6 +28,7 @@
                 <option>Chọn</option>
                 <option value="1">Nữ</option>
                 <option value="2">Nam</option>
+                <option value="3">Trẻ em</option>
               </select>
             </td>
           </tr>
@@ -130,6 +131,10 @@
                           echo 'Nữ';
                         } else if($ctsp['doituong_sudung'] == 2){
                           echo 'Nam';
+                        }else if($ctsp['doituong_sudung'] == 3){
+                          echo 'Trẻ em';
+                        }else{
+                          echo ' ';
                         }
                       ?> <br>
                     <b>Đường kính mặt:</b>  <?php echo $ctsp['duongkinh_mat'] ?> <br>

@@ -1,280 +1,41 @@
 <div class="list_sanpham mt-4 container">
-  <div class="row mb-4">
-    <div class="col-2">
-      <div class="btn-group ">
-        <button type="button" class="btn btn-light dropdown-toggle btn_loc" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          &emsp;&emsp;&emsp;&emsp;Gía&emsp;&emsp;&emsp;&emsp;
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#">Dưới 1 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Từ 1 triệu - 3 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Từ 3 triệu - 5 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Từ 7 triệu - 15 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Từ 15 triệu - 30 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Từ 30 triệu - 50 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Trên 50 triệu</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="btn-group ">
-        <button type="button" class="btn btn-light dropdown-toggle btn_loc" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          &emsp;&emsp;Giới tính&emsp;&emsp;&emsp;&emsp;
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#">Nam</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Nữ</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Trẻ em</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="btn-group ">
-        <button type="button" class="btn btn-light dropdown-toggle btn_loc" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          &emsp;Chất liệu mặt kính&emsp;
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#">Kính Sapphire</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Kính khoáng (Mineral)</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Nhựa Resin</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="btn-group ">
-        <button type="button" class="btn btn-light dropdown-toggle btn_loc" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          &emsp;&emsp;Chất liệu dây&emsp;&emsp;
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#">Da thật</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Da tổng hợp</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Gốm sứ (Ceramic)</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Thép không gỉ</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Kim loại</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Hợp kim</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Vải</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Silicone/Cao su</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Nhựa</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-  <div class="row mb-4 timkiem_hang ">
-    <div class="col-2 p-3 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_casio.jpg" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_citizen.jpg" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_mvm.jpg" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_dkny.jpg" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_canding.jpg" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_sheen.jpg" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_sr.png" class="d-block w-100">
-      </a>
-    </div>
-    <div class="col-2 p-3 btn_hang">
-      <a href="">
-        <img src="./img/logo/logo_justcavalli.jpg" class="d-block w-100">
-      </a>
-    </div>
-  </div>
   <!-- đồng hồ độc quyền -->
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row mt-3 mb-4 dongho_docquyen">
       <div class="col-2">
-        <img src="img/banner/banner_dongho_docquyen.jpg" class="d-block w-100">
+        <img src="<?php echo BASE_URL ?>public/img/banner/banner_dongho_docquyen.jpg" class="d-block w-100">
       </div>
       <div class="col-10 mt-4">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
           <div class="carousel carousel-showmanymoveone slide" id="itemslider">
             <div class="carousel-inner">
 
-              <div class="item active">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">Oppo reno 7</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">Samsung A33</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">Samsung s20</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">CVETNA HALJINA</h4>
-                  <h5 class="text-center text-light">600.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">MAJICA FOTO</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ip_13.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">MAJICA MAYORAL</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
+            <?php
+              foreach ($data['sanpham_ma_dm_limit1'] as $key => $sp){
+                ?>
+                  <div class="item active">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5" style="color:white ;"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+              foreach ($data['sanpham_ma_dm_limit'] as $key => $sp){
+                ?>
+                  <div class="item">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+            ?>
             </div>
             <!-- left,right control -->
             <div id="slider-control">
@@ -293,60 +54,39 @@
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row mt-3 mb-4 dongho_phaidep">
       <div class="col-2">
-        <img src="img/banner/banner_dongho_phaidep.png" class="d-block w-100">
+        <img src="<?php echo BASE_URL ?>public/img/banner/banner_dongho_phaidep.png" class="d-block w-100">
       </div>
       <div class="col-10 mt-4">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
           <div class="carousel carousel-showmanymoveone slide" id="itemslider1">
             <div class="carousel-inner">
 
-              <div class="item active">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/oppo_reno7.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">Oppo reno 7</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ss_a33.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">Samsung A33</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ss_s20.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">Samsung s20</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/sac_duphong.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">CVETNA HALJINA</h4>
-                  <h5 class="text-center text-light">600.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ss_a32.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">MAJICA FOTO</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-2">
-                  <a href="#"><img src="./img/sanpham/ip_13.png" class="img-responsive center-block"></a>
-                  <h4 class="text-center text-light fw-bold">MAJICA MAYORAL</h4>
-                  <h5 class="text-center text-light">400.000 VND</h5>
-                </div>
-              </div>
+            <?php
+              foreach ($data['sanpham_nu_limit1'] as $key => $sp){
+                ?>
+                  <div class="item active">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+              foreach ($data['sanpham_nu_limit'] as $key => $sp){
+                ?>
+                  <div class="item">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                      <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
+                          class="img-responsive center-block"></a>
+                      <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
+                      <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                    </div>
+                  </div>
+                <?php
+              }
+            ?>
 
             </div>
             <!-- left,right control -->
@@ -366,7 +106,7 @@
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row mt-3 mb-4 dongho_phaimanh">
       <div class="col-2">
-        <img src="img/banner/banner_dongho_phaimanh.png" class="d-block w-100">
+        <img src="<?php echo BASE_URL ?>public/img/banner/banner_dongho_phaimanh.png" class="d-block w-100">
       </div>
       <div class="col-10 mt-4">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
@@ -439,7 +179,7 @@
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row mt-3 mb-4 dongho_treem">
       <div class="col-2">
-        <img src="img/banner/banner_dongho_treem.jpg" class="d-block w-100">
+        <img src="<?php echo BASE_URL ?>public/img/banner/banner_dongho_treem.jpg" class="d-block w-100">
       </div>
       <div class="col-10 mt-4">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-4">

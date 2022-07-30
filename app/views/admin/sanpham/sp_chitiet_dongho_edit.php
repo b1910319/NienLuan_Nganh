@@ -43,12 +43,28 @@
                             <option>Chọn</option>
                             <option value="1" selected>Nữ</option>
                             <option value="2">Nam</option>
+                            <option value="3">Trẻ em</option>
                           <?php
                         } else if($ctsp['doituong_sudung'] == 2){
                           ?>
                             <option>Chọn</option>
                             <option value="1">Nữ</option>
                             <option value="2" selected>Nam</option>
+                            <option value="3">Trẻ em</option>
+                          <?php
+                        }else if($ctsp['doituong_sudung'] == 3){
+                          ?>
+                            <option>Chọn</option>
+                            <option value="1">Nữ</option>
+                            <option value="2">Nam</option>
+                            <option value="3" selected>Trẻ em</option>
+                          <?php
+                        }else{
+                          ?>
+                            <option>Chọn</option>
+                            <option value="1">Nữ</option>
+                            <option value="2">Nam</option>
+                            <option value="3" >Trẻ em</option>
                           <?php
                         }
                       ?>

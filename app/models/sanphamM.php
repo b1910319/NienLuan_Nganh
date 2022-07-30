@@ -82,4 +82,12 @@
       $sql = "SELECT * FROM $table_sp WHERE $dieukien ORDER BY ma_sp desc LIMIT $limit1";
       return $this->db->select($sql);
     }
+    public function sanpham_ma_dm_limit($table_sp, $table_dm, $dieukien, $limit){
+      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm WHERE $dieukien LIMIT $limit";
+      return $this->db->select($sql);
+    }
+    public function sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien, $limit){
+      $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm join $table_ctsp on $table_ctsp.ma_sp = $table_sp.ma_sp WHERE $dieukien LIMIT $limit";
+      return $this->db->select($sql);
+    }
   }
