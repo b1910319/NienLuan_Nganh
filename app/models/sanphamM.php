@@ -78,4 +78,8 @@
       $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm LIMIT $limit";
       return $this->db->select($sql);
     }
+    public function sp_limit($table_sp, $dieukien, $limit1){
+      $sql = "SELECT * FROM $table_sp WHERE $dieukien ORDER BY ma_sp desc LIMIT $limit1";
+      return $this->db->select($sql);
+    }
   }

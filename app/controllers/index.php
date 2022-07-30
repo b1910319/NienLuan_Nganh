@@ -27,7 +27,11 @@ class index extends controller
     $data['sanpham_limit1'] = $sanphamM->sanpham_limit1($table_sp, $table_dm);
     $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp,$table_dm);
     $data['sanpham_dt_limit'] = $sanphamM->sanpham_dt_limit($table_sp);
-
+    $dieukien = "sanpham.ma_dm = 9";
+    $limit1 = 12;
+    $data['sp_laptop_limit'] = $sanphamM->sp_limit($table_sp, $dieukien, $limit1);
+    $dieukien1 = "sanpham.ma_dm = 11";
+    $data['sp_smartwatch_limit'] = $sanphamM->sp_limit($table_sp, $dieukien1, $limit1);
     //tin tức
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
