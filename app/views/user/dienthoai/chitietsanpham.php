@@ -216,69 +216,24 @@
         }
       ?>
       <div class="h_congnghe_item pt-3 pb-3 ps-3">
-        <a href="" style="text-decoration: none;" class="text-dark">
-          <div class="row">
-            <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
-            </div>
-            <div class="col-9">
-              <p class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</p>
-              <span class="d-inline-block text-truncate" style="max-width: 250px;">
-                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-                vừa
-                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-                tinh
-                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
-                nhu
-                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-                ASUS
-                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-              </span>
-            </div>
-          </div>
-        </a>
-        <a href="" style="text-decoration: none;" class="text-dark">
-          <div class="row">
-            <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
-            </div>
-            <div class="col-9">
-              <p class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</p>
-              <span class="d-inline-block text-truncate" style="max-width: 250px;">
-                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-                vừa
-                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-                tinh
-                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
-                nhu
-                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-                ASUS
-                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-              </span>
-            </div>
-          </div>
-        </a>
-        <a href="" style="text-decoration: none;" class="text-dark">
-          <div class="row">
-            <div class="col-3">
-              <img src="./img/24h_congnghe/24h_congnghe_1.jpg" class="d-block w-100">
-            </div>
-            <div class="col-9">
-              <p class="fw-bold">Trên tay ASUS ZenBook 14 OLED UX3402: Thiết kế thời thượng, Intel Core i5 Gen 12</p>
-              <span class="d-inline-block text-truncate" style="max-width: 250px;">
-                Để chào mừng dòng sản phẩm ZenBook bước qua một thập kỷ mới với nhiều sự thay đổi ấn tượng thì thời gian
-                vừa
-                qua, ASUS đã giới thiệu đến người dùng mẫu laptop ZenBook 14 OLED UX3402 sở hữu một ngoại hình gọn nhẹ,
-                tinh
-                tế cực kỳ phù hợp với phong cách của thế hệ trẻ Gen Z năng động cùng cấu hình mạnh mẽ đáp ứng hầu hết
-                nhu
-                cầu sử dụng. Vậy ASUS ZenBook 12 OLED đã được trang bị những gì hay ho đến vậy? Hãy cùng nhau trên tay
-                ASUS
-                ZenBook 14 OLED UX3402 để tìm hiểu rõ hơn về sản phẩm này nhé.
-              </span>
-            </div>
-          </div>
-        </a>
+        <?php
+          foreach ($data['tintuc'] as $key => $tt){
+            ?>
+              <div class="mt-3 mb-3">
+                <a href="<?php echo BASE_URL ?>index/chitiet_tintuc/<?php echo $tt['ma_tt'] ?>" style="text-decoration: none;" class="text-dark">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="<?php echo BASE_URL ?>public/uploads/tintuc/<?php echo $tt['hinh_tt'] ?>" class="d-block w-100">
+                    </div>
+                    <div class="col-9">
+                      <p class="fw-bold"><?php echo $tt['ten_tt'] ?></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <?php
+          }
+        ?>
       </div>
     </div>
 

@@ -90,7 +90,14 @@ class smartwatch extends controller
 
     $dieukien2 = "mau_sanpham.ma_sp = '$ma_sp'";
     $data['mau_sanpham_ma'] = $mau_sanphamM->Umau_sanpham_ma($table_msp, $table_m, $dieukien2);
-
+    //tin tức
+    $tintucM = $this->load->model('tintucM');
+    $table_tt = 'tintuc';
+    //danh mục tin tức
+    $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
+    $table_dmtt = 'danhmuc_tintuc';
+    $limit = 4;
+    $data['tintuc'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
     $this->load->view_user("smartwatch/chitietsanpham", $data);
     $this->load->view_user("footer");
   }
