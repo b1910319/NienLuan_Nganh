@@ -1,13 +1,28 @@
 <div class="list_sanpham mt-4 container">
+  <!-- <p class="fw-bold">Kết quả tìm kiếm theo giá</p> -->
   <?php
-    if($data['sanpham_ma_dm_ram']){
+    if($data['sanpham_ma_dm_chatlieukinh']){
       $i=0;
-      foreach ($data['sanpham_ma_dm_ram'] as $key => $sp){
+      foreach ($data['sanpham_ma_dm_chatlieukinh'] as $key => $sp){
         $i++;
       }
       ?>
         <p>
-          Có <b><?php echo $i ?></b> sản phẩm RAM <b><?php echo  $sp['ram'].' GB' ?></b> đuợc tìm thấy
+          Có 
+          <b><?php echo $i ?></b> 
+          đồng hồ 
+          <b>
+            <?php
+              if ($sp['chatlieu_kinh'] == 1){
+                echo 'Kính Sapphire';
+              }else if($sp['chatlieu_kinh'] == 2){
+                echo 'Kính khoáng (Mineral)';
+              }else if($sp['chatlieu_kinh'] == 3){
+                echo 'Nhựa Resin';
+              }
+            ?>
+          </b> 
+          được tìm thấy
         </p>
       <?php
     }else{
@@ -17,10 +32,10 @@
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php
-        foreach ($data['sanpham_ma_dm_ram'] as $key => $sp){
+        foreach ($data['sanpham_ma_dm_chatlieukinh'] as $key => $sp){
           ?>
             <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+              <a href="<?php echo BASE_URL ?>dongho/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>

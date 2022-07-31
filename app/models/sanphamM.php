@@ -90,4 +90,8 @@
       $sql = "SELECT * FROM $table_sp join $table_dm on $table_sp.ma_dm = $table_dm.ma_dm join $table_ctsp on $table_ctsp.ma_sp = $table_sp.ma_sp WHERE $dieukien LIMIT $limit";
       return $this->db->select($sql);
     }
+    public function sanpham_dm_ctsp($table_sp, $table_ctsp, $dieukien){
+      $sql = "SELECT * FROM $table_sp join $table_ctsp on $table_sp.ma_sp = $table_ctsp.ma_sp WHERE $dieukien";
+      return $this->db->select($sql);
+    }
   }

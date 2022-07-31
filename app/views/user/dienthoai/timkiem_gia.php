@@ -1,6 +1,19 @@
 <div class="list_sanpham mt-4 container">
-  <p class="fw-bold">Kết quả tìm kiếm theo giá
-  </p>
+  <?php
+    if($data['sanpham_ma_dm_gia']){
+      $i=0;
+      foreach ($data['sanpham_ma_dm_gia'] as $key => $sp){
+        $i++;
+      }
+      ?>
+        <p>
+          Có <b><?php echo $i ?></b> sản phẩm được tìm thấy
+        </p>
+      <?php
+    }else{
+      echo 'Kết quả tìm kiếm hiện không tồn tại';
+    }
+  ?>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php

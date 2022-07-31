@@ -1,13 +1,22 @@
 <div class="list_sanpham mt-4 container">
-  <?php
-    if($data['sanpham_ma_dm_ram']){
+<?php
+    if($data['sanpham_ma_dm_th']){
       $i=0;
-      foreach ($data['sanpham_ma_dm_ram'] as $key => $sp){
+      foreach ($data['sanpham_ma_dm_th'] as $key => $sp){
         $i++;
       }
       ?>
-        <p>
-          Có <b><?php echo $i ?></b> sản phẩm RAM <b><?php echo  $sp['ram'].' GB' ?></b> đuợc tìm thấy
+        <p>Có <b><?php echo $i ?></b> sản phẩm thuộc thương hiệu 
+          <b>
+            <?php
+              foreach($data['thuonghieu'] as $key => $th){
+                if($sp['ma_th'] == $th['ma_th']){
+                  echo $th['ten_th'];
+                }
+              }
+            ?>
+            
+          </b>
         </p>
       <?php
     }else{
@@ -17,10 +26,10 @@
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php
-        foreach ($data['sanpham_ma_dm_ram'] as $key => $sp){
+        foreach ($data['sanpham_ma_dm_th'] as $key => $sp){
           ?>
             <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
-              <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+              <a href="<?php echo BASE_URL ?>dongho/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
@@ -30,13 +39,13 @@
                 $con = mysqli_connect('localhost', 'root', '', 'nienluan');
                 $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
-                    $arr[$row['ma_m']]['mau'] = $row['mau'];
-                    ?>
-                      <div class="col-2">
-                        <span  style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
-                      </div>
-                    <?php
+                  $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
+                  $arr[$row['ma_m']]['mau'] = $row['mau'];
+                  ?>
+                    <div class="col-2">
+                      <span  style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
+                    </div>
+                  <?php
                 }
               ?>
               </div>

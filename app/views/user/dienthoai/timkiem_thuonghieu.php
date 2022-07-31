@@ -1,5 +1,28 @@
 <div class="list_sanpham mt-4 container">
-  <p>Kết quả tìm kiếm: </p>
+  <?php
+    if($data['sanpham_ma_dm_th']){
+      $i=0;
+      foreach ($data['sanpham_ma_dm_th'] as $key => $sp){
+        $i++;
+      }
+      ?>
+        <p>Có <b><?php echo $i ?></b> sản phẩm thuộc thương hiệu 
+          <b>
+            <?php
+              foreach($data['thuonghieu'] as $key => $th){
+                if($sp['ma_th'] == $th['ma_th']){
+                  echo $th['ten_th'];
+                }
+              }
+            ?>
+            
+          </b>
+        </p>
+      <?php
+    }else{
+      echo 'Kết quả tìm kiếm hiện không tồn tại';
+    }
+  ?>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php

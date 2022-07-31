@@ -1,12 +1,19 @@
 <div class="list_sanpham mt-4 container">
-  <p class="fw-bold">Điện thoại có BỘ NHỚ TRONG  
-    <?php
+  <?php
+    if($data['sanpham_ma_dm_rom']){
+      $i=0;
       foreach ($data['sanpham_ma_dm_rom'] as $key => $sp){
-        echo  $sp['rom'].' GB';
-        break;
+        $i++;
       }
-    ?>
-  </p>
+      ?>
+        <p>
+          Có <b><?php echo $i ?></b> sản phẩm BỘ NHỚ TRONG <b><?php echo  $sp['rom'].' GB' ?></b> đuợc tìm thấy
+        </p>
+      <?php
+    }else{
+      echo 'Kết quả tìm kiếm hiện không tồn tại';
+    }
+  ?>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php

@@ -8,43 +8,43 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">Dưới 1 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/0/1">Dưới 1 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 1 triệu - 3 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/1/3">Từ 1 triệu - 3 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 3 triệu - 5 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/3/5">Từ 3 triệu - 5 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 7 triệu - 15 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/7/15">Từ 7 triệu - 15 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 15 triệu - 30 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/15/30">Từ 15 triệu - 30 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Từ 30 triệu - 50 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/30/50">Từ 30 triệu - 50 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Trên 50 triệu</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_gia/50/100">Trên 50 triệu</a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -60,19 +60,19 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">Nam</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_doituong_sudung/1">Nữ</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Nữ</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_doituong_sudung/2">Nam</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Trẻ em</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_doituong_sudung/3">Trẻ em</a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -88,19 +88,19 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">Kính Sapphire</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_doituong_chatlieu_kinh/1">Kính Sapphire</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Kính khoáng (Mineral)</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_doituong_chatlieu_kinh/2">Kính khoáng (Mineral)</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Nhựa Resin</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_doituong_chatlieu_kinh/3">Nhựa Resin</a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -116,55 +116,55 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">Da thật</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/1">Da thật</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Da tổng hợp</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/2">Da tổng hợp</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Gốm sứ (Ceramic)</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/3">Gốm sứ (Ceramic)</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Thép không gỉ</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/4">Thép không gỉ</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Kim loại</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/5">Kim loại</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Hợp kim</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/6">Hợp kim</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Vải</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/7">Vải</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Silicone/Cao su</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/8">Silicone/Cao su</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item" href="#">Nhựa</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL ?>dongho/timkiem_chatlieu_day/9">Nhựa</a>
           </li>
           <li>
             <hr class="dropdown-divider">

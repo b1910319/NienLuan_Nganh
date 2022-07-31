@@ -117,6 +117,7 @@ class smartwatch extends controller
     //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table_dmth = 'danhmuc_thuonghieu';

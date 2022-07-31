@@ -1,6 +1,19 @@
 <div class="list_sanpham mt-4 container">
-  <p class="fw-bold">Sản phẩm độc quyền
-  </p>
+  <?php
+    if($data['sanpham_ma_dm_docquyen']){
+      $i=0;
+      foreach ($data['sanpham_ma_dm_docquyen'] as $key => $sp){
+        $i++;
+      }
+      ?>
+        <p>
+          Có <b><?php echo $i ?></b> sản phẩm độc quyền
+        </p>
+      <?php
+    }else{
+      echo 'Kết quả tìm kiếm hiện không tồn tại';
+    }
+  ?>
   <div class="sanpham mb-3" style="border-top: 2px solid #c7c7c7;">
     <div class="row">
       <?php
