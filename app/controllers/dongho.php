@@ -43,6 +43,16 @@ class dongho extends controller
     $data['sanpham_nu_limit1'] = $sanphamM->sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien2, $limit1);
     $data['sanpham_nu_limit'] = $sanphamM->sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien2, $limit2);
     // 
+    //phái mạnh
+    $dieukien3 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.doituong_sudung = 2";
+    $data['sanpham_nam_limit1'] = $sanphamM->sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien3, $limit1);
+    $data['sanpham_nam_limit'] = $sanphamM->sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien3, $limit2);
+    //
+    //trẻ em
+    $dieukien4 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.doituong_sudung = 3";
+    $data['sanpham_treem_limit1'] = $sanphamM->sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien4, $limit1);
+    $data['sanpham_treem_limit'] = $sanphamM->sanpham_doituong_limit($table_sp,$table_dm, $table_ctsp, $dieukien4, $limit2);
+    //
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/sanpham", $data);
     $this->load->view_user("footer");
