@@ -2,26 +2,21 @@
   <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
       <div class="row">
-        <div class="col-6 mt-2">
-          <form action="<?php echo BASE_URL ?>index/lichsu_donhang" method="POST">
-            <?php
-              foreach ($data['lichsudonhang_chitiet'] as $key => $dh){
-                ?>
-                  <input type="hidden" style="border-radius:15px ;" class="form-control mt-4"  name="sdt_k" value="<?php echo $dh['sdt_k'] ?>">
-                <?php
-              }
-            ?>
-            <button type="submit" class="btn btn-success">Quay lại</button>
-          </form>
-        </div>
-        <div class="col-6">
-          <form class="d-flex" action="<?php echo BASE_URL ?>baohanh/baohanh_timkiem" method="POST" autocomplete="off">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tukhoa">
-            <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
+        <h2>Thông tin bảo hành</h2>
       </div>
     </div> 
+    <div class="row mb-3">
+      <form action="<?php echo BASE_URL ?>index/lichsu_donhang" method="POST">
+        <?php
+          foreach ($data['lichsudonhang_chitiet'] as $key => $dh){
+            ?>
+              <input type="hidden" style="border-radius:15px ;" class="form-control mt-4"  name="sdt_k" value="<?php echo $dh['sdt_k'] ?>">
+            <?php
+          }
+        ?>
+        <button type="submit" class="btn btn-success">Quay lại</button>
+      </form>
+    </div>
     <table class="table table-hover">
       <thead>
         <tr class="table-dark">

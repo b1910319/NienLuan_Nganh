@@ -72,10 +72,15 @@
       }
     ?>
   </div>
+  <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>
+
   <script src="<?php echo BASE_URL ?>public/assets\libs\morris-js\morris.min.js"></script>
   <script src="<?php echo BASE_URL ?>public/assets\libs\raphael\raphael.min.js"></script>
+
   <script src="<?php echo BASE_URL ?>public/assets\js\pages\dashboard.init.js"></script>
+
+  <!-- App js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\app.min.js"></script>
   <!-- trình soạn thảo  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

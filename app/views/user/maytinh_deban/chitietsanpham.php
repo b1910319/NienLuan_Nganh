@@ -6,7 +6,7 @@
           <div class="verticals ten offset-by-one">
             <ol class="breadcrumb breadcrumb-fill2 style2">
               <li><a href="<?php echo BASE_URL ?>index/index"><i class="fa fa-home"></i></a></li>
-              <li><a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/sanpham/8"><?php echo $sp['ten_dm'] ?></a></li>
+              <li><a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/sanpham/13"><?php echo $sp['ten_dm'] ?></a></li>
               <li><a href=""><?php echo $sp['ten_th'] ?></a></li>
             </ol>
           </div>
