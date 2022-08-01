@@ -87,6 +87,40 @@ class index extends controller
     $this->load->view_user("lichsu_donhang/lichsudonhang", $data);
     $this->load->view_user("footer");
   }
+
+  public function baohanh($ma_dh){
+    //sản phẩm
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    $dieukien1 = "donhang.ma_dh = '$ma_dh'";
+    //chi tiết đơn hàng
+    $table_ctdh = 'chitiet_donhang';
+    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    //màu
+    $mauM = $this->load->model('mauM');
+    $table_m = 'mau';
+    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien1);
+    //chi tiết đơn hàng
+    $table_ctdh = 'chitiet_donhang';
+    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+    //bảo hành
+    $baohanhM = $this->load->model('baohanhM');
+    $table_bh = "baohanh";
+    $order = "baohanh.ngay_bh desc ";
+    $dieukien2 = "baohanh.ma_sp = chitiet_donhang.ma_sp AND baohanh.ma_dh = '$ma_dh'";
+    $data['baohanh_ma_dh'] = $baohanhM->baohanh_list($table_bh, $table_dh, $table_sp, $table_ctdh,$dieukien2, $order);
+    $this->load->view_user("header", $data);
+    $this->load->view_user("lichsu_donhang/baohanh", $data);
+  }
+
   public function lichsudonhang_chitiet($ma_dh){
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
@@ -103,6 +137,7 @@ class index extends controller
     // sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
+    //màu
     $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $dieukien1 = "donhang.ma_dh = '$ma_dh'";

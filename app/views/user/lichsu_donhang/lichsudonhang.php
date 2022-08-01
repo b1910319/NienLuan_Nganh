@@ -64,9 +64,20 @@
                             <i class="fa-solid fa-check-to-slot"></i>
                           </button>
                         </a>
+                        <a href="<?php echo BASE_URL ?>index/baohanh/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn baohanh">
+                            <i class="fa-solid fa-file-shield"></i>
+                          </button>
+                        </a>
                       <?php
                     }else {
-                      echo '';
+                      ?>
+                        <a href="<?php echo BASE_URL ?>index/baohanh/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn baohanh">
+                            <i class="fa-solid fa-file-shield"></i>
+                          </button>
+                        </a>
+                      <?php
                     }
                   ?>
                 </td>

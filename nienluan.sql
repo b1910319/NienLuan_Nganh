@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 01, 2022 lúc 08:12 AM
+-- Thời gian đã tạo: Th8 01, 2022 lúc 08:35 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -42,7 +42,8 @@ CREATE TABLE `baohanh` (
 INSERT INTO `baohanh` (`ma_bh`, `ma_sp`, `ma_dh`, `ngay_bh`, `noidung_bh`) VALUES
 (6, 20, 458727, '2022-08-01 13:05:56', '<p>- B&aacute;o h&agrave;nh pin</p>\r\n\r\n<p>- Thay m&agrave;n h&igrave;nh&nbsp;</p>\r\n'),
 (7, 47, 458201, '2022-08-01 13:06:48', '<p>- Thay d&acirc;y</p>\r\n'),
-(8, 42, 135833, '2022-08-01 13:12:35', '<p>- Thay d&acirc;y&nbsp;đồng hồ</p>\r\n');
+(8, 42, 135833, '2022-08-01 13:12:35', '<p>- Thay d&acirc;y&nbsp;đồng hồ</p>\r\n'),
+(9, 39, 135833, '2022-08-01 13:34:25', '<p>- Vệ sinh m&aacute;y</p>\r\n\r\n<p>- Thay b&agrave;n ph&iacute;m</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -1771,7 +1772,7 @@ ALTER TABLE `tintuc`
 -- AUTO_INCREMENT cho bảng `baohanh`
 --
 ALTER TABLE `baohanh`
-  MODIFY `ma_bh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ma_bh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `chitiet_sanpham`

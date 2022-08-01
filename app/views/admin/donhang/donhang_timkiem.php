@@ -87,12 +87,22 @@
                         <button type="button" class="btn vanchuyen">
                           <i class="fa-solid fa-truck-fast"></i>
                         </button>
+                        <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn baohanh">
+                            <i class="fa-solid fa-file-shield"></i>
+                          </button>
+                        </a>
                       <?php
                     }else if($dh['tinhtrang_dh'] == 2){
                       ?>
                         <button type="button" class="btn danhan">
                           <i class="fa-solid fa-check-to-slot"></i>
                         </button>
+                        <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn baohanh">
+                            <i class="fa-solid fa-file-shield"></i>
+                          </button>
+                        </a>
                       <?php
                     }
                   ?>
