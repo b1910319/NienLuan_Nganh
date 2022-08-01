@@ -8,6 +8,7 @@
         <tr class="tr_table">
           <th scope="col">STT</th>
           <th scope="col">Thông tin khách</th>
+          <th scope="col">Mã đơn hàng</th>
           <th scope="col">Tổng giá</th>
           <th scope="col">Thời gian đặt</th>
           <th scope="col">Quản lý</th>
@@ -21,7 +22,7 @@
             ?>
               <tr>
                 <th scope="row" style="width: 5%;"><?php echo $i ?></th>
-                <td style="width: 35%;">
+                <td style="width: 30%;">
                   <div class="row ">
                     <div class="col-md-12">
                       <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
@@ -45,6 +46,7 @@
                     </div>
                   </div>
                 </td>
+                <td style="width: 5%;"><?php echo $dh['ma_dh'] ?></td>
                 <td style="width: 20%;"><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
                 <td style="width: 20%;"><?php echo $dh['ngaylap_dh'].'  '.$dh['giolap_dh'] ?></td>
                 <td style="width: 25%;">
@@ -72,12 +74,22 @@
                         <button type="button" class="btn vanchuyen">
                           <i class="fa-solid fa-truck-fast"></i>
                         </button>
+                        <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn baohanh">
+                            <i class="fa-solid fa-file-shield"></i>
+                          </button>
+                        </a>
                       <?php
                     }else if($dh['tinhtrang_dh'] == 2){
                       ?>
                         <button type="button" class="btn danhan">
                           <i class="fa-solid fa-check-to-slot"></i>
                         </button>
+                        <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
+                          <button type="button" class="btn baohanh">
+                            <i class="fa-solid fa-file-shield"></i>
+                          </button>
+                        </a>
                       <?php
                     }
                   ?>

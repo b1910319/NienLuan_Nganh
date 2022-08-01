@@ -231,6 +231,34 @@
             <span class="badge badge-primary float-right"></span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo BASE_URL ?>baohanh/baohanh_list">
+            <i class="fa-solid fa-file-shield"></i>
+            <span> Bảo hành </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="javascript: void(0);">
+            <i class="fa-solid fa-file-shield"></i>
+            <span> Bảo hành </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="nav-second-level nav" aria-expanded="false">
+            <li>
+              <a href="<?php echo BASE_URL ?>">
+                <span> Tìm đơn hàng </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo BASE_URL ?>baohanh/baohanh_new">
+                <span> Bảo hành </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+          </ul>
+        </li> -->
         <!-- <li>
           <a href="javascript: void(0);">
             <i class="ti-pencil-alt"></i>

@@ -76,6 +76,9 @@ use Carbon\Carbon;
       $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp WHERE $dieukien  GROUP BY $group ORDER BY $order desc , soluong desc ";
       return $this->db->select($sql);
     }
-
+    public function donhang_timkiem($table_dh, $dieukien){
+      $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc, giolap_dh desc";
+      return $this->db->select($sql);
+    }
 
   }

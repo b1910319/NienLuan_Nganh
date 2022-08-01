@@ -1,8 +1,21 @@
 <div id="wrapper">
   <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
-    Đơn đang vận chuyển
-    </div>
+      <div class="row">
+        <div class="col-6 mt-2">
+          <a href="<?php echo BASE_URL ?>donhang/donhang">
+            <i class="fas fa-solid fa-caret-left"></i>&ensp;
+          </a>
+          Thông tin đơn hàng
+        </div>
+        <div class="col-6">
+          <form class="d-flex" action="<?php echo BASE_URL ?>donhang/donhang_timkiem" method="POST" autocomplete="off">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tukhoa">
+            <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div> 
     <table class="table table-hover">
       <thead>
         <tr class="tr_table">
@@ -17,7 +30,7 @@
       <tbody>
         <?php
           $i = 0;
-          foreach ($data['donhang_dangvanchuyen'] as $key => $dh){
+          foreach ($data['donhang_timkiem'] as $key => $dh){
             $i ++;
             ?>
               <tr>
@@ -74,22 +87,12 @@
                         <button type="button" class="btn vanchuyen">
                           <i class="fa-solid fa-truck-fast"></i>
                         </button>
-                        <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
-                          <button type="button" class="btn baohanh">
-                            <i class="fa-solid fa-file-shield"></i>
-                          </button>
-                        </a>
                       <?php
                     }else if($dh['tinhtrang_dh'] == 2){
                       ?>
                         <button type="button" class="btn danhan">
                           <i class="fa-solid fa-check-to-slot"></i>
                         </button>
-                        <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
-                          <button type="button" class="btn baohanh">
-                            <i class="fa-solid fa-file-shield"></i>
-                          </button>
-                        </a>
                       <?php
                     }
                   ?>

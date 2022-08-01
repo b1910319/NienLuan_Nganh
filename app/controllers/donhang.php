@@ -214,5 +214,25 @@ use Carbon\Carbon;
       }
       header("Location:".BASE_URL."giohang/giohang");
     }
+    public function donhang_timkiem(){
+      session::init();
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+
+      $tukhoa = $_POST['tukhoa'];
+      $dieukien = "donhang.ma_dh = '$tukhoa'" ;
+      $data ['donhang_timkiem'] = $donhangM->donhang_timkiem($table_dh, $dieukien);
+      $this->load->view_admin("donhang/donhang_timkiem", $data);
+    }
   }
 ?>
