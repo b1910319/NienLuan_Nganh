@@ -13,7 +13,9 @@
     public function getURL(){
       $this->url = isset ($_GET['url'])? $_GET['url']:NULL;
       if ($this->url != NULL){
+        // rtrim cắt bỏ ký tự truyền vào, nếu không truyền vào thì mặc định là khoảng trắng
         $this->url = rtrim($this->url, '/');
+        //explode ngắt chuỗi thành mảng
         $this->url = explode('/', filter_var($this->url, FILTER_SANITIZE_URL));
       }else{
         unset($this->url);
@@ -21,6 +23,7 @@
     }
     public function loadController(){
       if (!isset($this->url[0])){
+        //không tồn tại controller mặt định là index
         require_once $this->controllerPATH.$this->controllerName.".php";
         $this->controller = new $this->controllerName;
       }else{
@@ -29,7 +32,7 @@
         //kiểm tra file có tồn tại hay không
         if(file_exists($filename)){
           require_once $filename;
-          //kiểu tra class có tồn tại trong file hay không
+          //kiểm tra class có tồn tại trong file hay không
           if(class_exists($this->controllerName)){
             $this->controller = new $this->controllerName;
           }else{

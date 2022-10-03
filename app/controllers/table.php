@@ -15,7 +15,6 @@ class table extends controller
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
     $this->load->view_user("slider");
-
     //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
@@ -97,11 +96,12 @@ class table extends controller
     //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table_dmth = 'danhmuc_thuonghieu';
-    $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
-    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
+    $dieukien1 = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
+    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien1);
 
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');

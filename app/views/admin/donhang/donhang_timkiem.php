@@ -64,7 +64,7 @@
                 <td style="width: 20%;"><?php echo $dh['ngaylap_dh'].'  '.$dh['giolap_dh'] ?></td>
                 <td style="width: 25%;">
                   <a href="<?php echo BASE_URL ?>donhang/chitiet_donhang/<?php echo $dh['ma_dh'] ?>">
-                    <button type="button" class="btn sua">
+                    <button type="button" class="btn sua" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết đơn hàng">
                       <i class="fa-solid fa-circle-info"></i>
                     </button>
                   </a>
@@ -72,12 +72,12 @@
                     if($dh['tinhtrang_dh'] == 0){
                       ?>
                         <a href="<?php echo BASE_URL ?>donhang/xuly/<?php echo $dh['ma_dh'] ?>">
-                          <button type="button" class="btn moi">
+                          <button type="button" class="btn moi" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xử lý đơn hàng">
                             <i class="fa-solid fa-circle-plus"></i>
                           </button>
                         </a>
                         <a onclick="return confirm('Bạn có muốn huỷ đơn hàng không?')" href="<?php echo BASE_URL ?>donhang/huy/<?php echo $dh['ma_dh'] ?>">
-                          <button type="button" class="btn xoa">
+                          <button type="button" class="btn xoa" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Huỷ đơn hàng">
                             <i class="fa-solid fa-ban"></i>
                           </button>
                         </a>
@@ -88,18 +88,18 @@
                           <i class="fa-solid fa-truck-fast"></i>
                         </button>
                         <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
-                          <button type="button" class="btn baohanh">
+                          <button type="button" class="btn baohanh" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bảo hành">
                             <i class="fa-solid fa-file-shield"></i>
                           </button>
                         </a>
                       <?php
                     }else if($dh['tinhtrang_dh'] == 2){
                       ?>
-                        <button type="button" class="btn danhan">
+                        <button type="button" class="btn danhan" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Đơn hàng đã nhận">
                           <i class="fa-solid fa-check-to-slot"></i>
                         </button>
                         <a href="<?php echo BASE_URL ?>baohanh/baohanh/<?php echo $dh['ma_dh'] ?>">
-                          <button type="button" class="btn baohanh">
+                          <button type="button" class="btn baohanh" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bảo hành">
                             <i class="fa-solid fa-file-shield"></i>
                           </button>
                         </a>
