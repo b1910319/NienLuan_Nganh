@@ -42,7 +42,7 @@
       $data['tongtien_ngay'] = $donhangM->tongtien_ngay($table_dh);
       $data['count_sp_ngay'] = $donhangM->count_sp_ngay($table_dh, $table_ctdh, $table_sp);
       //thống kê tháng
-      $data['soluong_thang'] = $donhangM->soluong_thang($table_dh, $table_sp, $table_ctdh);
+      $data['soluong_thang'] = $donhangM->soluong_thang($table_dh, $table_sp, $table_ctdh); 
       $data['tongtien_thang'] = $donhangM->tongtien_thang($table_dh);
       $data['count_sp_thang'] = $donhangM->count_sp_thang($table_dh, $table_ctdh, $table_sp);
       //thống kê nam

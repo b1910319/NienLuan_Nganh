@@ -2,7 +2,9 @@
   <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
       <a href="<?php echo BASE_URL ?>sanpham/sanpham">
-        <i class="fas fa-solid fa-caret-left"></i>&ensp;
+        <button type="button" class="btn btn-warning">
+          <i class="fas fa-solid fa-caret-left"></i>&ensp;
+        </button> &ensp;
       </a>
       Thêm thông tin sản phẩm
     </div>

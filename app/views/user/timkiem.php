@@ -1,10 +1,18 @@
 <div class="timkiem container">
   <div class="sanpham mb-3">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="gachchan"><b>"<?php echo $_POST['tukhoa'] ?>"</b></h2>
-      </div>
-    </div>
+    <?php
+      $i = 0;
+      foreach ($data['Usanpham_timkiem'] as $key => $sp_tk){
+        $i++;
+        ?>
+        <?php
+      }
+      ?>
+        <p class="text-success mt-5" style="font-weight: bold;">
+          Tổng: <?php echo $i ?> sản phẩm được tìm thấy với ̀từ khoá <span style="color: #ff6407;">" <?php echo $_POST['tukhoa'] ?> " </span>
+        </p>
+      <?php
+    ?>
     <div class="row">
       <?php
         foreach ($data['Usanpham_timkiem'] as $key => $sp_tk){

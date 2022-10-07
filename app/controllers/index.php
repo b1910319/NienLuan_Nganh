@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 class index extends controller
 {
   public function __construct()
@@ -25,10 +26,10 @@ class index extends controller
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $data['sanpham_limit1'] = $sanphamM->sanpham_limit1($table_sp, $table_dm);
-    $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp,$table_dm);
+    $data['sanpham_limit'] = $sanphamM->sanpham_limit($table_sp, $table_dm);
     $data['sanpham_dt_limit'] = $sanphamM->sanpham_dt_limit($table_sp);
     $dieukien = "sanpham.ma_dm = 9";
-    $limit1 = 12;
+    $limit1 = 6;
     $data['sp_laptop_limit'] = $sanphamM->sp_limit($table_sp, $dieukien, $limit1);
     $dieukien1 = "sanpham.ma_dm = 11";
     $data['sp_smartwatch_limit'] = $sanphamM->sp_limit($table_sp, $dieukien1, $limit1);
@@ -43,7 +44,8 @@ class index extends controller
     $this->load->view_user("trangchu", $data);
     $this->load->view_user("footer");
   }
-  public function timkiem_sp(){
+  public function timkiem_sp()
+  {
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -56,12 +58,13 @@ class index extends controller
     $this->load->view_user("header", $data);
     // $this->load->view_user("slider");
     $tukhoa = $_POST['tukhoa'];
-    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'";
     $data['Usanpham_timkiem'] = $sanphamM->Usanpham_timkiem($table_sp, $table_dm, $dieukien);
-    $this->load->view_user("timkiem",$data);
+    $this->load->view_user("timkiem", $data);
     $this->load->view_user("footer");
   }
-  public function tra_donhang(){
+  public function tra_donhang()
+  {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -71,7 +74,8 @@ class index extends controller
     $this->load->view_user("tradonhang");
     $this->load->view_user("footer");
   }
-  public function lichsu_donhang(){
+  public function lichsu_donhang()
+  {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -98,7 +102,8 @@ class index extends controller
     $this->load->view_user("footer");
   }
 
-  public function baohanh($ma_dh){
+  public function baohanh($ma_dh)
+  {
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -126,12 +131,13 @@ class index extends controller
     $table_bh = "baohanh";
     $order = "baohanh.ngay_bh desc ";
     $dieukien2 = "baohanh.ma_sp = chitiet_donhang.ma_sp AND baohanh.ma_dh = '$ma_dh'";
-    $data['baohanh_ma_dh'] = $baohanhM->baohanh_list($table_bh, $table_dh, $table_sp, $table_ctdh,$dieukien2, $order);
+    $data['baohanh_ma_dh'] = $baohanhM->baohanh_list($table_bh, $table_dh, $table_sp, $table_ctdh, $dieukien2, $order);
     $this->load->view_user("header", $data);
     $this->load->view_user("lichsu_donhang/baohanh", $data);
   }
 
-  public function lichsudonhang_chitiet($ma_dh){
+  public function lichsudonhang_chitiet($ma_dh)
+  {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -155,15 +161,17 @@ class index extends controller
     $this->load->view_user("lichsu_donhang/lichsudonhang_chitiet", $data);
     $this->load->view_user("footer");
   }
-  public function huy($ma_dh){
+  public function huy($ma_dh)
+  {
     //đơn hàng
     $table_dh = "donhang";
     $donhangM = $this->load->model('donhangM');
     $dieukien = "donhang.ma_dh = '$ma_dh'";
     $result = $donhangM->donhang_delete($table_dh, $dieukien);
-    header("Location:".BASE_URL."index/tra_donhang");
+    header("Location:" . BASE_URL . "index/tra_donhang");
   }
-  public function danhan($ma_dh){
+  public function danhan($ma_dh)
+  {
     session::init();
     //đơn hàng
     $table_dh = "donhang";
@@ -173,9 +181,10 @@ class index extends controller
       'tinhtrang_dh' => '2'
     );
     $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
-    header("Location:".BASE_URL."index/tra_donhang");
+    header("Location:" . BASE_URL . "index/tra_donhang");
   }
-  public function tintuc(){
+  public function tintuc()
+  {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -187,10 +196,10 @@ class index extends controller
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
-     // tin tức
+    // tin tức
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
-     //thương hiệu
+    //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //tin tức limit 
@@ -206,12 +215,13 @@ class index extends controller
     // danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
     $table_dm = 'danhmuc_sanpham';
-    $limit=4;
-    $data['sanpham'] = $sanphamM->Usanpham_limit($table_sp,$table_dm, $limit);
+    $limit = 4;
+    $data['sanpham'] = $sanphamM->Usanpham_limit($table_sp, $table_dm, $limit);
     $this->load->view_user("tintuc/tintuc", $data);
     $this->load->view_user("footer");
   }
-  public function chitiet_tintuc($ma_tt){
+  public function chitiet_tintuc($ma_tt)
+  {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -222,7 +232,7 @@ class index extends controller
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
-     // tin tức
+    // tin tức
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
     $dieukien1 = "tintuc.ma_tt = '$ma_tt'";
@@ -230,7 +240,8 @@ class index extends controller
     $this->load->view_user("tintuc/chitiet_tintuc", $data);
     $this->load->view_user("footer");
   }
-  public function tintuc_danhmuc($ma_dmtt){
+  public function tintuc_danhmuc($ma_dmtt)
+  {
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -242,10 +253,10 @@ class index extends controller
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
-     // tin tức
+    // tin tức
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
-     //thương hiệu
+    //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     $thuonghieuM = $this->load->model('thuonghieuM');
@@ -265,8 +276,8 @@ class index extends controller
     // danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
     $table_dm = 'danhmuc_sanpham';
-    $limit=4;
-    $data['sanpham'] = $sanphamM->Usanpham_limit($table_sp,$table_dm, $limit);
+    $limit = 4;
+    $data['sanpham'] = $sanphamM->Usanpham_limit($table_sp, $table_dm, $limit);
 
     $this->load->view_user("tintuc/tintuc_danhmuc", $data);
     $this->load->view_user("footer");

@@ -9,7 +9,7 @@
               foreach ($data['sanpham_deal1'] as $key => $sp){
                 ?>
                   <div class="item active">
-                    <div class="col-xs-12 col-sm-6 col-md-2">
+                    <div class="col-xs-12 col-sm-6 col-md-2 img-hover-zoom img-hover-zoom--brightness">
                       <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
@@ -21,7 +21,7 @@
               foreach ($data['sanpham_deal'] as $key => $sp){
                 ?>
                   <div class="item">
-                    <div class="col-xs-12 col-sm-6 col-md-2">
+                    <div class="col-xs-12 col-sm-6 col-md-2 img-hover-zoom img-hover-zoom--brightness">
                       <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
@@ -49,7 +49,7 @@
       <?php
         foreach ($data['sanpham_gaming'] as $key => $sp){
           ?>
-            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
@@ -83,7 +83,7 @@
       <?php
         foreach ($data['sanpham_hoctap'] as $key => $sp){
           ?>
-            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
@@ -117,7 +117,7 @@
       <?php
         foreach ($data['sanpham_dohoa'] as $key => $sp){
           ?>
-            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
@@ -151,7 +151,7 @@
       <?php
         foreach ($data['sanpham_nhe'] as $key => $sp){
           ?>
-            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
@@ -186,7 +186,7 @@
       <?php
         foreach ($data['sanpham_sangtrong'] as $key => $sp){
           ?>
-            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
@@ -236,37 +236,4 @@
     });
   });
   </script>
-  <!--  -->
-  <!-- chuyên trang thương hiệu -->
-  <!-- <div class="chuyentrang_thuonghieu">
-    <div class="row">
-      <div class="col-md-12 mb-4 mt-2">
-        <h2 class="gachchan"><b>chuyên trang thương hiệu</b></h2>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col-3">
-        <a href="">
-          <img src="./img/logo/samsung.png" class="d-block w-100" style="border-radius:15px ;">
-        </a>
-      </div>
-      <div class="col-3">
-        <a href="">
-          <img src="./img/logo/asus.png" class="d-block w-100" style="border-radius:15px ;">
-        </a>
-      </div>
-      <div class="col-3">
-        <a href="">
-          <img src="./img/logo/apple.png" class="d-block w-100" style="border-radius:15px ;">
-        </a>
-      </div>
-      <div class="col-3">
-        <a href="">
-          <img src="./img/logo/xiaomi.png" class="d-block w-100" style="border-radius:15px ;">
-        </a>
-      </div>
-    </div>
-  </div> -->
-
-  <!--  -->
 </div>

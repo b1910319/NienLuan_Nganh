@@ -1,5 +1,5 @@
 <div class="container mt-4 mb-4">
-  <div class="row">
+  <div class="row ">
     <div class="col-8">
       <img style="width:25% ;" src="<?php echo BASE_URL ?>public/img/chuyentrang_thuonghieu/samsung/samsung2021.png" alt="">
     </div>
@@ -50,18 +50,18 @@
   </div>
   <!--  -->
   <!-- điện thoại -->
-  <div class="row" id="dienthoai">
+  <div class="row ctth_dienthoai" id="dienthoai">
     <div>
-      <h2>ĐIỆN THOẠI</h2>
+      <h2 style="color: white;">ĐIỆN THOẠI</h2>
     </div>
     <?php
       foreach ($data['sanpham_ctth'] as $key => $sp){
         ?>
-          <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+          <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
             <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
               <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
             </a>
-            <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+            <p class="text-center mt-3 sanpham_item_title text-light"><?php echo $sp['ten_sp'] ?></p>
             <div class="row tex-center ms-2">
             <?php
               $ma_sp = $sp['ma_sp'];
@@ -78,7 +78,7 @@
               }
             ?>
             </div>
-            <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
+            <p class="fw-bold text-center mt-2 sanpham_gia" style="color: #D9D7F1;"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
           </div>
         <?php
       }

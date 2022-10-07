@@ -9,7 +9,9 @@
           <div class="row">
             <div class="col-8 mt-2">
               <a href="<?php echo BASE_URL ?>admin/index">
-                <i class="fas fa-solid fa-caret-left"></i>&ensp;
+                <button type="button" class="btn btn-warning">
+                  <i class="fas fa-solid fa-caret-left"></i>&ensp;
+                </button> &ensp;
               </a>
               Tìm sản phẩm bán được theo ngày
             </div>

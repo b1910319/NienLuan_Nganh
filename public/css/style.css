@@ -6,9 +6,12 @@ a {
 }
 /* style banner */
 .banner,
-.header,
 .nav {
   background-color: #ffcc1d;
+}
+.header{
+  background-color: #F8B400;
+  height: 55px;
 }
 .giua {
   display: block;
@@ -270,13 +273,37 @@ h2::after {
   font-weight: bold;
 }
 /*  */
+
+/* chung */
+/* chuyển động hình khi hover */
+.img-hover-zoom--brightness img {
+  transition: transform 1s, filter 1s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(100%);
+}
+.img-hover-zoom--brightness:hover img {
+  filter: brightness(100%);
+  transform: scale(1.1);
+}
+/*  */
+
+/*  */
 /* deal ngon */
 .deal_ngon{
-  background-color: #DFE8CC;
+  background-color: #fed220;
   border-radius: 10px;
 }
 .gia{
   color: #D0021C;
+}
+
+/*  */
+
+/* laptop */
+.laptop{
+  background-color: #B5FE83;
+  border-radius: 10px;
+  height: 400px;
 }
 
 /*  */
@@ -551,7 +578,6 @@ ol {
 
 
 /*--------------------------*\
-	$utilitys
 \*--------------------------*/
 .box-shadow {
 	box-shadow: rgba(68, 68, 68, 0.2) 0 .4em .8em
@@ -717,7 +743,11 @@ ol {
   text-decoration: none;
   border-bottom: 2px solid #038018; 
 }
-
+.ctth_dienthoai{
+  margin-top: 20px;
+  background-color: #005B73;
+  border-radius: 10px;
+}
 
 /*  */
 

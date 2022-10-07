@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col-6 mt-2">
           <a href="<?php echo BASE_URL ?>donhang/donhang">
-            <i class="fas fa-solid fa-caret-left"></i>&ensp;
+            <button type="button" class="btn btn-warning">
+              <i class="fas fa-solid fa-caret-left"></i>&ensp;
+            </button> &ensp;
           </a>
           Thông tin đơn hàng
         </div>

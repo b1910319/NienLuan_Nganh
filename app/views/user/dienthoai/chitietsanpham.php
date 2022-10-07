@@ -263,7 +263,7 @@
     <?php
       foreach ($data['sanpham_tuongtu'] as $key => $sp){
         ?>
-          <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+          <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
             <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
               <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
             </a>
@@ -290,30 +290,4 @@
       }
     ?>
   </div>
-  <!-- <script>
-    const print = console.log
-
-    const getSelectedOption = function (selectEl) {
-      const selectedOptionCurrent = selectEl.options[selectEl.selectedIndex]
-      renderText(selectedOptionCurrent.textContent)
-    }
-
-    const getSelect = function () {
-      const selectEl = document.getElementById('js-select')
-      
-      selectEl.addEventListener('change', function (e) {
-        const selectElCurrent = e.target
-        getSelectedOption(selectElCurrent)
-      })
-    }
-
-
-    const renderText = function (text) {
-      const spanEl = document.getElementById('js-text')
-      spanEl.textContent = text
-    }
-
-
-    getSelect()
-  </script> -->
 </div>

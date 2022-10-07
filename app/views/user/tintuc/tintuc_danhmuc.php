@@ -51,7 +51,7 @@
       <?php
         foreach ($data['sanpham'] as $key => $sp){
           ?>
-            <div class="sanpham_item row mt-4 ms-2">
+            <div class="sanpham_item row mt-4 ms-2 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>" class="col-4">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>

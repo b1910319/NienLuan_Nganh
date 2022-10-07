@@ -24,7 +24,7 @@
       return $this->db->select($sql);
     }
     public function sanpham_dt_limit($table_sp){
-      $sql = "SELECT * FROM $table_sp WHERE ma_dm = 8 ORDER BY ma_sp desc LIMIT 12";
+      $sql = "SELECT * FROM $table_sp WHERE ma_dm = 8 ORDER BY ma_sp desc LIMIT 6";
       return $this->db->select($sql);
     }
     public function sanpham_ma_dm($table, $dieukien){

@@ -6,8 +6,8 @@
         $i++;
       }
       ?>
-        <p>
-          Có <b><?php echo $i ?></b> sản phẩm được tìm thấy
+        <p class="text-success" style="font-weight: bold;">
+          Có <b style="color: #ff6407;"><?php echo $i ?></b> sản phẩm được tìm thấy
         </p>
       <?php
     }else{
@@ -19,7 +19,7 @@
       <?php
         foreach ($data['sanpham_ma_dm_gia'] as $key => $sp){
           ?>
-            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5">
+            <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
               <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>

@@ -2,7 +2,9 @@
   <div class="content-page card-box">
     <div class="alert alert-success title_page" role="alert">
       <a href="<?php echo BASE_URL ?>baohanh/baohanh_list">
-        <i class="fas fa-solid fa-caret-left"></i>&ensp;
+        <button type="button" class="btn btn-warning">
+          <i class="fas fa-solid fa-caret-left"></i>&ensp;
+        </button> &ensp;
       </a>
       Sửa thông tin bảo hành
     </div>
