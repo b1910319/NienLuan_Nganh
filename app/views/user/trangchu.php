@@ -2,7 +2,6 @@
   <div class="deal_ngon p-4">
     <div class="row">
       <div class="col-md-12">
-        <!-- <h2>Deal ngon <b>mỗi ngày</b></h2> -->
         <img src="<?php echo BASE_URL ?>public/img/banner/deal_ngon.png" alt="" class="img-responsive center-block">
       </div>
     </div>

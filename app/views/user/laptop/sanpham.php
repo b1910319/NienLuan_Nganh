@@ -1,11 +1,15 @@
 <div class="list_sanpham mt-4 container">
-  <div class="deal_soc mt-4" id="dealsoc">
-    <h1>DEAL SỐC <b>GIẢM TỚI 10.000.000đ</b></h1>
+  <div class="deal_ngon p-4" style="background-color: #C3FF99;">
+    <div class="row">
+      <div class="col-md-12">
+        <img src="<?php echo BASE_URL ?>public/img/banner/deal_ngon.png" alt="" class="img-responsive center-block">
+      </div>
+    </div>
     <div class="row mt-3 mb-4">
       <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
           <div class="carousel-inner">
-            <?php
+          <?php
               foreach ($data['sanpham_deal1'] as $key => $sp){
                 ?>
                   <div class="item active">
@@ -34,13 +38,14 @@
           </div>
           <!-- left,right control -->
           <div id="slider-control">
-            <a class="left carousel-control" href="#itemslider" data-slide="prev"><i
-                class="fas fa-angle-left icon_arrow"></i></a>
-            <a class="right carousel-control" href="#itemslider" data-slide="next"><i
-                class="fas fa-angle-right icon_arrow"></i></a>
+            <a class="left carousel-control" href="#itemslider" data-slide="prev"><i class="fas fa-angle-left icon_arrow"></i></a>
+            <a class="right carousel-control" href="#itemslider" data-slide="next"><i class="fas fa-angle-right icon_arrow"></i></a>
           </div>
         </div>
       </div>
+      <a href="" style="text-align:center ;" class="mt-4">
+        <button type="button" class="btn btn-success" style="font-weight:bold ; background-color:#367e18 ;">Xem Tất Cả &ensp; <i class="fa-solid fa-caret-right"></i></button>
+      </a>
     </div>
   </div>
   <div class="laptop_gaming mt-4" id="gaming">
