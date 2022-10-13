@@ -34,7 +34,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table_ncc = 'nhacungcap';
       $data ['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
@@ -56,7 +61,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("nhacungcap/nhacungcap_edit", $data);
     }
     public function nhacungcap_update($ma_ncc){
@@ -95,7 +105,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table = 'nhacungcap';
       $tukhoa = $_POST['tukhoa'];
@@ -103,13 +118,5 @@
       $data ['nhacungcap_timkiem'] = $nhacungcapM->nhacungcap_timkiem($table, $dieukien);
       $this->load->view_admin("nhacungcap/nhacungcap_timkiem", $data);
     }
-
-
-    //ví dụ thống kê
-    // public function tong (){
-    //   $nhacungcapM = $this->load->model('nhacungcapM');
-    //   $data ['tong1'] = $nhacungcapM->tong();
-    //   $this->load->view_admin("test", $data); 
-    // }
   }
 ?>

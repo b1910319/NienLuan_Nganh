@@ -17,7 +17,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
@@ -107,8 +112,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
-
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("tintuc/tintuc_edit", $data);
     }
     public function tintuc_update($ma_tt)
@@ -173,7 +182,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';

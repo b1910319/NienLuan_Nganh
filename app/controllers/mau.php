@@ -18,7 +18,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $mauM = $this->load->model('mauM');
       $table = 'mau';
       $data ['mau'] = $mauM->mau($table);
@@ -52,7 +57,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("mau/mau_edit", $data);
     }
     public function mau_update($ma_m){
@@ -87,7 +97,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $mauM = $this->load->model('mauM');
       $table = 'mau';
       $tukhoa = $_POST['tukhoa'];

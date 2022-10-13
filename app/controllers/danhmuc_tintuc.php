@@ -18,7 +18,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $data ['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table);
@@ -50,7 +55,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc_edit", $data);
     }
     public function danhmuc_tintuc_update($ma_dmtt){
@@ -83,7 +93,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $tukhoa = $_POST['tukhoa'];

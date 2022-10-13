@@ -20,7 +20,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $level=session::get('level');
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     // danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
     $table_dm = 'danhmuc_sanpham';
@@ -132,7 +137,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $level=session::get('level');
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/sanpham_edit", $data);
   }
   public function sanpham_update($ma_sp)
@@ -282,7 +292,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $level=session::get('level');
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     // danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
     $table_dm = 'danhmuc_sanpham';
@@ -312,8 +327,6 @@ class sanpham extends controller
     $this->load->view_admin("sanpham/sanpham_timkiem", $data);
   }
 
-
-
   //chi tiết sản phẩm
   public function sp_chitiet()
   {
@@ -330,7 +343,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = 'sanpham.ma_dm = 8 OR sanpham.ma_dm = 10';
@@ -393,7 +411,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/sp_chitiet_edit", $data);
   }
   public function sp_chitiet_update($ma_ctsp)
@@ -443,7 +466,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -478,7 +506,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = 'sanpham.ma_dm = 9';
@@ -543,7 +576,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/sp_chitiet_laptop_edit", $data);
   }
   public function sp_chitiet_laptop_update($ma_ctsp)
@@ -596,7 +634,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -630,7 +673,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = 'sanpham.ma_dm = 11';
@@ -685,7 +733,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/sp_chitiet_smartwatch_edit", $data);
   }
   public function sp_chitiet_smartwatch_update($ma_ctsp)
@@ -728,7 +781,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -763,7 +821,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = 'sanpham.ma_dm = 12';
@@ -815,7 +878,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/sp_chitiet_dongho_edit", $data);
   }
   public function sp_chitiet_dongho_update($ma_ctsp)
@@ -856,7 +924,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -890,7 +963,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = 'sanpham.ma_dm = 13';
@@ -950,7 +1028,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/sp_chitiet_maytinh_edit", $data);
   }
   public function sp_chitiet_maytinh_update($ma_ctsp)
@@ -999,7 +1082,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -1033,7 +1121,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     // sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -1086,7 +1179,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/hinh_edit", $data);
   }
   public function hinh_update($ma_h)
@@ -1152,7 +1250,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     // sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -1179,7 +1282,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -1235,7 +1343,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("sanpham/mau_sanpham_edit", $data);
   }
   public function mau_sanpham_update($ma_sp, $ma_m)
@@ -1273,7 +1386,12 @@ class sanpham extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';

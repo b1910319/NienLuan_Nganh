@@ -72,6 +72,7 @@
           <th scope="col">Số điện thoại</th>
           <th scope="col">Địa chỉ</th>
           <th scope="col">Ngày vào</th>
+          <th scope="col">Level</th>
           <th scope="col">Quản lý</th>
         </tr>
       </thead>
@@ -88,6 +89,7 @@
                 <td><?php echo $nv['sdt_nv'] ?></td>
                 <td><?php echo $nv['diachi_nv'] ?></td>
                 <td><?php echo $nv['ngayvao'] ?></td>
+                <td><?php echo $nv['level'] ?></td>
                 <td>
                   <a href="<?php echo BASE_URL ?>nhanvien/nhanvien_edit/<?php echo $nv['ma_nv'] ?>">
                     <button type="button" class="btn sua">

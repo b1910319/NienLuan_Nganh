@@ -24,7 +24,12 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $data['donhang_all'] = $donhangM->donhang_list($table_dh);
       $this->load->view_admin("donhang/donhang_all", $data);
     }
@@ -55,18 +60,25 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien);
       $this->load->view_admin("donhang/chitiet_donhang", $data);
     }
     public function xuly($ma_dh){
       session::init();
       //đơn hàng
+      $ma_nv = session::get('ma_nv');
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
       $dieukien = "donhang.ma_dh = '$ma_dh'";
       $data = array(
-        'tinhtrang_dh' => '1'
+        'tinhtrang_dh' => '1',
+        'ma_nv' => $ma_nv
       );
       $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
       header("Location:".BASE_URL."donhang/donhang");
@@ -77,8 +89,10 @@ use Carbon\Carbon;
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
       $dieukien = "donhang.ma_dh = '$ma_dh'";
+      $ma_nv = session::get('ma_nv');
       $data = array(
-        'tinhtrang_dh' => '1'
+        'tinhtrang_dh' => '1',
+        'ma_nv' => $ma_nv
       );
       $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
       header("Location:".BASE_URL."donhang/donhang_moi");
@@ -112,7 +126,12 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("donhang/donhang_moi", $data);
     }
     public function donhang_dangvanchuyen(){
@@ -128,7 +147,12 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("donhang/donhang_dangvanchuyen", $data);
     }
     public function donhang_dagiao(){
@@ -144,7 +168,12 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("donhang/donhang_dagiao", $data);
     }
     //user
@@ -227,8 +256,12 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
-
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $tukhoa = $_POST['tukhoa'];
       $dieukien = "donhang.ma_dh = '$tukhoa'" ;
       $data ['donhang_timkiem'] = $donhangM->donhang_timkiem($table_dh, $dieukien);

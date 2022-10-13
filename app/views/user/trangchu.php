@@ -106,7 +106,7 @@
       foreach ($data['sp_laptop_limit'] as $key => $sp) {
       ?>
         <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
-          <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+          <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
             <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
           </a>
           <p class="text-center mt-3 sanpham_item_title" style="color: #003865; font-weight: bold;"><?php echo $sp['ten_sp'] ?></p>

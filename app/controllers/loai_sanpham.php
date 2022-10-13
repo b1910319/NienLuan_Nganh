@@ -18,7 +18,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table_lsp = 'loai_sanpham';
       $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
@@ -32,7 +37,9 @@
       $table = 'loai_sanpham';
       $ten_lsp = $_POST['ten_lsp'];
       $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+      //chuyển chữ có dấu thành không dấu, bỏ dấu cách giữa các chữ
       $ghichu = $danhmuc_sanphamM->convert_name($ten_lsp);
+      //chuyển chữ hoa thành chữ thường
       $ghichu_lsp = strtolower($ghichu);
       $ma_dm = $_POST['ma_dm'];
       $icon_lsp = $_POST['icon_lsp'];
@@ -64,7 +71,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $this->load->view_admin("loai_sanpham/loai_sanpham_edit", $data);
     }
     public function loai_sanpham_update($ma_lsp){
@@ -103,7 +115,12 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $this->load->view_admin("leftmenu", $data);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table_lsp = 'loai_sanpham';
       $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");

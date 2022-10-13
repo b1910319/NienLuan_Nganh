@@ -20,7 +20,12 @@ class thuonghieu extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
     $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table);
@@ -79,7 +84,12 @@ class thuonghieu extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("thuonghieu/thuonghieu_edit", $data);
   }
   public function thuonghieu_update($ma_th)
@@ -187,7 +197,12 @@ class thuonghieu extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
     $tukhoa = $_POST['tukhoa'];

@@ -31,7 +31,13 @@
         session::set('ten_nv', $result[0]['ten_nv']);
         session::set('ma_nv', $result[0]['ma_nv']);
         session::set('user_nv', $result[0]['user_nv']);
-        header("Location:".BASE_URL."admin/index");
+        session::set('level', $result[0]['level']);
+        if($result[0]['level'] == 1){
+          header("Location:".BASE_URL."admin/index");
+        }else if($result[0]['level'] == 2){
+          header("Location:".BASE_URL."nhanvien/index");
+        }
+        
       }
     }
     public function nhanvien_dangxuat(){

@@ -19,8 +19,13 @@ class danhmuc_sanpham extends controller
     $dieukien_vc = 'donhang.tinhtrang_dh = 1';
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table);
@@ -66,8 +71,13 @@ class danhmuc_sanpham extends controller
     $dieukien_vc = 'donhang.tinhtrang_dh = 1';
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("danhmuc_sanpham/danhmuc_sanpham_edit", $data);
   }
   public function danhmuc_sanpham_update($ma_dm)
@@ -138,8 +148,13 @@ class danhmuc_sanpham extends controller
     $dieukien_vc = 'donhang.tinhtrang_dh = 1';
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu", $data);
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';
     $tukhoa = $_POST['tukhoa'];
