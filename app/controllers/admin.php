@@ -1,15 +1,20 @@
 <?php
-  class admin extends controller{
-    public function __construct()
-    {
-      $data = array();
-      parent::__construct();
-    }
-    public function index(){
-      $this->trangchu();
-    }
-    public function trangchu(){
-      session::checksession();
+class admin extends controller
+{
+  public function __construct()
+  {
+    $data = array();
+    parent::__construct();
+  }
+  public function index()
+  {
+    $this->trangchu();
+  }
+  public function trangchu()
+  {
+    session::checksession();
+    $level = session::get('level');
+    if ($level == 1) {
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -22,10 +27,10 @@
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
       //tổng số đơn hàng
-      $data['donhang'] = $donhangM ->donhang_list($table_dh);
+      $data['donhang'] = $donhangM->donhang_list($table_dh);
       //doanh thu hôm nay
       $ngay = date("d/m/Y");
-      $data['doanhthu_homnay'] = $donhangM->doanhthu_homnay ($table_dh, $ngay);
+      $data['doanhthu_homnay'] = $donhangM->doanhthu_homnay($table_dh, $ngay);
       //tổng số sản phẩm
       //sản phẩm
       $sanphamM = $this->load->model('sanphamM');
@@ -42,7 +47,7 @@
       $data['tongtien_ngay'] = $donhangM->tongtien_ngay($table_dh);
       $data['count_sp_ngay'] = $donhangM->count_sp_ngay($table_dh, $table_ctdh, $table_sp);
       //thống kê tháng
-      $data['soluong_thang'] = $donhangM->soluong_thang($table_dh, $table_sp, $table_ctdh); 
+      $data['soluong_thang'] = $donhangM->soluong_thang($table_dh, $table_sp, $table_ctdh);
       $data['tongtien_thang'] = $donhangM->tongtien_thang($table_dh);
       $data['count_sp_thang'] = $donhangM->count_sp_thang($table_dh, $table_ctdh, $table_sp);
       //thống kê nam
@@ -68,9 +73,15 @@
       $table_th = 'thuonghieu';
       $data['sanpham_soluong_min'] = $sanphamM->sanpham_soluong($table_sp, $table_dm, $table_nv, $table_ncc, $table_lsp, $table_th, $dieukien_soluong);
       $this->load->view_admin("trangchu", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function sanpham_banngay_timkiem(){
-      session::checksession();
+  }
+  public function sanpham_banngay_timkiem()
+  {
+    session::checksession();
+    $level = session::get('level');
+    if ($level == 1) {
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -96,11 +107,16 @@
       $order_tkn = "donhang.ngaylap_dh";
       $group_tkn = "chitiet_donhang.ma_sp, donhang.ngaylap_dh";
       $data['sanpham_banngay_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tkn, $order_tkn, $group_tkn);
-
       $this->load->view_admin("trangchu/sanpham_banngay_timkiem", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function sanpham_banthang_timkiem(){
-      session::checksession();
+  }
+  public function sanpham_banthang_timkiem()
+  {
+    session::checksession();
+    $level = session::get('level');
+    if ($level == 1) {
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -127,12 +143,17 @@
       $order_tkt = "donhang.thanglap_dh";
       $group_tkt = "chitiet_donhang.ma_sp, donhang.thanglap_dh";
       $data['sanpham_banthang_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tkt, $order_tkt, $group_tkt);
-
       $this->load->view_admin("trangchu/sanpham_banthang_timkiem", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
+  }
 
-    public function sanpham_bannam_timkiem(){
-      session::checksession();
+  public function sanpham_bannam_timkiem()
+  {
+    session::checksession();
+    $level = session::get('level');
+    if ($level == 1) {
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -154,13 +175,15 @@
       //sản phẩm
       $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
-      
+
       $dieukien_tknam = "donhang.namlap_dh = '$namlap_dh'";
       $order_tknam = "donhang.namlap_dh";
       $group_tknam = "chitiet_donhang.ma_sp, donhang.namlap_dh";
       $data['sanpham_bannam_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tknam, $order_tknam, $group_tknam);
 
       $this->load->view_admin("trangchu/sanpham_bannam_timkiem", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
-?>
+}
