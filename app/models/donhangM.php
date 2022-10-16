@@ -54,12 +54,24 @@ use Carbon\Carbon;
       $sql = "SELECT ngaylap_dh, tonggia_dh , $table_nv.ten_nv, SUM(tonggia_dh) AS tong, count(ma_dh) AS so_dh FROM $table_dh join $table_nv on $table_dh.ma_nv = $table_nv.ma_nv group by $table_dh.ma_nv, ngaylap_dh order by ngaylap_dh ASC, tong DESC ";
       return $this->db->select($sql);
     }
+    public function doanhthu_ngay_tung_nv_timkiem ($table_dh,$table_nv, $dieukien){
+      $sql = "SELECT ngaylap_dh, tonggia_dh , $table_nv.ten_nv, SUM(tonggia_dh) AS tong, count(ma_dh) AS so_dh FROM $table_dh join $table_nv on $table_dh.ma_nv = $table_nv.ma_nv where $dieukien group by $table_dh.ma_nv, ngaylap_dh order by ngaylap_dh ASC, tong DESC ";
+      return $this->db->select($sql);
+    }
     public function doanhthu_thang_tung_nv ($table_dh,$table_nv){
       $sql = "SELECT thanglap_dh, tonggia_dh , $table_nv.ten_nv, SUM(tonggia_dh) AS tong, count(ma_dh) AS so_dh FROM $table_dh join $table_nv on $table_dh.ma_nv = $table_nv.ma_nv group by $table_dh.ma_nv, thanglap_dh order by thanglap_dh ASC, tong DESC ";
       return $this->db->select($sql);
     }
+    public function doanhthu_thang_tung_nv_timkiem ($table_dh,$table_nv, $dieukien){
+      $sql = "SELECT thanglap_dh, tonggia_dh , $table_nv.ten_nv, SUM(tonggia_dh) AS tong, count(ma_dh) AS so_dh FROM $table_dh join $table_nv on $table_dh.ma_nv = $table_nv.ma_nv where $dieukien group by $table_dh.ma_nv, thanglap_dh order by thanglap_dh ASC, tong DESC ";
+      return $this->db->select($sql);
+    }
     public function doanhthu_nam_tung_nv ($table_dh,$table_nv){
       $sql = "SELECT namlap_dh, tonggia_dh , $table_nv.ten_nv, SUM(tonggia_dh) AS tong, count(ma_dh) AS so_dh FROM $table_dh join $table_nv on $table_dh.ma_nv = $table_nv.ma_nv group by $table_dh.ma_nv, namlap_dh order by namlap_dh ASC, tong DESC ";
+      return $this->db->select($sql);
+    }
+    public function doanhthu_nam_tung_nv_timkiem ($table_dh,$table_nv, $dieukien){
+      $sql = "SELECT *, SUM(tonggia_dh) AS tong, count(ma_dh) AS so_dh FROM $table_dh join $table_nv on $table_dh.ma_nv = $table_nv.ma_nv where $dieukien group by $table_dh.ma_nv, namlap_dh order by namlap_dh ASC, tong DESC ";
       return $this->db->select($sql);
     }
     public function doanhthu_nv ($table_dh, $dieukien){
@@ -138,7 +150,6 @@ use Carbon\Carbon;
       $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp where $dieukien GROUP BY $table_ctdh.ma_sp, $table_dh.namlap_dh ORDER BY $table_dh.namlap_dh desc , soluong desc ";
       return $this->db->select($sql);
     }
-
     public function sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien, $order, $group){
       $sql = "SELECT *, SUM($table_ctdh.soluong_dat) as soluong FROM $table_dh join $table_ctdh on $table_dh.ma_dh = $table_ctdh.ma_dh join $table_sp on $table_ctdh.ma_sp = $table_sp.ma_sp WHERE $dieukien  GROUP BY $group ORDER BY $order desc , soluong desc ";
       return $this->db->select($sql);

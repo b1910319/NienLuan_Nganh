@@ -77,7 +77,7 @@
               Doanh thu theo ngày của từng nhân viên
             </div>
             <div class="col-4">
-              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banngay_timkiem">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>thongke/timkiem_doanhthu_nhanvien_ngay">
                 <div class="app-search-box">
                   <div class="input-group">
                     <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
@@ -137,7 +137,7 @@
               Doanh thu theo tháng của từng nhân viên
             </div>
             <div class="col-4">
-              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banthang_timkiem">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>thongke/timkiem_doanhthu_nhanvien_thang">
                 <div class="app-search-box">
                   <div class="input-group">
                     <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
@@ -197,7 +197,7 @@
               Doanh thu theo năm của từng nhân viên
             </div>
             <div class="col-4">
-              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_bannam_timkiem">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>thongke/timkiem_doanhthu_nhanvien_nam">
                 <div class="app-search-box">
                   <div class="input-group">
                     <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
