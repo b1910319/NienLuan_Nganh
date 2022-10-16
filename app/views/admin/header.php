@@ -28,6 +28,8 @@
 <!--  -->
 <!-- link style css -->
   <link rel="stylesheet" href="<?php echo BASE_URL ?>public/css/styleAdmin.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>

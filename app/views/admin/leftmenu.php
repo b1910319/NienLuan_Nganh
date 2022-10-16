@@ -34,6 +34,12 @@
           </a>
         </li>
         <li>
+          <a href="<?php echo BASE_URL ?>thongke/index">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span> Thống kê </span>
+          </a>
+        </li>
+        <li>
           <a href="<?php echo BASE_URL ?>nhanvien/nhanvien">
           <i class="fa-solid fa-users"></i>
             <span> Nhân viên </span>
