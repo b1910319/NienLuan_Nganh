@@ -13,7 +13,6 @@ class thongke extends controller
   }
   public function trangchu()
   {
-    session::init();
     session::checksession();
     $level = session::get('level');
     if ($level == 1) {
@@ -51,7 +50,6 @@ class thongke extends controller
   }
   public function thongtin_nhanvien($ma_nv)
   {
-    session::init();
     session::checksession();
     $level = session::get('level');
     if ($level == 1) {
@@ -77,7 +75,6 @@ class thongke extends controller
     }
   }
   public function timkiem_doanhthu_nhanvien_ngay(){
-    session::init();
     session::checksession();
     $level = session::get('level');
     if ($level == 1) {
@@ -102,7 +99,6 @@ class thongke extends controller
     }
   }
   public function timkiem_doanhthu_nhanvien_thang(){
-    session::init();
     session::checksession();
     $level = session::get('level');
     if ($level == 1) {
@@ -127,7 +123,6 @@ class thongke extends controller
     }
   }
   public function timkiem_doanhthu_nhanvien_nam(){
-    session::init();
     session::checksession();
     $level = session::get('level');
     if ($level == 1) {

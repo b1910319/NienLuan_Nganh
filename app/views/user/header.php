@@ -115,9 +115,6 @@
         </div>
         <div class="col-2">
           <a href="<?php echo BASE_URL ?>giohang/giohang">
-            <!-- <button class="btn btn-success btn_giohang mt-3" type="submit"><i
-                class="fas fa-cart-arrow-down"></i>&ensp;Giỏ
-              hàng</button> -->
             <button type="button" class="btn btn-success btn_giohang mt-3 position-relative">
               <i class="fas fa-cart-arrow-down"></i>&ensp;Giỏ hàng
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="color: white; padding-top: 12px; font-size: 15px;">

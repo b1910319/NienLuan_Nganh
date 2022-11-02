@@ -14,7 +14,6 @@ class nhanvien extends controller
   }
   public function trangchu()
   {
-    session::init();
     session::checksession();
     $this->load->view_admin("header");
     //đơn hàng

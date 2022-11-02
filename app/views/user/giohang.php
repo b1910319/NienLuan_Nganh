@@ -4,7 +4,7 @@
     if (isset($_SESSION['giohang'])){
       ?>
         <a href="<?php echo BASE_URL ?>index/index">
-          <button type="button" class="btn btn-success">Mua thêm sản phẩm khác</button>
+          <button type="button" class="btn btn-success" style="font-weight:bold ; font-size: 16px ;">Mua thêm sản phẩm khác</button>
         </a>
         <div class="mt-4">
           <table class="table table-hover">
@@ -95,7 +95,14 @@
                 }
               ?>
               <tr>
-                <td colspan="8" >
+                <td colspan="2">
+                  <a href="<?php echo BASE_URL ?>giohang/giohang_delete_all" onclick="return confirm('Bạn có muốn xóa tất cả sản phẩm không?')">
+                    <button type="button" class="btn btn-warning btn_xoa" name="xoa_giohang">
+                      <i class="fa-solid fa-trash-can"></i>&emsp; Xoá tất cả
+                    </button>
+                  </a>
+                </td>
+                <td colspan="6" >
                   <p class="text-end fw-bold">
                     Tổng: 
                     <?php

@@ -12,7 +12,6 @@ class admin extends controller
   }
   public function trangchu()
   {
-    session::init();
     session::checksession();
     $level = session::get('level');
     if ($level == 1) {
@@ -80,7 +79,6 @@ class admin extends controller
   }
   public function sanpham_banngay_timkiem()
   {
-    session::init();
     session::checksession();
     $this->load->view_admin("header");
     //đơn hàng
@@ -111,7 +109,6 @@ class admin extends controller
   }
   public function sanpham_banthang_timkiem()
   {
-    session::init();
     session::checksession();
     $this->load->view_admin("header");
     //đơn hàng
@@ -144,7 +141,6 @@ class admin extends controller
 
   public function sanpham_bannam_timkiem()
   {
-    session::init();
     session::checksession();
     $this->load->view_admin("header");
     //đơn hàng

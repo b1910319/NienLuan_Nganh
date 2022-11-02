@@ -287,7 +287,9 @@
     </div>
   </div>
   <div class="row sanpham_tuongtu">
-    <h3 class="pb-2">Sản phẩm tương tự</h3>
+    <div class="alert alert-info" role="alert" style="text-align:center ; font-weight:bold ; font-size: 20px; color: #16511a;" >
+      Sản phẩm tương tự
+    </div>
     <?php
       foreach ($data['sanpham_tuongtu'] as $key => $sp){
         ?>

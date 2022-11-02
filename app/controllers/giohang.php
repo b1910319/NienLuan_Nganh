@@ -77,5 +77,13 @@
       }
       
     }
+    public function giohang_delete_all(){
+      session::init();
+      if(isset($_SESSION['giohang'])){
+        unset($_SESSION['giohang']);
+        header("Location:".BASE_URL."giohang/giohang");
+        
+      }
+    }
   }
 ?>
