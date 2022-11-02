@@ -10,7 +10,7 @@
             <th scope="row">Sản phẩm: </th>
             <td class="was-validated">
               <select class="custom-select input_table" id="gender2" name="ma_sp">
-                <option>Chọn sản phẩm</option>
+                <!-- <option>Chọn sản phẩm</option> -->
                 <?php
                   foreach ($data['sanpham_ma_dm'] as $key => $sp) {
                     ?>

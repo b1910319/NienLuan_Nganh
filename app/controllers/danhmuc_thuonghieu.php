@@ -39,6 +39,7 @@ class danhmuc_thuonghieu extends controller
   }
   public function danhmuc_thuonghieu_insert()
   {
+    session::init();
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table = 'danhmuc_thuonghieu';
     $ma_dm = $_POST['ma_dm'];
@@ -83,6 +84,7 @@ class danhmuc_thuonghieu extends controller
   }
   public function danhmuc_thuonghieu_update($ma_dm, $ma_th)
   {
+    session::init();
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table = 'danhmuc_thuonghieu';
     $dieukien = "danhmuc_thuonghieu.ma_dm='$ma_dm' AND danhmuc_thuonghieu.ma_th ='$ma_th'";
@@ -97,6 +99,7 @@ class danhmuc_thuonghieu extends controller
   }
   public function danhmuc_thuonghieu_delete($ma_dm, $ma_th)
   {
+    session::init();
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table = 'danhmuc_thuonghieu';
     $dieukien = "danhmuc_thuonghieu.ma_dm='$ma_dm' AND danhmuc_thuonghieu.ma_th ='$ma_th'";

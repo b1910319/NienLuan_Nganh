@@ -8,6 +8,7 @@ class smartwatch extends controller
   }
   public function sanpham($ma_dm)
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -49,6 +50,7 @@ class smartwatch extends controller
   }
   public function chitiet_sanpham($ma_sp, $ma_th, $ma_dm)
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -103,6 +105,7 @@ class smartwatch extends controller
   }
   public function timkiem_thuonghieu($ma_dm, $ma_th)
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';

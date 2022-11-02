@@ -97,8 +97,8 @@
   <div class="sanpham mb-3 laptop">
     <div class="row">
       <div class="col-md-12">
-        <!-- <h2 class="gachchan"><b>Laptop</b></h2> -->
-        <p class="pt-3 ps-3" style="font-size: 25px; color: black; font-weight: bold;   border-bottom: 4px solid #ff5b00; width: 10%;">Laptop</p>
+        <!-- <p class="pt-3 ps-3" style="font-size: 25px; color: black; font-weight: bold;   border-bottom: 4px solid #ff5b00; width: 10%;">Laptop</p> -->
+        <img src="<?php echo BASE_URL ?>public/img/banner/banner_laptop.png" class="img-responsive center-block">
       </div>
     </div>
     <div class="row">

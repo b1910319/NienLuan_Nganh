@@ -66,6 +66,9 @@
           <div class="carousel-item">
             <img src="<?php echo BASE_URL ?>public/img/banner/banner_3.png" class="d-block giua" alt="...">
           </div>
+          <div class="carousel-item">
+            <img src="<?php echo BASE_URL ?>public/img/banner/banner_4.png" class="d-block giua" alt="...">
+          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
           data-bs-slide="prev">
@@ -112,9 +115,27 @@
         </div>
         <div class="col-2">
           <a href="<?php echo BASE_URL ?>giohang/giohang">
-            <button class="btn btn-success btn_giohang mt-3" type="submit"><i
+            <!-- <button class="btn btn-success btn_giohang mt-3" type="submit"><i
                 class="fas fa-cart-arrow-down"></i>&ensp;Giỏ
-              hàng</button>
+              hàng</button> -->
+            <button type="button" class="btn btn-success btn_giohang mt-3 position-relative">
+              <i class="fas fa-cart-arrow-down"></i>&ensp;Giỏ hàng
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="color: white; padding-top: 12px; font-size: 15px;">
+                <?php
+                  $count = 0;
+                  if(isset($_SESSION['giohang'])){
+                    foreach($_SESSION['giohang'] as $key => $gh){
+                      $count++;
+                    }
+                    echo $count;
+                  }else{
+                    echo '0';
+                  }
+                  
+                ?>
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
           </a>
         </div>
         <div class="col-1">

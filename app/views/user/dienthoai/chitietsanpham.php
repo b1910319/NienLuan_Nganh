@@ -18,7 +18,7 @@
     <?php
       foreach($data['sanpham_ma'] as $key => $sp){
         ?>
-          <h3 class="fw-bold">Điện thoại: <?php echo $sp['ten_sp'] ?></h3>
+          <h3 class="fw-bold">Sản phẩm: <?php echo $sp['ten_sp'] ?></h3>
         <?php
       }
     ?>

@@ -33,6 +33,7 @@ class danhmuc_sanpham extends controller
   }
   public function danhmuc_sanpham_insert()
   {
+    session::init();
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';
     $ten_dm = $_POST['ten_dm'];
@@ -82,6 +83,7 @@ class danhmuc_sanpham extends controller
   }
   public function danhmuc_sanpham_update($ma_dm)
   {
+    session::init();
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';
     $dieukien = "danhmuc_sanpham.ma_dm='$ma_dm'";
@@ -122,6 +124,7 @@ class danhmuc_sanpham extends controller
   }
   public function danhmuc_sanpham_delete($ma_dm)
   {
+    session::init();
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table = 'danhmuc_sanpham';
     $dieukien = "danhmuc_sanpham.ma_dm='$ma_dm'";

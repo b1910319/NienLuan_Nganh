@@ -33,6 +33,7 @@ class thuonghieu extends controller
   }
   public function thuonghieu_insert()
   {
+    session::init();
     //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
@@ -94,6 +95,7 @@ class thuonghieu extends controller
   }
   public function thuonghieu_update($ma_th)
   {
+    session::init();
     //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
@@ -169,6 +171,7 @@ class thuonghieu extends controller
   }
   public function thuonghieu_delete($ma_th)
   {
+    session::init();
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table = 'thuonghieu';
     $dieukien = "thuonghieu.ma_th='$ma_th'";

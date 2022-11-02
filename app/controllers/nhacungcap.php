@@ -7,6 +7,7 @@
       parent::__construct();
     }
     public function nhacungcap_insert(){
+      session::init();
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table = 'nhacungcap';
       $ten_ncc = $_POST['ten_ncc'];
@@ -70,6 +71,7 @@
       $this->load->view_admin("nhacungcap/nhacungcap_edit", $data);
     }
     public function nhacungcap_update($ma_ncc){
+      session::init();
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table = 'nhacungcap';
       $dieukien = "nhacungcap.ma_ncc='$ma_ncc'" ;
@@ -87,6 +89,7 @@
       header("Location:".BASE_URL."nhacungcap/nhacungcap");
     }
     public function nhacungcap_delete($ma_ncc){
+      session::init();
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table = 'nhacungcap';
       $dieukien = "nhacungcap.ma_ncc='$ma_ncc'" ;

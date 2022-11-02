@@ -7,6 +7,7 @@ class chuyentrang_thuonghieu extends controller
     parent::__construct();
   }
   public function samsung($ma_th){
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';

@@ -30,6 +30,7 @@
       $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc", $data); 
     }
     public function danhmuc_tintuc_insert(){
+      session::init();
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $ten_dmtt = $_POST['ten_dmtt'];
@@ -64,6 +65,7 @@
       $this->load->view_admin("danhmuc_tintuc/danhmuc_tintuc_edit", $data);
     }
     public function danhmuc_tintuc_update($ma_dmtt){
+      session::init();
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $dieukien = "danhmuc_tintuc.ma_dmtt='$ma_dmtt'" ;
@@ -75,6 +77,7 @@
       header("Location:".BASE_URL."danhmuc_tintuc/danhmuc_tintuc");
     }
     public function danhmuc_tintuc_delete($ma_dmtt){
+      session::init();
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table = 'danhmuc_tintuc';
       $dieukien = "danhmuc_tintuc.ma_dmtt='$ma_dmtt'" ;

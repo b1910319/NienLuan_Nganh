@@ -30,6 +30,7 @@
       $this->load->view_admin("mau/mau", $data); 
     }
     public function mau_insert(){
+      session::init();
       $mauM = $this->load->model('mauM');
       $table = 'mau';
       $ten_m = $_POST['ten_m'];
@@ -66,6 +67,7 @@
       $this->load->view_admin("mau/mau_edit", $data);
     }
     public function mau_update($ma_m){
+      session::init();
       $mauM = $this->load->model('mauM');
       $table = 'mau';
       $dieukien = "mau.ma_m='$ma_m'" ;
@@ -79,6 +81,7 @@
       header("Location:".BASE_URL."mau/mau");
     }
     public function mau_delete($ma_m){
+      session::init();
       $mauM = $this->load->model('mauM');
       $table = 'mau';
       $dieukien = "mau.ma_m='$ma_m'" ;

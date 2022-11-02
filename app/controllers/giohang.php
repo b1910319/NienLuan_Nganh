@@ -27,7 +27,6 @@
     }
     public function giohang_insert(){
       session::init();
-      // session::destroy();
       if(isset($_SESSION['giohang'])){
         $i = 0;
         foreach ($_SESSION['giohang'] as $key => $gh){

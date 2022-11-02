@@ -98,6 +98,7 @@ use Carbon\Carbon;
       header("Location:".BASE_URL."donhang/donhang_moi");
     }
     public function huy ($ma_dh){
+      session::init();
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
@@ -106,6 +107,7 @@ use Carbon\Carbon;
       header("Location:".BASE_URL."donhang/donhang");
     }
     public function huy_m ($ma_dh){
+      session::init();
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');

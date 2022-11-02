@@ -33,6 +33,7 @@
       $this->load->view_admin("loai_sanpham/loai_sanpham", $data); 
     }
     public function loai_sanpham_insert(){
+      session::init();
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table = 'loai_sanpham';
       $ten_lsp = $_POST['ten_lsp'];
@@ -80,6 +81,7 @@
       $this->load->view_admin("loai_sanpham/loai_sanpham_edit", $data);
     }
     public function loai_sanpham_update($ma_lsp){
+      session::init();
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table = 'loai_sanpham';
       $dieukien = "loai_sanpham.ma_lsp='$ma_lsp'" ;
@@ -97,6 +99,7 @@
       header("Location:".BASE_URL."loai_sanpham/loai_sanpham");
     }
     public function loai_sanpham_delete($ma_lsp){
+      session::init();
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table = 'loai_sanpham';
       $dieukien = "loai_sanpham.ma_lsp='$ma_lsp'" ;

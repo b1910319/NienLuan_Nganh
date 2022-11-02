@@ -9,6 +9,7 @@ class index extends controller
   }
   public function index()
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -46,6 +47,7 @@ class index extends controller
   }
   public function timkiem_sp()
   {
+    session::init();
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -65,6 +67,7 @@ class index extends controller
   }
   public function tra_donhang()
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -76,6 +79,7 @@ class index extends controller
   }
   public function lichsu_donhang()
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -104,6 +108,7 @@ class index extends controller
 
   public function baohanh($ma_dh)
   {
+    session::init();
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -138,6 +143,7 @@ class index extends controller
 
   public function lichsudonhang_chitiet($ma_dh)
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -163,6 +169,7 @@ class index extends controller
   }
   public function huy($ma_dh)
   {
+    session::init();
     //đơn hàng
     $table_dh = "donhang";
     $donhangM = $this->load->model('donhangM');
@@ -185,6 +192,7 @@ class index extends controller
   }
   public function tintuc()
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -222,6 +230,7 @@ class index extends controller
   }
   public function chitiet_tintuc($ma_tt)
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -242,6 +251,7 @@ class index extends controller
   }
   public function tintuc_danhmuc($ma_dmtt)
   {
+    session::init();
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';

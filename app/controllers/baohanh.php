@@ -200,6 +200,7 @@
       $result_bh = $baohanhM->baohanh_update($table_bh, $data_bh, $dieukien_bh);
     }
     public function baohanh_delete($ma_bh){
+      session::init();
       //bảo hành
       $baohanhM = $this->load->model('baohanhM');
       $table_bh = "baohanh";

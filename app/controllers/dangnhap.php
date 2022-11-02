@@ -17,6 +17,7 @@
       $this->load->view_admin("dangnhap");
     }
     public function nhanvien_dangnhap(){
+      session::init();
       $nhanvienM = $this->load->model('nhanvienM');
       $user_nv = $_POST['user_nv'];
       $pass_nv = md5($_POST['pass_nv']);

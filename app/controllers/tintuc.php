@@ -73,6 +73,7 @@
       header("Location:" . BASE_URL . "tintuc/tintuc");
     }
     public function tintuc_delete($ma_tt){
+      session::init();
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
       $dieukien = "tintuc.ma_tt='$ma_tt'";

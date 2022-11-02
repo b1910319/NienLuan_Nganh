@@ -14,6 +14,7 @@ class nhanvien extends controller
   }
   public function trangchu()
   {
+    session::init();
     session::checksession();
     $this->load->view_admin("header");
     //đơn hàng
@@ -88,6 +89,7 @@ class nhanvien extends controller
   }
   public function nhanvien_insert()
   {
+    session::init();
     $nhanvienM = $this->load->model('nhanvienM');
     $table_nv = 'nhanvien';
     $ten_nv = $_POST['ten_nv'];
@@ -132,6 +134,7 @@ class nhanvien extends controller
   }
   public function nhanvien_update($ma_nv)
   {
+    session::init();
     $nhanvienM = $this->load->model('nhanvienM');
     $table_nv = 'nhanvien';
     $dieukien = "nhanvien.ma_nv='$ma_nv'";
@@ -148,6 +151,7 @@ class nhanvien extends controller
   }
   public function nhanvien_delete($ma_nv)
   {
+    session::init();
     $nhanvienM = $this->load->model('nhanvienM');
     $table_nv = 'nhanvien';
     $dieukien = "nhanvien.ma_nv='$ma_nv'";

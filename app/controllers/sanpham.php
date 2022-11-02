@@ -22,7 +22,7 @@ class sanpham extends controller
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
     $level=session::get('level');
     if($level == 1){
-      $level=session::get('level');
+      $this->load->view_admin("leftmenu", $data);
     }else if($level == 2){
       $this->load->view_admin("leftmenu_nhanvien", $data);
     }
@@ -264,6 +264,7 @@ class sanpham extends controller
   }
   public function sanpham_delete($ma_sp)
   {
+    session::init();
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = "sanpham.ma_sp='$ma_sp'";
@@ -421,6 +422,7 @@ class sanpham extends controller
   }
   public function sp_chitiet_update($ma_ctsp)
   {
+    session::init();
     $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -482,6 +484,7 @@ class sanpham extends controller
   }
   public function sp_chitiet_delete($ma_ctsp)
   {
+    session::init();
     $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -650,6 +653,7 @@ class sanpham extends controller
   }
   public function sp_chitiet_laptop_delete($ma_ctsp)
   {
+    session::init();
     $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -797,6 +801,7 @@ class sanpham extends controller
   }
   public function sp_chitiet_smartwatch_delete($ma_ctsp)
   {
+    session::init();
     $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -940,6 +945,7 @@ class sanpham extends controller
   }
   public function sp_chitiet_dongho_delete($ma_ctsp)
   {
+    session::init();
     $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -1098,14 +1104,13 @@ class sanpham extends controller
   }
   public function sp_chitiet_maytinh_delete($ma_ctsp)
   {
+    session::init();
     $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
     $result = $chitiet_sanphamM->sp_chitiet_delete($table_ctsp, $dieukien);
     header("Location:" . BASE_URL . "sanpham/sp_chitiet_maytinh");
   }
-
-
 
   //hình sản phẩm
   public function hinh()
@@ -1223,6 +1228,7 @@ class sanpham extends controller
   }
   public function hinh_delete($ma_h)
   {
+    session::init();
     $hinhM = $this->load->model('hinhM');
     $table_h = 'hinh';
     $dieukien = "hinh.ma_h='$ma_h'";
@@ -1353,6 +1359,7 @@ class sanpham extends controller
   }
   public function mau_sanpham_update($ma_sp, $ma_m)
   {
+    session::init();
     $mau_sanphamM = $this->load->model("mau_sanphamM");
     $table_msp = 'mau_sanpham';
     $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'";
@@ -1367,6 +1374,7 @@ class sanpham extends controller
   }
   public function mau_sanpham_delete($ma_sp, $ma_m)
   {
+    session::init();
     $mau_sanphamM = $this->load->model("mau_sanphamM");
     $table_msp = 'mau_sanpham';
     $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'";
