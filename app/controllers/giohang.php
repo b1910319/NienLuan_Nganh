@@ -51,7 +51,26 @@
         );
         $_SESSION['giohang'][] = $giohang;
       }
-      header("Location:".BASE_URL.'index/index');
+      $ma_sp = $_POST['ma_sp'];
+      $sanphamM = $this->load->model('sanphamM');
+      $table_sp = 'sanpham';
+      $dieukien = "sanpham.ma_sp = '$ma_sp'";
+      $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+      $table_dm = 'danhmuc_sanpham';
+      $data['sanpham_ma'] = $sanphamM->sanpham_ma($table_sp, $dieukien);
+      if($data['sanpham_ma']){
+        foreach($data['sanpham_ma'] as $sp_m){
+          $ma_dm = $sp_m['ma_dm'];
+          $dieukien1 = "danhmuc_sanpham.ma_dm = '$ma_dm'";
+          $data['danhmuc_ma'] = $danhmuc_sanphamM->danhmuc_sanpham_ma($table_dm, $dieukien1);
+          if($data['danhmuc_ma']){
+            foreach($data['danhmuc_ma'] as $dm_m){
+              header("Location:".BASE_URL.'/'.$dm_m['ghichu_dm'].'/chitiet_sanpham'.'/'.$sp_m['ma_sp'].'/'.$sp_m['ma_th'].'/'.$ma_dm);
+            }
+          }
+        }
+      }
+      // header("Location:".BASE_URL.'index/index');
     }
     public function giohang_update($ma_sp){
       session::init();

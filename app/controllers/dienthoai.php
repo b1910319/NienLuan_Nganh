@@ -33,6 +33,7 @@ class dienthoai extends controller
     $this->load->view_user("dienthoai/sanpham", $data);
     $this->load->view_user("footer");
   }
+  
   public function chitiet_sanpham($ma_sp, $ma_th, $ma_dm)
   { 
     session::init();

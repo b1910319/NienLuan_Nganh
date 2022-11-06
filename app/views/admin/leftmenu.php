@@ -29,7 +29,7 @@
 
         <li>
           <a href="<?php echo BASE_URL ?>admin/index">
-            <i class="ti-home"></i>
+            <i class="fa-solid fa-house-chimney"></i>
             <span> Trang chủ </span>
           </a>
         </li>
@@ -48,7 +48,7 @@
         </li>
         <li>
           <a href="<?php echo BASE_URL ?>nhacungcap/nhacungcap">
-            <i class="ti-paint-bucket"></i>
+            <i class="fa-solid fa-warehouse"></i>
             <span> Nhà cung cấp </span>
             <span class="badge badge-primary float-right"></span>
           </a>
