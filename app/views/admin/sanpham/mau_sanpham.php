@@ -81,27 +81,37 @@
           foreach($data['mau_sanpham_list'] as $key => $msp){
             $i++;
             ?>
-        <tr>
-          <th scope="row" style="width:10% ;"><?php echo $i ?></th>
-          <td style="width:30% ;"> <?php echo $msp['ten_sp'] ?></td>
-          <td style="width:30% ;"><?php echo $msp['ten_m'] ?></td>
-          <td style="width:30% ;">
-            <a href="<?php echo BASE_URL ?>sanpham/mau_sanpham_edit/<?php echo $msp['ma_sp'] ?>/<?php echo $msp['ma_m'] ?>">
-              <button type="button" class="btn sua">
-                <i class="fas fa-edit"></i>
-              </button>
-            </a>
-            <a onclick="return confirm('Bạn có muốn xóa màu <?php echo $msp['ten_m'] ?>  của sản phẩm <?php echo $msp['ten_sp'] ?> không?')"
-              href="<?php echo BASE_URL ?>sanpham/mau_sanpham_delete/<?php echo $msp['ma_sp'] ?>/<?php echo $msp['ma_m'] ?>">
-              <button type="button" class="btn xoa">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </a>
-          </td>
-        </tr>
-        <?php
+              <tr>
+                <th scope="row" style="width:10% ;"><?php echo $i ?></th>
+                <td style="width:30% ;"> <?php echo $msp['ten_sp'] ?></td>
+                <td style="width:30% ;"><?php echo $msp['ten_m'] ?></td>
+                <td style="width:30% ;">
+                  <a href="<?php echo BASE_URL ?>sanpham/mau_sanpham_edit/<?php echo $msp['ma_sp'] ?>/<?php echo $msp['ma_m'] ?>">
+                    <button type="button" class="btn sua">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </a>
+                  <a onclick="return confirm('Bạn có muốn xóa màu <?php echo $msp['ten_m'] ?>  của sản phẩm <?php echo $msp['ten_sp'] ?> không?')"
+                    href="<?php echo BASE_URL ?>sanpham/mau_sanpham_delete/<?php echo $msp['ma_sp'] ?>/<?php echo $msp['ma_m'] ?>">
+                    <button type="button" class="btn xoa">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            <?php
           }
           echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.'</p>';
+          $level=session::get('level');
+          if($level == 1){
+            ?>
+              <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>sanpham/mau_sanpham_deleteAll">
+                <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
+                  <i class="fas fa-trash-alt"></i> Xoá tất cả
+                </button>
+              </a>
+            <?php
+          }
         ?>
       </tbody>
     </table>

@@ -42,6 +42,10 @@
       $sql = "DELETE FROM $table WHERE $dieukien LIMIT $limit";
       return $this->exec($sql);
     }
+    public function deleteAll ($table){
+      $sql = "DELETE FROM $table";
+      return $this->exec($sql);
+    }
     public function affectedRows($sql, $dk1, $dk2){
       $statement = $this->prepare($sql);
       $statement->execute(array($dk1, $dk2));

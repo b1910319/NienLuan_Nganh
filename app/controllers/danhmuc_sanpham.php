@@ -139,6 +139,20 @@ class danhmuc_sanpham extends controller
     $result = $danhmuc_sanphamM->danhmuc_sanpham_delete($table, $dieukien);
     header("Location:" . BASE_URL . "danhmuc_sanpham/danhmuc_sanpham");
   }
+  public function danhmuc_sanpham_deleteAll()
+  {
+    session::init();
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table);
+    foreach ($data['danhmuc_sanpham'] as $key => $dm) {
+      if ($dm['hinh_dm']) {
+        unlink("public/uploads/danhmuc/" . $dm['hinh_dm']);
+      }
+    }
+    $result = $danhmuc_sanphamM->danhmuc_sanpham_deleteAll($table);
+    header("Location:" . BASE_URL . "danhmuc_sanpham/danhmuc_sanpham");
+  }
   public function danhmuc_sanpham_timkiem()
   {
     session::init();

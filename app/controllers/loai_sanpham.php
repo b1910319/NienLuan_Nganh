@@ -106,6 +106,14 @@
       $result = $loai_sanphamM->loai_sanpham_delete($table, $dieukien);
       header("Location:".BASE_URL."loai_sanpham/loai_sanpham");
     }
+    public function loai_sanpham_deleteAll()
+    {
+      session::init();
+      $loai_sanphamM = $this->load->model('loai_sanphamM');
+      $table = 'loai_sanpham';
+      $result = $loai_sanphamM->loai_sanpham_deleteAll($table);
+      header("Location:" . BASE_URL . "loai_sanpham/loai_sanpham");
+    }
     public function loai_sanpham_timkiem(){
       session::init();
       $this->load->view_admin("header");

@@ -96,6 +96,14 @@
       $result = $nhacungcapM->nhacungcap_delete($table, $dieukien);
       header("Location:".BASE_URL."nhacungcap/nhacungcap");
     }
+    public function nhacungcap_deleteAll()
+    {
+      session::init();
+      $nhacungcapM = $this->load->model('nhacungcapM');
+      $table = 'nhacungcap';
+      $result = $nhacungcapM->nhacungcap_deleteAll($table);
+      header("Location:" . BASE_URL . "nhacungcap/nhacungcap");
+    }
     public function nhacungcap_timkiem(){
       session::init();
       $this->load->view_admin("header");

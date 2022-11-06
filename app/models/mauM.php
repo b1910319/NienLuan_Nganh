@@ -25,6 +25,9 @@
     public function mau_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function mau_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function mau_timkiem($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

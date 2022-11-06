@@ -88,6 +88,14 @@
       $result = $mauM->mau_delete($table, $dieukien);
       header("Location:".BASE_URL."mau/mau");
     }
+    public function mau_deleteAll()
+    {
+      session::init();
+      $mauM = $this->load->model('mauM');
+      $table = 'mau';
+      $result = $mauM->mau_deleteAll($table);
+      header("Location:" . BASE_URL . "mau/mau");
+    }
     public function mau_timkiem(){
       session::init();
       $this->load->view_admin("header");

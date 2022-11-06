@@ -274,10 +274,33 @@ class sanpham extends controller
         if ($sp['hinh_sp'] && $sp['hinhchitiet_sp']) {
           unlink("public/uploads/sanpham/" . $sp['hinh_sp']);
           unlink("public/uploads/sanpham/" . $sp['hinhchitiet_sp']);
+        }else if($sp['hinh_sp']){
+          unlink("public/uploads/sanpham/" . $sp['hinh_sp']);
+        }else if($sp['hinhchitiet_sp']){
+          unlink("public/uploads/sanpham/" . $sp['hinhchitiet_sp']);
         }
       }
     }
     $result = $sanphamM->sanpham_delete($table_sp, $dieukien);
+    header("Location:" . BASE_URL . "sanpham/sanpham");
+  }
+  public function sanpham_deleteAll()
+  {
+    session::init();
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    $data['sanpham'] = $sanphamM->sanpham($table_sp);
+    foreach ($data['sanpham'] as $key => $sp) {
+      if ($sp['hinh_sp'] && $sp['hinhchitiet_sp']) {
+        unlink("public/uploads/sanpham/" . $sp['hinh_sp']);
+        unlink("public/uploads/sanpham/" . $sp['hinhchitiet_sp']);
+      }else if($sp['hinh_sp']){
+        unlink("public/uploads/sanpham/" . $sp['hinh_sp']);
+      }else if($sp['hinhchitiet_sp']){
+        unlink("public/uploads/sanpham/" . $sp['hinhchitiet_sp']);
+      }
+    }
+    $result = $sanphamM->sanpham_deleteAll($table_sp);
     header("Location:" . BASE_URL . "sanpham/sanpham");
   }
   public function sanpham_timkiem()
@@ -295,7 +318,7 @@ class sanpham extends controller
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
     $level=session::get('level');
     if($level == 1){
-      $level=session::get('level');
+      $this->load->view_admin("leftmenu", $data);
     }else if($level == 2){
       $this->load->view_admin("leftmenu_nhanvien", $data);
     }
@@ -478,8 +501,8 @@ class sanpham extends controller
     $table_sp = 'sanpham';
     $data['sanpham'] = $sanphamM->sanpham($table_sp);
     $tukhoa = $_POST['tukhoa'];
-    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%' AND sanpham.ma_dm = 8 OR sanpham.ma_dm = 10";
-    $data['sp_chitiet_timkiem'] = $chitiet_sanphamM->sp_chitiet_timkiem($table_sp, $table_ctsp, $dieukien);
+    $dieukien1 = "sanpham.ten_sp LIKE '%$tukhoa%' AND sanpham.ma_dm = 8 OR sanpham.ma_dm = 10";
+    $data['sp_chitiet_timkiem'] = $chitiet_sanphamM->sp_chitiet_timkiem($table_sp, $table_ctsp, $dieukien1);
     $this->load->view_admin("sanpham/sp_chitiet_timkiem", $data);
   }
   public function sp_chitiet_delete($ma_ctsp)
@@ -491,8 +514,6 @@ class sanpham extends controller
     $result = $chitiet_sanphamM->sp_chitiet_delete($table_ctsp, $dieukien);
     header("Location:" . BASE_URL . "sanpham/sp_chitiet");
   }
-
-
   //chi tiết sản phẩm laptop
   public function sp_chitiet_laptop()
   {
@@ -1243,6 +1264,21 @@ class sanpham extends controller
     $result = $hinhM->hinh_delete($table_h, $dieukien);
     header("Location:" . BASE_URL . "sanpham/hinh");
   }
+  public function hinh_deleteAll()
+  {
+    session::init();
+    $hinhM = $this->load->model('hinhM');
+    $table_h = 'hinh';
+    $table_sp = 'sanpham';
+    $data['hinh'] = $hinhM->hinh_list($table_h, $table_sp);
+    foreach ($data['hinh'] as $key => $h) {
+      if ($h['hinh']) {
+        unlink("public/uploads/hinh_chitiet/" . $h['hinh']);
+      }
+    }
+    $result = $hinhM->hinh_deleteAll($table_h);
+    header("Location:" . BASE_URL . "sanpham/hinh");
+  }
   public function hinh_timkiem()
   {
     session::init();
@@ -1379,6 +1415,14 @@ class sanpham extends controller
     $table_msp = 'mau_sanpham';
     $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'";
     $result = $mau_sanphamM->mau_sanpham_delete($table_msp, $dieukien);
+    header("Location:" . BASE_URL . "sanpham/mau_sanpham");
+  }
+  public function mau_sanpham_deleteAll()
+  {
+    session::init();
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    $result = $mau_sanphamM->mau_sanpham_deleteAll($table_msp);
     header("Location:" . BASE_URL . "sanpham/mau_sanpham");
   }
   public function mau_sanpham_timkiem()

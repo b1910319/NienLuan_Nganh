@@ -84,6 +84,14 @@
       $result = $danhmuc_tintucM->danhmuc_tintuc_delete($table, $dieukien);
       header("Location:".BASE_URL."danhmuc_tintuc/danhmuc_tintuc");
     }
+    public function danhmuc_tintuc_deleteAll()
+    {
+      session::init();
+      $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
+      $table = 'danhmuc_tintuc';
+      $result = $danhmuc_tintucM->danhmuc_tintuc_deleteAll($table);
+      header("Location:" . BASE_URL . "danhmuc_tintuc/danhmuc_tintuc");
+    }
     public function danhmuc_tintuc_timkiem(){
       session::init();
       $this->load->view_admin("header");

@@ -21,6 +21,9 @@
     public function loai_sanpham_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function loai_sanpham_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function loai_sanpham_timkiem($table_lsp, $table_dm, $dieukien){
       $sql = "SELECT * FROM $table_lsp join $table_dm on $table_lsp.ma_dm = $table_dm.ma_dm where $dieukien";
       return $this->db->select($sql);

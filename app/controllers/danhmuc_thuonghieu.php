@@ -106,6 +106,14 @@ class danhmuc_thuonghieu extends controller
     $result = $danhmuc_thuonghieuM->danhmuc_thuonghieu_delete($table, $dieukien);
     header("Location:" . BASE_URL . "danhmuc_thuonghieu/danhmuc_thuonghieu");
   }
+  public function danhmuc_thuonghieu_deleteAll()
+  {
+    session::init();
+    $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+    $table = 'danhmuc_thuonghieu';
+    $result = $danhmuc_thuonghieuM->danhmuc_thuonghieu_deleteAll($table);
+    header("Location:" . BASE_URL . "danhmuc_thuonghieu/danhmuc_thuonghieu");
+  }
   public function danhmuc_thuonghieu_timkiem()
   {
     session::init();

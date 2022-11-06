@@ -37,28 +37,38 @@
           foreach($data['loai_sanpham_timkiem'] as $key => $lsp){
             $i++;
             ?>
-        <tr>
-          <th scope="row"><?php echo $i ?></th>
-          <td><?php echo $lsp['ten_lsp'] ?></td>
-          <td><?php echo $lsp['ten_dm'] ?></td>
-          <td><?php echo $lsp['icon_lsp'] ?></td>
-          <td>
-            <a href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham_edit/<?php echo $lsp['ma_lsp'] ?>">
-              <button type="button" class="btn sua">
-                <i class="fas fa-edit"></i>
-              </button>
-            </a>
-            <a onclick="return confirm('Bạn có muốn xóa <?php echo $lsp['ten_lsp'] ?> không?')"
-              href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham_delete/<?php echo $lsp['ma_lsp'] ?>">
-              <button type="button" class="btn xoa">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </a>
-          </td>
-        </tr>
-        <?php
+              <tr>
+                <th scope="row"><?php echo $i ?></th>
+                <td><?php echo $lsp['ten_lsp'] ?></td>
+                <td><?php echo $lsp['ten_dm'] ?></td>
+                <td><?php echo $lsp['icon_lsp'] ?></td>
+                <td>
+                  <a href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham_edit/<?php echo $lsp['ma_lsp'] ?>">
+                    <button type="button" class="btn sua">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </a>
+                  <a onclick="return confirm('Bạn có muốn xóa <?php echo $lsp['ten_lsp'] ?> không?')"
+                    href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham_delete/<?php echo $lsp['ma_lsp'] ?>">
+                    <button type="button" class="btn xoa">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            <?php
           }
           echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.'</p>';
+          $level=session::get('level');
+          if($level == 1){
+            ?>
+              <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>loai_sanpham/loai_sanpham_deleteAll">
+                <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
+                  <i class="fas fa-trash-alt"></i> Xoá tất cả
+                </button>
+              </a>
+            <?php
+          }
         ?>
       </tbody>
     </table>

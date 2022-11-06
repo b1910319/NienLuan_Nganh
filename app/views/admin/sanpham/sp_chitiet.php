@@ -117,8 +117,7 @@
           Thông tin chi tiết: Điện thoại - Table
         </div>
         <div class="col-6">
-          <form class="d-flex" action="<?php echo BASE_URL ?>sanpham/sp_chitiet_timkiem"
-            method="POST">
+          <form class="d-flex" action="<?php echo BASE_URL ?>sanpham/sp_chitiet_timkiem" method="POST">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
               name="tukhoa">
             <button class="btn btn-success btn_search" type="submit"><i
@@ -138,51 +137,51 @@
       </thead>
       <tbody>
         <?php
-        $i = 0;
-        foreach ($data['sp_chitiet_list'] as $key => $ctsp) {
-          $i++;
-          ?>
-        <tr>
-          <th scope="row" style="width: 10%;"><?php echo $i ?></th>
-          <td style="width: 30%;"><?php echo $ctsp['ten_sp'] ?></td>
-          <td style="width: 45%;">
-            <div class="row ">
-              <div class="col-md-12">
-                <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
-                  style="height: 100px; overflow: auto;">
-                  <p>
-                    <b>Màn hình:</b>  <?php echo $ctsp['manhinh'] ?> <br>
-                    <b>Hệ điều hành:</b> <?php echo $ctsp['hedieuhanh'] ?> <br>
-                    <b>Camera trước:</b> <?php echo $ctsp['camera_truoc'] ?> <br>
-                    <b>Camera sau:</b> <?php echo $ctsp['camera_sau'] ?> <br>
-                    <b>Chip:</b> <?php echo $ctsp['chip'] ?> <br>
-                    <b>RAM:</b> <?php echo $ctsp['ram'].'GB' ?> <br>
-                    <b>Bộ nhớ trong:</b> <?php echo $ctsp['rom'].'GB' ?> <br>
-                    <b>SIM:</b> <?php echo $ctsp['sim'] ?> <br>
-                    <b>Pin, sạc:</b> <?php echo $ctsp['pin'] ?> <br>
-                    <b>Bộ sản phẩm:</b> <?php echo $ctsp['bo_sanpham'] ?> <br>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td style="width: 15%;">
-            <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet_edit/<?php echo $ctsp['ma_ctsp'] ?>">
-              <button type="button" class="btn sua">
-                <i class="fas fa-edit"></i>
-              </button>
-            </a>
-            <a onclick="return confirm('Bạn có muốn xóa sản phẩm <?php echo $ctsp['ten_sp'] ?> không?')"
-              href="<?php echo BASE_URL ?>sanpham/sp_chitiet_delete/<?php echo $ctsp['ma_ctsp'] ?>">
-              <button type="button" class="btn xoa">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </a>
-          </td>
-        </tr>
-        <?php
-        }
-        echo '<p class="text-warning" style="font-weight: bold;">Tổng: ' . $i . '</p>';
+          $i = 0;
+          foreach ($data['sp_chitiet_list'] as $key => $ctsp) {
+            $i++;
+            ?>
+              <tr>
+                <th scope="row" style="width: 10%;"><?php echo $i ?></th>
+                <td style="width: 30%;"><?php echo $ctsp['ten_sp'] ?></td>
+                <td style="width: 45%;">
+                  <div class="row ">
+                    <div class="col-md-12">
+                      <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
+                        style="height: 100px; overflow: auto;">
+                        <p>
+                          <b>Màn hình:</b>  <?php echo $ctsp['manhinh'] ?> <br>
+                          <b>Hệ điều hành:</b> <?php echo $ctsp['hedieuhanh'] ?> <br>
+                          <b>Camera trước:</b> <?php echo $ctsp['camera_truoc'] ?> <br>
+                          <b>Camera sau:</b> <?php echo $ctsp['camera_sau'] ?> <br>
+                          <b>Chip:</b> <?php echo $ctsp['chip'] ?> <br>
+                          <b>RAM:</b> <?php echo $ctsp['ram'].'GB' ?> <br>
+                          <b>Bộ nhớ trong:</b> <?php echo $ctsp['rom'].'GB' ?> <br>
+                          <b>SIM:</b> <?php echo $ctsp['sim'] ?> <br>
+                          <b>Pin, sạc:</b> <?php echo $ctsp['pin'] ?> <br>
+                          <b>Bộ sản phẩm:</b> <?php echo $ctsp['bo_sanpham'] ?> <br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 15%;">
+                  <a href="<?php echo BASE_URL ?>sanpham/sp_chitiet_edit/<?php echo $ctsp['ma_ctsp'] ?>">
+                    <button type="button" class="btn sua">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </a>
+                  <a onclick="return confirm('Bạn có muốn xóa sản phẩm <?php echo $ctsp['ten_sp'] ?> không?')"
+                    href="<?php echo BASE_URL ?>sanpham/sp_chitiet_delete/<?php echo $ctsp['ma_ctsp'] ?>">
+                    <button type="button" class="btn xoa">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            <?php
+          }
+          echo '<p class="text-warning" style="font-weight: bold;">Tổng: ' . $i . '</p>';
         ?>
       </tbody>
     </table>

@@ -21,13 +21,11 @@
     public function nhacungcap_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function nhacungcap_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function nhacungcap_timkiem($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);
     }
-    //ví dụ thống kê
-    // public function tong (){
-    //   $sql = "SELECT gia, ngay, SUM(gia) AS tonggia FROM test GROUP BY ngay";
-    //   return $this->db->select($sql);
-    // }
   }

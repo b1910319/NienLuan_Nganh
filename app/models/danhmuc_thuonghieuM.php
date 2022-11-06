@@ -21,6 +21,9 @@
     public function danhmuc_thuonghieu_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function danhmuc_thuonghieu_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function danhmuc_thuonghieu_timkiem($table_dm, $table_dmth, $table_th, $dieukien){
       $sql = "SELECT * FROM $table_dmth join $table_dm on $table_dmth.ma_dm = $table_dm.ma_dm join $table_th on $table_dmth.ma_th = $table_th.ma_th where $dieukien";
       return $this->db->select($sql);

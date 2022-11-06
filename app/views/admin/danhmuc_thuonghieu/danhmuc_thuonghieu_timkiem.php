@@ -36,27 +36,37 @@
           foreach($data['danhmuc_thuonghieu_timkiem'] as $key => $dmth){
             $i++;
             ?>
-        <tr>
-          <th scope="row" style="width:10% ;"><?php echo $i ?></th>
-          <td style="width:30% ;"> <?php echo $dmth['ten_dm'] ?></td>
-          <td style="width:30% ;"><?php echo $dmth['ten_th'] ?></td>
-          <td style="width:30% ;">
-            <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_edit/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
-              <button type="button" class="btn sua">
-                <i class="fas fa-edit"></i>
-              </button>
-            </a>
-            <a onclick="return confirm('Bạn có muốn xóa thương hiệu <?php echo $dmth['ten_th'] ?> thuộc danh mục <?php echo $dmth['ten_dm'] ?> không?')"
-              href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_delete/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
-              <button type="button" class="btn xoa">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </a>
-          </td>
-        </tr>
-        <?php
+              <tr>
+                <th scope="row" style="width:10% ;"><?php echo $i ?></th>
+                <td style="width:30% ;"> <?php echo $dmth['ten_dm'] ?></td>
+                <td style="width:30% ;"><?php echo $dmth['ten_th'] ?></td>
+                <td style="width:30% ;">
+                  <a href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_edit/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
+                    <button type="button" class="btn sua">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </a>
+                  <a onclick="return confirm('Bạn có muốn xóa thương hiệu <?php echo $dmth['ten_th'] ?> thuộc danh mục <?php echo $dmth['ten_dm'] ?> không?')"
+                    href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_delete/<?php echo $dmth['ma_dm'] ?>/<?php echo $dmth['ma_th'] ?>">
+                    <button type="button" class="btn xoa">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            <?php
           }
           echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.'</p>';
+          $level=session::get('level');
+          if($level == 1){
+            ?>
+              <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>danhmuc_thuonghieu/danhmuc_thuonghieu_deleteAll">
+                <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
+                  <i class="fas fa-trash-alt"></i> Xoá tất cả
+                </button>
+              </a>
+            <?php
+          }
         ?>
       </tbody>
     </table>

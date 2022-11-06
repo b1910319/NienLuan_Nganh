@@ -181,10 +181,33 @@ class thuonghieu extends controller
         if ($th['logo_th'] && $th['hinh_th']) {
           unlink("public/uploads/thuonghieu/" . $th['logo_th']);
           unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
+        }else if($th['logo_th']){
+          unlink("public/uploads/thuonghieu/" . $th['logo_th']);
+        }else if($th['hinh_th']){
+          unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
         }
       }
     }
     $result = $thuonghieuM->thuonghieu_delete($table, $dieukien);
+    header("Location:" . BASE_URL . "thuonghieu/thuonghieu");
+  }
+  public function thuonghieu_deleteAll()
+  {
+    session::init();
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table = 'thuonghieu';
+    $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table);
+    foreach ($data['thuonghieu'] as $key => $th) {
+      if ($th['logo_th'] && $th['hinh_th']) {
+        unlink("public/uploads/thuonghieu/" . $th['logo_th']);
+        unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
+      }else if($th['logo_th']){
+        unlink("public/uploads/thuonghieu/" . $th['logo_th']);
+      }else if($th['hinh_th']){
+        unlink("public/uploads/thuonghieu/" . $th['hinh_th']);
+      }
+    }
+    $result = $thuonghieuM->thuonghieu_deleteAll($table);
     header("Location:" . BASE_URL . "thuonghieu/thuonghieu");
   }
   public function thuonghieu_timkiem()

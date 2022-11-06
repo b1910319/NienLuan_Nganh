@@ -21,6 +21,9 @@
     public function mau_sanpham_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function mau_sanpham_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function mau_sanpham_timkiem($table_sp, $table_msp, $table_m, $dieukien){
       $sql = "SELECT * FROM $table_msp join $table_sp on $table_msp.ma_sp = $table_sp.ma_sp join $table_m on $table_msp.ma_m = $table_m.ma_m where $dieukien";
       return $this->db->select($sql);

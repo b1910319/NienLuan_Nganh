@@ -11,6 +11,10 @@
       $sql = "SELECT * FROM $table_tt join $table_nv on $table_tt.ma_nv = $table_nv.ma_nv join $table_th on $table_tt.ma_th = $table_th.ma_th join $table_dmtt on $table_tt.ma_dmtt = $table_dmtt.ma_dmtt ORDER BY ma_tt desc";
       return $this->db->select($sql);
     }
+    public function tintuc($table){
+      $sql = "SELECT * FROM $table";
+      return $this->db->select($sql);
+    }
     public function tintuc_ma($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);
@@ -20,6 +24,9 @@
     }
     public function tintuc_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
+    }
+    public function tintuc_deleteAll($table){
+      return $this->db->deleteAll($table);
     }
     public function tintuc_timkiem($table_tt, $table_nv, $table_th, $table_dmtt, $dieukien){
       $sql = "SELECT * FROM $table_tt join $table_nv on $table_tt.ma_nv = $table_nv.ma_nv join $table_th on $table_tt.ma_th = $table_th.ma_th join $table_dmtt on $table_tt.ma_dmtt = $table_dmtt.ma_dmtt WHERE $dieukien ORDER BY ma_tt desc";
@@ -33,8 +40,4 @@
       $sql = "SELECT * FROM $table_tt join $table_th on $table_tt.ma_th = $table_th.ma_th join $table_dmtt on $table_tt.ma_dmtt = $table_dmtt.ma_dmtt WHERE $dieukien LIMIT $limit";
       return $this->db->select($sql);
     }
-    // public function hinh_limit1($table, $dieukien){
-    //   $sql = "SELECT * FROM $table where $dieukien LIMIT 1";
-    //   return $this->db->select($sql);
-    // }
   }

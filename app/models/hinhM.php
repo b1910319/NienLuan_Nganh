@@ -21,6 +21,9 @@
     public function hinh_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function hinh_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function hinh_timkiem($table_sp, $table_h, $dieukien){
       $sql = "SELECT * FROM $table_h join $table_sp on $table_h.ma_sp = $table_sp.ma_sp where $dieukien";
       return $this->db->select($sql);

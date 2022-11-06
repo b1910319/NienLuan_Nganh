@@ -21,6 +21,9 @@
     public function danhmuc_tintuc_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function danhmuc_tintuc_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function danhmuc_tintuc_timkiem($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

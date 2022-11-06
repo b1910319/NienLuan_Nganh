@@ -88,6 +88,19 @@
       $result = $tintucM->tintuc_delete($table_tt, $dieukien);
       header("Location:" . BASE_URL . "tintuc/tintuc");
     }
+    public function tintuc_deleteAll(){
+      session::init();
+      $tintucM = $this->load->model('tintucM');
+      $table_tt = 'tintuc';
+      $data['tintuc'] = $tintucM->tintuc($table_tt);
+        foreach ($data['tintuc'] as $key => $tt) {
+          if ($tt['hinh_tt']) {
+            unlink("public/uploads/tintuc/" . $tt['hinh_tt']);
+          }
+        }
+      $result = $tintucM->tintuc_deleteAll($table_tt);
+      header("Location:" . BASE_URL . "tintuc/tintuc");
+    }
     public function tintuc_edit($ma_tt)
     {
       session::init();

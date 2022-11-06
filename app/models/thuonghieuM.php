@@ -25,6 +25,9 @@
     public function thuonghieu_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function thuonghieu_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function thuonghieu_timkiem($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

@@ -41,6 +41,9 @@
     public function sanpham_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function sanpham_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function sanpham_timkiem($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);
