@@ -496,10 +496,10 @@ ol {
 /* Bredcrumb Fill 2 - style 2 */
 .breadcrumb-fill2.style2 {
   border-radius: 30px;
-  background: #ff6407;
+  background: #0b4619;
 }
 .breadcrumb-fill2.style2 .fa {
-  background: #ff6407;
+  background: #0b4619;
 }
 .breadcrumb .fa:hover {
   transform: scale(1.15);
@@ -508,7 +508,11 @@ ol {
 .chitiet_sanpham_title {
   border-bottom: 2px solid #c7c7c7;
 }
-
+.mota{
+  background-color: #BCE29E;
+  padding: 15px;
+  border-radius: 15px;
+}
 /* cắt bớt thông tin hi hiển thị ra màn hình */
 .thongtin_sanpham span {
   width: 100%;
@@ -598,20 +602,20 @@ ol {
 	margin-bottom: 1em;
 	padding: 1em;
 	text-align: center;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #f5ffbb;
+	background-color: #EEBB4D;
 	font-weight: bold;
 }
 
 .select {
 	border: none;
-	border-radius: .25rem;
+	border-radius: 5px;
 	padding: .2em;
 	color: white;
-	background-color: #FF9F29;
+	background-color: #9BB67C;
 	cursor: pointer;
 
 	width: 30%;
@@ -622,7 +626,7 @@ ol {
 	.select__item {
 		padding: 1em;
 		color: white;
-		background-color: #FF9F29;
+		background-color: #9BB67C;
 		text-align: left;
   
 	}

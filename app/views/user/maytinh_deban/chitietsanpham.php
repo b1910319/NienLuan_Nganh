@@ -106,12 +106,30 @@
         foreach ($data['sanpham_ma'] as $key => $sp){
           ?>
             <div class="chitiet_sanpham_gia">
-              <p><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
+              <div class="alert alert-danger" role="alert" style="background-color:#FEE2E2 ; color: red; font-weight: bold; font-size: 20px;">
+                <i class="fa-solid fa-circle-dollar-to-slot"></i> &ensp;
+                <?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?>
+                <span style="color: gray; text-decoration: line-through;"><?php echo number_format($sp['gia_sp']+200000, 0, ',', '.') . ' <sup>đ</sup>'  ?></span>
+              </div>
             </div>
-            <button type="button" class="btn btn-light btn_tragop">Trả góp 0%</button>
-            <button type="button" class="btn btn-success">Mới</button>
+            <div class="mota">
+              <p style="font-weight:bold ;">Sản phẩm có những màu: </p>
+              <?php
+                foreach ($data['mau_sanpham_ma'] as $key => $msp){
+                  ?>
+                    <button type="button" class="btn btn-success" style="background-color:#16511a ;">
+                    <span style="border-radius: 50%; background-color: <?php echo $msp['mau'] ?>; color: <?php echo $msp['mau'] ?>;">... </span> &ensp;
+                      <?php echo $msp['ten_m'] ?>
+                    </button>
+                  <?php
+                }
+              ?>
+              <p class="mt-3" style="font-weight: bold;">
+                Miễn phí giao hàng cho đơn hàng từ
+                <button type="button" class="btn btn-danger">2.000.000 <sup>đ</sup></button>
+              </p>
+            </div>
             <div class="thongso_kythuat">
-              <h2 class="py-3 text-center">Thông số kỹ thuật</h2>
               <div class="row py-5 justify-content-center">
                 <div class="col-md-12">
                   <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
@@ -173,7 +191,7 @@
                 <input type="hidden" value="1" name="soluong_dat">
                 <input type="hidden" value="<?php echo $sp['ma_sp'] ?>" name="ma_sp">
                 <div class="">
-                  <div class="l-container">
+                  <div class="">
                       <!-- 	Select	 -->
                       <div class="select-control">
                         <span class="select-control__title">Màu của sản phẩm</span>
@@ -196,7 +214,7 @@
                   <?php
                     if ($sp['soluong_sp'] > 0){
                       ?>
-                        <button class="btn5-hover btn5">Thêm vào giỏ hàng</Button>
+                        <button class="btn btn-light p-4" type="submit" style="background-color:#E51F22 ; color: white; font-size: 18px; font-weight: bold;">Thêm vào giỏ hàng</button>
                       <?php
                     }else{
                       ?>
@@ -235,7 +253,10 @@
   </div>
   <div class="thongtin_sanpham">
     <div class="">
-      <h2 class="py-3 text-center">Thông tin sản phẩm</h2>
+      <!-- <h2 class="py-3 text-center">Thông tin sản phẩm</h2> -->
+      <div class="alert alert-warning" role="alert" style="font-weight: bold; font-size: 20px; text-align: center; color: white; background-color: #E6A157;">
+        THÔNG TIN SẢN PHẨM
+      </div>
       <div class="row py-5 justify-content-center">
         <div class="col-md-12">
           <?php
