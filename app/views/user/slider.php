@@ -14,7 +14,7 @@
                 <img src="<?php echo BASE_URL ?>public/img/slider/slider_3.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img src="<?php echo BASE_URL ?>public/img/slider/slider_4.png" class="d-block w-100" alt="...">
+                <img src="<?php echo BASE_URL ?>public/img/slider/slider_4.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item" data-bs-interval="2000">
                 <img src="<?php echo BASE_URL ?>public/img/slider/slider_5.png" class="d-block w-100" alt="...">

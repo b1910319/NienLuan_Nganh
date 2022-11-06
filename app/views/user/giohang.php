@@ -1,5 +1,8 @@
-<div class="container giohang ">
-  <h2>Giỏ hàng</h2>
+<div class="container">
+  <div class="alert alert-info mt-4" role="alert" style="text-align: center; font-weight: bold; font-size: 20px;" >
+    GIỎ HÀNG
+  </div>
+  <!-- <h2>Giỏ hàng</h2> -->
   <?php
     if (isset($_SESSION['giohang'])){
       ?>
@@ -17,7 +20,7 @@
                 <th scope="col">Số lượng</th>
                 <th scope="col">Màu</th>
                 <th scope="col">Thành tiền</th>
-                <th></th>
+                <th scope="col">Quản lý</th>
               </tr>
             </thead>
             <tbody>
@@ -39,12 +42,12 @@
                             }
                           ?>
                         </td>
-                        <td style="width: 15%;">
+                        <td style="width: 10%;">
                           <?php
                             foreach($data['sanpham'] as $key => $sp){
                               if($gh['ma_sp'] == $sp['ma_sp']){
                                 ?>
-                                  <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" style="width: 40%;" >
+                                  <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" style="width: 60%;" >
                                 <?php
                               }
                             }
@@ -63,11 +66,15 @@
                           <input type="number" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
                             min="0" max="10" name="soluong_dat" value="<?php echo $gh['soluong_dat'] ?>">
                         </td>
-                        <td style="width: 10%;">
+                        <td style="width: 15%;">
                           <?php
                             foreach($data['mau'] as $key => $m){
                               if($gh['ma_m'] == $m['ma_m']){
-                                echo $m['ten_m'];
+                                // echo $m['ten_m'];
+                                ?>
+                                  <span  style="border-radius:100% ; background-color: <?php echo $m['mau'] ?> ; color: <?php echo $m['mau'] ?>;">....</span> 
+                                  <?php echo $m['ten_m'] ?>
+                                <?php
                               }
                             }
                           ?>
@@ -84,10 +91,10 @@
                         <td style="width: 20%;">
                           <a href="<?php echo BASE_URL ?>giohang/giohang_delete/<?php echo $gh['ma_sp'] ?>" onclick="return confirm('Bạn có muốn xóa sản phẩm không?')">
                             <button type="button" class="btn btn-warning btn_xoa" name="xoa_giohang">
-                              <i class="fa-solid fa-trash-can"></i>
+                              <i class="fa-solid fa-trash-can"></i> Xoá
                             </button>
                           </a>
-                          <button class="btn btn-success" name="update_giohang" type="submit" id="button-addon2">Update</button>
+                          <button class="btn btn-success" name="update_giohang" type="submit" id="button-addon2"><i class="fa-solid fa-pen-to-square"></i> Cập nhật</button>
                         </td>
                       </tr>
                     </form>
@@ -159,7 +166,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-center mt-4">
-              <button type="submit" class="btn btn-warning btn_dathang ">ĐẶT HÀNG</button>
+              <button type="submit" class="btn btn-warning btn_dathang p-3 ">ĐẶT HÀNG</button>
             </div>
             
           </form>
