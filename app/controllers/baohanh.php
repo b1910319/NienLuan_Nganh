@@ -208,5 +208,13 @@
       $result = $baohanhM->baohanh_delete($table_bh, $dieukien);
       header("Location:".BASE_URL."baohanh/baohanh_list");
     }
+    public function baohanh_deleteAll(){
+      session::init();
+      //bảo hành
+      $baohanhM = $this->load->model('baohanhM');
+      $table_bh = "baohanh";
+      $result = $baohanhM->baohanh_deleteAll($table_bh);
+      header("Location:".BASE_URL."baohanh/baohanh_list");
+    }
   }
 ?>

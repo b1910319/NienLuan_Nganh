@@ -17,4 +17,7 @@
     public function baohanh_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function baohanh_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
   }
