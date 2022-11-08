@@ -1,12 +1,16 @@
 <?php
-  class tintuc extends controller{
-    public function __construct()
-    {
-      $data = array();
-      parent::__construct();
-    }
-    public function tintuc(){
-      session::init();
+class tintuc extends controller
+{
+  public function __construct()
+  {
+    $data = array();
+    parent::__construct();
+  }
+  public function tintuc()
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -17,12 +21,7 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $level=session::get('level');
-      if($level == 1){
-        $this->load->view_admin("leftmenu", $data);
-      }else if($level == 2){
-        $this->load->view_admin("leftmenu_nhanvien", $data);
-      }
+      $this->load->view_admin("leftmenu", $data);
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
@@ -37,11 +36,17 @@
       $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
       $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
-      $data ['tintuc'] = $tintucM->tintuc_list($table_tt, $table_nv, $table_th, $table_dmtt);
-      $this->load->view_admin("tintuc/tintuc", $data); 
+      $data['tintuc'] = $tintucM->tintuc_list($table_tt, $table_nv, $table_th, $table_dmtt);
+      $this->load->view_admin("tintuc/tintuc", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function tintuc_insert(){
-      session::init();
+  }
+  public function tintuc_insert()
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
@@ -71,9 +76,15 @@
       );
       $result = $tintucM->tintuc_insert($table_tt, $data);
       header("Location:" . BASE_URL . "tintuc/tintuc");
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function tintuc_delete($ma_tt){
-      session::init();
+  }
+  public function tintuc_delete($ma_tt)
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
       $dieukien = "tintuc.ma_tt='$ma_tt'";
@@ -87,23 +98,34 @@
       }
       $result = $tintucM->tintuc_delete($table_tt, $dieukien);
       header("Location:" . BASE_URL . "tintuc/tintuc");
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function tintuc_deleteAll(){
-      session::init();
+  }
+  public function tintuc_deleteAll()
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
       $data['tintuc'] = $tintucM->tintuc($table_tt);
-        foreach ($data['tintuc'] as $key => $tt) {
-          if ($tt['hinh_tt']) {
-            unlink("public/uploads/tintuc/" . $tt['hinh_tt']);
-          }
+      foreach ($data['tintuc'] as $key => $tt) {
+        if ($tt['hinh_tt']) {
+          unlink("public/uploads/tintuc/" . $tt['hinh_tt']);
         }
+      }
       $result = $tintucM->tintuc_deleteAll($table_tt);
       header("Location:" . BASE_URL . "tintuc/tintuc");
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function tintuc_edit($ma_tt)
-    {
-      session::init();
+  }
+  public function tintuc_edit($ma_tt)
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
       $dieukien = "tintuc.ma_tt='$ma_tt'";
@@ -126,17 +148,17 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $level=session::get('level');
-      if($level == 1){
-        $this->load->view_admin("leftmenu", $data);
-      }else if($level == 2){
-        $this->load->view_admin("leftmenu_nhanvien", $data);
-      }
+      $this->load->view_admin("leftmenu", $data);
       $this->load->view_admin("tintuc/tintuc_edit", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function tintuc_update($ma_tt)
-    {
-      session::init();
+  }
+  public function tintuc_update($ma_tt)
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
@@ -183,9 +205,15 @@
       }
       $result = $tintucM->tintuc_update($table_tt, $data, $dieukien);
       header("Location:" . BASE_URL . "tintuc/tintuc");
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
-    public function tintuc_timkiem(){
-      session::init();
+  }
+  public function tintuc_timkiem()
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -196,12 +224,7 @@
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-      $level=session::get('level');
-      if($level == 1){
-        $this->load->view_admin("leftmenu", $data);
-      }else if($level == 2){
-        $this->load->view_admin("leftmenu_nhanvien", $data);
-      }
+      $this->load->view_admin("leftmenu", $data);
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
@@ -218,9 +241,10 @@
       $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
       $tukhoa = $_POST['tukhoa'];
       $dieukien1 = "tintuc.ten_tt LIKE '%$tukhoa%'";
-      $data ['tintuc_timkiem'] = $tintucM->tintuc_timkiem($table_tt, $table_nv, $table_th, $table_dmtt, $dieukien1);
-      $this->load->view_admin("tintuc/tintuc_timkiem", $data); 
-
+      $data['tintuc_timkiem'] = $tintucM->tintuc_timkiem($table_tt, $table_nv, $table_th, $table_dmtt, $dieukien1);
+      $this->load->view_admin("tintuc/tintuc_timkiem", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
-?>
+}
