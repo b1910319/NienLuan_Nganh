@@ -67,6 +67,40 @@
             </div>
           </div>
         </div>
+        <div class="card-box">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Tên</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Địa chỉ</th>
+                <th scope="col">Cập nhật</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                if($data['nhanvien_ma']){
+                  foreach($data['nhanvien_ma'] as $nv_m){
+                    ?>
+                      <tr>
+                        <th scope="row"><?php echo $nv_m['ten_nv'] ?></th>
+                        <td><?php echo $nv_m['sdt_nv'] ?></td>
+                        <td><?php echo $nv_m['diachi_nv'] ?></td>
+                        <td>
+                          <a href="<?php echo BASE_URL ?>nhanvien/nhanvien_capnhat/<?php echo $nv_m['ma_nv'] ?>">
+                            <button type="button" class="btn sua">
+                              <i class="fas fa-edit"></i> Cập nhật
+                            </button>
+                          </a>
+                        </td>
+                      </tr>
+                    <?php
+                  }
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
         <!-- thống kê theo ngày -->
         <div class="row">
           <div class="col-lg-6">

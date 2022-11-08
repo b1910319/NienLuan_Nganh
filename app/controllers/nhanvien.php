@@ -59,6 +59,11 @@ class nhanvien extends controller
     $data['soluong_nam'] = $donhangM->soluong_nam_nv($table_dh, $table_sp, $table_ctdh, $dieukien);
     $data['tongtien_nam'] = $donhangM->tongtien_nam_nv($table_dh, $dieukien);
     $data['count_sp_nam'] = $donhangM->count_sp_nam_nv($table_dh, $table_ctdh, $table_sp, $dieukien);
+    //lấy thông tin nhân viên
+    $table_nv = 'nhanvien';
+    $nhanvienM = $this->load->model('nhanvienM');
+    $dieukien_nv = "nhanvien.ma_nv = '$ma_nv'";
+    $data['nhanvien_ma'] = $nhanvienM->nhanvien_ma($table_nv, $dieukien_nv);
     $this->load->view_admin("trangchu_nhanvien", $data);
   }
   // 
@@ -130,6 +135,26 @@ class nhanvien extends controller
     } else if ($level == 2) {
       header("Location:" . BASE_URL . "nhanvien/index");
     }
+  }
+  public function nhanvien_capnhat($ma_nv)
+  {
+    session::init();
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    $dieukien = "nhanvien.ma_nv='$ma_nv'";
+    $data['nhanvien_ma'] = $nhanvienM->nhanvien_ma($table_nv, $dieukien);
+    $this->load->view_admin("header");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $this->load->view_admin("nhanvien/nhanvien_edit", $data);
   }
   public function nhanvien_update($ma_nv)
   {
