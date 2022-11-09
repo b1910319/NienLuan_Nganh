@@ -110,20 +110,80 @@
                   </a>
                 </td>
                 <td colspan="6" >
-                  <p class="text-end fw-bold">
-                    Tổng: 
-                    <?php
-                      $tong = 0;
-                      foreach($_SESSION['giohang'] as $key => $gh){
-                        foreach($data['sanpham'] as $key => $sp){
-                          if($gh['ma_sp'] == $sp['ma_sp']){
-                            $tong = $tong + ( $sp['gia_sp'] * $gh['soluong_dat'] );
-                          }
+                  <?php
+                    $tong = 0;
+                    foreach($_SESSION['giohang'] as $key => $gh){
+                      foreach($data['sanpham'] as $key => $sp){
+                        if($gh['ma_sp'] == $sp['ma_sp']){
+                          $tong = $tong + ( $sp['gia_sp'] * $gh['soluong_dat'] );
                         }
                       }
-                      echo number_format($tong, 0, ',', '.') . ' <sup>đ</sup>';
+                    }
                     ?>
-                  </p>
+                      <p class="text-end fw-bold">
+                        Tạm tính: 
+                        <?php echo number_format($tong, 0, ',', '.') . ' <sup>đ</sup>'; ?>
+                      </p>
+                    <?php
+                  ?>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="8">
+                  <?php
+                    $tong = 0;
+                    foreach($_SESSION['giohang'] as $key => $gh){
+                      foreach($data['sanpham'] as $key => $sp){
+                        if($gh['ma_sp'] == $sp['ma_sp']){
+                          $tong = $tong + ( $sp['gia_sp'] * $gh['soluong_dat'] );
+                        }
+                      }
+                    }
+                    if($tong<2000000){
+                      ?>
+                        <p class="text-end fw-bold">
+                          Phí vận chuyển: 
+                          <?php echo number_format(30000, 0, ',', '.') . ' <sup>đ</sup>'; ?>
+                        </p>
+                      <?php
+                    }else if($tong >=2000000){
+                      ?>
+                        <p class="text-end" style="color: #038018;">
+                          Miễn phí vận chuyển
+                        </p>
+                      <?php
+                    }
+                  ?>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="8">
+                <?php
+                    $tong = 0;
+                    foreach($_SESSION['giohang'] as $key => $gh){
+                      foreach($data['sanpham'] as $key => $sp){
+                        if($gh['ma_sp'] == $sp['ma_sp']){
+                          $tong = $tong + ( $sp['gia_sp'] * $gh['soluong_dat'] );
+                        }
+                      }
+                    }
+                    if($tong<2000000){
+                      $tong = $tong + 30000;
+                      ?>
+                        <p class="text-end fw-bold">
+                          Tổng giá:  
+                          <?php echo number_format($tong, 0, ',', '.') . ' <sup>đ</sup>'; ?>
+                        </p>
+                      <?php
+                    }else if($tong >=2000000){
+                      ?>
+                        <p class="text-end fw-bold">
+                          Tổng giá:  
+                          <?php echo number_format($tong, 0, ',', '.') . ' <sup>đ</sup>'; ?>
+                        </p>
+                      <?php
+                    }
+                  ?>
                 </td>
               </tr>
             </tbody>
@@ -139,6 +199,9 @@
                     $tong = $tong + ( $sp['gia_sp'] * $gh['soluong_dat'] );
                   }
                 }
+              }
+              if($tong<2000000){
+                $tong = $tong + 30000;
               }
               ?>
                 <input type="hidden" name="tonggia_dh" value="<?php echo $tong ?>">
