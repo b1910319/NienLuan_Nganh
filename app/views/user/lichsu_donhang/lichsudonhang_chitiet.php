@@ -8,7 +8,7 @@
         <?php
       }
     ?>
-    <button type="submit" class="btn btn-success">Quay lại</button>
+    <button type="submit" class="btn btn-success" style="font-weight: bold;">Quay lại</button>
   </form>
   <div class="mt-3">
   <table class="table table-hover">

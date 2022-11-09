@@ -269,5 +269,18 @@ use Carbon\Carbon;
       $data ['donhang_timkiem'] = $donhangM->donhang_timkiem($table_dh, $dieukien);
       $this->load->view_admin("donhang/donhang_timkiem", $data);
     }
+    public function donhang_deleteAll()
+    {
+      session::init();
+      $level=session::get('level');
+      if($level == 1){
+        $donhangM = $this->load->model('donhangM');
+        $table_dh = 'donhang';
+        $result = $donhangM->donhang_deleteAll($table_dh);
+        header("Location:" . BASE_URL . "donhang/donhang");
+      }else if($level == 2){
+        header("Location:".BASE_URL."nhanvien/index");
+      }
+    }
   }
 ?>

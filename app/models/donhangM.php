@@ -38,6 +38,9 @@ use Carbon\Carbon;
     public function donhang_delete($table, $dieukien){
       return $this->db->delete($table, $dieukien);
     }
+    public function donhang_deleteAll($table){
+      return $this->db->deleteAll($table);
+    }
     public function donhang_moi($table_dh, $dieukien){
       $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc, giolap_dh desc ";
       return $this->db->select($sql);

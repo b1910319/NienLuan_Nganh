@@ -108,6 +108,16 @@
             <?php
           }
           echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.' đơn hàng'.'</p>';
+          $level=session::get('level');
+          if($level == 1){
+            ?>
+              <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>donhang/donhang_deleteAll">
+                <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
+                  <i class="fas fa-trash-alt"></i> Xoá tất cả
+                </button>
+              </a>
+            <?php
+          }
         ?>
       </tbody>
     </table>

@@ -52,7 +52,35 @@
           }
           ?>
             <tr>
-              <td colspan="5" class="text-center" style="font-weight: bold; color:#EF5B0C ;" > Tổng: <?php echo number_format($ctdh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>'  ?></td>
+              <td colspan="2" class="text-center" style="font-weight: bold; color:#EF5B0C ;" >
+                Tạm tính: 
+                <?php
+                  if($ctdh['tonggia_dh'] < 2000000){
+                    echo number_format($ctdh['tonggia_dh']-30000, 0, ',', '.') . ' <sup>đ</sup>';
+                  }else if($ctdh['tonggia_dh'] >=2000000){
+                    echo number_format($ctdh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>';
+                  }
+                ?>
+              </td>
+              <td colspan="2" style="color: #038018;">
+                <?php
+                  if($ctdh['tonggia_dh'] >= 2000000){
+                    ?>
+                      Miễn phí vẫn chuyển
+                    <?php
+                  }else if($ctdh['tonggia_dh'] < 2000000){
+                    ?>
+                      Phí vận chuyển: 30.000 <sup>đ</sup>
+                    <?php
+                  }
+                ?> 
+              </td>
+              <td colspan="1" style="color: #ff5e14; font-weight: bold;">
+                Tổng: 
+                <?php
+                  echo number_format($ctdh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>';
+                ?> 
+              </td>
             </tr>
           <?php
         ?>

@@ -7,7 +7,10 @@
       break;
     }
   ?>
-  <h2>LỊCH SỬ ĐƠN HÀNG</h2>
+  <!-- <h2>LỊCH SỬ ĐƠN HÀNG</h2> -->
+  <div class="alert alert-info mt-4" role="alert" style="text-align: center; font-weight: bold; font-size: 20px;" >
+    LỊCH SỬ ĐƠN HÀNG
+  </div>
   <div class="mt-5">
     <table class="table table-hover">
       <thead>
