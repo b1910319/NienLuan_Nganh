@@ -215,7 +215,7 @@
                   <?php
                     if ($sp['soluong_sp'] > 0){
                       ?>
-                        <button class="btn btn-light p-4" type="submit" style="background-color:#E51F22 ; color: white; font-size: 18px; font-weight: bold;">Thêm vào giỏ hàng</button>
+                        <button onclick="alert('Sản phẩm <?php echo $sp['ten_sp'] ?> được thêm thành công !!!')" class="btn btn-light p-4" type="submit" style="background-color:#E51F22 ; color: white; font-size: 18px; font-weight: bold;">Thêm vào giỏ hàng</button>
                       <?php
                     }else{
                       ?>
