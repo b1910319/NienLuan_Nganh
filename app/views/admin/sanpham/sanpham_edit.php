@@ -6,7 +6,7 @@
           <i class="fas fa-solid fa-caret-left"></i>&ensp;
         </button> &ensp;
       </a>
-      Thêm thông tin sản phẩm
+      Cập nhật thông tin sản phẩm
     </div>
     <?php
       foreach ($data['sanpham_ma'] as $key => $sp){

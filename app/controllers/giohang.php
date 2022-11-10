@@ -39,7 +39,8 @@
           $giohang = array(
             'ma_sp' => $_POST['ma_sp'],
             'ma_m' => $_POST['ma_m'],
-            'soluong_dat' => $_POST['soluong_dat']
+            'soluong_dat' => $_POST['soluong_dat'],
+            'soluong_sp' => $_POST['soluong_sp']
           );
           $_SESSION['giohang'][] = $giohang;
         }
@@ -47,7 +48,8 @@
         $giohang = array(
           'ma_sp' => $_POST['ma_sp'],
           'ma_m' => $_POST['ma_m'],
-          'soluong_dat' => $_POST['soluong_dat']
+          'soluong_dat' => $_POST['soluong_dat'],
+          'soluong_sp' => $_POST['soluong_sp']
         );
         $_SESSION['giohang'][] = $giohang;
       }
@@ -70,7 +72,6 @@
           }
         }
       }
-      // header("Location:".BASE_URL.'index/index');
     }
     public function giohang_update($ma_sp){
       session::init();

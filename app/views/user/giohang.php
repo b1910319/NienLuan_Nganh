@@ -30,7 +30,6 @@
                   $i++;
                   ?>
                     <form action="<?php echo BASE_URL ?>giohang/giohang_update/<?php echo $gh['ma_sp'] ?>" method="POST">
-                    
                       <tr>
                         <th style="width: 5%;" scope="row"><?php echo $i ?></th>
                         <td style="width: 20%;"> 
@@ -64,7 +63,7 @@
                         </td>
                         <td>
                           <input type="number" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
-                            min="0" max="10" name="soluong_dat" value="<?php echo $gh['soluong_dat'] ?>">
+                            min="0" max="<?php echo $gh['soluong_sp'] ?>" name="soluong_dat" value="<?php echo $gh['soluong_dat'] ?>">
                         </td>
                         <td style="width: 15%;">
                           <?php

@@ -198,6 +198,7 @@
               <form action="<?php echo BASE_URL ?>giohang/giohang_insert" method="POST">
                 <input type="hidden" value="1" name="soluong_dat">
                 <input type="hidden" value="<?php echo $sp['ma_sp'] ?>" name="ma_sp">
+                <input type="hidden" value="<?php echo $sp['soluong_sp'] ?>" name="soluong_sp">
                 <div class="">
                   <div class="">
                       <!-- 	Select	 -->
