@@ -63,7 +63,7 @@
                         </td>
                         <td>
                           <input type="number" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
-                            min="0" max="<?php echo $gh['soluong_sp'] ?>" name="soluong_dat" value="<?php echo $gh['soluong_dat'] ?>">
+                            min="1" max="<?php echo $gh['soluong_sp'] ?>" name="soluong_dat" value="<?php echo $gh['soluong_dat'] ?>">
                         </td>
                         <td style="width: 15%;">
                           <?php

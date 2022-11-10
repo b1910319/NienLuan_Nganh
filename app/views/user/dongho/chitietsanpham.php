@@ -252,7 +252,7 @@
                       <?php
                     }else{
                       ?>
-                        <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Sản phẩm hết hàng</button>
+                        <button type="button" class="btn" style="padding: 15px; background-color: #497174; color: white; font-weight: bold;">Sản phẩm hết hàng</button>
                       <?php
                     }
                   ?>
