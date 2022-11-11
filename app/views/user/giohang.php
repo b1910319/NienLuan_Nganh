@@ -223,8 +223,11 @@
               </div>
             </div>
             <div class="row mt-3">
-              <div class="col-12">
+              <div class="col-8">
                 <input name="diachi_k" type="text" class="form-control" placeholder="Địa chỉ" required minlength="10" value="">
+              </div>
+              <div class="col-4">
+                <input name="matkhau_k" type="password" class="form-control" placeholder="Mật khẩu" required value="">
               </div>
             </div>
             <div class="d-flex justify-content-center mt-4">

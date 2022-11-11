@@ -6,7 +6,8 @@
     <div class="col-6">
       <form action="<?php echo BASE_URL ?>index/lichsu_donhang" method="POST">
         <h3 class="text-center fw-bold">Tra cứu thông tin đơn hàng</h3>
-        <input type="text" style="border-radius:15px ;" class="form-control mt-4" placeholder="Nhập số điện thoại mua hàng" name="sdt_k">
+        <input type="text" style="border-radius:15px ;" class="form-control mt-4" placeholder="Nhập số điện thoại mua hàng" name="sdt_k" required>
+        <input type="password" style="border-radius:15px ;" class="form-control mt-4" placeholder="Nhập mật khẩu" name="matkhau_k" required>
         <div class="d-flex justify-content-center">
           <button type="submit" class="btn btn-success mt-4">Tra cứu</button>
         </div>

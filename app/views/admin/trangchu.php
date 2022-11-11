@@ -1,7 +1,4 @@
-﻿<?php
-  use Carbon\Carbon;
-?>
-<div id="wrapper">
+﻿<div id="wrapper">
   <div class="content-page">
     <div class="content">
       <div class="container-fluid">

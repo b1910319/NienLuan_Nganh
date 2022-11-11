@@ -196,7 +196,7 @@ use Carbon\Carbon;
       $diachi_k = $_POST['diachi_k'];
       $ma_dh = rand(0,999999);
       $tonggia_dh = $_POST['tonggia_dh'];
-
+      $matkhau_k = md5($_POST['matkhau_k']);
       date_default_timezone_set('Asia/Ho_Chi_Minh');
       $ngaylap_dh = date("d/m/Y");
       $giolap_dh = date("h:i:sa");
@@ -215,7 +215,8 @@ use Carbon\Carbon;
         'ngaylap_dh' => $ngaylap_dh,
         'thanglap_dh' => $thanglap_dh,
         'namlap_dh' => $namlap_dh,
-        'giolap_dh' => $giolap_dh
+        'giolap_dh' => $giolap_dh,
+        'matkhau_k' => $matkhau_k
       );
       $result_dh = $donhangM->donhang_insert($table_dh, $data_dh);
       if(session::get("giohang") == true){

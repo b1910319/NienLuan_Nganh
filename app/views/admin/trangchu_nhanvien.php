@@ -1,6 +1,3 @@
-<?php
-  use Carbon\Carbon;
-?>
 <div id="wrapper">
   <div class="content-page">
     <div class="content">

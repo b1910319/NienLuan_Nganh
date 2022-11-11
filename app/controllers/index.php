@@ -87,10 +87,14 @@ class index extends controller
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
     $sdt_k = $_POST['sdt_k'];
+    $matkhau_k1 = $_POST['matkhau_k'];
+    session::set('nhapmatkhau',true);
+    session::set('matkhau_k',$matkhau_k1);
+    $matkhau_k = md5($_POST['matkhau_k']);
     // đơn hàng
     $table_dh = "donhang";
     $donhangM = $this->load->model('donhangM');
-    $dieukien = "donhang.sdt_k = '$sdt_k' ";
+    $dieukien = "donhang.sdt_k = '$sdt_k' AND donhang.matkhau_k = '$matkhau_k' ";
     $data['donhang_sdt'] = $donhangM->donhang_sdt($table_dh, $dieukien);
     //bảo hành
     $baohanhM = $this->load->model('baohanhM');

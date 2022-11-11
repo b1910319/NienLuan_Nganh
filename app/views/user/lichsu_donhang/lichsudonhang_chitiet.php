@@ -5,6 +5,15 @@
       foreach ($data['lichsudonhang_chitiet'] as $key => $dh){
         ?>
           <input type="hidden" style="border-radius:15px ;" class="form-control mt-4"  name="sdt_k" value="<?php echo $dh['sdt_k'] ?>">
+          <?php
+            if(session::get('nhapmatkhau')){
+              $matkhau_k = session::get('matkhau_k');
+              ?>
+                <input type="hidden" style="border-radius:15px ;" class="form-control mt-4"  name="matkhau_k" value="<?php echo $matkhau_k ?>">
+              <?php
+            }
+          ?>
+          
         <?php
       }
     ?>
