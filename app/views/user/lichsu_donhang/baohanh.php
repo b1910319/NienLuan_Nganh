@@ -11,10 +11,19 @@
           foreach ($data['lichsudonhang_chitiet'] as $key => $dh){
             ?>
               <input type="hidden" style="border-radius:15px ;" class="form-control mt-4"  name="sdt_k" value="<?php echo $dh['sdt_k'] ?>">
+              <?php
+                if(session::get('nhapmatkhau')){
+                  $matkhau_k = session::get('matkhau_k');
+                  ?>
+                    <input type="hidden" style="border-radius:15px ;" class="form-control mt-4"  name="matkhau_k" value="<?php echo $matkhau_k ?>">
+                  <?php
+                }
+              ?>
+              
             <?php
           }
         ?>
-        <button type="submit" class="btn btn-success">Quay lại</button>
+        <button type="submit" class="btn btn-success" style="font-weight: bold;">Quay lại</button>
       </form>
     </div>
     <table class="table table-hover">

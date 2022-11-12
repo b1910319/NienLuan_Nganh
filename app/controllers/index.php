@@ -97,14 +97,14 @@ class index extends controller
     $dieukien = "donhang.sdt_k = '$sdt_k' AND donhang.matkhau_k = '$matkhau_k' ";
     $data['donhang_sdt'] = $donhangM->donhang_sdt($table_dh, $dieukien);
     //bảo hành
-    $baohanhM = $this->load->model('baohanhM');
-    $table_bh = "baohanh";
-    // sản phẩm
-    $sanphamM = $this->load->model('sanphamM');
-    $table_sp = 'sanpham';
-    //chi tiết đơn hàng
-    $table_ctdh = 'chitiet_donhang';
-    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+    // $baohanhM = $this->load->model('baohanhM');
+    // $table_bh = "baohanh";
+    // // sản phẩm
+    // $sanphamM = $this->load->model('sanphamM');
+    // $table_sp = 'sanpham';
+    // //chi tiết đơn hàng
+    // $table_ctdh = 'chitiet_donhang';
+    // $chitiet_donhangM = $this->load->model('chitiet_donhangM');
 
     $this->load->view_user("lichsu_donhang/lichsudonhang", $data);
     $this->load->view_user("footer");
