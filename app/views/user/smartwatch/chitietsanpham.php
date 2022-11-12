@@ -19,6 +19,45 @@
       foreach($data['sanpham_ma'] as $key => $sp){
         ?>
           <h3 class="fw-bold"><?php echo $sp['ten_sp'] ?></h3>
+          <form action="<?php echo BASE_URL ?>sp_yeuthich/sp_yeuthich_insert" method="POST">
+            <input type="hidden" value="<?php echo $sp['ma_sp'] ?>" name="ma_sp">
+            <input type="hidden" value="<?php echo $sp['ma_th'] ?>" name="ma_th">
+            <input type="hidden" value="<?php echo $sp['ma_dm'] ?>" name="ma_dm">
+            <input type="hidden" value="<?php echo $sp['ten_sp'] ?>" name="ten_sp">
+            <input type="hidden" value="<?php echo $sp['hinh_sp'] ?>" name="hinh_sp">
+            <input type="hidden" value="<?php echo $sp['ghichu_dm'] ?>" name="ghichu_dm">
+            <?php
+              $i = 0;
+              if(isset($_SESSION['sp_yeuthich'])){
+                foreach($_SESSION['sp_yeuthich'] as $key => $sp_yt){
+                  if ($sp_yt['ma_sp'] == $sp['ma_sp']){
+                    ?>
+                      <button type="submit" style="border: none; background-color: white;">
+                        <i class="fa-solid fa-heart" style="color:#E51F22 ;"></i>
+                      </button>
+                    <?php
+                    $i = $i + 1;
+                    break;
+                    
+                  }
+                }
+                if($i == 0){
+                  ?>
+                    <button type="submit" style="border: none; background-color: white;">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  <?php
+                }
+                
+              }else{
+                ?>
+                  <button type="submit" style="border: none; background-color: white;">
+                    <i class="fa-solid fa-heart"></i>
+                  </button>
+                <?php
+              }
+            ?>
+          </form>
         <?php
       }
     ?>

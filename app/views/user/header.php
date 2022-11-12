@@ -89,11 +89,16 @@
             <img src="<?php echo BASE_URL ?>public/img/logo/logo.png" class="d-block mt-4 ms-4 " style="width: 70%;">
           </a>
         </div>
-        <div class="col-2">
+        <!-- <div class="col-2">
           <a href="">
             <button type="button" class="btn btn-success mt-3 btn_dathang">
               <i class="fas fa-phone"></i>&ensp;0123456789
             </button>
+          </a>
+        </div> -->
+        <div class="col-2">
+          <a href="<?php echo BASE_URL ?>index/tra_donhang">
+            <button class="btn btn-success btn_tradonhang mt-3" type="submit"><i class="fas fa-history"></i>&ensp;Lịch sử đơn hàng</button>
           </a>
         </div>
         <!-- tìm kiếm -->
@@ -108,11 +113,6 @@
           </nav>
         </div>
         <!--  -->
-        <div class="col-2">
-          <a href="<?php echo BASE_URL ?>index/tra_donhang">
-            <button class="btn btn-success btn_tradonhang mt-3" type="submit"><i class="fas fa-history"></i>&ensp;Lịch sử đơn hàng</button>
-          </a>
-        </div>
         <div class="col-2">
           <a href="<?php echo BASE_URL ?>giohang/giohang">
             <button type="button" class="btn btn-success btn_giohang mt-3 position-relative">
@@ -134,6 +134,12 @@
               </span>
             </button>
           </a>
+        </div>
+        <div class="col-2">
+          <a href="<?php echo BASE_URL ?>sp_yeuthich/index">
+            <button type="button" class="btn btn-success btn_sp_yeuthich mt-3">Sản phẩm yêu thích</button>
+          </a>
+          
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-light mt-3">
