@@ -60,13 +60,14 @@ use Carbon\Carbon;
       $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $table_dm='danhmuc_sanpham';
       $level=session::get('level');
       if($level == 1){
         $this->load->view_admin("leftmenu", $data);
       }else if($level == 2){
         $this->load->view_admin("leftmenu_nhanvien", $data);
       }
-      $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien);
+      $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $dieukien);
       $this->load->view_admin("donhang/chitiet_donhang", $data);
     }
     public function xuly($ma_dh){

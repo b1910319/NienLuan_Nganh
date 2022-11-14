@@ -167,7 +167,7 @@ class index extends controller
     $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $dieukien1 = "donhang.ma_dh = '$ma_dh'";
-    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien1);
+    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $dieukien1);
     $this->load->view_user("lichsu_donhang/lichsudonhang_chitiet", $data);
     $this->load->view_user("footer");
   }

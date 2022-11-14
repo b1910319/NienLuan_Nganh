@@ -28,6 +28,7 @@
           <th scope="col">Số lượng đặt</th>
           <th scope="col">Thành tiền</th>
           <th scope="col">Thời gian bảo hành</th>
+          <th scope="col">Quản lý</th>
         </tr>
       </thead>
       <tbody>
@@ -38,7 +39,7 @@
             ?>
               <tr>
                 <th scope="row" style="width: 5%;"><?php echo $i ?></th>
-                <td style="width: 40%;">
+                <td style="width: 35%;">
                   <div class="row ">
                     <div class="col-md-12">
                       <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
@@ -54,10 +55,17 @@
                     </div>
                   </div>
                 </td>
-                <td style="width: 15%;"><?php echo $ctdh['soluong_dat'] ?></td>
-                <td style="width: 20%;"><?php echo number_format($ctdh['gia_sp'] * $ctdh['soluong_dat'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
+                <td style="width: 10%;"><?php echo $ctdh['soluong_dat'] ?></td>
+                <td style="width: 15%;"><?php echo number_format($ctdh['gia_sp'] * $ctdh['soluong_dat'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
                 <td style="width: 25%;">
                   <?php echo $ctdh['thoigian_bh'] ?>
+                </td>
+                <td style="width: 10%;">
+                  <a href="<?php echo BASE_URL ?><?php echo $ctdh['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $ctdh['ma_sp'] ?>/<?php echo $ctdh['ma_th'] ?>/<?php echo $ctdh['ma_dm'] ?>">
+                    <button type="button" class="btn btn-warning btn_chitiet" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết sản phẩm" >
+                      <i class="fa-solid fa-eye"></i> Chi tiết
+                    </button>
+                  </a>
                 </td>
               </tr>
             <?php

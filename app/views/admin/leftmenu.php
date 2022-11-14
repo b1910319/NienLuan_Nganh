@@ -12,12 +12,11 @@
           if(session::get('dangnhap') == true){
             $ten_nv = session::get('ten_nv');
             ?>
-        <a href="#"><?php echo $ten_nv ?></a>
-        <?php
+              <a href="#"><?php echo $ten_nv ?></a>
+            <?php
           }
         ?>
-        <p class="text-muted m-0"><a href="<?php echo BASE_URL ?>dangnhap/nhanvien_dangxuat">Đăng
-            xuất</a></p>
+        <p class="text-muted m-0"><a href="<?php echo BASE_URL ?>dangnhap/nhanvien_dangxuat">Đăng xuất</a></p>
       </div>
     </div>
     <!--- Sidemenu -->
