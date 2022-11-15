@@ -75,11 +75,13 @@ use Carbon\Carbon;
       //đơn hàng
       $ma_nv = session::get('ma_nv');
       $table_dh = "donhang";
+      $date = Carbon::now('Asia/Ho_Chi_Minh');
       $donhangM = $this->load->model('donhangM');
       $dieukien = "donhang.ma_dh = '$ma_dh'";
       $data = array(
         'tinhtrang_dh' => '1',
-        'ma_nv' => $ma_nv
+        'ma_nv' => $ma_nv,
+        'ngay_xuly' => $date
       );
       $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
       header("Location:".BASE_URL."donhang/donhang");
@@ -88,12 +90,14 @@ use Carbon\Carbon;
       session::init();
       //đơn hàng
       $table_dh = "donhang";
+      $date = Carbon::now('Asia/Ho_Chi_Minh');
       $donhangM = $this->load->model('donhangM');
       $dieukien = "donhang.ma_dh = '$ma_dh'";
       $ma_nv = session::get('ma_nv');
       $data = array(
         'tinhtrang_dh' => '1',
-        'ma_nv' => $ma_nv
+        'ma_nv' => $ma_nv,
+        'ngay_xuly' => $date
       );
       $result = $donhangM->donhang_update($table_dh, $data, $dieukien);
       header("Location:".BASE_URL."donhang/donhang_moi");

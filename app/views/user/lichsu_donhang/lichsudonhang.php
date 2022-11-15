@@ -17,6 +17,7 @@
         <tr class="table-dark">
           <th scope="col">STT</th>
           <th scope="col">Thời gian đặt hàng</th>
+          <th scope="col">Thời gian xử lý đặt hàng</th>
           <th scope="col">Mã đơn hàng</th>
           <th scope="col">Tổng giá</th>
           <th scope="col">Quản lý</th>
@@ -40,6 +41,7 @@
                 ?> ; font-weight: bold ;">
                 <th scope="row"><?php echo $i ?></th>
                 <td><?php echo $dh['ngaylap_dh'].' '.$dh['giolap_dh'] ?></td>
+                <td><?php echo $dh['ngay_xuly']?></td>
                 <td><?php echo $dh['ma_dh'] ?></td>
                 <td><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
                 <td>

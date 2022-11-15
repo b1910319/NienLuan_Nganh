@@ -21,6 +21,7 @@
           <th scope="col">Mã đơn hàng</th>
           <th scope="col">Tổng giá</th>
           <th scope="col">Thời gian đặt</th>
+          <th scope="col">Thời gian xử lý</th>
           <th scope="col">Quản lý</th>
         </tr>
       </thead>
@@ -57,9 +58,10 @@
                   </div>
                 </td>
                 <td style="width: 5%;"><?php echo $dh['ma_dh'] ?></td>
-                <td style="width: 20%;"><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
+                <td style="width: 10%;"><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
                 <td style="width: 20%;"><?php echo $dh['ngaylap_dh'].'  '.$dh['giolap_dh'] ?></td>
-                <td style="width: 25%;">
+                <td style="width: 15%;"><?php echo $dh['ngay_xuly']?></td>
+                <td style="width: 20%;">
                   <a href="<?php echo BASE_URL ?>donhang/chitiet_donhang/<?php echo $dh['ma_dh'] ?>">
                     <button type="button" class="btn sua" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết đơn hàng">
                       <i class="fa-solid fa-circle-info"></i>
