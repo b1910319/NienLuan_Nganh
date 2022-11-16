@@ -247,28 +247,25 @@
     </div>
     <div class="row">
       <?php
-      foreach ($data['tintuc_limit'] as $key => $tt) {
-      ?>
-        <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
-          <a href="<?php echo BASE_URL ?>index/chitiet_tintuc/<?php echo $tt['ma_tt'] ?>" style="text-decoration: none;" class="text-dark">
-            <div class="row">
-              <div class="col-3">
-                <img style="width: 100%;" src="<?php echo BASE_URL ?>public/uploads/tintuc/<?php echo $tt['hinh_tt'] ?>" alt="">
-              </div>
-              <div class="col-9">
-                <h4 class="fw-bold"><?php echo $tt['ten_tt'] ?></h4>
-              </div>
+        foreach ($data['tintuc_limit'] as $key => $tt) {
+          ?>
+            <div class="h_congnghe_item col-6 pt-3 pb-3 pe-4">
+              <a href="<?php echo BASE_URL ?>index/chitiet_tintuc/<?php echo $tt['ma_tt'] ?>" style="text-decoration: none;" class="text-dark">
+                <div class="row">
+                  <div class="col-3">
+                    <img style="width: 100%;" src="<?php echo BASE_URL ?>public/uploads/tintuc/<?php echo $tt['hinh_tt'] ?>" alt="">
+                  </div>
+                  <div class="col-9">
+                    <h4 class="fw-bold"><?php echo $tt['ten_tt'] ?></h4>
+                  </div>
+                </div>
+              </a>
             </div>
-          </a>
-        </div>
-      <?php
-      }
+          <?php 
+        }
       ?>
-
     </div>
-
   </div>
-
 
   <!--  -->
   <!-- script chạy deal ngon mỗi ngày -->

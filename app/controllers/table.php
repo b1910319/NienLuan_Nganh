@@ -78,7 +78,15 @@ class table extends controller
 
     $dieukien2 = "mau_sanpham.ma_sp = '$ma_sp'";
     $data['mau_sanpham_ma'] = $mau_sanphamM->Umau_sanpham_ma($table_msp, $table_m, $dieukien2);
-
+    // hiển thị bình luận
+    $hoi_dapM = $this->load->model('hoi_dapM');
+    $table_hd = "hoi_dap";
+    $order = "hoi_dap.thoigian_hd DESC";
+    $table_nv = 'nhanvien';
+    $dieukien3 = "hoi_dap.ma_sp = '$ma_sp'";
+    $data['hoi_dap_list'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv, $dieukien3, $order);
+    $order1 = "hoi_dap.thoigian_hd ASC ";
+    $data['hoi_dap_list1'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv,$dieukien3, $order1);
     $this->load->view_user("dienthoai/chitietsanpham", $data);
     $this->load->view_user("footer");
   }

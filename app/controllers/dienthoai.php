@@ -81,6 +81,15 @@ class dienthoai extends controller
     $table_dmtt = 'danhmuc_tintuc';
     $limit = 4;
     $data['tintuc'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
+    // hiển thị bình luận
+    $hoi_dapM = $this->load->model('hoi_dapM');
+    $table_hd = "hoi_dap";
+    $order = "hoi_dap.thoigian_hd DESC";
+    $table_nv = 'nhanvien';
+    $dieukien3 = "hoi_dap.ma_sp = '$ma_sp'";
+    $data['hoi_dap_list'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv, $dieukien3, $order);
+    $order1 = "hoi_dap.thoigian_hd ASC ";
+    $data['hoi_dap_list1'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv,$dieukien3, $order1);
     $this->load->view_user("dienthoai/chitietsanpham", $data);
     $this->load->view_user("footer");
   }

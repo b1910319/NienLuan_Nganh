@@ -69,12 +69,12 @@
             ?>
               <tr>
                 <th scope="row" style="width: 5%;" ><?php echo $i ?></th>
-                <td style="width: 5%;"><?php echo $th['ten_th'] ?></td>
-                <td style="width: 35%;">
+                <td style="width: 15%;"><?php echo $th['ten_th'] ?></td>
+                <td style="width: 20%;">
                   <img style="width: 40%;" src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['logo_th'] ?>" alt="">
                 </td>
-                <td style="width: 35%;">
-                  <img style="width: 40%;" src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['hinh_th'] ?>" alt="">
+                <td style="width: 20%;">
+                  <img style="width: 50%;" src="<?php echo BASE_URL ?>public/uploads/thuonghieu/<?php echo $th['hinh_th'] ?>" alt="">
                 </td>
                 <td style="width: 20%;" >
                   <a href="<?php echo BASE_URL ?>thuonghieu/thuonghieu_edit/<?php echo $th['ma_th'] ?>">

@@ -339,5 +339,52 @@
       }
     ?>
   </div>
-
+  <div class="hoi_dap mt-5">
+    <?php
+      foreach ($data['sanpham_ma'] as $key => $sp){
+        ?>
+          <form action="<?php echo BASE_URL ?>hoi_dap/hoi_dap_insert" method="post">
+            <div class="row">
+              <div class="col-8">
+                <input type="hidden" name="ma_sp" class="form-control" value="<?php echo $sp['ma_sp'] ?>">
+                <input type="hidden" name="ghichu_hd" class="form-control" value="<?php echo $sp['ghichu_dm'] ?>">
+                <input type="text" name="ten_k" class="form-control"  required minlength="5" placeholder="Họ và Tên">
+                <p class="mt-3">Nội dung</p>
+                <textarea class="form-control" name="noidung_hd" minlength="10" required rows="3"></textarea>
+                <button type="submit" class="btn btn-primary mt-3 float-end">Gửi</button>
+              </div>
+            </div>
+          </form>
+        <?php
+      }
+    ?>
+    <hr style=" border: 2px solid blue; border-radius: 5px;">
+    <div class="mt-5">
+      <?php
+        foreach($data['hoi_dap_list'] as $key => $hd){
+          if($hd['status'] == 0 && $hd['parent'] == 0){
+            ?>
+              <div style="font-weight: bold;">
+                <i class="fa-solid fa-user-large" style="font-size: 20px; color:#8CBA51 ;"></i>&ensp; <?php echo $hd['ten_k'] ?>
+              </div>
+              <p class="mt-2"><?php echo $hd['noidung_hd'] ?></p>
+              <p style="color: blue;">Trả lời - <span style="color:gray ;"><?php echo $hd['thoigian_hd'] ?></span></p>
+              <hr>
+            <?php
+          }
+          foreach($data['hoi_dap_list1'] as $key => $hd1){
+            if($hd1['parent'] == $hd['ma_hd'] && $hd1['status'] !=0){
+              ?>
+                <div class="alert alert-dark ms-5" role="alert">
+                  <i class="fa-solid fa-user-large" style="font-size: 20px; color:#E51F22 ;"></i>&ensp; <b><?php echo $hd1['ten_nv'] ?></b> <br>
+                  <?php echo $hd1['noidung_hd'] ?>
+                  <p style="color: blue;" class="mt-2">Trả lời - <span style="color:gray ;"><?php echo $hd1['thoigian_hd'] ?></span></p>
+                </div>
+              <?php
+            }
+          }
+        }
+      ?>
+    </div>
+  </div>
 </div>

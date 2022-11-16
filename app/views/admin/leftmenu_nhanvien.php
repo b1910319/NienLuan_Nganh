@@ -85,6 +85,13 @@
             <span class="badge badge-primary float-right"></span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo BASE_URL ?>hoi_dap/hoi_dap_list">
+            <i class="fa-solid fa-question"></i>
+            <span> Hỏi đáp </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
       </ul>
     </div>
     <!-- End Sidebar -->

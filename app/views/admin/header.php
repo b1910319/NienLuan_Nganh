@@ -15,8 +15,7 @@
   <!--  -->
   <!--  -->
   <!-- App css -->
-  <link href="<?php echo BASE_URL ?>public/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css"
-    id="bootstrap-stylesheet">
+  <link href="<?php echo BASE_URL ?>public/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
   <link href="<?php echo BASE_URL ?>public/assets\css\icons.min.css" rel="stylesheet" type="text/css">
   <link href="<?php echo BASE_URL ?>public/assets\css\app.min.css" rel="stylesheet" type="text/css"
     id="app-stylesheet">
@@ -28,6 +27,9 @@
 <!--  -->
 <!-- link style css -->
   <link rel="stylesheet" href="<?php echo BASE_URL ?>public/css/styleAdmin.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
