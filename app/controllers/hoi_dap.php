@@ -91,5 +91,36 @@
       $data['hoi_dap_listAll'] = $hoi_dapM->hoi_dap_listAll($table_hd, $table_sp,$table_nv, $order);
       $this->load->view_admin("hoi_dap/hoi_dap", $data);
     }
+    public function hoi_dap_timkiem()
+  {
+    session::init();
+    $this->load->view_admin("header");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $level=session::get('level');
+    if($level == 1){
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
+    // nhân viên
+    $table_nv = 'nhanvien';
+    // sản phẩm
+    $table_sp = 'sanpham';
+    //hỏi đáp
+    $hoi_dapM = $this->load->model('hoi_dapM');
+    $table_hd = "hoi_dap";
+    $tukhoa = $_POST['tukhoa'];
+    $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'";
+    $data['hoi_dap_timkiem'] = $hoi_dapM->hoi_dap_timkiem($table_hd,$table_sp, $table_nv, $dieukien);
+    $this->load->view_admin("hoi_dap/hoi_dap_timkiem", $data);
+  }
   }
 ?>

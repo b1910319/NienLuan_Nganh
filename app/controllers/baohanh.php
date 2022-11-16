@@ -39,7 +39,8 @@
       //màu
       $mauM = $this->load->model('mauM');
       $table_m = 'mau';
-      $data['sanpham_donhang'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien1);
+      $table_dm = "danhmuc_sanpham";
+      $data['sanpham_donhang'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $dieukien);
       $this->load->view_admin("baohanh/baohanh", $data);
     }
     public function baohanh_insert(){

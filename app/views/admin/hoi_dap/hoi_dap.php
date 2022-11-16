@@ -6,7 +6,7 @@
           Hỏi đáp
         </div>
         <div class="col-6">
-          <form class="d-flex" action="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_timkiem" method="POST">
+          <form class="d-flex" action="<?php echo BASE_URL ?>hoi_dap/hoi_dap_timkiem" method="POST">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tukhoa">
             <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
           </form>
@@ -21,7 +21,7 @@
           <th scope="col">Tên người gửi</th>
           <!-- <th scope="col">Ngày gửi</th> -->
           <th scope="col">Tên sản phẩm</th>
-          <th scope="col">Quản lý</th>
+          <!-- <th scope="col">Quản lý</th> -->
         </tr>
       </thead>
       <tbody>
@@ -35,7 +35,7 @@
                   <?php
                     if($hd['status'] == 0 && $hd['parent'] == 0){
                       ?>
-                        <td style="width:45% ;">
+                        <td style="width:50% ;">
                           <?php echo $hd['noidung_hd'] ?>
                           <?php
                             foreach($data['hoi_dap_listAll'] as $key => $hd1){
@@ -59,22 +59,10 @@
                           </form>
                         </td>
                         <td style="width:20% ;"><?php echo $hd['ten_k'] ?></td>
-                        <td style="width:20% ;">
+                        <td style="width:30% ;">
                           <a href="<?php echo BASE_URL ?><?php echo $hd['ghichu_hd'] ?>/chitiet_sanpham/<?php echo $hd['ma_sp'] ?>/<?php echo $hd['ma_th'] ?>/<?php echo $hd['ma_dm'] ?>">
                             <button type="button" class="btn btn-warning" style="font-weight: bold;">
                               <?php echo $hd['ten_sp'] ?>
-                            </button>
-                          </a>
-                        </td>
-                        <td style="width:15% ;">
-                          <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_edit/<?php echo $dmtt['ma_dmtt'] ?>">
-                            <button type="button" class="btn sua">
-                              <i class="fas fa-edit"></i>
-                            </button>
-                          </a>
-                          <a onclick="return confirm('Bạn có muốn xóa <?php echo $dmtt['ten_dmtt'] ?> không?')" href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_delete/<?php echo $dmtt['ma_dmtt'] ?>">
-                            <button type="button" class="btn xoa">
-                              <i class="fas fa-trash-alt"></i>
                             </button>
                           </a>
                         </td>
@@ -85,16 +73,6 @@
               </tr>
             <?php
             
-          }
-          $level=session::get('level');
-          if($level == 1){
-            ?>
-              <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_deleteAll">
-                <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
-                  <i class="fas fa-trash-alt"></i> Xoá tất cả
-                </button>
-              </a>
-            <?php
           }
         ?>
       </tbody>
