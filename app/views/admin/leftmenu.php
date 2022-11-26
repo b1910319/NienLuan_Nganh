@@ -179,6 +179,13 @@
           </ul>
         </li>
         <li>
+          <a href="<?php echo BASE_URL ?>khuyenmai/khuyenmai">
+            <i class="fa-solid fa-percent"></i>
+            <span> Khuyến mãi </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+        <li>
           <?php
             $i = 0;
             foreach ($data['donhang_moi'] as $key => $dh){

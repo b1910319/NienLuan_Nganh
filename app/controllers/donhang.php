@@ -13,7 +13,6 @@ use Carbon\Carbon;
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
@@ -199,6 +198,7 @@ use Carbon\Carbon;
       $sdt_k = $_POST['sdt_k'];
       $gioitinh_k = $_POST['gioitinh_k'];
       $diachi_k = $_POST['diachi_k'];
+      $ma_km = $_POST['ma_km'];
       $ma_dh = rand(0,999999);
       $tonggia_dh = $_POST['tonggia_dh'];
       $matkhau_k = md5($_POST['matkhau_k']);
@@ -214,6 +214,7 @@ use Carbon\Carbon;
         'ma_dh' => $ma_dh,
         'ten_k' => $ten_k,
         'sdt_k' => $sdt_k,
+        'ma_km' => $ma_km,
         'gioitinh_k' => $gioitinh_k,
         'diachi_k' => $diachi_k,
         'tonggia_dh' => $tonggia_dh,
@@ -224,6 +225,22 @@ use Carbon\Carbon;
         'matkhau_k' => $matkhau_k
       );
       $result_dh = $donhangM->donhang_insert($table_dh, $data_dh);
+      //cập nhật lại số lượng khuyến mãi
+      $khuyenmaiM = $this->load->model('khuyenmaiM');
+      $table_km = 'khuyenmai';
+      $dieukien_km = "khuyenmai.ma_km = '$ma_km'";
+      $data['khuyenmai_ma'] = $khuyenmaiM->khuyenmai_ma($table_km, $dieukien_km);
+      if($data['khuyenmai_ma']){
+        foreach($data['khuyenmai_ma'] as $key => $km){
+          $soluong = $km['soluong_km'];
+          $soluong_km = $soluong -1;
+          $data_km = array(
+            'soluong_km' => $soluong_km
+          );
+        }
+        $result = $khuyenmaiM->khuyenmai_update($table_km, $data_km, $dieukien_km);
+      }
+      
       if(session::get("giohang") == true){
         foreach (session::get("giohang") as $key => $gh){
           $data_ctdh = array(

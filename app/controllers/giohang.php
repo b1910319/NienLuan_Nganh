@@ -21,6 +21,10 @@
       $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       $data['sanpham'] = $sanphamM->sanpham($table_sp);
+      $khuyenmaiM = $this->load->model('khuyenmaiM');
+      $table = 'khuyenmai';
+      $dieukien = 'tinhtrang_km = 0 and soluong_km >0';
+      $data['khuyenmai_hien'] = $khuyenmaiM->khuyenmai_dieukien($table, $dieukien);
       $this->load->view_user("header", $data);
       $this->load->view_user("giohang", $data);
       $this->load->view_user("footer"); 

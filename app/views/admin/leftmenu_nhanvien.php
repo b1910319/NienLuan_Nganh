@@ -79,6 +79,13 @@
           </ul>
         </li>
         <li>
+          <a href="<?php echo BASE_URL ?>khuyenmai/khuyenmai">
+            <i class="fa-solid fa-percent"></i>
+            <span> Khuyến mãi </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+        <li>
           <a href="<?php echo BASE_URL ?>baohanh/baohanh_list">
             <i class="fa-solid fa-file-shield"></i>
             <span> Bảo hành </span>

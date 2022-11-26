@@ -43,6 +43,26 @@
   color: #038018;
   background-color: white;
 }
+.an{
+  color: white;
+  background-color: red;
+}
+.an:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: red;
+  background-color: white;
+}
+.hien{
+  color: white;
+  background-color: #F49D1A;
+}
+.hien:hover{
+  font-weight: bold; 
+  border: 1px solid white;
+  color: #F49D1A;
+  background-color: white;
+}
 .thongbao{
   font-weight: bold;
   color: #9EB23B;

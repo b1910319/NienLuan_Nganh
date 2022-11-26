@@ -33,7 +33,7 @@
                   if ($sp_yt['ma_sp'] == $sp['ma_sp']){
                     ?>
                       <button type="submit" style="border: none; background-color: white;">
-                        <i class="fa-solid fa-heart" style="color:#E51F22 ;"></i>
+                        <i class="fa-solid fa-heart" style="color:#E51F22 ; font-size: 30px;"></i>
                       </button>
                     <?php
                     $i = $i + 1;
@@ -44,7 +44,7 @@
                 if($i == 0){
                   ?>
                     <button type="submit" style="border: none; background-color: white;">
-                      <i class="fa-solid fa-heart"></i>
+                      <i class="fa-solid fa-heart" style="font-size: 30px;"></i>
                     </button>
                   <?php
                 }
