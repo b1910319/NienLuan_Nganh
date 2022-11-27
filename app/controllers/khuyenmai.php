@@ -144,33 +144,25 @@
         header("Location:".BASE_URL."nhanvien/index");
       }
     }
-    // public function loai_sanpham_timkiem(){
-    //   session::init();
-    //   $level=session::get('level');
-    //   if($level == 1){
-    //     $this->load->view_admin("header");
-    //     //đơn hàng
-    //     $table_dh = "donhang";
-    //     $donhangM = $this->load->model('donhangM');
-    //     $dieukien = 'donhang.tinhtrang_dh = 0';
-    //     $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
-    //     $dieukien_vc = 'donhang.tinhtrang_dh = 1';
-    //     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
-    //     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-    //     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    //     $this->load->view_admin("leftmenu", $data);
-    //     $loai_sanphamM = $this->load->model('loai_sanphamM');
-    //     $table_lsp = 'loai_sanpham';
-    //     $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
-    //     $table_dm = 'danhmuc_sanpham';
-    //     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
-    //     $tukhoa = $_POST['tukhoa'];
-    //     $dieukien = "loai_sanpham.ten_lsp LIKE '%$tukhoa%'" ;
-    //     $data ['loai_sanpham_timkiem'] = $loai_sanphamM->loai_sanpham_timkiem($table_lsp,$table_dm, $dieukien);
-    //     $this->load->view_admin("loai_sanpham/loai_sanpham_timkiem", $data); 
-    //   }else if($level == 2){
-    //     header("Location:".BASE_URL."nhanvien/index");
-    //   }
-    // }
+    public function khuyenmai_timkiem(){
+      session::init();
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      $khuyenmaiM = $this->load->model('khuyenmaiM');
+      $table_km = 'khuyenmai';
+      $tukhoa = $_POST['tukhoa'];
+      $dieukien_km = "khuyenmai.ten_km LIKE '%$tukhoa%'" ;
+      $data ['khuyenmai'] = $khuyenmaiM->khuyenmai_timkiem($table_km, $dieukien_km);
+      $this->load->view_admin("khuyenmai/khuyenmai_timkiem", $data); 
+    }
   }
 ?>

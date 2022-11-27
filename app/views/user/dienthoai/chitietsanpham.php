@@ -259,7 +259,7 @@
                   <?php
                     if ($sp['soluong_sp'] > 0){
                       ?>
-                        <button onclick="alert('Sản phẩm <?php echo $sp['ten_sp'] ?> được thêm thành công !!!')" class="btn btn-light p-4" type="submit" style="background-color:#E51F22 ; color: white; font-size: 18px; font-weight: bold;">Thêm vào giỏ hàng</button>
+                        <button onclick="return confirm('Sản phẩm <?php echo $sp['ten_sp'] ?> được thêm thành công !!!')" class="btn btn-light p-4" type="submit" style="background-color:#E51F22 ; color: white; font-size: 18px; font-weight: bold;">Thêm vào giỏ hàng</button>
                       <?php
                     }else{
                       ?>
@@ -319,6 +319,11 @@
       </div>
     </div>
   </div>
+  <!-- đánh giá sản phẩm -->
+  <div class="danhgia">
+    
+  </div>
+  <!--  -->
   <div class="row sanpham_tuongtu">
     <div class="alert alert-info" role="alert" style="text-align:center ; font-weight:bold ; font-size: 20px; color: #16511a;" >
       Sản phẩm tương tự

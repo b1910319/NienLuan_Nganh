@@ -255,24 +255,31 @@
                     }
                   }
                 }
-                foreach($data['khuyenmai_hien'] as $key => $km){
-                  $i++;
-                  if($tong >= $km['dieukien_km']){
-                    ?>
-                      <label class="plan basic-plan" for="<?php echo $i ?>">
-                        <input type="radio" name="ma_km" id="<?php echo $i ?>" value="<?php echo $km['ma_km'] ?>" />
-                        <div class="plan-content">
-                          <img loading="lazy" src="<?php echo BASE_URL ?>public/img/logo/sale.png" alt="" />
-                          <div class="plan-details">
-                            <span><?php echo $km['ten_km'] ?></span>
-                            <p>Đơn tối thiểu <?php echo number_format($km['dieukien_km'], 0, ',', '.') . ' <sup>đ</sup>'.' được giảm '?><?php echo $km['phantram_km'].'%' ?></p>
+                if($data['khuyenmai_hien']){
+                  foreach($data['khuyenmai_hien'] as $key => $km){
+                    $i++;
+                    if($tong >= $km['dieukien_km']){
+                      ?>
+                        <label class="plan basic-plan" for="<?php echo $i ?>">
+                          <input type="radio" name="ma_km" id="<?php echo $i ?>" value="<?php echo $km['ma_km'] ?>" />
+                          <div class="plan-content">
+                            <img loading="lazy" src="<?php echo BASE_URL ?>public/img/logo/sale.png" alt="" />
+                            <div class="plan-details">
+                              <span><?php echo $km['ten_km'] ?></span>
+                              <p>Đơn tối thiểu <?php echo number_format($km['dieukien_km'], 0, ',', '.') . ' <sup>đ</sup>'.' được giảm '?><?php echo $km['phantram_km'].'%' ?></p>
+                            </div>
                           </div>
-                        </div>
-                      </label>
-                    <?php
+                        </label>
+                      <?php
+                    }
+                    
                   }
-                  
+                }else{
+                  ?>
+                    <p style="color: blue;">Hiện không có khuyến mãi</p>
+                  <?php
                 }
+                
               ?>
             </div>
           </div>

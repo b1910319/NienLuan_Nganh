@@ -28,8 +28,8 @@
     public function khuyenmai_deleteAll($table){
       return $this->db->deleteAll($table);
     }
-    // public function loai_sanpham_timkiem($table_lsp, $table_dm, $dieukien){
-    //   $sql = "SELECT * FROM $table_lsp join $table_dm on $table_lsp.ma_dm = $table_dm.ma_dm where $dieukien";
-    //   return $this->db->select($sql);
-    // }
+    public function khuyenmai_timkiem($table_km, $dieukien){
+      $sql = "SELECT * FROM $table_km WHERE $dieukien";
+      return $this->db->select($sql);
+    }
   }
