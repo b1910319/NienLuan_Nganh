@@ -67,7 +67,8 @@ use Carbon\Carbon;
       }else if($level == 2){
         $this->load->view_admin("leftmenu_nhanvien", $data);
       }
-      $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $dieukien);
+      $table_km ="khuyenmai";
+      $data['chitiet_donhang_madh'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm,$table_km, $dieukien);
       $this->load->view_admin("donhang/chitiet_donhang", $data);
     }
     public function xuly($ma_dh){
