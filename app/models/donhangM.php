@@ -8,8 +8,8 @@ use Carbon\Carbon;
     public function donhang_insert($table, $data){
       return $this->db->insert($table, $data);
     }
-    public function donhang_list($table){
-      $sql = "SELECT * FROM $table ORDER BY ngaylap_dh desc, giolap_dh desc";
+    public function donhang_list($table, $table_km){
+      $sql = "SELECT * FROM $table join $table_km on $table.ma_km = $table_km.ma_km ORDER BY ngaylap_dh desc, giolap_dh desc";
       return $this->db->select($sql);
     }
     public function donhang_nv($table, $dieukien){

@@ -22,6 +22,7 @@
           <th scope="col">Tổng giá</th>
           <th scope="col">Thời gian đặt</th>
           <th scope="col">Thời gian xử lý</th>
+          <th scope="col">Khuyến mãi</th>
           <th scope="col">Quản lý</th>
         </tr>
       </thead>
@@ -32,8 +33,8 @@
             $i ++;
             ?>
               <tr>
-                <th scope="row" style="width: 5%;"><?php echo $i ?></th>
-                <td style="width: 30%;">
+                <th scope="row" ><?php echo $i ?></th>
+                <td >
                   <div class="row ">
                     <div class="col-md-12">
                       <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
@@ -57,11 +58,12 @@
                     </div>
                   </div>
                 </td>
-                <td style="width: 5%;"><?php echo $dh['ma_dh'] ?></td>
-                <td style="width: 10%;"><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
-                <td style="width: 20%;"><?php echo $dh['ngaylap_dh'].'  '.$dh['giolap_dh'] ?></td>
-                <td style="width: 15%;"><?php echo $dh['ngay_xuly']?></td>
-                <td style="width: 20%;">
+                <td ><?php echo $dh['ma_dh'] ?></td>
+                <td ><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
+                <td ><?php echo $dh['ngaylap_dh'].'  '.$dh['giolap_dh'] ?></td>
+                <td ><?php echo $dh['ngay_xuly']?></td>
+                <td ><?php echo $dh['ten_km']?></td>
+                <td >
                   <a href="<?php echo BASE_URL ?>donhang/chitiet_donhang/<?php echo $dh['ma_dh'] ?>">
                     <button type="button" class="btn sua" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết đơn hàng">
                       <i class="fa-solid fa-circle-info"></i>

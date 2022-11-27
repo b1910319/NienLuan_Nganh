@@ -27,7 +27,8 @@ class admin extends controller
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
       //tổng số đơn hàng
-      $data['donhang'] = $donhangM->donhang_list($table_dh);
+      $table_km = "khuyenmai";
+      $data['donhang'] = $donhangM->donhang_list($table_dh,$table_km);
       //doanh thu hôm nay
       $ngay = date("d/m/Y");
       $data['doanhthu_homnay'] = $donhangM->doanhthu_homnay($table_dh, $ngay);

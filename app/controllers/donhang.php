@@ -29,7 +29,8 @@ use Carbon\Carbon;
       }else if($level == 2){
         $this->load->view_admin("leftmenu_nhanvien", $data);
       }
-      $data['donhang_all'] = $donhangM->donhang_list($table_dh);
+      $table_km = "khuyenmai";
+      $data['donhang_all'] = $donhangM->donhang_list($table_dh, $table_km);
       $this->load->view_admin("donhang/donhang_all", $data);
     }
     public function chitiet_donhang($ma_dh){

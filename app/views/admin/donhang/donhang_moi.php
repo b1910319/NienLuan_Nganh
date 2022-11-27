@@ -21,8 +21,8 @@
           $i++;
           ?>
             <tr>
-              <th scope="row" style="width: 5%;"><?php echo $i ?></th>
-              <td style="width: 30%;">
+              <th scope="row" ><?php echo $i ?></th>
+              <td >
                 <div class="row ">
                   <div class="col-md-12">
                     <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20" style="height: 100px; overflow: auto;">
@@ -45,10 +45,10 @@
                   </div>
                 </div>
               </td>
-              <td style="width: 10%;"><?php echo $dh['ma_dh'] ?></td>
-              <td style="width: 15%;"><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
-              <td style="width: 20%;"><?php echo $dh['ngaylap_dh'] . '  ' . $dh['giolap_dh'] ?></td>
-              <td style="width: 25%;">
+              <td ><?php echo $dh['ma_dh'] ?></td>
+              <td ><?php echo number_format($dh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>' ?></td>
+              <td ><?php echo $dh['ngaylap_dh'] . '  ' . $dh['giolap_dh'] ?></td>
+              <td >
                 <a href="<?php echo BASE_URL ?>donhang/chitiet_donhang/<?php echo $dh['ma_dh'] ?>">
                   <button type="button" class="btn sua" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết đơn hàng">
                     <i class="fa-solid fa-circle-info"></i>
