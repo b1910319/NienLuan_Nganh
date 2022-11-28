@@ -129,6 +129,11 @@ class dongho extends controller
     $data['hoi_dap_list'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv, $dieukien3, $order);
     $order1 = "hoi_dap.thoigian_hd ASC ";
     $data['hoi_dap_list1'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv,$dieukien3, $order1);
+    //hiển thị đánh giá
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $dieukien_dg = "danhgia.ma_sp = '$ma_sp'";
+    $data['danhgia_ma_sp'] = $danhgiaM->danhgia_ma_sp($table_dg, $dieukien_dg);
     $this->load->view_user("dongho/chitietsanpham", $data);
     $this->load->view_user("footer");
   }

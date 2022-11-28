@@ -1,7 +1,7 @@
 a {
   text-decoration: none;
 }
-*{
+* {
   font-size: 16px;
 }
 /* style banner */
@@ -9,8 +9,8 @@ a {
 .nav {
   background-color: #ffcc1d;
 }
-.header{
-  background-color: #F8B400;
+.header {
+  background-color: #f8b400;
   height: 55px;
 }
 .giua {
@@ -290,19 +290,19 @@ h2::after {
 
 /*  */
 /* deal ngon */
-.deal_ngon{
+.deal_ngon {
   background-color: #fed220;
   border-radius: 10px;
 }
-.gia{
-  color: #D0021C;
+.gia {
+  color: #d0021c;
 }
 
 /*  */
 
 /* laptop */
-.laptop{
-  background-color: #B5FE83;
+.laptop {
+  background-color: #b5fe83;
   border-radius: 10px;
   height: 450px;
 }
@@ -330,7 +330,7 @@ h2::after {
 }
 .sanpham_gia {
   font-size: 17px;
-  color: #D0021C;
+  color: #d0021c;
 }
 .sanpham_gia::after {
   content: "";
@@ -375,7 +375,7 @@ h2::after {
   border: 1px solid #e4dccf !important;
   width: 100%;
 }
-.timkiem_hang{
+.timkiem_hang {
   background-color: black;
   border-radius: 10px;
 }
@@ -383,55 +383,51 @@ h2::after {
   background-color: white;
   width: 75% !important;
   padding: 5px 20px;
-  border-radius:20px ;
+  border-radius: 20px;
 }
 
-.sanpham_item:hover .sanpham_item_title{
-  color: #FF5B00;
+.sanpham_item:hover .sanpham_item_title {
+  color: #ff5b00;
 }
 /* ----------------------------------------------------------------------*/
 /* -------------------------------------------------------------trang sản phẩm laptop */
 
-.timkiem_sanpham_loai p{
+.timkiem_sanpham_loai p {
   color: black;
 }
-.timkiem_sanpham_loai i{
+.timkiem_sanpham_loai i {
   font-size: 36px;
   color: white;
   background-color: black;
   border-radius: 50%;
   padding: 15px;
 }
-.timkiem_sanpham_loai i:hover{
+.timkiem_sanpham_loai i:hover {
   background-color: #0b4619;
   color: white;
 }
-.timkiem_sanpham_loai a{
+.timkiem_sanpham_loai a {
   font-weight: bold;
   font-size: 16px;
 }
-.deal_soc{
-  background-color: #FBB454;
+.deal_soc {
+  background-color: #fbb454;
   padding: 30px 50px;
   border-radius: 10px;
 }
-.deal_soc h1{
+.deal_soc h1 {
   font-weight: bold;
   color: red;
   text-align: center;
 }
-.deal_soc h1 b{
+.deal_soc h1 b {
   color: white;
 }
 
 /*  */
 /* ---------------------------------------------------------trang chi tiết sản phẩm smartwatch */
 
-
-
 /*  */
-
-
 
 /*------------------------------------------------------------ trang chi tiết sản phẩm điện thoại */
 ol {
@@ -509,8 +505,8 @@ ol {
 .chitiet_sanpham_title {
   border-bottom: 2px solid #c7c7c7;
 }
-.mota{
-  background-color: #BCE29E;
+.mota {
+  background-color: #bce29e;
   padding: 15px;
   border-radius: 15px;
 }
@@ -544,20 +540,20 @@ ol {
   /* margin: 20px; */
   margin-bottom: 20px;
   height: 55px;
-  text-align:center;
+  text-align: center;
   border: none;
   background-size: 300% 100%;
   border-radius: 50px;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn5-hover:hover {
   background-position: 100% 0;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn5-hover:focus {
@@ -565,169 +561,189 @@ ol {
 }
 
 .btn5-hover.btn5 {
-    background-image: linear-gradient(
-      to right,
-      #60d366,
-      #1a651c,
-      #45cc4d,
-      #16511a
-    );
-    box-shadow: 0 4px 15px 0 #16511a;
-  }
+  background-image: linear-gradient(
+    to right,
+    #60d366,
+    #1a651c,
+    #45cc4d,
+    #16511a
+  );
+  box-shadow: 0 4px 15px 0 #16511a;
+}
 
+.title {
+  text-transform: uppercase;
+}
+/* đánh giá */
+.danhgia {
+  border: 2px solid #DEF5E5;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
 
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:not(:disabled) ~ label {
+  cursor: pointer;
+}
+input[type="radio"]:disabled ~ label {
+  color: #bcc2bf;
+  border-color: #bcc2bf;
+  cursor: not-allowed;
+}
+label {
+  height: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  
+}
+input[type="radio"]:checked + label {
+  color: #c7c7c7;
+  border-bottom: 2px solid palegreen;
+}
 
-  .title {
-		text-transform: uppercase;
-	}
-
+/*  */
 
 /*--------------------------*\
 \*--------------------------*/
 .box-shadow {
-	box-shadow: rgba(68, 68, 68, 0.2) 0 .4em .8em
+  box-shadow: rgba(68, 68, 68, 0.2) 0 0.4em 0.8em;
 }
 .center-content {
-	text-align: center;
+  text-align: center;
 }
 .l-container {
-	padding: 1em;
-	max-width: 1024px;
+  padding: 1em;
+  max-width: 1024px;
 }
-
 
 /*--------------------------*\
 /* chọn màu sản phầm */
 .select-control {
-	border-radius: .5rem;
-	margin-bottom: 1em;
-	padding: 1em;
-	text-align: center;
-	/* text-transform: uppercase; */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #EEBB4D;
-	font-weight: bold;
+  border-radius: 0.5rem;
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
+  /* text-transform: uppercase; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eebb4d;
+  font-weight: bold;
 }
 
 .select {
-	border: none;
-	border-radius: 5px;
-	padding: .2em;
-	color: white;
-	background-color: #9BB67C;
-	cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.2em;
+  color: white;
+  background-color: #9bb67c;
+  cursor: pointer;
 
-	width: 30%;
+  width: 30%;
 }
-	.select:focus {
-		outline: .14rem solid white;
-	}
-	.select__item {
-		padding: 1em;
-		color: white;
-		background-color: #9BB67C;
-		text-align: left;
-  
-	}
-	.select__item:focus {
-		outline: none;
-	}
-
+.select:focus {
+  outline: 0.14rem solid white;
+}
+.select__item {
+  padding: 1em;
+  color: white;
+  background-color: #9bb67c;
+  text-align: left;
+}
+.select__item:focus {
+  outline: none;
+}
 
 /*  */
 
-
-
-
 /* --------------------------------------------------------------- */
 /* ---------------------------------------------------------trang sản phầm đồng hồ */
-.dongho_docquyen{
-  background-color: #020C16;
+.dongho_docquyen {
+  background-color: #020c16;
 }
-.dongho_phaidep{
-  background-color: #FFB1BF;
+.dongho_phaidep {
+  background-color: #ffb1bf;
 }
 .dongho_phaimanh {
-  background-color: #05314A;
+  background-color: #05314a;
 }
 .dongho_treem {
-  background-color: #FFBF56;
+  background-color: #ffbf56;
 }
-
-
 
 /* ------------------------------------------------------------- */
 
 /*------------------------------------------------------------- trang tin tức */
-.tintuc_dm a{
+.tintuc_dm a {
   text-decoration: none !important;
   color: black;
 }
-.tintuc_dm:hover button{
+.tintuc_dm:hover button {
   background-color: #3ec70b;
   color: white;
 }
 /*-------------------------------------------------------------  */
 /*------------------------------------------------------------ trang lịch sử đơn hàng */
-.btn_chitiet{
+.btn_chitiet {
   background-color: #038018 !important;
   border: 2px solid #038018 !important;
 }
 /*------------------------------------------------------------  */
 
 /*-------------------------------------------------------------------- trang giỏ hàng */
-.btn_xoa{
+.btn_xoa {
   background-color: red !important;
 }
-.xoa{
+.xoa {
   color: white;
   background-color: #ee3500;
 }
-.xoa:hover{
-  font-weight: bold; 
+.xoa:hover {
+  font-weight: bold;
   border: 1px solid white;
   color: #ee3500;
   background-color: white;
 }
 
-.vanchuyen{
+.vanchuyen {
   color: white;
   background-color: #003865;
 }
-.vanchuyen:hover{
-  font-weight: bold; 
+.vanchuyen:hover {
+  font-weight: bold;
   border: 1px solid white;
   color: #003865;
   background-color: white;
 }
-.baohanh{
+.baohanh {
   color: white;
   background-color: #ff8d05;
 }
-.baohanh:hover{
-  font-weight: bold; 
+.baohanh:hover {
+  font-weight: bold;
   border: 1px solid white;
   color: #ff8d05;
   background-color: white;
 }
-.danhan{
+.danhan {
   color: white;
-  background-color: #F7EC09;
+  background-color: #f7ec09;
 }
-.danhan:hover{
-  font-weight: bold; 
+.danhan:hover {
+  font-weight: bold;
   border: 1px solid white;
-  color: #F7EC09;
+  color: #f7ec09;
   background-color: white;
 }
-.moi{
+.moi {
   color: white;
   background-color: red;
 }
-.moi:hover{
-  font-weight: bold; 
+.moi:hover {
+  font-weight: bold;
   border: 1px solid white;
   color: red;
   background-color: white;
@@ -931,26 +947,22 @@ ol {
 /*-------------------------------------------------------  */
 /* ------------------------------------------chuyên trang thương hiệu */
 /* samsung */
-.ctth_dm  a{
+.ctth_dm a {
   color: #000;
   font-weight: bold;
 }
-.ctth_dm  a:hover{
+.ctth_dm a:hover {
   color: #000;
   text-decoration: none;
-  border-bottom: 2px solid #038018; 
+  border-bottom: 2px solid #038018;
 }
-.ctth_dienthoai{
+.ctth_dienthoai {
   margin-top: 20px;
-  background-color: #BABD42;
+  background-color: #babd42;
   border-radius: 10px;
 }
 
 /*  */
-
-
-
-
 
 /* --------------------------------------------------------------------- */
 /* ---------------------------------------------------------footer */
@@ -1114,6 +1126,5 @@ ul {
   font-size: 14px;
   color: #878787;
 }
-
 
 /*  */

@@ -131,7 +131,8 @@ class index extends controller
     //màu
     $mauM = $this->load->model('mauM');
     $table_m = 'mau';
-    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $dieukien1);
+    $table_km ="khuyenmai";
+    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m,$table_km, $dieukien1);
     //chi tiết đơn hàng
     $table_ctdh = 'chitiet_donhang';
     $chitiet_donhangM = $this->load->model('chitiet_donhangM');
@@ -167,7 +168,8 @@ class index extends controller
     $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $dieukien1 = "donhang.ma_dh = '$ma_dh'";
-    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $dieukien1);
+    $table_km ="khuyenmai";
+    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm,$table_km, $dieukien1);
     $this->load->view_user("lichsu_donhang/lichsudonhang_chitiet", $data);
     $this->load->view_user("footer");
   }
