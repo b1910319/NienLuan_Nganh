@@ -61,11 +61,26 @@
                   <?php echo $ctdh['thoigian_bh'] ?>
                 </td>
                 <td style="width: 10%;">
-                  <a href="<?php echo BASE_URL ?><?php echo $ctdh['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $ctdh['ma_sp'] ?>/<?php echo $ctdh['ma_th'] ?>/<?php echo $ctdh['ma_dm'] ?>">
-                    <button type="button" class="btn btn-warning btn_chitiet" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết sản phẩm" >
-                      <i class="fa-solid fa-eye"></i> Chi tiết
-                    </button>
-                  </a>
+                  <?php
+                    if($ctdh['tinhtrang_dh'] == 2){
+                      ?>
+                        <a href="<?php echo BASE_URL ?><?php echo $ctdh['ghichu_dm'] ?>/chitiet_sanpham_dg/<?php echo $ctdh['ma_sp'] ?>/<?php echo $ctdh['ma_th'] ?>/<?php echo $ctdh['ma_dm'] ?>">
+                          <button type="button" class="btn btn-warning btn_chitiet" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết sản phẩm" >
+                            <i class="fa-solid fa-star"></i> Đánh giá
+                          </button>
+                        </a>
+                      <?php
+                    }else{
+                      ?>
+                        <a href="<?php echo BASE_URL ?><?php echo $ctdh['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $ctdh['ma_sp'] ?>/<?php echo $ctdh['ma_th'] ?>/<?php echo $ctdh['ma_dm'] ?>">
+                          <button type="button" class="btn btn-warning btn_chitiet" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chi tiết sản phẩm" >
+                            <i class="fa-solid fa-eye"></i> Chi tiết
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
+                  
                 </td>
               </tr>
             <?php

@@ -6,8 +6,8 @@
           <div class="verticals ten offset-by-one">
             <ol class="breadcrumb breadcrumb-fill2 style2">
               <li><a href="<?php echo BASE_URL ?>index/index"><i class="fa fa-home"></i></a></li>
-              <li><a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/sanpham/13"><?php echo $sp['ten_dm'] ?></a></li>
-              <li><a href=""><?php echo $sp['ten_th'] ?></a></li>
+              <li style="font-weight: bold;"><a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/sanpham/8"><?php echo $sp['ten_dm'] ?></a></li>
+              <li style="font-weight: bold;"><a href=""><?php echo $sp['ten_th'] ?></a></li>
             </ol>
           </div>
         <?php
@@ -45,20 +45,20 @@
                 }
                 $tb = ceil((5*$sao_5 + 4*$sao_4 + 3*$sao_3 + 2*$sao_2 + $sao_1)/$so_danhgia);
                 ?>
-                <?php
-                  for($i = 1; $i<=$tb; $i++){
-                    ?>
-                      <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
-                    <?php
-                  }
-                  if($tb<5){
-                    for($i = 1; $i<=5-$tb; $i++){
+                  <?php
+                    for($i = 1; $i<=$tb; $i++){
                       ?>
-                        <i class="fa-solid fa-star" style="color: gray;"></i>
+                        <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
                       <?php
                     }
-                  }
-                ?>
+                    if($tb<5){
+                      for($i = 1; $i<=5-$tb; $i++){
+                        ?>
+                          <i class="fa-solid fa-star" style="color: gray;"></i>
+                        <?php
+                      }
+                    }
+                  ?>
                 <?php
               }
               
@@ -157,7 +157,7 @@
               <?php
                 foreach($data['sanpham_ma'] as $key => $sp){
                   ?>
-                    <p class="ps-4">Bộ bán hàng chuẩn: <?php echo $sp['bo_sanpham'] ?></p>
+                    <p class="ps-4">Bộ sản phẩm gồm: <?php echo $sp['bo_sanpham'] ?></p>
                   <?php
                 }
               ?>
@@ -193,7 +193,7 @@
               <div class="alert alert-danger" role="alert" style="background-color:#FEE2E2 ; color: red; font-weight: bold; font-size: 20px;">
                 <i class="fa-solid fa-circle-dollar-to-slot"></i> &ensp;
                 <?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?>
-                <span style="color: gray; text-decoration: line-through;"><?php echo number_format($sp['gia_sp']+200000, 0, ',', '.') . ' <sup>đ</sup>'  ?></span>
+                <span  style="color: gray; text-decoration: line-through;"><?php echo number_format($sp['gia_sp']+200000, 0, ',', '.') . ' <sup>đ</sup>'  ?></span>
               </div>
             </div>
             <div class="mota">
@@ -213,49 +213,54 @@
                 <button type="button" class="btn btn-danger">2.000.000 <sup>đ</sup></button>
               </p>
             </div>
+            
             <div class="thongso_kythuat">
               <div class="row py-5 justify-content-center">
                 <div class="col-md-12">
                   <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
                     style="height: 350px; overflow: auto;">
                     <div class="alert alert-info text-center" role="alert" style="font-size: 18px; font-weight: bold;">
-                      Cấu hình Máy tính: <?php echo $sp['ten_sp'] ?>
+                      Cấu hình Điện thoại: <?php echo $sp['ten_sp'] ?>
                     </div>
                     <p>
                     <table class="table table-hover">
                       <tbody>
                         <tr>
-                          <th scope="row">Công nghệ CPU </th>
-                          <td><?php echo $sp['congnghe_cpu'] ?></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">RAM:</th>
-                          <td><?php echo $sp['ram'].' GB' ?></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Ổ cứng:</th>
-                          <td><?php echo 'SSD '.$sp['rom'].' GB' ?></td>
-                        </tr>
-                        <tr>
                           <th scope="row">Màn hình: </th>
                           <td><?php echo $sp['manhinh'] ?></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Card màn hình:</th>
-                          <td><?php echo $sp['card_manhinh'] ?></td>
-                        </tr>
-
-                        <tr>
-                          <th scope="row">Cổng kết nối:</th>
-                          <td><?php echo $sp['cong_ketnoi'] ?></td>
                         </tr>
                         <tr>
                           <th scope="row">Hệ điều hành:</th>
                           <td><?php echo $sp['hedieuhanh'] ?></td>
                         </tr>
                         <tr>
-                          <th scope="row">Kích thước:</th>
-                          <td><?php echo $sp['kichthuoc'] ?></td>
+                          <th scope="row">Camera sau:</th>
+                          <td><?php echo $sp['camera_sau'] ?></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Camera trước:</th>
+                          <td><?php echo $sp['camera_truoc'] ?></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Chip:</th>
+                          <td><?php echo $sp['chip'] ?></td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">RAM:</th>
+                          <td><?php echo $sp['ram'].'GB' ?></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Bộ nhớ trong:</th>
+                          <td><?php echo $sp['rom'].'GB' ?></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">SIM:</th>
+                          <td><?php echo $sp['sim'] ?></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Pin, Sạc:</th>
+                          <td><?php echo $sp['pin'] ?></td>
                         </tr>
                       </tbody>
                     </table>
@@ -279,7 +284,7 @@
                   <div class="">
                       <!-- 	Select	 -->
                       <div class="select-control">
-                        <span class="select-control__title">Màu của sản phẩm</span>
+                        <span class="select-control__title">Chọn màu cho sản phẩm</span>
                         <select class="select" id="js-select" name="ma_m">
                           <?php
                             $i=0;
@@ -362,7 +367,7 @@
   <!-- đánh giá sản phẩm -->
   <div class="mb-5 danhgia">
     <div class="row">
-      <div class="col-12 ">
+      <div class="col-6 ">
         <p>
           <?php
             if($data['danhgia_ma_sp']){
@@ -393,7 +398,7 @@
                   <div class="col-1">
                     <span style="color:#FE8C23 ; font-weight: bold; font-size: 20px;"><?php echo $tb ?></span> 
                   </div>
-                  <div class="col-9">
+                  <div class="col-7">
                     <?php
                       for($i = 1; $i<=$tb; $i++){
                         ?>
@@ -409,7 +414,7 @@
                       }
                     ?>
                   </div>
-                  <div class="col-2">
+                  <div class="col-4">
                     <?php echo $so_danhgia ?> đánh giá
                   </div>
                 </div>
@@ -420,14 +425,14 @@
                   <div class="col-1">
                     <span style="color:#FE8C23 ; font-weight: bold; font-size: 20px;">0</span> 
                   </div>
-                  <div class="col-9">
+                  <div class="col-7">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                   </div>
-                  <div class="col-2">
+                  <div class="col-4">
                     0 đánh giá
                   </div>
                 </div>
@@ -463,12 +468,12 @@
                 <div class="col-1">
                   5 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: <?php echo ($sao_5/$so_danhgia)*100 .'%' ?>;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   <?php echo ceil(($sao_5/$so_danhgia)*100) .'%' ?> (<?php echo $sao_5 ?> đánh giá)
                 </div>
               </div>
@@ -476,12 +481,12 @@
                 <div class="col-1">
                   4 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: <?php echo ($sao_4/$so_danhgia)*100 .'%' ?>;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   <?php echo ceil(($sao_4/$so_danhgia)*100) .'%' ?> (<?php echo $sao_4 ?> đánh giá)
                 </div>
               </div>
@@ -489,12 +494,12 @@
                 <div class="col-1">
                   3 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: <?php echo ($sao_3/$so_danhgia)*100 .'%' ?>;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                 <?php echo ceil(($sao_3/$so_danhgia)*100) .'%' ?> (<?php echo $sao_3 ?> đánh giá)
                 </div>
               </div>
@@ -502,12 +507,12 @@
                 <div class="col-1">
                   2 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-danger" role="progressbar" aria-label="Warning example" style="width: <?php echo ($sao_2/$so_danhgia)*100 .'%' ?>;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   <?php echo ceil(($sao_2/$so_danhgia)*100) .'%' ?> (<?php echo $sao_2 ?> đánh giá)
                 </div>
               </div>
@@ -515,12 +520,12 @@
                 <div class="col-1">
                   1 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-danger" role="progressbar" aria-label="Warning example" style="width: <?php echo ($sao_1/$so_danhgia)*100 .'%' ?>;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   <?php echo ceil(($sao_1/$so_danhgia)*100) .'%' ?> (<?php echo $sao_1 ?> đánh giá)
                 </div>
               </div>
@@ -531,12 +536,12 @@
                 <div class="col-1">
                   5 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: 0%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   0% (0 đánh giá)
                 </div>
               </div>
@@ -544,12 +549,12 @@
                 <div class="col-1">
                   4 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style=" width: 0%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   0% (0 đánh giá)
                 </div>
               </div>
@@ -557,12 +562,12 @@
                 <div class="col-1">
                   3 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: 0%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   0% (0 đánh giá)
                 </div>
               </div>
@@ -570,12 +575,12 @@
                 <div class="col-1">
                   2 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: 0%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   0% (0 đánh giá)
                 </div>
               </div>
@@ -583,12 +588,12 @@
                 <div class="col-1">
                   1 <i class="fa-solid fa-star"></i>
                 </div>
-                <div class="col-9">
+                <div class="col-7">
                   <div class="progress" >
                     <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example" style="width: 0%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-                <div class="col-2" style="color: blue; font-weight: bold;">
+                <div class="col-4" style="color: blue; font-weight: bold;">
                   0% (0 đánh giá)
                 </div>
               </div>
@@ -596,6 +601,90 @@
           }
           
         ?>
+      </div>
+      <div class="col-6">
+        <?php
+          foreach($data['sanpham_ma'] as $key => $sp){
+            ?>
+              <form action="<?php echo BASE_URL ?>danhgia/danhgia_insert" method="post">
+                <div class="row">
+                  <div class="col-4">
+                    <section>
+                      <div>
+                        <input type="radio" id="control_05" name="sosao_dg" value="5" checked>
+                        <label for="control_05">
+                          <p>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                          </p>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="control_04" name="sosao_dg" value="4">
+                        <label for="control_04">
+                          <p>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </p>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="control_03" name="sosao_dg" value="3">
+                        <label for="control_03">
+                          <p>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </p>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="control_02" name="sosao_dg" value="2">
+                        <label for="control_02">
+                          <p>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </p>
+                        </label>
+                      </div>
+                      <div>
+                        <input type="radio" id="control_01" name="sosao_dg" value="1">
+                        <label for="control_01">
+                          <p>
+                            <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </p>
+                        </label>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-8">
+                    <input type="hidden" name="ma_sp" value="<?php echo $sp['ma_sp'] ?>">
+                    <input type="text" name="ten_k" class="form-control"  required minlength="5" placeholder="Họ và Tên">
+                    <p class="mt-3">Nội dung</p>
+                    <textarea class="form-control" name="noidung_dg" minlength="10" required rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary mt-3 float-end">Gửi</button>
+                  </div>
+                </div>
+              </form>
+            <?php
+          }
+        ?>
+        
       </div>
     </div>
     <div class="row">
@@ -645,7 +734,7 @@
       foreach ($data['sanpham_tuongtu'] as $key => $sp){
         ?>
           <div class="sanpham_item col-xs-12 col-sm-6 col-md-2 mt-5 img-hover-zoom img-hover-zoom--brightness">
-            <a href="<?php echo BASE_URL ?>maytinhdeban/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
+            <a href="<?php echo BASE_URL ?>dienthoai/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
               <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
             </a>
             <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>

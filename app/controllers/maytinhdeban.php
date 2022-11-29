@@ -108,6 +108,76 @@ class maytinhdeban extends controller
     $this->load->view_user("maytinh_deban/chitietsanpham", $data);
     $this->load->view_user("footer");
   }
+  public function chitiet_sanpham_dg($ma_sp, $ma_th, $ma_dm)
+  {
+    session::init();
+    //danh mục sản phẩm
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table_dm = 'danhmuc_sanpham';
+    $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
+    $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+    //chi tiết sản phẩm
+    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
+    $table_ctsp = 'chitiet_sanpham';
+    //màu sản phẩm
+    $mau_sanphamM = $this->load->model("mau_sanphamM");
+    $table_msp = 'mau_sanpham';
+    //loại sản phẩm
+    $loai_sanphamM = $this->load->model('loai_sanphamM');
+    $table_lsp = 'loai_sanpham';
+    //thương hiệu
+    $thuonghieuM = $this->load->model('thuonghieuM');
+    $table_th = 'thuonghieu';
+    //hình
+    $hinhM = $this->load->model('hinhM');
+    $table_hsp = 'hinh';
+    $this->load->view_user("header", $data);
+    $sanphamM = $this->load->model('sanphamM');
+    $table_sp = 'sanpham';
+    //màu
+    $mauM = $this->load->model('mauM');
+    $table_m = 'mau';
+
+    $dieukien = "sanpham.ma_sp = '$ma_sp'";
+    $data['sanpham_ma'] = $sanphamM->Usanpham_ma($table_sp, $table_dm, $table_ctsp, $table_msp, $table_th, $table_lsp, $table_hsp, $dieukien);
+    //sản phẩm tương tự
+    $dieukien_sp_tuongtu = "sanpham.ma_th = '$ma_th' AND sanpham.ma_dm = '$ma_dm'";
+    $data['sanpham_tuongtu'] = $sanphamM->Usanpham_tuongtu($table_sp, $dieukien_sp_tuongtu);
+    
+    $dieukien1 = "hinh.ma_sp = '$ma_sp'";
+
+    $data['hinh_limit1'] = $hinhM->hinh_limit1($table_hsp, $dieukien1);
+
+    $data['hinh_ma'] = $hinhM->hinh_ma($table_hsp, $dieukien1);
+
+    $dieukien2 = "mau_sanpham.ma_sp = '$ma_sp'";
+    $data['mau_sanpham_ma'] = $mau_sanphamM->Umau_sanpham_ma($table_msp, $table_m, $dieukien2);
+
+    //tin tức
+    $tintucM = $this->load->model('tintucM');
+    $table_tt = 'tintuc';
+    //danh mục tin tức
+    $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
+    $table_dmtt = 'danhmuc_tintuc';
+    $limit = 4;
+    $data['tintuc'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
+    // hiển thị bình luận
+    $hoi_dapM = $this->load->model('hoi_dapM');
+    $table_hd = "hoi_dap";
+    $order = "hoi_dap.thoigian_hd DESC";
+    $table_nv = 'nhanvien';
+    $dieukien3 = "hoi_dap.ma_sp = '$ma_sp'";
+    $data['hoi_dap_list'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv, $dieukien3, $order);
+    $order1 = "hoi_dap.thoigian_hd ASC ";
+    $data['hoi_dap_list1'] = $hoi_dapM->hoi_dap_list($table_hd, $table_sp,$table_nv,$dieukien3, $order1);
+    //hiển thị đánh giá
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $dieukien_dg = "danhgia.ma_sp = '$ma_sp'";
+    $data['danhgia_ma_sp'] = $danhgiaM->danhgia_ma_sp($table_dg, $dieukien_dg);
+    $this->load->view_user("maytinh_deban/chitietsanpham_danhgia", $data);
+    $this->load->view_user("footer");
+  }
   public function timkiem_thuonghieu($ma_dm, $ma_th)
   {
     session::init();
