@@ -62,7 +62,9 @@ class dongho extends controller
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $data['tintuc_limit'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
-
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/sanpham", $data);
     $this->load->view_user("footer");
@@ -166,7 +168,9 @@ class dongho extends controller
     $table_sp = 'sanpham';
     $dieukien = "sanpham.ma_dm = '$ma_dm' && sanpham.ma_th = '$ma_th'";
     $data['sanpham_ma_dm_th'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien);
-
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/timkiem_thuonghieu", $data);
     $this->load->view_user("footer");
@@ -201,6 +205,9 @@ class dongho extends controller
     $end = $end.'000000';
     $dieukien1 = "sanpham.gia_sp BETWEEN '$start' AND '$end' AND sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_ma_dm_gia'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien1);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/timkiem_gia", $data);
     $this->load->view_user("footer");
@@ -236,6 +243,9 @@ class dongho extends controller
     $table_ctsp = 'chitiet_sanpham';
     $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.doituong_sudung = '$doituong_sudung'";
     $data['sanpham_ma_dm_doituong'] = $sanphamM->sanpham_dm_ctsp($table_sp, $table_ctsp, $dieukien1);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/timkiem_doituong_sudung", $data);
     $this->load->view_user("footer");
@@ -271,6 +281,9 @@ class dongho extends controller
     $table_ctsp = 'chitiet_sanpham';
     $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.chatlieu_kinh = '$chatlieu_kinh'";
     $data['sanpham_ma_dm_chatlieukinh'] = $sanphamM->sanpham_dm_ctsp($table_sp, $table_ctsp, $dieukien1);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/timkiem_chatlieu_kinh", $data);
     $this->load->view_user("footer");
@@ -306,6 +319,9 @@ class dongho extends controller
     $table_ctsp = 'chitiet_sanpham';
     $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.chatlieu_day = '$chatlieu_day'";
     $data['sanpham_ma_dm_chatlieuday'] = $sanphamM->sanpham_dm_ctsp($table_sp, $table_ctsp, $dieukien1);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("dongho/header_dongho", $data);
     $this->load->view_user("dongho/timkiem_chatlieu_day", $data);
     $this->load->view_user("footer");

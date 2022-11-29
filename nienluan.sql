@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 28, 2022 lúc 10:59 AM
+-- Thời gian đã tạo: Th10 29, 2022 lúc 10:28 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -408,14 +408,40 @@ CREATE TABLE `danhgia` (
 --
 
 INSERT INTO `danhgia` (`ma_dg`, `ma_sp`, `ten_k`, `noidung_dg`, `sosao_dg`, `thoigian_dg`) VALUES
-(1, 74, 'Lê Diểm Trinh', 'Sản phẩm Tuyệt vời', 5, '2022-11-28 15:10:02'),
+(1, 74, 'Lê Diểm Trinh', 'Sản phẩm Tuyệt vời', 1, '2022-11-28 15:10:02'),
 (2, 74, 'Phương Oanh', 'Chất lượng', 4, '2022-11-28 15:11:41'),
 (3, 74, 'Trần Nguyễn Lam Tuyền', 'Thiết kế đẹp', 2, '2022-11-28 15:22:10'),
 (4, 74, 'Hoàng', 'Chất lượng', 5, '2022-11-28 15:49:53'),
 (5, 74, 'Phương Oanh', 'Sản phẩm tốt', 3, '2022-11-28 15:57:48'),
 (6, 46, 'Lê Diểm Trinh', 'Sản phẩm chất lượng', 5, '2022-11-28 16:51:18'),
 (7, 79, 'Lê Diểm Trinh', 'Sản phẩm chất lượng', 5, '2022-11-28 16:53:24'),
-(8, 79, 'Trần Nguyễn Lam Tuyền', 'Sản phẩm chất lượng', 3, '2022-11-28 16:53:55');
+(8, 79, 'Trần Nguyễn Lam Tuyền', 'Sản phẩm chất lượng', 3, '2022-11-28 16:53:55'),
+(9, 23, 'Lê Diểm Trinh', 'Sản phẩm chất lượng', 5, '2022-11-29 13:23:46'),
+(10, 23, 'Hoàng', 'Sản phẩm tốt', 4, '2022-11-29 13:24:20'),
+(11, 104, 'Lê Diểm Trinh', 'Sản phẩm chất lượng', 5, '2022-11-29 13:36:53'),
+(12, 71, 'Lê Diểm Trinh', 'Sản phẩm chất lượng', 3, '2022-11-29 13:37:17'),
+(13, 71, 'Nguyễn Trần Lam Tuyền', 'Sản phẩm tốt', 5, '2022-11-29 13:37:48'),
+(14, 23, 'Trần Nguyễn Lam Tuyền', 'Sản phẩm chất lượng', 5, '2022-11-29 14:10:15'),
+(15, 74, 'Lê Thị Diễm Hằng', 'Sản phẩm chất lượng', 5, '2022-11-29 14:39:27'),
+(16, 74, 'Hoàng', 'Sản phẩm tệ', 1, '2022-11-29 14:39:43'),
+(17, 74, 'Trần Nguyễn Lam Tuyền', 'Sản phẩm tệ', 1, '2022-11-29 14:39:53'),
+(18, 24, 'Lê Diểm Trinh', 'San pham tot', 5, '2022-11-29 14:43:58'),
+(19, 23, 'Nguyễn Trần Lam Tuyền', 'Chat luong kem', 1, '2022-11-29 14:45:11'),
+(20, 133, 'Lê Diểm Trinh', 'San pham tuyet voi', 4, '2022-11-29 14:48:00'),
+(21, 76, 'Lê Diểm Trinh', 'San ppham chat luong', 5, '2022-11-29 14:56:46'),
+(22, 96, 'Lê Diểm Trinh', 'San pham chat luong', 5, '2022-11-29 14:58:17'),
+(23, 92, 'Lê Thị Diễm Hằng', 'San pham chat luong', 4, '2022-11-29 14:58:39'),
+(24, 88, 'Hoàng', 'San pham chat luong', 3, '2022-11-29 14:58:59'),
+(25, 35, 'Lê Diểm Trinh', 'San pham chat luong', 5, '2022-11-29 14:59:14'),
+(26, 27, 'Lê Diểm Trinh', 'San pham chat luong', 5, '2022-11-29 14:59:33'),
+(27, 108, 'Lê Diểm Trinh', 'San pham chat luong', 5, '2022-11-29 15:03:09'),
+(28, 118, 'Lê Diểm Trinh', 'San pham chat luong', 5, '2022-11-29 15:06:09'),
+(29, 113, 'Lê Diểm Trinh', 'San pham chat luong', 3, '2022-11-29 15:07:16'),
+(30, 43, 'Lê Thị Diễm Hằng', 'San pham chat luong', 5, '2022-11-29 15:07:56'),
+(31, 125, 'Phương Oanh', 'San pham chat luong', 4, '2022-11-29 15:09:10'),
+(32, 55, 'Trần Nguyễn Lam Tuyền', 'San pham chat luong', 4, '2022-11-29 15:12:37'),
+(33, 64, 'Hoàng', 'San pham chat luong', 4, '2022-11-29 15:14:21'),
+(34, 67, 'Lê Diểm Trinh', 'San pham chat luong', 4, '2022-11-29 15:41:03');
 
 -- --------------------------------------------------------
 
@@ -3123,7 +3149,9 @@ CREATE TABLE `hoi_dap` (
 INSERT INTO `hoi_dap` (`ma_hd`, `parent`, `noidung_hd`, `thoigian_hd`, `ma_sp`, `ten_k`, `ma_nv`, `status`, `ghichu_hd`) VALUES
 (26, 0, 'Cho tôi hỏi sao tôi mới cập nhật phần mềm lên 5.0 UI,thì đt bị hao pin nhanh hơn lúc chưa cập nhật, sạc 100% để chừng 15 phút k xài là hao 8% pin, nhờ qtrvien nghien cứu dùm ak', '2022-11-16 14:03:17', 29, 'Phương Oanh', 4, 0, 'dienthoai'),
 (27, 0, 'ss a32 vs a23 chiếc nào mạnh mẽ về hiệu năng chơi game, camera tốt, dùng để lướt web học tập vậy ạ(ý chung là hơn về mọi mặt luôn á nha)', '2022-11-16 14:04:02', 29, 'Diểm Trinh', 4, 0, 'dienthoai'),
-(28, 26, 'Chào chị,\r\nDạ trường hợp này có lẽ do bản cập nhật mới có nhiều tính năng nên máy sẽ hơi hao pin hơn bình thường đó ạ , nếu tình trạng hao pin ngày càng tăng thì anh mang máy đến cửa hàng để nhân viên kiểm tra xem sao nhé\r\nThông tin đến chị.', '2022-11-16 14:04:43', 29, '', 5, 1, '');
+(28, 26, 'Chào chị,\r\nDạ trường hợp này có lẽ do bản cập nhật mới có nhiều tính năng nên máy sẽ hơi hao pin hơn bình thường đó ạ , nếu tình trạng hao pin ngày càng tăng thì anh mang máy đến cửa hàng để nhân viên kiểm tra xem sao nhé\r\nThông tin đến chị.', '2022-11-16 14:04:43', 29, '', 5, 1, ''),
+(29, 0, 'Đồng hồ định vị sai vị trí lên đến 1km . Bảo hành đi đi lại lại vẫn thế', '2022-11-28 17:02:49', 129, 'Nguyễn Trần Lam Tuyền', 4, 0, 'smartwatch'),
+(30, 29, 'Chào chị . Dạ chị vui lòng cho em xin số điện thoại mua hàng để em có thể hỗ trợ mình chị nha. Thông tin đến chị ', '2022-11-28 17:03:16', 129, '', 5, 1, '');
 
 -- --------------------------------------------------------
 
@@ -3872,7 +3900,7 @@ ALTER TABLE `chitiet_sanpham`
 -- AUTO_INCREMENT cho bảng `danhgia`
 --
 ALTER TABLE `danhgia`
-  MODIFY `ma_dg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ma_dg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc_sanpham`
@@ -3896,7 +3924,7 @@ ALTER TABLE `hinh`
 -- AUTO_INCREMENT cho bảng `hoi_dap`
 --
 ALTER TABLE `hoi_dap`
-  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ma_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `khuyenmai`
@@ -3932,7 +3960,7 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ma_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `ma_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT cho bảng `thuonghieu`

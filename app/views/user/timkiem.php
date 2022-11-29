@@ -22,6 +22,33 @@
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp_tk['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title"><?php echo $sp_tk['ten_sp'] ?></p>
+              <?php
+                foreach($data['count_sao'] as $key => $count_sao){
+                  if($sp_tk['ma_sp'] == $count_sao['ma_sp']){
+                    $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                    ?>
+                      <div>
+                        <?php
+                          for($i = 1; $i<=$tb; $i++){
+                            ?>
+                              <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <?php
+                          }
+                          if($tb<5){
+                            for($i = 1; $i<=5-$tb; $i++){
+                              ?>
+                                <i class="fa-solid fa-star" style="color: gray;"></i>
+                              <?php
+                            }
+                          }
+                        ?>
+                      </div>
+                      
+                      
+                    <?php
+                  }
+                }
+              ?>
               <div class="row tex-center ms-2">
               <?php
                 $ma_sp = $sp_tk['ma_sp'];

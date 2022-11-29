@@ -17,6 +17,33 @@
                   <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="img-responsive center-block"></a>
                   <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                   <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                  <?php
+                    foreach($data['count_sao'] as $key => $count_sao){
+                      if($sp['ma_sp'] == $count_sao['ma_sp']){
+                        $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                        ?>
+                          <div>
+                            <?php
+                              for($i = 1; $i<=$tb; $i++){
+                                ?>
+                                  <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                                <?php
+                              }
+                              if($tb<5){
+                                for($i = 1; $i<=5-$tb; $i++){
+                                  ?>
+                                    <i class="fa-solid fa-star" style="color: gray;"></i>
+                                  <?php
+                                }
+                              }
+                            ?>
+                          </div>
+                          
+                          
+                        <?php
+                      }
+                    }
+                  ?>
                 </div>
               </div>
             <?php
@@ -28,6 +55,31 @@
                   <a href="<?php echo BASE_URL ?><?php echo $sp['ghichu_dm'] ?>/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>"><img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="img-responsive center-block"></a>
                   <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                   <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                  <?php
+                    foreach($data['count_sao'] as $key => $count_sao){
+                      if($sp['ma_sp'] == $count_sao['ma_sp']){
+                        $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                        ?>
+                          <div>
+                            <?php
+                              for($i = 1; $i<=$tb; $i++){
+                                ?>
+                                  <i class="fa-solid fa-star" style="color: #367e18;"></i>
+                                <?php
+                              }
+                              if($tb<5){
+                                for($i = 1; $i<=5-$tb; $i++){
+                                  ?>
+                                    <i class="fa-solid fa-star" style="color: gray;"></i>
+                                  <?php
+                                }
+                              }
+                            ?>
+                          </div>
+                        <?php
+                      }
+                    }
+                  ?>
                 </div>
               </div>
             <?php
@@ -63,20 +115,47 @@
             <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
           </a>
           <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+          <?php
+            foreach($data['count_sao'] as $key => $count_sao){
+              if($sp['ma_sp'] == $count_sao['ma_sp']){
+                $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                ?>
+                  <div>
+                    <?php
+                      for($i = 1; $i<=$tb; $i++){
+                        ?>
+                          <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                        <?php
+                      }
+                      if($tb<5){
+                        for($i = 1; $i<=5-$tb; $i++){
+                          ?>
+                            <i class="fa-solid fa-star" style="color: gray;"></i>
+                          <?php
+                        }
+                      }
+                    ?>
+                  </div>
+                  
+                  
+                <?php
+              }
+            }
+          ?>
           <div class="row tex-center ms-2">
             <?php
-            $ma_sp = $sp['ma_sp'];
-            $con = mysqli_connect('localhost', 'root', '', 'nienluan');
-            $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
-            while ($row = mysqli_fetch_assoc($result)) {
-              $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
-              $arr[$row['ma_m']]['mau'] = $row['mau'];
-            ?>
-              <div class="col-2">
-                <span style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
-              </div>
-            <?php
-            }
+              $ma_sp = $sp['ma_sp'];
+              $con = mysqli_connect('localhost', 'root', '', 'nienluan');
+              $result = mysqli_query($con, "SELECT * FROM `mau_sanpham` join `sanpham` on mau_sanpham.ma_sp = sanpham.ma_sp join `mau` on mau_sanpham.ma_m = mau.ma_m WHERE sanpham.ma_sp = '$ma_sp'");
+              while ($row = mysqli_fetch_assoc($result)) {
+                $arr[$row['ma_m']]['ten_m'] = $row['ten_m'];
+                $arr[$row['ma_m']]['mau'] = $row['mau'];
+                ?>
+                  <div class="col-2">
+                    <span style="border-radius:100% ; background-color: <?php echo $row['mau'] ?> ; color: <?php echo $row['mau'] ?>;">....</span>
+                  </div>
+                <?php
+              }
             ?>
           </div>
           <p class="fw-bold text-center mt-2 sanpham_gia"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></p>
@@ -109,7 +188,36 @@
           <a href="<?php echo BASE_URL ?>laptop/chitiet_sanpham/<?php echo $sp['ma_sp'] ?>/<?php echo $sp['ma_th'] ?>/<?php echo $sp['ma_dm'] ?>">
             <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
           </a>
-          <p class="text-center mt-3 sanpham_item_title" style="color: #003865; font-weight: bold;"><?php echo $sp['ten_sp'] ?></p>
+          <p class="text-center mt-3 sanpham_item_title" style="color: #003865; font-weight: bold;">
+            <?php echo $sp['ten_sp'] ?>
+          </p>
+          <?php
+            foreach($data['count_sao'] as $key => $count_sao){
+              if($sp['ma_sp'] == $count_sao['ma_sp']){
+                $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                ?>
+                  <div>
+                    <?php
+                      for($i = 1; $i<=$tb; $i++){
+                        ?>
+                          <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                        <?php
+                      }
+                      if($tb<5){
+                        for($i = 1; $i<=5-$tb; $i++){
+                          ?>
+                            <i class="fa-solid fa-star" style="color: gray;"></i>
+                          <?php
+                        }
+                      }
+                    ?>
+                  </div>
+                  
+                  
+                <?php
+              }
+            }
+          ?>
           <div class="row tex-center ms-2">
             <?php
             $ma_sp = $sp['ma_sp'];
@@ -156,6 +264,33 @@
             <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
           </a>
           <p class="text-center mt-3 sanpham_item_title"><?php echo $sp['ten_sp'] ?></p>
+          <?php
+            foreach($data['count_sao'] as $key => $count_sao){
+              if($sp['ma_sp'] == $count_sao['ma_sp']){
+                $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                ?>
+                  <div>
+                    <?php
+                      for($i = 1; $i<=$tb; $i++){
+                        ?>
+                          <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                        <?php
+                      }
+                      if($tb<5){
+                        for($i = 1; $i<=5-$tb; $i++){
+                          ?>
+                            <i class="fa-solid fa-star" style="color: gray;"></i>
+                          <?php
+                        }
+                      }
+                    ?>
+                  </div>
+                  
+                  
+                <?php
+              }
+            }
+          ?>
           <div class="row tex-center ms-2">
             <?php
             $ma_sp = $sp['ma_sp'];

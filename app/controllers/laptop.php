@@ -46,6 +46,9 @@ class laptop extends controller
     $data['sanpham_nhe'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien6);
     $dieukien7 = "sanpham.ma_lsp = '18' and sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_sangtrong'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien7);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("laptop/header_laptop", $data);
     $this->load->view_user("laptop/sanpham", $data);
     $this->load->view_user("footer");
@@ -152,7 +155,9 @@ class laptop extends controller
     $table_sp = 'sanpham';
     $dieukien = "sanpham.ma_dm = '$ma_dm' && sanpham.ma_th = '$ma_th'";
     $data['sanpham_ma_dm_th'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien);
-
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("laptop/header_laptop", $data);
     $this->load->view_user("laptop/timkiem_thuonghieu", $data);
     $this->load->view_user("footer");

@@ -45,28 +45,20 @@
                 }
                 $tb = ceil((5*$sao_5 + 4*$sao_4 + 3*$sao_3 + 2*$sao_2 + $sao_1)/$so_danhgia);
                 ?>
-                <?php
-                  for($i = 1; $i<=$tb; $i++){
-                    ?>
-                      <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
-                    <?php
-                  }
-                  if($tb<5){
-                    for($i = 1; $i<=5-$tb; $i++){
+                  <?php
+                    for($i = 1; $i<=$tb; $i++){
                       ?>
-                        <i class="fa-solid fa-star" style="color: gray;"></i>
+                        <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
                       <?php
                     }
-                  }
-                ?>
-                <?php
-              }else{
-                ?>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
+                    if($tb<5){
+                      for($i = 1; $i<=5-$tb; $i++){
+                        ?>
+                          <i class="fa-solid fa-star" style="color: gray;"></i>
+                        <?php
+                      }
+                    }
+                  ?>
                 <?php
               }
               

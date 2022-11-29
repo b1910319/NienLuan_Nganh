@@ -86,6 +86,13 @@
           </a>
         </li>
         <li>
+          <a href="<?php echo BASE_URL ?>danhgia/danhgia">
+            <i class="fa-solid fa-star"></i>
+            <span> Đánh giá </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li>
+        <li>
           <a href="<?php echo BASE_URL ?>baohanh/baohanh_list">
             <i class="fa-solid fa-file-shield"></i>
             <span> Bảo hành </span>

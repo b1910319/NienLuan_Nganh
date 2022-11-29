@@ -42,6 +42,10 @@ class index extends controller
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $data['tintuc_limit'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
+
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("trangchu", $data);
     $this->load->view_user("footer");
   }
@@ -62,6 +66,9 @@ class index extends controller
     $tukhoa = $_POST['tukhoa'];
     $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'";
     $data['Usanpham_timkiem'] = $sanphamM->Usanpham_timkiem($table_sp, $table_dm, $dieukien);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("timkiem", $data);
     $this->load->view_user("footer");
   }

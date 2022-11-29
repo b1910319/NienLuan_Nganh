@@ -185,6 +185,34 @@
             <span class="badge badge-primary float-right"></span>
           </a>
         </li>
+        <!-- <li>
+          <a href="<?php echo BASE_URL ?>danhgia/danhgia">
+            <i class="fa-solid fa-star"></i>
+            <span> Đánh giá </span>
+            <span class="badge badge-primary float-right"></span>
+          </a>
+        </li> -->
+        <li>
+          <a href="javascript: void(0);">
+            <i class="fa-solid fa-star"></i>
+            <span> Đánh giá sản phẩm </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="nav-second-level nav" aria-expanded="false">
+            <li>
+              <a href="<?php echo BASE_URL ?>danhgia/danhgia">
+                <span> Đánh giá </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+            <li>
+              <a href="<?php echo BASE_URL ?>danhgia/thongke">
+                <span> Thống kê </span>
+                <span class="badge badge-primary float-right"></span>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li>
           <?php
             $i = 0;

@@ -60,16 +60,7 @@
                   }
                 ?>
                 <?php
-              }else{
-                ?>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                <?php
               }
-              
             ?>
           </h3>
           <form action="<?php echo BASE_URL ?>sp_yeuthich/sp_yeuthich_insert" method="POST">

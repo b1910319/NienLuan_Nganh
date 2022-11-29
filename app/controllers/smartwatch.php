@@ -44,6 +44,9 @@ class smartwatch extends controller
     $data['sanpham_thethao'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien5);
     $dieukien6 = "sanpham.ma_lsp = '22' and sanpham.ma_dm = '$ma_dm'";
     $data['sanpham_treem'] = $sanphamM -> sanpham_deal($table_sp, $table_dm, $dieukien6);
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("smartwatch/header_smartwatch", $data);
     $this->load->view_user("smartwatch/sanpham", $data);
     $this->load->view_user("footer");
@@ -150,7 +153,9 @@ class smartwatch extends controller
     $table_sp = 'sanpham';
     $dieukien = "sanpham.ma_dm = '$ma_dm' && sanpham.ma_th = '$ma_th'";
     $data['sanpham_ma_dm_th'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien);
-
+    $danhgiaM = $this->load->model('danhgiaM');
+    $table_dg = 'danhgia';
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("smartwatch/header_smartwatch", $data);
     $this->load->view_user("smartwatch/timkiem_thuonghieu", $data);
     $this->load->view_user("footer");

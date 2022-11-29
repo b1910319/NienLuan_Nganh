@@ -60,14 +60,6 @@
                   }
                 ?>
                 <?php
-              }else{
-                ?>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                  <i class="fa-solid fa-star" style="color: gray;"></i>
-                <?php
               }
               
             ?>

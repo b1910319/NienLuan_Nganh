@@ -18,6 +18,33 @@
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                       <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                      <?php
+                        foreach($data['count_sao'] as $key => $count_sao){
+                          if($sp['ma_sp'] == $count_sao['ma_sp']){
+                            $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                            ?>
+                              <div>
+                                <?php
+                                  for($i = 1; $i<=$tb; $i++){
+                                    ?>
+                                      <i class="fa-solid fa-star" style="color: #367e18;"></i>
+                                    <?php
+                                  }
+                                  if($tb<5){
+                                    for($i = 1; $i<=5-$tb; $i++){
+                                      ?>
+                                        <i class="fa-solid fa-star" style="color: gray;"></i>
+                                      <?php
+                                    }
+                                  }
+                                ?>
+                              </div>
+                              
+                              
+                            <?php
+                          }
+                        }
+                      ?>
                     </div>
                   </div>
                 <?php
@@ -30,6 +57,33 @@
                           class="img-responsive center-block"></a>
                       <h4 class="text-center fw-bold fs-5"><?php echo $sp['ten_sp'] ?></h4>
                       <h5 class="text-center gia fs-4"><?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></h5>
+                      <?php
+                        foreach($data['count_sao'] as $key => $count_sao){
+                          if($sp['ma_sp'] == $count_sao['ma_sp']){
+                            $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                            ?>
+                              <div>
+                                <?php
+                                  for($i = 1; $i<=$tb; $i++){
+                                    ?>
+                                      <i class="fa-solid fa-star" style="color: #367e18;"></i>
+                                    <?php
+                                  }
+                                  if($tb<5){
+                                    for($i = 1; $i<=5-$tb; $i++){
+                                      ?>
+                                        <i class="fa-solid fa-star" style="color: gray;"></i>
+                                      <?php
+                                    }
+                                  }
+                                ?>
+                              </div>
+                              
+                              
+                            <?php
+                          }
+                        }
+                      ?>
                     </div>
                   </div>
                 <?php
@@ -59,6 +113,33 @@
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
+              <?php
+                foreach($data['count_sao'] as $key => $count_sao){
+                  if($sp['ma_sp'] == $count_sao['ma_sp']){
+                    $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                    ?>
+                      <div>
+                        <?php
+                          for($i = 1; $i<=$tb; $i++){
+                            ?>
+                              <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <?php
+                          }
+                          if($tb<5){
+                            for($i = 1; $i<=5-$tb; $i++){
+                              ?>
+                                <i class="fa-solid fa-star" style="color: gray;"></i>
+                              <?php
+                            }
+                          }
+                        ?>
+                      </div>
+                      
+                      
+                    <?php
+                  }
+                }
+              ?>
               <div class="row tex-center ms-2">
               <?php
                 $ma_sp = $sp['ma_sp'];
@@ -94,6 +175,33 @@
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
+              <?php
+                foreach($data['count_sao'] as $key => $count_sao){
+                  if($sp['ma_sp'] == $count_sao['ma_sp']){
+                    $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                    ?>
+                      <div>
+                        <?php
+                          for($i = 1; $i<=$tb; $i++){
+                            ?>
+                              <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <?php
+                          }
+                          if($tb<5){
+                            for($i = 1; $i<=5-$tb; $i++){
+                              ?>
+                                <i class="fa-solid fa-star" style="color: gray;"></i>
+                              <?php
+                            }
+                          }
+                        ?>
+                      </div>
+                      
+                      
+                    <?php
+                  }
+                }
+              ?>
               <div class="row tex-center ms-2">
               <?php
                 $ma_sp = $sp['ma_sp'];
@@ -129,6 +237,33 @@
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
+              <?php
+                foreach($data['count_sao'] as $key => $count_sao){
+                  if($sp['ma_sp'] == $count_sao['ma_sp']){
+                    $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                    ?>
+                      <div>
+                        <?php
+                          for($i = 1; $i<=$tb; $i++){
+                            ?>
+                              <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <?php
+                          }
+                          if($tb<5){
+                            for($i = 1; $i<=5-$tb; $i++){
+                              ?>
+                                <i class="fa-solid fa-star" style="color: gray;"></i>
+                              <?php
+                            }
+                          }
+                        ?>
+                      </div>
+                      
+                      
+                    <?php
+                  }
+                }
+              ?>
               <div class="row tex-center ms-2">
               <?php
                 $ma_sp = $sp['ma_sp'];
@@ -164,6 +299,33 @@
                 <img src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>" class="d-block w-100">
               </a>
               <p class="text-center mt-3 sanpham_item_title" ><?php echo $sp['ten_sp'] ?></p>
+              <?php
+                foreach($data['count_sao'] as $key => $count_sao){
+                  if($sp['ma_sp'] == $count_sao['ma_sp']){
+                    $tb= ceil($count_sao['tongsao']/$count_sao['so_dg']) 
+                    ?>
+                      <div>
+                        <?php
+                          for($i = 1; $i<=$tb; $i++){
+                            ?>
+                              <i class="fa-solid fa-star" style="color: #FE8C23;"></i>
+                            <?php
+                          }
+                          if($tb<5){
+                            for($i = 1; $i<=5-$tb; $i++){
+                              ?>
+                                <i class="fa-solid fa-star" style="color: gray;"></i>
+                              <?php
+                            }
+                          }
+                        ?>
+                      </div>
+                      
+                      
+                    <?php
+                  }
+                }
+              ?>
               <div class="row tex-center ms-2">
               <?php
                 $ma_sp = $sp['ma_sp'];

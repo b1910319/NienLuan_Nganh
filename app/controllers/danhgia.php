@@ -6,29 +6,59 @@
       $thongbao = array();
       parent::__construct();
     }
-    // public function khuyenmai(){
-    //   session::init();
-    //   $this->load->view_admin("header");
-    //   //đơn hàng
-    //   $table_dh = "donhang";
-    //   $donhangM = $this->load->model('donhangM');
-    //   $dieukien = 'donhang.tinhtrang_dh = 0';
-    //   $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
-    //   $dieukien_vc = 'donhang.tinhtrang_dh = 1';
-    //   $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
-    //   $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-    //   $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    //   $level=session::get('level');
-    //   if($level == 1){
-    //     $this->load->view_admin("leftmenu", $data);
-    //   }else if($level == 2){
-    //     $this->load->view_admin("leftmenu_nhanvien", $data);
-    //   }
-    //   $khuyenmaiM = $this->load->model('khuyenmaiM');
-    //   $table = 'khuyenmai';
-    //   $data ['khuyenmai'] = $khuyenmaiM->khuyenmai_list($table);
-    //   $this->load->view_admin("khuyenmai/khuyenmai", $data); 
-    // }
+    public function danhgia(){
+      session::init();
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
+      $danhgiaM = $this->load->model('danhgiaM');
+      $table_dg = 'danhgia';
+      $table_sp = "sanpham";
+      $table_dm = "danhmuc_sanpham";
+      $table_th = "thuonghieu";
+      $data ['danhgia'] = $danhgiaM->danhgia_list($table_dg, $table_sp, $table_dm, $table_th);
+      $this->load->view_admin("danhgia/danhgia", $data); 
+    }
+    public function thongke(){
+      session::init();
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $level=session::get('level');
+      if($level == 1){
+        $this->load->view_admin("leftmenu", $data);
+      }else if($level == 2){
+        $this->load->view_admin("leftmenu_nhanvien", $data);
+      }
+      $danhgiaM = $this->load->model('danhgiaM');
+      $table_dg = 'danhgia';
+      $table_sp = "sanpham";
+      // $table_dm = "danhmuc_sanpham";
+      // $table_th = "thuonghieu";
+      $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
+      $data['count_sao_chitiet'] = $danhgiaM->count_sao_chitiet($table_sp,$table_dg);
+      $this->load->view_admin("danhgia/danhgia_thongke", $data); 
+    }
     public function danhgia_insert(){
       session::init();
       $danhgiaM = $this->load->model('danhgiaM');
@@ -142,38 +172,63 @@
     //   $result = $khuyenmaiM->khuyenmai_delete($table_km, $dieukien_km);
     //   header("Location:".BASE_URL."khuyenmai/khuyenmai");
     // }
-    // public function khuyenmai_deleteAll()
-    // {
-    //   session::init();
-    //   $level=session::get('level');
-    //   if($level == 1){
-    //     $khuyenmaiM = $this->load->model('khuyenmaiM');
-    //     $table_km = 'khuyenmai';
-    //     $result = $khuyenmaiM->khuyenmai_deleteAll($table_km);
-    //     header("Location:" . BASE_URL . "khuyenmai/khuyenmai");
-    //   }else if($level == 2){
-    //     header("Location:".BASE_URL."nhanvien/index");
-    //   }
-    // }
-    // public function khuyenmai_timkiem(){
-    //   session::init();
-    //   $this->load->view_admin("header");
-    //   //đơn hàng
-    //   $table_dh = "donhang";
-    //   $donhangM = $this->load->model('donhangM');
-    //   $dieukien = 'donhang.tinhtrang_dh = 0';
-    //   $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
-    //   $dieukien_vc = 'donhang.tinhtrang_dh = 1';
-    //   $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
-    //   $dieukien_dg = 'donhang.tinhtrang_dh = 2';
-    //   $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    //   $this->load->view_admin("leftmenu", $data);
-    //   $khuyenmaiM = $this->load->model('khuyenmaiM');
-    //   $table_km = 'khuyenmai';
-    //   $tukhoa = $_POST['tukhoa'];
-    //   $dieukien_km = "khuyenmai.ten_km LIKE '%$tukhoa%'" ;
-    //   $data ['khuyenmai'] = $khuyenmaiM->khuyenmai_timkiem($table_km, $dieukien_km);
-    //   $this->load->view_admin("khuyenmai/khuyenmai_timkiem", $data); 
-    // }
+    public function danhgia_deleteAll()
+    {
+      session::init();
+      $level=session::get('level');
+      if($level == 1){
+        $danhgiaM = $this->load->model('danhgiaM');
+        $table = 'danhgia';
+        $result = $danhgiaM->danhgia_deleteAll($table);
+        header("Location:" . BASE_URL . "danhgia/danhgia");
+      }else if($level == 2){
+        header("Location:".BASE_URL."nhanvien/index");
+      }
+    }
+    public function danhgia_timkiem(){
+      session::init();
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      $danhgiaM = $this->load->model('danhgiaM');
+      $table_dg = 'danhgia';
+      $table_sp = "sanpham";
+      $table_dm = "danhmuc_sanpham";
+      $table_th = "thuonghieu";
+      $tukhoa = $_POST['tukhoa'];
+      $dieukien_dg = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+      $data ['danhgia'] = $danhgiaM->danhgia_timkiem($table_dg, $table_sp, $table_dm, $table_th, $dieukien_dg);
+      $this->load->view_admin("danhgia/danhgia_timkiem", $data); 
+    }
+    public function thongke_timkiem(){
+      session::init();
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      $danhgiaM = $this->load->model('danhgiaM');
+      $table_dg = 'danhgia';
+      $table_sp = "sanpham";
+      $tukhoa = $_POST['tukhoa'];
+      $dieukien_tk = "sanpham.ten_sp LIKE '%$tukhoa%'" ;
+      $data ['danhgia_thongke_timkiem'] = $danhgiaM->danhgia_thongke_timkiem($table_dg, $table_sp, $dieukien_tk);
+      $data['count_sao_chitiet'] = $danhgiaM->count_sao_chitiet($table_sp,$table_dg);
+      $this->load->view_admin("danhgia/danhgia_thongke_timkiem", $data); 
+    }
   }
 ?>

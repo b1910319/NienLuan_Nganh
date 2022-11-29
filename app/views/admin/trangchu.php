@@ -296,6 +296,7 @@
                     <th scope="col">Số lượng</th>
                     <th scope="col">Chi tiết</th>
                     <th scope="col">Hình ảnh</th>
+                    <th scope="col">Quản lý</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -305,12 +306,12 @@
                     $i++;
                     ?>
                   <tr>
-                    <th scope="row" style="width: 5%;"><?php echo $i ?></th>
-                    <td style="width: 5%;"><?php echo $sp['ten_sp'] ?></td>
-                    <td style="width: 5%;">
+                    <th scope="row"><?php echo $i ?></th>
+                    <td ><?php echo $sp['ten_sp'] ?></td>
+                    <td style="width: 10%;" >
                       <?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?></td>
-                    <td style="width: 5%;"><?php echo $sp['soluong_sp'] ?></td>
-                    <td style="width: 20%;">
+                    <td><?php echo $sp['soluong_sp'] ?></td>
+                    <td >
                       <div class="row ">
                         <div class="col-md-12">
                           <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work" data-offset="20"
@@ -336,12 +337,24 @@
                         </div>
                       </div>
                     </td>
-                    <td style="width: 15%;">
-                      <img style="width: 40%;"
+                    <td>
+                      <img style="width: 20%;"
                         src="<?php echo BASE_URL ?>public/uploads/sanpham/<?php echo $sp['hinh_sp'] ?>"
                         alt="">
                     </td>
-                    
+                    <td style="width: 10%;" >
+                      <a href="<?php echo BASE_URL ?>sanpham/sanpham_edit/<?php echo $sp['ma_sp'] ?>">
+                        <button type="button" class="btn sua">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                      </a>
+                      <a onclick="return confirm('Bạn có muốn xóa sản phẩm <?php echo $sp['ten_sp'] ?> không?')"
+                        href="<?php echo BASE_URL ?>sanpham/sanpham_delete/<?php echo $sp['ma_sp'] ?>">
+                        <button type="button" class="btn xoa">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </a>
+                    </td>
                   </tr>
                   <?php
                   }
