@@ -26,7 +26,7 @@
         <tr class="tr_table">
           <th scope="col">Sản phẩm</th>
           <th scope="col">Tổng số sao</th>
-          <th scope="col">Số đánh giá</th>
+          <th scope="col">Số lượt đánh giá</th>
           <th scope="col">Trung bình</th>
         </tr>
       </thead>
@@ -39,9 +39,8 @@
                   <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                       <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse">
-                          <?php echo $count_sao['ten_sp'] ?></a>
+                        <h4 class="panel-title" style="font-weight: bold;">
+                          <?php echo $count_sao['ten_sp'] ?>
                         </h4>
                       </div>
                       <div id="collapse" class="panel-collapse collapse in">
