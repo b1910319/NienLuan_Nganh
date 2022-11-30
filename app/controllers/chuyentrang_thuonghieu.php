@@ -40,6 +40,9 @@ class chuyentrang_thuonghieu extends controller
     //hiển thị smartwatch
     $dieukien4 = "sanpham.ma_dm = 11 AND sanpham.ma_th = '$ma_th'";
     $data['sanpham_ctth_smartwatch'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien4);
+    $danhgiaM = $this->load->model("danhgiaM");
+    $table_dg = "danhgia";
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("header", $data);
     $this->load->view_user("chuyentrang_thuonghieu/samsung", $data);
     $this->load->view_user("footer");

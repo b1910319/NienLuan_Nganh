@@ -119,6 +119,7 @@ class laptop extends controller
     $table_dg = 'danhgia';
     $dieukien_dg = "danhgia.ma_sp = '$ma_sp'";
     $data['danhgia_ma_sp'] = $danhgiaM->danhgia_ma_sp($table_dg, $dieukien_dg);
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("laptop/chitietsanpham", $data);
     $this->load->view_user("footer");
   }
@@ -188,6 +189,7 @@ class laptop extends controller
     $table_dg = 'danhgia';
     $dieukien_dg = "danhgia.ma_sp = '$ma_sp'";
     $data['danhgia_ma_sp'] = $danhgiaM->danhgia_ma_sp($table_dg, $dieukien_dg);
+    $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
     $this->load->view_user("laptop/chitietsanpham_danhgia", $data);
     $this->load->view_user("footer");
   }
