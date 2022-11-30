@@ -241,7 +241,7 @@
           </table>
         </div>
         <!-- khuyến mãi  -->
-        <div class="khuyenmai">
+        <div class="">
           <div class="">
             <div class="plans">
               <div class="title" style="font-weight: bold;">Khuyến mãi</div>

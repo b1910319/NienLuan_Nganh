@@ -184,6 +184,33 @@
           <?php
         }
       ?>
+      <div class="khuyenmai">
+        <div class="">
+          <div class="plans">
+            <?php
+              if($data['khuyenmai']){
+                ?>
+                  <div class="title khuyenmai_title" style="font-weight: bold; color: #E51F22; font-size: 20px;"> <i class="fa-solid fa-gift" style="font-size:25px ;"></i> &ensp;Khuyến mãi</div>
+                <?php
+                foreach($data['khuyenmai'] as $key => $km){
+                  ?>
+                    <label class="plan basic-plan" for="1">
+                      <input type="hidden" name="ma_km" id="1" value="<?php echo $km['ma_km'] ?>" />
+                      <div class="plan-content">
+                        <img loading="lazy" src="<?php echo BASE_URL ?>public/img/logo/sale.png" alt="" />
+                        <div class="plan-details">
+                          <span><?php echo $km['ten_km'] ?></span>
+                          <p>Đơn tối thiểu <?php echo number_format($km['dieukien_km'], 0, ',', '.') . ' <sup>đ</sup>'.' được giảm '?><?php echo $km['phantram_km'].'%' ?></p>
+                        </div>
+                      </div>
+                    </label>
+                  <?php
+                }
+              }
+            ?>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-5" style="border-left: 2px solid #c7c7c7;">
       <?php 

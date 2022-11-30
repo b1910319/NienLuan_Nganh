@@ -120,6 +120,11 @@ class laptop extends controller
     $dieukien_dg = "danhgia.ma_sp = '$ma_sp'";
     $data['danhgia_ma_sp'] = $danhgiaM->danhgia_ma_sp($table_dg, $dieukien_dg);
     $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
+    //hiển thị khuyến mãi
+    $khuyenmaiM = $this->load->model('khuyenmaiM');
+    $table_km = 'khuyenmai';
+    $dieukien_km = "khuyenmai.tinhtrang_km = 0 AND khuyenmai.ma_km !=6";
+    $data['khuyenmai']= $khuyenmaiM-> khuyenmai_dieukien($table_km, $dieukien_km);
     $this->load->view_user("laptop/chitietsanpham", $data);
     $this->load->view_user("footer");
   }
@@ -190,6 +195,11 @@ class laptop extends controller
     $dieukien_dg = "danhgia.ma_sp = '$ma_sp'";
     $data['danhgia_ma_sp'] = $danhgiaM->danhgia_ma_sp($table_dg, $dieukien_dg);
     $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
+    //hiển thị khuyến mãi
+    $khuyenmaiM = $this->load->model('khuyenmaiM');
+    $table_km = 'khuyenmai';
+    $dieukien_km = "khuyenmai.tinhtrang_km = 0 AND khuyenmai.ma_km !=6";
+    $data['khuyenmai']= $khuyenmaiM-> khuyenmai_dieukien($table_km, $dieukien_km);
     $this->load->view_user("laptop/chitietsanpham_danhgia", $data);
     $this->load->view_user("footer");
   }
