@@ -156,6 +156,50 @@ class nhanvien extends controller
     $this->load->view_admin("leftmenu_nhanvien", $data);
     $this->load->view_admin("nhanvien/nhanvien_edit", $data);
   }
+  public function nhanvien_matkhau($ma_nv)
+  {
+    session::init();
+    $this->load->view_admin("header");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    $dieukien = "nhanvien.ma_nv='$ma_nv'";
+    $data['nhanvien_ma'] = $nhanvienM->nhanvien_ma($table_nv, $dieukien);
+    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $this->load->view_admin("nhanvien/nhanvien_matkhau", $data);
+  }
+  public function nhanvien_update_matkhau($ma_nv)
+  {
+    session::init();
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    $pass_cu = md5($_POST['pass_cu']);
+    $pass_moi = md5($_POST['pass_moi']);
+    $dieukien = "nhanvien.ma_nv='$ma_nv'";
+    $data['nhanvien_ma'] = $nhanvienM->nhanvien_ma($table_nv, $dieukien);
+    if($data['nhanvien_ma']){
+      foreach($data['nhanvien_ma'] as $key => $nv){
+        $i = strcmp($pass_cu, $nv['pass_nv']);
+        if($i == 0){
+          $data = array(
+            'pass_nv' => $pass_moi
+          );
+          $result = $nhanvienM->nhanvien_update($table_nv, $data, $dieukien);
+          header("Location:" . BASE_URL . "nhanvien/nhanvien");
+        }else{
+          header("Location:" . BASE_URL . "nhanvien/nhanvien_matkhau/".$nv['ma_nv']);
+        }
+      }
+    }
+  }
   public function nhanvien_update($ma_nv)
   {
     session::init();

@@ -21,7 +21,7 @@ use Carbon\Carbon;
       return $this->db->select($sql);
     }
     public function donhang_sdt($table_dh, $dieukien){
-      $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc, giolap_dh desc ";
+      $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc ";
       return $this->db->select($sql);
     }
     public function dem_nhanvien_homnay($table_dh, $ngay){

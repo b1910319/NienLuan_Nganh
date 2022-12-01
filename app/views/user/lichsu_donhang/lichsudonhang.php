@@ -61,9 +61,9 @@
                       <?php
                     } else if($dh['tinhtrang_dh'] == 1){
                       ?>
-                        <button type="button" class="btn vanchuyen" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Đang vận chuyển">
+                        <!-- <button type="button" class="btn vanchuyen" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Đang vận chuyển">
                           <i class="fa-solid fa-truck-fast"></i>
-                        </button>
+                        </button> -->
                         <a href="<?php echo BASE_URL ?>index/danhan/<?php echo $dh['ma_dh'] ?>">
                           <button type="button" class="btn danhan" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Xác nhận đã nhận hàng">
                             <i class="fa-solid fa-check-to-slot"></i>

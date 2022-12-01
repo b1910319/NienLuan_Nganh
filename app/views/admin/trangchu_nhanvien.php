@@ -71,7 +71,7 @@
                 <th scope="col">Tên</th>
                 <th scope="col">Số điện thoại</th>
                 <th scope="col">Địa chỉ</th>
-                <th scope="col">Cập nhật</th>
+                <th scope="col">Quản lý</th>
               </tr>
             </thead>
             <tbody>
@@ -87,6 +87,11 @@
                           <a href="<?php echo BASE_URL ?>nhanvien/nhanvien_capnhat/<?php echo $nv_m['ma_nv'] ?>">
                             <button type="button" class="btn sua">
                               <i class="fas fa-edit"></i> Cập nhật
+                            </button>
+                          </a>
+                          <a href="<?php echo BASE_URL ?>nhanvien/nhanvien_matkhau/<?php echo $nv_m['ma_nv'] ?>">
+                            <button type="button" class="btn xoa">
+                              <i class="fa-solid fa-lock"></i> Đổi mật khẩu
                             </button>
                           </a>
                         </td>

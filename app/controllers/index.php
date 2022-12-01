@@ -139,7 +139,7 @@ class index extends controller
     $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $table_km ="khuyenmai";
-    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m,$table_km, $dieukien1);
+    $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm,$table_km, $dieukien1);
     //chi tiết đơn hàng
     $table_ctdh = 'chitiet_donhang';
     $chitiet_donhangM = $this->load->model('chitiet_donhangM');
