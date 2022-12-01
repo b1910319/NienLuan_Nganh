@@ -185,13 +185,13 @@
             <span class="badge badge-primary float-right"></span>
           </a>
         </li>
-        <!-- <li>
-          <a href="<?php echo BASE_URL ?>danhgia/danhgia">
-            <i class="fa-solid fa-star"></i>
-            <span> Đánh giá </span>
+        <li>
+          <a href="<?php echo BASE_URL ?>luotxem/luotxem">
+            <i class="fa-solid fa-eye"></i>
+            <span> Lượt xem sản phẩm </span>
             <span class="badge badge-primary float-right"></span>
           </a>
-        </li> -->
+        </li>
         <li>
           <a href="javascript: void(0);">
             <i class="fa-solid fa-star"></i>

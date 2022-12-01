@@ -57,7 +57,8 @@ class smartwatch extends controller
     //thêm lượt xem cho sản phẩm
     $luotxemM = $this->load->model('luotxemM');
     $table_lx = "luotxem";
-    $data['luotxem_list'] = $luotxemM->luotxem_list($table_lx);
+    $table_sp = "sanpham";
+    $data['luotxem_list'] = $luotxemM->luotxem_list($table_lx, $table_sp);
     $i = 0;
     foreach($data['luotxem_list'] as $key => $lx){
       if($lx['ma_sp'] == $ma_sp){
@@ -155,7 +156,8 @@ class smartwatch extends controller
     //thêm lượt xem cho sản phẩm
     $luotxemM = $this->load->model('luotxemM');
     $table_lx = "luotxem";
-    $data['luotxem_list'] = $luotxemM->luotxem_list($table_lx);
+    $table_sp = "sanpham";
+    $data['luotxem_list'] = $luotxemM->luotxem_list($table_lx, $table_sp);
     $i = 0;
     foreach($data['luotxem_list'] as $key => $lx){
       if($lx['ma_sp'] == $ma_sp){

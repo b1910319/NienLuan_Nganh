@@ -7,14 +7,14 @@
     public function luotxem_insert($table, $data){
       return $this->db->insert($table, $data);
     }
-    public function luotxem_list($table){
-      $sql = "SELECT * FROM $table ORDER BY so_lx desc";
+    public function luotxem_list($table_lx, $table_sp){
+      $sql = "SELECT * FROM $table_lx join $table_sp on $table_lx.ma_sp = $table_sp.ma_sp ORDER BY so_lx desc";
       return $this->db->select($sql);
     }
-    // public function khuyenmai_dieukien($table, $dieukien){
-    //   $sql = "SELECT * FROM $table WHERE $dieukien ORDER BY ma_km desc";
-    //   return $this->db->select($sql);
-    // }
+    public function luotxem_dieukien($table_lx, $table_sp, $dieukien){
+      $sql = "SELECT * FROM $table_lx join $table_sp on $table_lx.ma_sp = $table_sp.ma_sp where $dieukien ORDER BY so_lx desc";
+      return $this->db->select($sql);
+    }
     // public function khuyenmai_ma($table, $dieukien){
     //   $sql = "SELECT * FROM $table where $dieukien";
     //   return $this->db->select($sql);
