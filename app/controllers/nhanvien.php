@@ -153,7 +153,12 @@ class nhanvien extends controller
     $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
     $dieukien_dg = 'donhang.tinhtrang_dh = 2';
     $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
-    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $level = session::get('level');
+    if ($level == 1) {
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("nhanvien/nhanvien_edit", $data);
   }
   public function nhanvien_matkhau($ma_nv)
@@ -173,7 +178,12 @@ class nhanvien extends controller
     $table_nv = 'nhanvien';
     $dieukien = "nhanvien.ma_nv='$ma_nv'";
     $data['nhanvien_ma'] = $nhanvienM->nhanvien_ma($table_nv, $dieukien);
-    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $level = session::get('level');
+    if ($level == 1) {
+      $this->load->view_admin("leftmenu", $data);
+    }else if($level == 2){
+      $this->load->view_admin("leftmenu_nhanvien", $data);
+    }
     $this->load->view_admin("nhanvien/nhanvien_matkhau", $data);
   }
   public function nhanvien_update_matkhau($ma_nv)
@@ -193,7 +203,11 @@ class nhanvien extends controller
             'pass_nv' => $pass_moi
           );
           $result = $nhanvienM->nhanvien_update($table_nv, $data, $dieukien);
-          header("Location:" . BASE_URL . "nhanvien/nhanvien");
+          if($nv['level'] == 1){
+            header("Location:" . BASE_URL . "admin/index");
+          }else if($nv['level'] == 2){
+            header("Location:" . BASE_URL . "nhanvien/nhanvien");
+          }
         }else{
           header("Location:" . BASE_URL . "nhanvien/nhanvien_matkhau/".$nv['ma_nv']);
         }

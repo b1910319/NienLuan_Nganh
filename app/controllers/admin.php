@@ -73,6 +73,12 @@ class admin extends controller
       $thuonghieuM = $this->load->model('thuonghieuM');
       $table_th = 'thuonghieu';
       $data['sanpham_soluong_min'] = $sanphamM->sanpham_soluong($table_sp, $table_dm, $table_nv, $table_ncc, $table_lsp, $table_th, $dieukien_soluong);
+      $ma_nv = session::get('ma_nv');
+      //lấy thông tin nhân viên
+      $table_nv = 'nhanvien';
+      $nhanvienM = $this->load->model('nhanvienM');
+      $dieukien_nv = "nhanvien.ma_nv = '$ma_nv'";
+      $data['nhanvien_ma'] = $nhanvienM->nhanvien_ma($table_nv, $dieukien_nv);
       $this->load->view_admin("trangchu", $data);
     } else if ($level == 2) {
       header("Location:" . BASE_URL . "nhanvien/index");
