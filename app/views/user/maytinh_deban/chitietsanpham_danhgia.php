@@ -221,6 +221,7 @@
                 <i class="fa-solid fa-circle-dollar-to-slot"></i> &ensp;
                 <?php echo number_format($sp['gia_sp'], 0, ',', '.') . ' <sup>đ</sup>'  ?>
                 <span style="color: gray; text-decoration: line-through;"><?php echo number_format($sp['gia_sp']+200000, 0, ',', '.') . ' <sup>đ</sup>'  ?></span>
+                <p style="font-size:15px ; color: gray;">Số lượng sản phẩm còn lại: <?php echo $sp['soluong_sp'] ?></p>
               </div>
             </div>
             <div class="mota">
