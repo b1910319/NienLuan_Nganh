@@ -40,6 +40,29 @@ class dienthoai extends controller
   public function chitiet_sanpham($ma_sp, $ma_th, $ma_dm)
   { 
     session::init();
+    //thêm lượt xem cho sản phẩm
+    $luotxemM = $this->load->model('luotxemM');
+    $table_lx = "luotxem";
+    $data['luotxem_list'] = $luotxemM->luotxem_list($table_lx);
+    $i = 0;
+    foreach($data['luotxem_list'] as $key => $lx){
+      if($lx['ma_sp'] == $ma_sp){
+        $so_lx = $lx['so_lx'] + 1;
+        $data = array(
+          'so_lx' => $so_lx
+        );
+        $dieukien_lx = "luotxem.ma_sp = '$ma_sp'";
+        $result = $luotxemM->luotxem_update($table_lx, $data, $dieukien_lx );
+        $i++;
+      }
+    }
+    if($i==0){
+      $data = array(
+        'so_lx' => 1,
+        'ma_sp' => $ma_sp
+      );
+      $result = $luotxemM->luotxem_insert($table_lx, $data);
+    }
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
@@ -111,6 +134,29 @@ class dienthoai extends controller
   public function chitiet_sanpham_dg($ma_sp, $ma_th, $ma_dm)
   { 
     session::init();
+    //thêm lượt xem cho sản phẩm
+    $luotxemM = $this->load->model('luotxemM');
+    $table_lx = "luotxem";
+    $data['luotxem_list'] = $luotxemM->luotxem_list($table_lx);
+    $i = 0;
+    foreach($data['luotxem_list'] as $key => $lx){
+      if($lx['ma_sp'] == $ma_sp){
+        $so_lx = $lx['so_lx'] + 1;
+        $data = array(
+          'so_lx' => $so_lx
+        );
+        $dieukien_lx = "luotxem.ma_sp = '$ma_sp'";
+        $result = $luotxemM->luotxem_update($table_lx, $data, $dieukien_lx );
+        $i++;
+      }
+    }
+    if($i==0){
+      $data = array(
+        'so_lx' => 1,
+        'ma_sp' => $ma_sp
+      );
+      $result = $luotxemM->luotxem_insert($table_lx, $data);
+    }
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
     $table_dm = 'danhmuc_sanpham';
