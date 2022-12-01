@@ -843,10 +843,10 @@
           if($hd['status'] == 0 && $hd['parent'] == 0){
             ?>
               <div style="font-weight: bold;">
-                <i class="fa-solid fa-user-large" style="font-size: 20px; color:#8CBA51 ;"></i>&ensp; <?php echo $hd['ten_k'] ?>
+                <i class="fa-solid fa-user-large" style="font-size: 20px; color:#FE8C23 ;"></i>&ensp; <?php echo $hd['ten_k'] ?>
               </div>
               <p class="mt-2"><?php echo $hd['noidung_hd'] ?></p>
-              <p style="color: blue;">Trả lời - <span style="color:gray ;"><?php echo $hd['thoigian_hd'] ?></span></p>
+              <p style="color: gray;"><i class="fa-solid fa-clock"></i> <span style="color:gray ;"><?php echo $hd['thoigian_hd'] ?></span></p>
               <hr>
             <?php
           }
@@ -856,7 +856,7 @@
                 <div class="alert alert-dark ms-5" role="alert">
                   <i class="fa-solid fa-user-large" style="font-size: 20px; color:#E51F22 ;"></i>&ensp; <b><?php echo $hd1['ten_nv'] ?></b> <br>
                   <?php echo $hd1['noidung_hd'] ?>
-                  <p style="color: blue;" class="mt-2">Trả lời - <span style="color:gray ;"><?php echo $hd1['thoigian_hd'] ?></span></p>
+                  <p style="color: blue;" class="mt-2"><i class="fa-solid fa-clock"></i> <span style="color:gray ;"><?php echo $hd1['thoigian_hd'] ?></span></p>
                 </div>
               <?php
             }
