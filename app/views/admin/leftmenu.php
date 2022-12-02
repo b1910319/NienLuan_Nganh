@@ -186,7 +186,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo BASE_URL ?>luotxem/luotxem">
+          <a href="<?php echo BASE_URL ?>luotxem/luotxem/DESC">
             <i class="fa-solid fa-eye"></i>
             <span> Lượt xem sản phẩm </span>
             <span class="badge badge-primary float-right"></span>

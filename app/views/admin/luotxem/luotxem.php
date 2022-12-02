@@ -13,6 +13,17 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-10"></div>
+      <div class="col-2">
+        <a href="<?php echo BASE_URL ?>luotxem/luotxem/ASC">
+          <button type="button" class="btn btn-warning">Tăng dần <i class="fa-solid fa-sort-up"></i></button>
+        </a>
+        <a href="<?php echo BASE_URL ?>luotxem/luotxem/DESC">
+          <button type="button" class="btn btn-warning">Giảm dần <i class="fa-solid fa-sort-down"></i></button>
+        </a>
+      </div>
+    </div>
     <table class="table table-hover">
       <thead>
         <tr class="tr_table">

@@ -6,7 +6,7 @@
       $thongbao = array();
       parent::__construct();
     }
-    public function luotxem(){
+    public function luotxem($orderby){
       session::init();
       $level=session::get('level');
       if($level == 1){
@@ -24,7 +24,8 @@
         $luotxemM = $this->load->model('luotxemM');
         $table_lx = 'luotxem';
         $table_sp = 'sanpham';
-        $data ['luotxem'] = $luotxemM->luotxem_list($table_lx, $table_sp);
+        $orderby = $orderby;
+        $data ['luotxem'] = $luotxemM->luotxem_list_sort($table_lx, $table_sp, $orderby);
         $this->load->view_admin("luotxem/luotxem", $data);
       }else if($level == 2){
         header("Location:".BASE_URL."nhanvien/index");
