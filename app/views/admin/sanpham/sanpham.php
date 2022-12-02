@@ -217,11 +217,24 @@
           $level=session::get('level');
           if($level == 1){
             ?>
-              <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>sanpham/sanpham_deleteAll">
-                <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
-                  <i class="fas fa-trash-alt"></i> Xoá tất cả
-                </button>
-              </a>
+            <div class="row">
+              <div class="col-10">
+                <a onclick="return confirm('Bạn có muốn xóa tất cả không?')" href="<?php echo BASE_URL ?>sanpham/sanpham_deleteAll">
+                  <button type="button" class="btn" style="background-color: red; font-weight: bold; margin-bottom: 10px;">
+                    <i class="fas fa-trash-alt"></i> Xoá tất cả
+                  </button>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="<?php echo BASE_URL ?>sanpham/sanpham_sort/ASC">
+                  <button type="button" class="btn btn-warning">Gía &ensp; <i class="fa-solid fa-angles-up"></i></button>
+                </a>
+                <a href="<?php echo BASE_URL ?>sanpham/sanpham_sort/DESC">
+                  <button type="button" class="btn btn-warning">Gía &ensp; <i class="fa-solid fa-angles-down"></i></button>
+                </a>
+              </div>
+            </div>
+              
             <?php
           }
         ?>

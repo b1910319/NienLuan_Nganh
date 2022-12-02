@@ -52,6 +52,52 @@ class sanpham extends controller
       header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
+  public function sanpham_sort($orderby)
+  {
+    session::init();
+    $level = session::get('level');
+    if ($level == 1) {
+      $this->load->view_admin("header");
+      //đơn hàng
+      $table_dh = "donhang";
+      $donhangM = $this->load->model('donhangM');
+      $dieukien = 'donhang.tinhtrang_dh = 0';
+      $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
+      $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+      $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+      $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+      $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+      $this->load->view_admin("leftmenu", $data);
+      // danh mục sản phẩm
+      $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
+      $table_dm = 'danhmuc_sanpham';
+      $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+      // thương hiệu sản phẩm
+      $thuonghieuM = $this->load->model('thuonghieuM');
+      $table_th = 'thuonghieu';
+      $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
+      $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
+      // loại sản phẩm
+      $loai_sanphamM = $this->load->model('loai_sanphamM');
+      $table_lsp = 'loai_sanpham';
+      $data['loai_sanpham'] = $loai_sanphamM->loai_sanpham_list($table_lsp, $table_dm);
+      // nhà cung cấp
+      $nhacungcapM = $this->load->model('nhacungcapM');
+      $table_ncc = 'nhacungcap';
+      $data['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
+      // nhân viên
+      $nhanvienM = $this->load->model('nhanvienM');
+      $table_nv = 'nhanvien';
+      // sản phẩm
+      $sanphamM = $this->load->model('sanphamM');
+      $table_sp = 'sanpham';
+      $orderby = $orderby;
+      $data['sanpham'] = $sanphamM->sanpham_sort($table_sp, $table_dm, $table_nv, $table_ncc, $table_lsp, $table_th, $orderby);
+      $this->load->view_admin("sanpham/sanpham_sort", $data);
+    } else if ($level == 2) {
+      header("Location:" . BASE_URL . "nhanvien/index");
+    }
+  }
   public function sanpham_insert()
   {
     session::init();

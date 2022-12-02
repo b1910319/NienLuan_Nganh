@@ -14,13 +14,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-10"></div>
-      <div class="col-2">
+      <div class="col-9"></div>
+      <div class="col-3">
         <a href="<?php echo BASE_URL ?>luotxem/luotxem/ASC">
-          <button type="button" class="btn btn-warning">Tăng dần <i class="fa-solid fa-sort-up"></i></button>
+          <button type="button" class="btn btn-warning">Lượt xem &ensp; <i class="fa-solid fa-angles-up"></i></button>
         </a>
         <a href="<?php echo BASE_URL ?>luotxem/luotxem/DESC">
-          <button type="button" class="btn btn-warning">Giảm dần <i class="fa-solid fa-sort-down"></i></button>
+          <button type="button" class="btn btn-warning">Lượt xem &ensp; <i class="fa-solid fa-angles-down"></i></button>
         </a>
       </div>
     </div>
