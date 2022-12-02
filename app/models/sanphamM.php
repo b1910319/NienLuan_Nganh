@@ -31,6 +31,10 @@
       $sql = "SELECT * FROM $table  WHERE $dieukien ORDER BY ma_sp desc ";
       return $this->db->select($sql);
     }
+    public function sanpham_ma_dm_orderby($table_sp, $dieukien, $orderby){
+      $sql = "SELECT * FROM $table_sp  WHERE $dieukien ORDER BY gia_sp $orderby ";
+      return $this->db->select($sql);
+    }
     public function sanpham_ma($table, $dieukien){
       $sql = "SELECT * FROM $table where $dieukien";
       return $this->db->select($sql);

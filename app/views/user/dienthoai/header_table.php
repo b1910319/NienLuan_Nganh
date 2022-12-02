@@ -149,6 +149,16 @@
         </ul>
       </div>
     </div>
+    <div class="col-2">
+      <a href="<?php echo BASE_URL ?>table/timkiem/ASC">
+        <button style="width: 100%;" type="button" class="btn btn-warning ">Gía &ensp; <i class="fa-solid fa-angles-up"></i></button>
+      </a>
+    </div>
+    <div class="col-2">
+      <a href="<?php echo BASE_URL ?>table/timkiem/DESC">
+        <button style="width: 100%;" type="button" class="btn btn-warning ">Gía &ensp; <i class="fa-solid fa-angles-down"></i></button>
+      </a>
+    </div>
   </div>
   <div class="row mb-4 timkiem_hang ">
     <?php
