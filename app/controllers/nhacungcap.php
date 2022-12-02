@@ -76,6 +76,17 @@
         header("Location:".BASE_URL."nhanvien/index");
       }
     }
+    public function nhacungcap_tuychinh($ma_ncc, $tinhtrang_ncc){
+      session::init();
+      $nhacungcapM = $this->load->model('nhacungcapM');
+      $table = 'nhacungcap';
+      $dieukien = "nhacungcap.ma_ncc='$ma_ncc'" ;
+      $data = array(
+        'tinhtrang_ncc' => $tinhtrang_ncc
+      );
+      $result = $nhacungcapM->nhacungcap_update($table, $data, $dieukien);
+      header("Location:".BASE_URL."nhacungcap/nhacungcap");
+    }
     public function nhacungcap_update($ma_ncc){
       session::init();
       $level=session::get('level');

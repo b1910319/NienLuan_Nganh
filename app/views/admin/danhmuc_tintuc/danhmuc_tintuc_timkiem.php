@@ -53,6 +53,25 @@
                       <i class="fas fa-trash-alt"></i>
                     </button>
                   </a>
+                  <?php
+                    if($dmtt['tinhtrang_dmtt'] == 0){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_tuychinh/<?php echo $dmtt['ma_dmtt'] ?>/1">
+                          <button type="button" class="btn an">
+                            Ẩn
+                          </button>
+                        </a>
+                      <?php
+                    }else if($dmtt['tinhtrang_dmtt'] == 1){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>danhmuc_tintuc/danhmuc_tintuc_tuychinh/<?php echo $dmtt['ma_dmtt'] ?>/0">
+                          <button type="button" class="btn hien">
+                            Hiện
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
                 </td>
               </tr>
             <?php

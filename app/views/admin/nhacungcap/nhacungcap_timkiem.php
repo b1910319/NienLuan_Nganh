@@ -52,6 +52,25 @@
                       <i class="fas fa-trash-alt"></i>
                     </button>
                   </a>
+                  <?php
+                    if($ncc['tinhtrang_ncc'] == 0){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>nhacungcap/nhacungcap_tuychinh/<?php echo $ncc['ma_ncc'] ?>/1">
+                          <button type="button" class="btn an">
+                            Ẩn
+                          </button>
+                        </a>
+                      <?php
+                    }else if($ncc['tinhtrang_ncc'] == 1){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>nhacungcap/nhacungcap_tuychinh/<?php echo $ncc['ma_ncc'] ?>/0">
+                          <button type="button" class="btn hien">
+                            Hiện
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
                 </td>
               </tr>
             <?php

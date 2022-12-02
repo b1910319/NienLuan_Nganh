@@ -61,6 +61,17 @@ class danhmuc_sanpham extends controller
       header("Location:".BASE_URL."nhanvien/index");
     }
   }
+  public function danhmuc_sanpham_tuychinh($ma_dm, $tinhtrang_dm){
+    session::init();
+    $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
+    $table = 'danhmuc_sanpham';
+    $dieukien = "ma_dm='$ma_dm'" ;
+    $data = array(
+      'tinhtrang_dm' => $tinhtrang_dm
+    );
+    $result = $danhmuc_sanphamM->danhmuc_sanpham_update($table, $data, $dieukien);
+    header("Location:".BASE_URL."danhmuc_sanpham/danhmuc_sanpham");
+  }
   public function danhmuc_sanpham_edit($ma_dm)
   {
     session::init();

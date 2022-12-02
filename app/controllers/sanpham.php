@@ -24,9 +24,10 @@ class sanpham extends controller
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
       // danh mục sản phẩm
+      $dieukien_dm = "tinhtrang_dm = 0";
       $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
       $table_dm = 'danhmuc_sanpham';
-      $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
+      $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_ma($table_dm, $dieukien_dm);
       // thương hiệu sản phẩm
       $thuonghieuM = $this->load->model('thuonghieuM');
       $table_th = 'thuonghieu';
@@ -39,7 +40,8 @@ class sanpham extends controller
       // nhà cung cấp
       $nhacungcapM = $this->load->model('nhacungcapM');
       $table_ncc = 'nhacungcap';
-      $data['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
+      $dieukien_ncc = 'tinhtrang_ncc = 0';
+      $data['nhacungcap'] = $nhacungcapM->nhacungcap_ma($table_ncc, $dieukien_ncc);
       // nhân viên
       $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
@@ -1496,7 +1498,8 @@ class sanpham extends controller
       //màu
       $mauM = $this->load->model('mauM');
       $table_m = 'mau';
-      $data['mau'] = $mauM->mau_list($table_m);
+      $dieukien_m = "tinhtrang_m = 0";
+      $data['mau'] = $mauM->mau_ma($table_m,$dieukien_m);
 
       $mau_sanphamM = $this->load->model("mau_sanphamM");
       $table_msp = 'mau_sanpham';

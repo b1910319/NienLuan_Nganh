@@ -48,6 +48,25 @@
                       <i class="fas fa-trash-alt"></i>
                     </button>
                   </a>
+                  <?php
+                    if($m['tinhtrang_m'] == 0){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>mau/mau_tuychinh/<?php echo $m['ma_m'] ?>/1">
+                          <button type="button" class="btn an">
+                            Ẩn
+                          </button>
+                        </a>
+                      <?php
+                    }else if($m['tinhtrang_m'] == 1){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>mau/mau_tuychinh/<?php echo $m['ma_m'] ?>/0">
+                          <button type="button" class="btn hien">
+                            Hiện
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
                 </td>
               </tr>
             <?php

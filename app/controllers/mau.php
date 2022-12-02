@@ -29,6 +29,17 @@
         header("Location:".BASE_URL."nhanvien/index");
       }
     }
+    public function mau_tuychinh($ma_m, $tinhtrang_m){
+      session::init();
+      $mauM = $this->load->model('mauM');
+      $table = 'mau';
+      $dieukien = "mau.ma_m='$ma_m'" ;
+      $data = array(
+        'tinhtrang_m' => $tinhtrang_m
+      );
+      $result = $mauM->mau_update($table, $data, $dieukien);
+      header("Location:".BASE_URL."mau/mau");
+    }
     public function mau_insert(){
       session::init();
       $level=session::get('level');

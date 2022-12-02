@@ -32,10 +32,11 @@ class tintuc extends controller
       //danh mục tin tức
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table_dmtt = 'danhmuc_tintuc';
+      $dieukien_dmtt = "tinhtrang_dmtt = 0";
       //nhân viên
       $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
-      $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
+      $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_ma($table_dmtt, $dieukien_dmtt);
       $data['tintuc'] = $tintucM->tintuc_list($table_tt, $table_nv, $table_th, $table_dmtt);
       $this->load->view_admin("tintuc/tintuc", $data);
     } else if ($level == 2) {

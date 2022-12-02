@@ -29,6 +29,17 @@
         header("Location:".BASE_URL."nhanvien/index");
       }
     }
+    public function danhmuc_tintuc_tuychinh($ma_dmtt, $tinhtrang_dmtt){
+      session::init();
+      $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
+      $table = 'danhmuc_tintuc';
+      $dieukien = "ma_dmtt='$ma_dmtt'" ;
+      $data = array(
+        'tinhtrang_dmtt' => $tinhtrang_dmtt
+      );
+      $result = $danhmuc_tintucM->danhmuc_tintuc_update($table, $data, $dieukien);
+      header("Location:".BASE_URL."danhmuc_tintuc/danhmuc_tintuc");
+    }
     public function danhmuc_tintuc_insert(){
       session::init();
       $level=session::get('level');

@@ -59,6 +59,25 @@
                       <i class="fas fa-trash-alt"></i>
                     </button>
                   </a>
+                  <?php
+                    if($dm['tinhtrang_dm'] == 0){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham_tuychinh/<?php echo $dm['ma_dm'] ?>/1">
+                          <button type="button" class="btn an">
+                            Ẩn
+                          </button>
+                        </a>
+                      <?php
+                    }else if($dm['tinhtrang_dm'] == 1){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham_tuychinh/<?php echo $dm['ma_dm'] ?>/0">
+                          <button type="button" class="btn hien">
+                            Hiện
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
                 </td>
               </tr>
             <?php

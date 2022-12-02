@@ -74,11 +74,11 @@
               <select class="custom-select input_table" id="gender2" name="ma_ncc">
                 <option>Chọn nhà cung cấp</option>
                 <?php
-                foreach ($data['nhacungcap'] as $key => $ncc) {
-                ?>
-                <option value="<?php echo $ncc['ma_ncc'] ?>"><?php echo $ncc['ten_ncc'] ?></option>
-                <?php
-                }
+                  foreach ($data['nhacungcap'] as $key => $ncc) {
+                    ?>
+                      <option value="<?php echo $ncc['ma_ncc'] ?>"><?php echo $ncc['ten_ncc'] ?></option>
+                    <?php
+                  }
                 ?>
               </select>
             </td>
