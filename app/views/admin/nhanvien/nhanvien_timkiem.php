@@ -49,11 +49,36 @@
                       <i class="fas fa-edit"></i>
                     </button>
                   </a>
-                  <a onclick="return confirm('Bạn có muốn xóa nhân viên <?php echo $nv['ten_nv'] ?> không?')" href="<?php echo BASE_URL ?>nhanvien/nhanvien_delete/<?php echo $nv['ma_nv'] ?>">
-                    <button type="button" class="btn xoa">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </a>
+                  <?php
+                    if($nv['level'] !=1){
+                      ?>
+                        <a onclick="return confirm('Bạn có muốn xóa nhân viên <?php echo $nv['ten_nv'] ?> không?')" href="<?php echo BASE_URL ?>nhanvien/nhanvien_delete/<?php echo $nv['ma_nv'] ?>">
+                          <button type="button" class="btn xoa">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
+                  <?php
+                    if($nv['tinhtrang_nv'] == 0 && $nv['level'] !=1){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>nhanvien/nhanvien_an/<?php echo $nv['ma_nv'] ?>">
+                          <button type="button" class="btn an">
+                            Vô hiệu hoá
+                          </button>
+                        </a>
+                      <?php
+                    }else if($nv['tinhtrang_nv'] == 1 && $nv['level'] !=1){
+                      ?>
+                        <a href="<?php echo BASE_URL ?>nhanvien/nhanvien_hien/<?php echo $nv['ma_nv'] ?>">
+                          <button type="button" class="btn hien">
+                            Kích hoạt
+                          </button>
+                        </a>
+                      <?php
+                    }
+                  ?>
                 </td>
               </tr>
             <?php

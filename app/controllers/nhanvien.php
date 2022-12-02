@@ -91,6 +91,28 @@ class nhanvien extends controller
       header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
+  public function nhanvien_an($ma_nv){
+    session::init();
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    $dieukien = "nhanvien.ma_nv='$ma_nv'" ;
+    $data = array(
+      'tinhtrang_nv' => 1
+    );
+    $result = $nhanvienM->nhanvien_update($table_nv, $data, $dieukien);
+    header("Location:".BASE_URL."nhanvien/nhanvien");
+  }
+  public function nhanvien_hien($ma_nv){
+    session::init();
+    $nhanvienM = $this->load->model('nhanvienM');
+    $table_nv = 'nhanvien';
+    $dieukien = "nhanvien.ma_nv='$ma_nv'" ;
+    $data = array(
+      'tinhtrang_nv' => 0
+    );
+    $result = $nhanvienM->nhanvien_update($table_nv, $data, $dieukien);
+    header("Location:".BASE_URL."nhanvien/nhanvien");
+  }
   public function nhanvien_insert()
   {
     session::init();

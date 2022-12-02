@@ -5,7 +5,7 @@
       parent::__construct();
     }
     public function nhanvien_dangnhap($table, $user_nv, $pass_nv){
-      $sql = "SELECT * FROM $table WHERE user_nv = ? AND pass_nv = ?";
+      $sql = "SELECT * FROM $table WHERE user_nv = ? AND pass_nv = ? AND tinhtrang_nv = 0";
       return $this->db->affectedRows($sql, $user_nv, $pass_nv);
     }
     public function get_dangnhap($table, $user_nv, $pass_nv){
