@@ -42,17 +42,14 @@ use Carbon\Carbon;
       $table_ctdh = 'chitiet_donhang';
       $chitiet_donhangM = $this->load->model('chitiet_donhangM');
       //sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       //màu
-      $mauM = $this->load->model('mauM');
       $table_m = 'mau';
       $dieukien = "chitiet_donhang.ma_dh = '$ma_dh' ";
       $this->load->view_admin("header");
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $this->load->view_admin("header");
       $dieukien_m = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien_m);
@@ -126,7 +123,6 @@ use Carbon\Carbon;
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $this->load->view_admin("header");
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
@@ -147,7 +143,6 @@ use Carbon\Carbon;
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $this->load->view_admin("header");
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
@@ -168,7 +163,6 @@ use Carbon\Carbon;
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $this->load->view_admin("header");
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
@@ -276,7 +270,6 @@ use Carbon\Carbon;
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
       $dieukien_vc = 'donhang.tinhtrang_dh = 1';

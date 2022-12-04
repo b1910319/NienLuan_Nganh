@@ -27,12 +27,6 @@
       $sql = "SELECT * FROM $table_dg where $dieukien_dg";
       return $this->db->select($sql);
     }
-    // public function khuyenmai_update($table, $data, $dieukien){
-    //   return $this->db->update($table, $data,$dieukien);
-    // }
-    // public function khuyenmai_delete($table, $dieukien){
-    //   return $this->db->delete($table, $dieukien);
-    // }
     public function danhgia_deleteAll($table){
       return $this->db->deleteAll($table);
     }

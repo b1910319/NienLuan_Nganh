@@ -46,7 +46,6 @@
         $dieukien_dg = 'donhang.tinhtrang_dh = 2';
         $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
         $this->load->view_admin("leftmenu", $data);
-
         $luotxemM = $this->load->model('luotxemM');
         $table_lx = 'luotxem';
         $table_sp ='sanpham';

@@ -14,13 +14,11 @@ class sp_yeuthich extends controller
     $table_dm = 'danhmuc_sanpham';
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $this->load->view_user("header", $data);
-
     $this->load->view_user("sp_yeuthich", $data);
     $this->load->view_user("footer");
   }
   public function sp_yeuthich_insert(){
     session::init();
-    // session::destroy();
     if(isset($_SESSION['sp_yeuthich'])){
       $i = 0;
       foreach ($_SESSION['sp_yeuthich'] as $key => $sp_yt){
@@ -79,8 +77,6 @@ class sp_yeuthich extends controller
           header("Location:".BASE_URL."sp_yeuthich/index");
         }
       }
-      
     }
-    
   }
 }

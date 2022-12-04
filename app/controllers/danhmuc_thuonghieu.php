@@ -23,12 +23,10 @@ class danhmuc_thuonghieu extends controller
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
-
       $danhmuc_sanphamM = $this->load->model("danhmuc_sanphamM");
       $table_dm = 'danhmuc_sanpham';
       $dieukien_dm = "tinhtrang_dm = 0";
       $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_ma($table_dm,$dieukien_dm);
-
       $thuonghieuM = $this->load->model('thuonghieuM');
       $table_th = 'thuonghieu';
       $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);

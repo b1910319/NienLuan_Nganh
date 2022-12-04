@@ -16,12 +16,9 @@
     <table class="table table-hover">
       <thead>
         <tr class="tr_table text-center">
-          <!-- <th scope="col">STT</th> -->
           <th scope="col">Nội dung</th>
           <th scope="col">Tên người gửi</th>
-          <!-- <th scope="col">Ngày gửi</th> -->
           <th scope="col">Tên sản phẩm</th>
-          <!-- <th scope="col">Quản lý</th> -->
         </tr>
       </thead>
       <tbody>
@@ -80,12 +77,9 @@
   </div>
   <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\libs\morris-js\morris.min.js"></script>
   <script src="<?php echo BASE_URL ?>public/assets\libs\raphael\raphael.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\js\pages\dashboard.init.js"></script>
-
   <!-- App js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\app.min.js"></script>
 </div>

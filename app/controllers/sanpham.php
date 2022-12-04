@@ -32,7 +32,6 @@ class sanpham extends controller
       $thuonghieuM = $this->load->model('thuonghieuM');
       $table_th = 'thuonghieu';
       $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
-      $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
       // loại sản phẩm
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table_lsp = 'loai_sanpham';
@@ -43,7 +42,6 @@ class sanpham extends controller
       $dieukien_ncc = 'tinhtrang_ncc = 0';
       $data['nhacungcap'] = $nhacungcapM->nhacungcap_ma($table_ncc, $dieukien_ncc);
       // nhân viên
-      $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
       // sản phẩm
       $sanphamM = $this->load->model('sanphamM');
@@ -78,7 +76,6 @@ class sanpham extends controller
       $thuonghieuM = $this->load->model('thuonghieuM');
       $table_th = 'thuonghieu';
       $data['thuonghieu'] = $thuonghieuM->thuonghieu_list($table_th);
-      $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
       // loại sản phẩm
       $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table_lsp = 'loai_sanpham';
@@ -88,7 +85,6 @@ class sanpham extends controller
       $table_ncc = 'nhacungcap';
       $data['nhacungcap'] = $nhacungcapM->nhacungcap_list($table_ncc);
       // nhân viên
-      $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
       // sản phẩm
       $sanphamM = $this->load->model('sanphamM');
@@ -116,7 +112,6 @@ class sanpham extends controller
       $ma_ncc = $_POST['ma_ncc'];
       $ma_lsp = $_POST['ma_lsp'];
       $ma_th = $_POST['ma_th'];
-
       $hinh_sp = $_FILES['hinh_sp']['name'];
       $file_temp_hinh = $_FILES['hinh_sp']['tmp_name'];
       $div_hinh = explode(' . ', $hinh_sp);
@@ -124,7 +119,6 @@ class sanpham extends controller
       $unique_image_hinh = substr(md5(time()), 0, 10) . ' . ' . $file_ext_hinh;
       $uploaded_image_hinh = "public/uploads/sanpham/" . $unique_image_hinh;
       move_uploaded_file($file_temp_hinh, $uploaded_image_hinh);
-
       $hinhchitiet_sp = $_FILES['hinhchitiet_sp']['name'];
       $file_temp = $_FILES['hinhchitiet_sp']['tmp_name'];
       $div = explode(' . ', $hinhchitiet_sp);
@@ -495,7 +489,6 @@ class sanpham extends controller
       $table_sp = 'sanpham';
       $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
       $table_ctsp = 'chitiet_sanpham';
-      // $data['sanpham'] = $sanphamM->sanpham($table_sp);
       $dieukien1 = 'sanpham.ma_dm = 8 OR sanpham.ma_dm = 10';
       $data['sanpham_ma_dm'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien1);
       $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -572,7 +565,6 @@ class sanpham extends controller
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
-
       $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -676,7 +668,6 @@ class sanpham extends controller
       $table_sp = 'sanpham';
       $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
       $table_ctsp = 'chitiet_sanpham';
-      // $data['sanpham'] = $sanphamM->sanpham($table_sp);
       $dieukien1 = 'sanpham.ma_dm = 9';
       $data['sanpham_ma_dm'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien1);
       $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -780,7 +771,6 @@ class sanpham extends controller
       header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
-
   //chi tiết sản phẩm smartwatch
   public function sp_chitiet_smartwatch()
   {
@@ -849,7 +839,6 @@ class sanpham extends controller
       $table_sp = 'sanpham';
       $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
       $table_ctsp = 'chitiet_sanpham';
-      // $data['sanpham'] = $sanphamM->sanpham($table_sp);
       $dieukien1 = 'sanpham.ma_dm = 11';
       $data['sanpham_ma_dm'] = $sanphamM->sanpham_ma_dm($table_sp, $dieukien1);
       $dieukien = "chitiet_sanpham.ma_ctsp='$ma_ctsp'";
@@ -943,8 +932,6 @@ class sanpham extends controller
       header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
-
-
   //chi tiết sản phẩm đồng hồ
   public function sp_chitiet_dongho()
   {
@@ -1276,7 +1263,6 @@ class sanpham extends controller
       header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
-
   //hình sản phẩm
   public function hinh()
   {
@@ -1371,7 +1357,6 @@ class sanpham extends controller
       $table_h = 'hinh';
       $dieukien = "hinh.ma_h='$ma_h'";
       $ma_sp = $_POST['ma_sp'];
-
       $hinh = $_FILES['hinh']['name'];
       $file_temp = $_FILES['hinh']['tmp_name'];
       $div = explode(' . ', $hinh);
@@ -1460,7 +1445,6 @@ class sanpham extends controller
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
       // sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       //hinh
       $hinhM = $this->load->model('hinhM');
@@ -1473,7 +1457,6 @@ class sanpham extends controller
       header("Location:" . BASE_URL . "nhanvien/index");
     }
   }
-
   //màu của sản phẩm
   public function mau_sanpham()
   {
@@ -1500,7 +1483,6 @@ class sanpham extends controller
       $table_m = 'mau';
       $dieukien_m = "tinhtrang_m = 0";
       $data['mau'] = $mauM->mau_ma($table_m,$dieukien_m);
-
       $mau_sanphamM = $this->load->model("mau_sanphamM");
       $table_msp = 'mau_sanpham';
       $data['mau_sanpham_list'] = $mau_sanphamM->mau_sanpham_list($table_sp, $table_m, $table_msp);
@@ -1536,7 +1518,6 @@ class sanpham extends controller
       $mau_sanphamM = $this->load->model("mau_sanphamM");
       $table_msp = 'mau_sanpham';
       $dieukien = "mau_sanpham.ma_sp='$ma_sp' AND mau_sanpham.ma_m ='$ma_m'";
-
       //sản phẩm
       $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
@@ -1545,7 +1526,6 @@ class sanpham extends controller
       $mauM = $this->load->model('mauM');
       $table_m = 'mau';
       $data['mau'] = $mauM->mau_list($table_m);
-
       $data['mau_sanpham_ma'] = $mau_sanphamM->mau_sanpham_ma($table_msp, $dieukien);
       $this->load->view_admin("header");
       //đơn hàng
@@ -1626,19 +1606,13 @@ class sanpham extends controller
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
-      //sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
-      //màu
-      $mauM = $this->load->model('mauM');
       $table_m = 'mau';
       //màu sản phẩm
       $mau_sanphamM = $this->load->model("mau_sanphamM");
       $table_msp = 'mau_sanpham';
-
       $tukhoa = $_POST['tukhoa'];
       $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'";
-
       $data['mau_sanpham_timkiem'] = $mau_sanphamM->mau_sanpham_timkiem($table_sp, $table_msp, $table_m, $dieukien);
       $this->load->view_admin("sanpham/mau_sanpham_timkiem", $data);
     } else if ($level == 2) {

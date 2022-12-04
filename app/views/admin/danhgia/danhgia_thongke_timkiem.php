@@ -102,7 +102,6 @@
                       
                     <?php
                   ?>
-
                 </td>
               </tr>
             <?php
@@ -113,12 +112,9 @@
   </div>
   <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\libs\morris-js\morris.min.js"></script>
   <script src="<?php echo BASE_URL ?>public/assets\libs\raphael\raphael.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\js\pages\dashboard.init.js"></script>
-
   <!-- App js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\app.min.js"></script>
 </div>

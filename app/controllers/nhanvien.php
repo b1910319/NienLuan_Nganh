@@ -30,7 +30,6 @@ class nhanvien extends controller
     $ma_nv = session::get('ma_nv');
     $dieukien = "donhang.ma_nv = '$ma_nv' ";
     $data['donhang'] = $donhangM->donhang_nv($table_dh, $dieukien);
-
     //doanh thu hôm nay của nhân viên
     $ngay = date("d/m/Y");
     $data['doanhthu_homnay'] = $donhangM->doanhthu_homnay_nv($table_dh, $ngay, $dieukien);
@@ -46,8 +45,6 @@ class nhanvien extends controller
     $donhangM = $this->load->model('donhangM');
     //chi tiết đơn hàng
     $table_ctdh = 'chitiet_donhang';
-    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
-
     $data['soluong_ngay'] = $donhangM->soluong_ngay_nv($table_dh, $table_sp, $table_ctdh, $dieukien);
     $data['tongtien_ngay'] = $donhangM->tongtien_ngay_nv($table_dh, $dieukien);
     $data['count_sp_ngay'] = $donhangM->count_sp_ngay_nv($table_dh, $table_ctdh, $table_sp, $dieukien);

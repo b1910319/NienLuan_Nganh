@@ -4,7 +4,6 @@
     public function __construct()
     {
       $data = array();
-      $thongbao = array();
       parent::__construct();
     }
     public function baohanh($ma_dh){
@@ -13,7 +12,6 @@
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
       $dieukien_vc = 'donhang.tinhtrang_dh = 1';
@@ -26,21 +24,17 @@
       }else if($level == 2){
         $this->load->view_admin("leftmenu_nhanvien", $data);
       }
-      $data['donhang'] = $donhangM->donhang_list($table_dh);
+      $table_km = "khuyenmai";
+      $data['donhang'] = $donhangM->donhang_list($table_dh, $table_km);
       $dieukien1 = "donhang.ma_dh = '$ma_dh'";
-
       $data['donhang_ma'] = $donhangM->donhang_ma($table_dh, $dieukien1);
       //chi tiết đơn hàng
       $table_ctdh = 'chitiet_donhang';
       $chitiet_donhangM = $this->load->model('chitiet_donhangM');
-      // sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
-      //màu
-      $mauM = $this->load->model('mauM');
       $table_m = 'mau';
       $table_dm = "danhmuc_sanpham";
-      $data['sanpham_donhang'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $dieukien);
+      $data['sanpham_donhang'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm, $table_km, $dieukien1);
       $this->load->view_admin("baohanh/baohanh", $data);
     }
     public function baohanh_insert(){
@@ -67,7 +61,6 @@
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
       $dieukien_vc = 'donhang.tinhtrang_dh = 1';
@@ -84,7 +77,6 @@
       $baohanhM = $this->load->model('baohanhM');
       $table_bh = "baohanh";
       // sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       //chi tiết đơn hàng
       $table_ctdh = 'chitiet_donhang';
@@ -101,7 +93,6 @@
       //đơn hàng
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
-
       $dieukien = 'donhang.tinhtrang_dh = 0';
       $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien);
       $dieukien_vc = 'donhang.tinhtrang_dh = 1';
@@ -118,11 +109,9 @@
       $baohanhM = $this->load->model('baohanhM');
       $table_bh = "baohanh";
       // sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       //chi tiết đơn hàng
       $table_ctdh = 'chitiet_donhang';
-      $chitiet_donhangM = $this->load->model('chitiet_donhangM');
       $order = "baohanh.ngay_bh desc ";
       $dieukien1 = "baohanh.ma_sp = chitiet_donhang.ma_sp AND baohanh.ma_dh = '$ma_dh'";
       $data['baohanh_timkiem'] = $baohanhM->baohanh_list($table_bh, $table_dh, $table_sp, $table_ctdh,$dieukien1, $order);
@@ -151,10 +140,8 @@
       $baohanhM = $this->load->model('baohanhM');
       $table_bh = "baohanh";
       // sản phẩm
-      $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       //màu
-      $mauM = $this->load->model('mauM');
       $table_m = 'mau';
       //chi tiết đơn hàng
       $table_ctdh = 'chitiet_donhang';

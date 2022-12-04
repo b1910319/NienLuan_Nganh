@@ -64,7 +64,6 @@ class thongke extends controller
       $dieukien_dg = 'donhang.tinhtrang_dh = 2';
       $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
       $this->load->view_admin("leftmenu", $data);
-      $ngay = date("d/m/Y");
       $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
       $dieukien2 = "nhanvien.ma_nv = '$ma_nv'";

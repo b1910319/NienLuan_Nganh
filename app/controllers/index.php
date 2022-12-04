@@ -16,14 +16,12 @@ class index extends controller
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $dieukien_dm = "tinhtrang_dm = 0";
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_ma($table_dm, $dieukien_dm);
-
     $this->load->view_user("header", $data);
     $this->load->view_user("slider");
     //thương hiệu
     $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     $data['thuonghieu'] = $thuonghieuM->thuonghieu_limit($table_th);
-
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -40,10 +38,8 @@ class index extends controller
     $table_tt = 'tintuc';
     $limit = 6;
     //danh mục tin tức
-    $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $data['tintuc_limit'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
-
     $danhgiaM = $this->load->model('danhgiaM');
     $table_dg = 'danhgia';
     $data ['count_sao'] = $danhgiaM->count_sao($table_sp,$table_dg);
@@ -61,9 +57,7 @@ class index extends controller
     $table_dm = 'danhmuc_sanpham';
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
-
     $this->load->view_user("header", $data);
-    // $this->load->view_user("slider");
     $tukhoa = $_POST['tukhoa'];
     $dieukien = "sanpham.ten_sp LIKE '%$tukhoa%'";
     $data['Usanpham_timkiem'] = $sanphamM->Usanpham_timkiem($table_sp, $table_dm, $dieukien);
@@ -112,7 +106,6 @@ class index extends controller
   {
     session::init();
     //sản phẩm
-    $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     //danh mục sản phẩm
     $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
@@ -125,9 +118,7 @@ class index extends controller
     $chitiet_donhangM = $this->load->model('chitiet_donhangM');
     //đơn hàng
     $table_dh = "donhang";
-    $donhangM = $this->load->model('donhangM');
     //màu
-    $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $table_km ="khuyenmai";
     $data['lichsudonhang_chitiet'] = $chitiet_donhangM->chitiet_donhang_madh($table_dh, $table_ctdh, $table_sp, $table_m, $table_dm,$table_km, $dieukien1);
@@ -158,12 +149,9 @@ class index extends controller
     $chitiet_donhangM = $this->load->model('chitiet_donhangM');
     //đơn hàng
     $table_dh = "donhang";
-    $donhangM = $this->load->model('donhangM');
     // sản phẩm
-    $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     //màu
-    $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $dieukien1 = "donhang.ma_dh = '$ma_dh'";
     $table_km ="khuyenmai";
@@ -202,7 +190,6 @@ class index extends controller
     $table_dm = 'danhmuc_sanpham';
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
-
     $this->load->view_user("header", $data);
     //danh mục tin tức
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
@@ -213,7 +200,6 @@ class index extends controller
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //tin tức limit 
     $limit1 = 1;
@@ -262,7 +248,6 @@ class index extends controller
     $table_dm = 'danhmuc_sanpham';
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
-
     $this->load->view_user("header", $data);
     //danh mục tin tức
     $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
@@ -272,11 +257,7 @@ class index extends controller
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
-    $thuonghieuM = $this->load->model('thuonghieuM');
-    $table_th = 'thuonghieu';
-
     //tin tức limit 
     $dieukien = "tintuc.ma_dmtt = '$ma_dmtt'";
     $limit1 = 1;
@@ -293,7 +274,6 @@ class index extends controller
     $table_dm = 'danhmuc_sanpham';
     $limit = 4;
     $data['sanpham'] = $sanphamM->Usanpham_limit($table_sp, $table_dm, $limit);
-
     $this->load->view_user("tintuc/tintuc_danhmuc", $data);
     $this->load->view_user("footer");
   }

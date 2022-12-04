@@ -31,6 +31,7 @@
     }
     public function khuyenmai_insert(){
       session::init();
+      $ma_nv = session::get('ma_nv');
       $khuyenmaiM = $this->load->model('khuyenmaiM');
       $table = 'khuyenmai';
       $ten_km = $_POST['ten_km'];
@@ -47,7 +48,8 @@
         'batdau_km' => $batdau_km,
         'ketthuc_km' => $ketthuc_km,
         'soluong_km' => $soluong_km,
-        'loai_km' => $loai_km
+        'loai_km' => $loai_km,
+        'ma_nv' => $ma_nv
       );
       $result = $khuyenmaiM->khuyenmai_insert($table, $data);
       header("Location:".BASE_URL."khuyenmai/khuyenmai");
@@ -70,7 +72,6 @@
       }else if($level == 2){
         $this->load->view_admin("leftmenu_nhanvien", $data);
       }
-
       $khuyenmaiM = $this->load->model('khuyenmaiM');
       $table_km = 'khuyenmai';
       $dieukien_km = "khuyenmai.ma_km = '$ma_km'";
@@ -89,6 +90,7 @@
       $ketthuc_km = $_POST['ketthuc_km'];
       $soluong_km = $_POST['soluong_km'];
       $loai_km = $_POST['loai_km'];
+      $ma_nv = session::get('ma_nv');
       $data = array(
         'ten_km' => $ten_km,
         'phantram_km' => $phantram_km,
@@ -96,7 +98,8 @@
         'batdau_km' => $batdau_km,
         'ketthuc_km' => $ketthuc_km,
         'soluong_km' => $soluong_km,
-        'loai_km' => $loai_km
+        'loai_km' => $loai_km,
+        'ma_nv' => $ma_nv
       );
       $result = $khuyenmaiM->khuyenmai_update($table_km, $data, $dieukien);
       header("Location:".BASE_URL."khuyenmai/khuyenmai");

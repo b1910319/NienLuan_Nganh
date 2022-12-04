@@ -33,8 +33,6 @@ class tintuc extends controller
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table_dmtt = 'danhmuc_tintuc';
       $dieukien_dmtt = "tinhtrang_dmtt = 0";
-      //nhân viên
-      $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
       $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_ma($table_dmtt, $dieukien_dmtt);
       $data['tintuc'] = $tintucM->tintuc_list($table_tt, $table_nv, $table_th, $table_dmtt);
@@ -51,12 +49,10 @@ class tintuc extends controller
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
-
       $ten_tt = $_POST['ten_tt'];
       $ma_th = $_POST['ma_th'];
       $ma_dmtt = $_POST['ma_dmtt'];
       $noidung_tt = $_POST['noidung_tt'];
-
       $hinh_tt = $_FILES['hinh_tt']['name'];
       $file_temp = $_FILES['hinh_tt']['tmp_name'];
       $div = explode(' . ', $hinh_tt);
@@ -163,12 +159,10 @@ class tintuc extends controller
       // tin tức
       $tintucM = $this->load->model('tintucM');
       $table_tt = 'tintuc';
-
       $ten_tt = $_POST['ten_tt'];
       $ma_th = $_POST['ma_th'];
       $ma_dmtt = $_POST['ma_dmtt'];
       $noidung_tt = $_POST['noidung_tt'];
-
       $hinh_tt = $_FILES['hinh_tt']['name'];
       $file_temp = $_FILES['hinh_tt']['tmp_name'];
       $div = explode(' . ', $hinh_tt);
@@ -236,8 +230,6 @@ class tintuc extends controller
       //danh mục tin tức
       $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
       $table_dmtt = 'danhmuc_tintuc';
-      //nhân viên
-      $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
       $data['danhmuc_tintuc'] = $danhmuc_tintucM->danhmuc_tintuc_list($table_dmtt);
       $tukhoa = $_POST['tukhoa'];

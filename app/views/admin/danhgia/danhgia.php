@@ -16,7 +16,6 @@
     <table class="table table-hover">
       <thead>
         <tr class="tr_table">
-          <!-- <th scope="col">STT</th> -->
           <th scope="col">Tên khách</th>
           <th scope="col">Nội dung</th>
           <th scope="col">Số lượng sao</th>
@@ -31,7 +30,6 @@
             $i++;
             ?>
               <tr>
-                <!-- <th scope="row"><?php echo $i ?></th> -->
                 <td><?php echo $dg['ten_k'] ?></td>
                 <td><?php echo $dg['noidung_dg'] ?></td>
                 <td>
@@ -78,12 +76,9 @@
   </div>
   <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\libs\morris-js\morris.min.js"></script>
   <script src="<?php echo BASE_URL ?>public/assets\libs\raphael\raphael.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\js\pages\dashboard.init.js"></script>
-
   <!-- App js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\app.min.js"></script>
 </div>

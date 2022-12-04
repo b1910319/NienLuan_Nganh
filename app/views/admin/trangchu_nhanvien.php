@@ -126,14 +126,14 @@
               Sản phẩm theo ngày
             </div>
             <div class="col-4">
-              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banngay_timkiem">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banngay_nv_timkiem">
                 <div class="app-search-box">
                   <div class="input-group">
                     <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
                     <div class="input-group-append">
                       <button class="btn btn-success" type="submit">
                         <i class="fas fa-search"></i>
-                      </button>
+                      </button> 
                     </div>
                   </div>
                 </div>
@@ -198,7 +198,7 @@
               Sản phẩm theo tháng
             </div>
             <div class="col-4">
-              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banthang_timkiem">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_banthang_nv_timkiem">
                 <div class="app-search-box">
                   <div class="input-group">
                     <input type="text" name="tukhoa" class="form-control" placeholder="Search...">
@@ -270,7 +270,7 @@
               Sản phẩm theo năm
             </div>
             <div class="col-4">
-              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_bannam_timkiem">
+              <form class="app-search" method="POST" action="<?php echo BASE_URL ?>admin/sanpham_bannam_nv_timkiem">
                 <div class="app-search-box">
                   <div class="input-group">
                     <input type="text" name="tukhoa" class="form-control" placeholder="Search...">

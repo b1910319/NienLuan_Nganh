@@ -2,7 +2,6 @@
   class dangnhap extends controller{
     public function __construct()
     {
-      $thongbao = array();
       $data = array();
       parent::__construct();
     }

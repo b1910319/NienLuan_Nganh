@@ -52,7 +52,6 @@ class thuonghieu extends controller
       $unique_image_logo = substr(md5(time()), 0, 10) . ' . ' . $file_ext_logo;
       $uploaded_image_logo = "public/uploads/thuonghieu/" . $unique_image_logo;
       move_uploaded_file($file_temp_logo, $uploaded_image_logo);
-
       $hinh_th = $_FILES['hinh_th']['name'];
       $file_temp = $_FILES['hinh_th']['tmp_name'];
       $div = explode(' . ', $hinh_th);
@@ -60,7 +59,6 @@ class thuonghieu extends controller
       $unique_image = substr(md5(time()), 0, 10) . ' . ' . $file_ext;
       $uploaded_image = "public/uploads/thuonghieu/" . $unique_image;
       move_uploaded_file($file_temp, $uploaded_image);
-
       $data = array(
         'ten_th' => $ten_th,
         'ghichu_th' => $ghichu_th,
@@ -108,7 +106,6 @@ class thuonghieu extends controller
       $table = 'thuonghieu';
       //danh mục sản phẩm
       $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
-      $table_dm = 'danhmuc_sanpham';
       $dieukien = "thuonghieu.ma_th='$ma_th'";
       $ten_th = $_POST['ten_th'];
       $ghichu = $danhmuc_sanphamM->convert_name($ten_th);
@@ -120,7 +117,6 @@ class thuonghieu extends controller
       $unique_image_logo = substr(md5(time()), 0, 10) . ' . ' . $file_ext_logo;
       $uploaded_image_logo = "public/uploads/thuonghieu/" . $unique_image_logo;
       move_uploaded_file($file_temp_logo, $uploaded_image_logo);
-
       $hinh_th = $_FILES['hinh_th']['name'];
       $file_temp = $_FILES['hinh_th']['tmp_name'];
       $div = explode(' . ', $hinh_th);

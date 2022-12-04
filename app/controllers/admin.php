@@ -16,7 +16,7 @@ class admin extends controller
     $level = session::get('level');
     if ($level == 1) {
       $this->load->view_admin("header");
-      //đơn hàng
+      //hiển thị số lượng đơn hàng bên left menu
       $table_dh = "donhang";
       $donhangM = $this->load->model('donhangM');
       $dieukien_m = 'donhang.tinhtrang_dh = 0';
@@ -33,7 +33,6 @@ class admin extends controller
       $ngay = date("d/m/Y");
       $data['doanhthu_homnay'] = $donhangM->doanhthu_homnay($table_dh, $ngay);
       //tổng số sản phẩm
-      //sản phẩm
       $sanphamM = $this->load->model('sanphamM');
       $table_sp = 'sanpham';
       $data['sanpham'] = $sanphamM->sanpham($table_sp);
@@ -43,7 +42,6 @@ class admin extends controller
       $donhangM = $this->load->model('donhangM');
       //chi tiết đơn hàng
       $table_ctdh = 'chitiet_donhang';
-      $chitiet_donhangM = $this->load->model('chitiet_donhangM');
       $data['soluong_ngay'] = $donhangM->soluong_ngay($table_dh, $table_sp, $table_ctdh);
       $data['tongtien_ngay'] = $donhangM->tongtien_ngay($table_dh);
       $data['count_sp_ngay'] = $donhangM->count_sp_ngay($table_dh, $table_ctdh, $table_sp);
@@ -55,23 +53,15 @@ class admin extends controller
       $data['soluong_nam'] = $donhangM->soluong_nam($table_dh, $table_sp, $table_ctdh);
       $data['tongtien_nam'] = $donhangM->tongtien_nam($table_dh);
       $data['count_sp_nam'] = $donhangM->count_sp_nam($table_dh, $table_ctdh, $table_sp);
-      //sản phẩm có số lượng còn lại ít
-      $dieukien_soluong = "soluong_sp < 50";
-      //danh mục sản phẩm
-      $danhmuc_sanphamM = $this->load->model('danhmuc_sanphamM');
       $table_dm = 'danhmuc_sanpham';
       //nhân viên
       $nhanvienM = $this->load->model('nhanvienM');
       $table_nv = 'nhanvien';
-      //nhà cung cấp
-      $nhacungcapM = $this->load->model('nhacungcapM');
       $table_ncc = 'nhacungcap';
-      //loại sản phẩm
-      $loai_sanphamM = $this->load->model('loai_sanphamM');
       $table_lsp = 'loai_sanpham';
-      //thương hiệu
-      $thuonghieuM = $this->load->model('thuonghieuM');
       $table_th = 'thuonghieu';
+      //sản phẩm có số lượng còn lại ít
+      $dieukien_soluong = "soluong_sp < 50";
       $data['sanpham_soluong_min'] = $sanphamM->sanpham_soluong($table_sp, $table_dm, $table_nv, $table_ncc, $table_lsp, $table_th, $dieukien_soluong);
       $ma_nv = session::get('ma_nv');
       //lấy thông tin nhân viên
@@ -104,11 +94,38 @@ class admin extends controller
     $donhangM = $this->load->model('donhangM');
     //chi tiết đơn hàng
     $table_ctdh = 'chitiet_donhang';
-    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
     //sản phẩm
-    $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien_tkn = "donhang.ngaylap_dh = '$ngaylap_dh'";
+    $order_tkn = "donhang.ngaylap_dh";
+    $group_tkn = "chitiet_donhang.ma_sp, donhang.ngaylap_dh";
+    $data['sanpham_banngay_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tkn, $order_tkn, $group_tkn);
+    $this->load->view_admin("trangchu/sanpham_banngay_timkiem", $data);
+  }
+  public function sanpham_banngay_nv_timkiem()
+  {
+    session::checksession();
+    $ma_nv = session::get('ma_nv');
+    $this->load->view_admin("header");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien_m = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien_m);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $ngaylap_dh = $_POST['tukhoa'];
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    //chi tiết đơn hàng
+    $table_ctdh = 'chitiet_donhang';
+    //sản phẩm
+    $table_sp = 'sanpham';
+    $dieukien_tkn = "donhang.ngaylap_dh = '$ngaylap_dh' AND donhang.ma_nv = '$ma_nv'";
     $order_tkn = "donhang.ngaylap_dh";
     $group_tkn = "chitiet_donhang.ma_sp, donhang.ngaylap_dh";
     $data['sanpham_banngay_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tkn, $order_tkn, $group_tkn);
@@ -134,12 +151,38 @@ class admin extends controller
     $donhangM = $this->load->model('donhangM');
     //chi tiết đơn hàng
     $table_ctdh = 'chitiet_donhang';
-    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
     //sản phẩm
-    $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
-
     $dieukien_tkt = "donhang.thanglap_dh = '$thanglap_dh'";
+    $order_tkt = "donhang.thanglap_dh";
+    $group_tkt = "chitiet_donhang.ma_sp, donhang.thanglap_dh";
+    $data['sanpham_banthang_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tkt, $order_tkt, $group_tkt);
+    $this->load->view_admin("trangchu/sanpham_banthang_timkiem", $data);
+  }
+  public function sanpham_banthang_nv_timkiem()
+  {
+    session::checksession();
+    $ma_nv = session::get('ma_nv');
+    $this->load->view_admin("header");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien_m = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien_m);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $thanglap_dh = $_POST['tukhoa'];
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    //chi tiết đơn hàng
+    $table_ctdh = 'chitiet_donhang';
+    //sản phẩm
+    $table_sp = 'sanpham';
+    $dieukien_tkt = "donhang.thanglap_dh = '$thanglap_dh'AND donhang.ma_nv = '$ma_nv'";
     $order_tkt = "donhang.thanglap_dh";
     $group_tkt = "chitiet_donhang.ma_sp, donhang.thanglap_dh";
     $data['sanpham_banthang_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tkt, $order_tkt, $group_tkt);
@@ -166,16 +209,39 @@ class admin extends controller
     $donhangM = $this->load->model('donhangM');
     //chi tiết đơn hàng
     $table_ctdh = 'chitiet_donhang';
-    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
     //sản phẩm
-    $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
-
     $dieukien_tknam = "donhang.namlap_dh = '$namlap_dh'";
     $order_tknam = "donhang.namlap_dh";
     $group_tknam = "chitiet_donhang.ma_sp, donhang.namlap_dh";
     $data['sanpham_bannam_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tknam, $order_tknam, $group_tknam);
-
+    $this->load->view_admin("trangchu/sanpham_bannam_timkiem", $data);
+  }
+  public function sanpham_bannam_nv_timkiem()
+  {
+    session::checksession();
+    $ma_nv = session::get('ma_nv');
+    $this->load->view_admin("header");
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $dieukien_m = 'donhang.tinhtrang_dh = 0';
+    $data['donhang_moi'] = $donhangM->donhang_moi($table_dh, $dieukien_m);
+    $dieukien_vc = 'donhang.tinhtrang_dh = 1';
+    $data['donhang_dangvanchuyen'] = $donhangM->donhang_moi($table_dh, $dieukien_vc);
+    $dieukien_dg = 'donhang.tinhtrang_dh = 2';
+    $data['donhang_dagiao'] = $donhangM->donhang_moi($table_dh, $dieukien_dg);
+    $this->load->view_admin("leftmenu_nhanvien", $data);
+    $namlap_dh = $_POST['tukhoa'];
+    //đơn hàng
+    $table_dh = "donhang";
+    $donhangM = $this->load->model('donhangM');
+    $table_ctdh = 'chitiet_donhang';
+    $table_sp = 'sanpham';
+    $dieukien_tknam = "donhang.namlap_dh = '$namlap_dh'AND donhang.ma_nv = '$ma_nv'";
+    $order_tknam = "donhang.namlap_dh";
+    $group_tknam = "chitiet_donhang.ma_sp, donhang.namlap_dh";
+    $data['sanpham_bannam_timkiem'] = $donhangM->sanphamban_timkiem($table_dh, $table_ctdh, $table_sp, $dieukien_tknam, $order_tknam, $group_tknam);
     $this->load->view_admin("trangchu/sanpham_bannam_timkiem", $data);
   }
 }

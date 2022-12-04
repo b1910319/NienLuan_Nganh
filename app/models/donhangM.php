@@ -161,5 +161,4 @@ use Carbon\Carbon;
       $sql = "SELECT * FROM $table_dh WHERE $dieukien ORDER BY ngaylap_dh desc, giolap_dh desc";
       return $this->db->select($sql);
     }
-
   }

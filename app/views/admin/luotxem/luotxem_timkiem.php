@@ -3,7 +3,7 @@
     <div class="alert alert-success title_page" role="alert">
       <div class="row">
         <div class="col-6 mt-2">
-          <a href="<?php echo BASE_URL ?>luotxem/luotxem">
+          <a href="<?php echo BASE_URL ?>luotxem/luotxem/desc">
             <button type="button" class="btn btn-warning">
               <i class="fas fa-solid fa-caret-left"></i>&ensp;
             </button> &ensp;
@@ -46,12 +46,9 @@
   </div>
   <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\libs\morris-js\morris.min.js"></script>
   <script src="<?php echo BASE_URL ?>public/assets\libs\raphael\raphael.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\js\pages\dashboard.init.js"></script>
-
   <!-- App js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\app.min.js"></script>
 </div>

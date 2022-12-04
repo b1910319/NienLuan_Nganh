@@ -15,8 +15,7 @@
             action="<?php echo BASE_URL ?>danhmuc_sanpham/danhmuc_sanpham_timkiem" method="POST">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
               name="tukhoa">
-            <button class="btn btn-success btn_search" type="submit"><i
-                class="fas fa-search"></i></button>
+            <button class="btn btn-success btn_search" type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
       </div>
@@ -99,12 +98,9 @@
   </div>
   <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\libs\morris-js\morris.min.js"></script>
   <script src="<?php echo BASE_URL ?>public/assets\libs\raphael\raphael.min.js"></script>
-
   <script src="<?php echo BASE_URL ?>public/assets\js\pages\dashboard.init.js"></script>
-
   <!-- App js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\app.min.js"></script>
 </div>

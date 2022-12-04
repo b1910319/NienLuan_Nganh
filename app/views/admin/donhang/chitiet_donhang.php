@@ -64,12 +64,6 @@
                   }else if($tong > 2000000){
                     echo number_format($tong, 0, ',', '.') . ' <sup>đ</sup>';
                   }
-                  // if($ctdh['tonggia_dh'] < 2000000){
-                  //   echo number_format($ctdh['tonggia_dh']-30000, 0, ',', '.') . ' <sup>đ</sup>';
-                  // }else if($ctdh['tonggia_dh'] >=2000000){
-                  //   echo number_format($ctdh['tonggia_dh'], 0, ',', '.') . ' <sup>đ</sup>';
-                  // }
-
                 ?>
               </td>
               <td colspan="2" style="color: #038018;">
@@ -116,5 +110,4 @@
       </tbody>
     </table>
   </div>
-
 </div>

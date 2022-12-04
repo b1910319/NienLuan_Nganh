@@ -17,7 +17,6 @@ class dienthoai extends controller
     $this->load->view_user("header", $data);
     $this->load->view_user("slider");
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
@@ -70,16 +69,13 @@ class dienthoai extends controller
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     //chi tiết sản phẩm
-    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     //màu sản phẩm
     $mau_sanphamM = $this->load->model("mau_sanphamM");
     $table_msp = 'mau_sanpham';
     //loại sản phẩm
-    $loai_sanphamM = $this->load->model('loai_sanphamM');
     $table_lsp = 'loai_sanpham';
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //hình
     $hinhM = $this->load->model('hinhM');
@@ -88,7 +84,6 @@ class dienthoai extends controller
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     //màu
-    $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $dieukien = "sanpham.ma_sp = '$ma_sp'";
     $data['sanpham_ma'] = $sanphamM->Usanpham_ma($table_sp, $table_dm, $table_ctsp, $table_msp, $table_th, $table_lsp, $table_hsp, $dieukien);
@@ -165,16 +160,13 @@ class dienthoai extends controller
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     //chi tiết sản phẩm
-    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     //màu sản phẩm
     $mau_sanphamM = $this->load->model("mau_sanphamM");
     $table_msp = 'mau_sanpham';
     //loại sản phẩm
-    $loai_sanphamM = $this->load->model('loai_sanphamM');
     $table_lsp = 'loai_sanpham';
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //hình
     $hinhM = $this->load->model('hinhM');
@@ -183,7 +175,6 @@ class dienthoai extends controller
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     //màu
-    $mauM = $this->load->model('mauM');
     $table_m = 'mau';
     $dieukien = "sanpham.ma_sp = '$ma_sp'";
     $data['sanpham_ma'] = $sanphamM->Usanpham_ma($table_sp, $table_dm, $table_ctsp, $table_msp, $table_th, $table_lsp, $table_hsp, $dieukien);
@@ -199,7 +190,6 @@ class dienthoai extends controller
     $tintucM = $this->load->model('tintucM');
     $table_tt = 'tintuc';
     //danh mục tin tức
-    $danhmuc_tintucM = $this->load->model('danhmuc_tintucM');
     $table_dmtt = 'danhmuc_tintuc';
     $limit = 4;
     $data['tintuc'] = $tintucM->tintuc_limit($table_tt, $table_th, $table_dmtt, $limit);
@@ -271,7 +261,6 @@ class dienthoai extends controller
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
@@ -279,7 +268,6 @@ class dienthoai extends controller
     $ma_dm = '8';
     $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
     $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
-    // 
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -305,8 +293,6 @@ class dienthoai extends controller
     $data['danhmuc_sanpham_limit'] = $danhmuc_sanphamM->danhmuc_sanpham_limit($table_dm);
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
-    //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
@@ -314,7 +300,6 @@ class dienthoai extends controller
     $ma_dm = '8';
     $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
     $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
-    // 
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -340,15 +325,13 @@ class dienthoai extends controller
     $this->load->view_user("header", $data);
     $this->load->view_user("slider");
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
     $table_dmth = 'danhmuc_thuonghieu';
     $ma_dm = '8';
     $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
-    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
-    // 
+    $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien); 
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
@@ -374,7 +357,6 @@ class dienthoai extends controller
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
@@ -382,12 +364,10 @@ class dienthoai extends controller
     $ma_dm = '8';
     $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
     $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
-    // 
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     //chi tiết sản phẩm
-    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.ram = '$ram'";
     $data['sanpham_ma_dm_ram'] = $sanphamM->sanpham_ma_dm_GB($table_sp, $table_ctsp, $dieukien1);
@@ -410,7 +390,6 @@ class dienthoai extends controller
     $data['danhmuc_sanpham'] = $danhmuc_sanphamM->danhmuc_sanpham_list($table_dm);
     $this->load->view_user("header", $data);
     //thương hiệu
-    $thuonghieuM = $this->load->model('thuonghieuM');
     $table_th = 'thuonghieu';
     //danh mục - thương hiệu
     $danhmuc_thuonghieuM = $this->load->model('danhmuc_thuonghieuM');
@@ -418,12 +397,10 @@ class dienthoai extends controller
     $ma_dm = '8';
     $dieukien = "danhmuc_thuonghieu.ma_dm = '$ma_dm'";
     $data['thuonghieu_ma_dm'] = $danhmuc_thuonghieuM->thuonghieu_ma_dm($table_th, $table_dm, $table_dmth, $dieukien);
-    // 
     //sản phẩm
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     //chi tiết sản phẩm
-    $chitiet_sanphamM = $this->load->model('chitiet_sanphamM');
     $table_ctsp = 'chitiet_sanpham';
     $dieukien1 = "sanpham.ma_dm = '$ma_dm' AND chitiet_sanpham.rom = '$rom'";
     $data['sanpham_ma_dm_rom'] = $sanphamM->sanpham_ma_dm_GB($table_sp, $table_ctsp, $dieukien1);

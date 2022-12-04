@@ -110,11 +110,8 @@
     }else if($level == 2){
       $this->load->view_admin("leftmenu_nhanvien", $data);
     }
-    // nhân viên
     $table_nv = 'nhanvien';
-    // sản phẩm
     $table_sp = 'sanpham';
-    //hỏi đáp
     $hoi_dapM = $this->load->model('hoi_dapM');
     $table_hd = "hoi_dap";
     $tukhoa = $_POST['tukhoa'];
