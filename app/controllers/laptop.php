@@ -134,7 +134,7 @@ class laptop extends controller
     $this->load->view_user("laptop/chitietsanpham", $data);
     $this->load->view_user("footer");
   }
-  public function chitiet_sanpham_dg($ma_sp, $ma_th, $ma_dm)
+  public function chitiet_sanpham_dg($ma_sp, $ma_th, $ma_dm, $ma_dh)
   {
     session::init();
     //thêm lượt xem cho sản phẩm
@@ -214,6 +214,11 @@ class laptop extends controller
     $table_km = 'khuyenmai';
     $dieukien_km = "khuyenmai.tinhtrang_km = 0 AND khuyenmai.ma_km !=6";
     $data['khuyenmai']= $khuyenmaiM-> khuyenmai_dieukien($table_km, $dieukien_km);
+    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+    $table_ctdh = 'chitiet_donhang';
+    $table_dh = 'donhang';
+    $dieukien4 = "chitiet_donhang.ma_dh = '$ma_dh' and chitiet_donhang.ma_sp = '$ma_sp' ";
+    $data['donhang'] = $chitiet_donhangM->chitiet_donhang($table_ctdh, $table_dh, $dieukien4);
     $this->load->view_user("laptop/chitietsanpham_danhgia", $data);
     $this->load->view_user("footer");
   }

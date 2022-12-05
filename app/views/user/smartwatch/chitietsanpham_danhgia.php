@@ -685,7 +685,14 @@
                   </div>
                   <div class="col-8">
                     <input type="hidden" name="ma_sp" value="<?php echo $sp['ma_sp'] ?>">
-                    <input type="text" name="ten_k" class="form-control"  required minlength="5" placeholder="Họ và Tên">
+                    <?php
+                      foreach ($data['donhang'] as $key => $dh){
+                        ?>
+                          <input type="hidden" name="ma_dh" value="<?php echo $dh['ma_dh'] ?>">
+                          <input type="text" name="ten_k" class="form-control" required minlength="5" value="<?php echo $dh['ten_k'] ?>">
+                        <?php
+                      }
+                    ?>
                     <p class="mt-3">Nội dung</p>
                     <textarea class="form-control" name="noidung_dg" minlength="10" required rows="5"></textarea>
                     <button type="submit" class="btn btn-primary mt-3 float-end" style="background-color: #16511a;"> <i class="fa-solid fa-paper-plane"></i>&ensp;Gửi</button>

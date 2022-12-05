@@ -68,13 +68,21 @@ class danhgia extends controller
     $noidung_dg = $_POST['noidung_dg'];
     $sosao_dg = $_POST['sosao_dg'];
     $ma_sp = $_POST['ma_sp'];
+    $ma_dh = $_POST['ma_dh'];
     $data = array(
       'ten_k' => $ten_k,
       'noidung_dg' => $noidung_dg,
       'sosao_dg' => $sosao_dg,
       'ma_sp' => $ma_sp
     );
+    $data_update = array(
+      'tinhtrang_ctdh' => 1
+    );
     $result = $danhgiaM->danhgia_insert($table, $data);
+    $chitiet_donhangM = $this->load->model('chitiet_donhangM');
+    $table_ctdh = 'chitiet_donhang';
+    $dieukien = "ma_dh = '$ma_dh' and ma_sp = '$ma_sp'";
+    $result = $chitiet_donhangM -> chitiet_donhang_update($table_ctdh, $data_update, $dieukien);
     $sanphamM = $this->load->model('sanphamM');
     $table_sp = 'sanpham';
     $dieukien = "sanpham.ma_sp = '$ma_sp'";
