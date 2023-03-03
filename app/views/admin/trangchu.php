@@ -148,32 +148,32 @@
             <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
               data-offset="20" style="height: 300px; overflow: auto;">
               <p>
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Tên sản phẩm</th>
-                    <th scope="col">Ngày lập đơn hàng</th>
-                    <th scope="col">Số lượng</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                    $i=0;
-                    foreach ($data['count_sp_ngay'] as $key => $count){
-                      $i++;
-                      ?>
-                        <tr>
-                          <th scope="row"><?php echo $i ?></th>
-                          <td><?php echo $count['ten_sp'] ?></td>
-                          <td><?php echo $count['ngaylap_dh'] ?></td>
-                          <td><?php echo $count['soluong'] ?></td>
-                        </tr>
-                      <?php
-                    }
-                  ?>
-                </tbody>
-              </table>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Tên sản phẩm</th>
+                      <th scope="col">Ngày lập đơn hàng</th>
+                      <th scope="col">Số lượng</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $i=0;
+                      foreach ($data['count_sp_ngay'] as $key => $count){
+                        $i++;
+                        ?>
+                          <tr>
+                            <th scope="row"><?php echo $i ?></th>
+                            <td><?php echo $count['ten_sp'] ?></td>
+                            <td><?php echo $count['ngaylap_dh'] ?></td>
+                            <td><?php echo $count['soluong'] ?></td>
+                          </tr>
+                        <?php
+                      }
+                    ?>
+                  </tbody>
+                </table>
               </p>
             </div>
           </div>

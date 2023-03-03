@@ -38,7 +38,7 @@
               <tr>
                 <th scope="row"><?php echo $i ?></th>
                 <td><?php echo $dg['ten_k'] ?></td>
-                <td><?php echo $dg['noidung_dg'] ?></td>
+                <td style="width:30% ;"><?php echo $dg['noidung_dg'] ?></td>
                 <td>
                   <?php
                     for($i=1; $i<=$dg['sosao_dg']; $i++){

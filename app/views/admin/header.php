@@ -52,59 +52,34 @@
         <a href="<?php echo BASE_URL ?>admin/index" class="logo text-center logo-dark">
           <span class="logo-lg">
             <img src="" alt="" height="26">
-            <!-- <span class="logo-lg-text-dark">Simple</span> -->
           </span>
           <span class="logo-sm">
-            <!-- <span class="logo-lg-text-dark">S</span> -->
             <img src="<?php echo BASE_URL ?>public/assets\images\logo-sm.png" alt="" height="22">
           </span>
         </a>
-
         <a href="<?php echo BASE_URL ?>admin/index" class="logo text-center logo-light">
           <span class="logo-lg">
             <img src="<?php echo BASE_URL ?>public/assets\images\logo-light.png" alt="" height="26">
-            <!-- <span class="logo-lg-text-light">Simple</span> -->
           </span>
           <span class="logo-sm">
-            <!-- <span class="logo-lg-text-light">S</span> -->
             <img src="<?php echo BASE_URL ?>public/assets\images\logo-sm.png" alt="" height="22">
           </span>
         </a>
       </div>
-
       <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
         <li>
           <button class="button-menu-mobile">
             <i class="mdi mdi-menu"></i>
           </button>
         </li>
-
-        <li class="d-none d-sm-block">
-          <form class="app-search">
-            <div class="app-search-box">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <button class="btn" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </li>
       </ul>
     </div>
-
   </div>
   <!-- Vendor js -->
   <script src="../public/assets\js\vendor.min.js"></script>
-
   <script src="../public/assets\libs\morris-js\morris.min.js"></script>
   <script src="../public/assets\libs\raphael\raphael.min.js"></script>
-
   <script src="../public/assets\js\pages\dashboard.init.js"></script>
-
   <!-- App js -->
   <script src="../public/assets\js\app.min.js"></script>
 

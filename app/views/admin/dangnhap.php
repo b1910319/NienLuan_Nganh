@@ -14,11 +14,11 @@
     <h2>Đăng nhập</h2>
     <form action="<?php echo BASE_URL ?>dangnhap/nhanvien_dangnhap" method="POST" autocomplete="off">
       <div class="user-box">
-        <input type="text" name="user_nv" required="" autofocus>
+        <input type="text" name="user_nv" required="" autofocus value="ldtrinh">
         <label>Username</label>
       </div>
       <div class="user-box">
-        <input type="password" name="pass_nv" required="">
+        <input type="password" name="pass_nv" required="" value="ldtrinh">
         <label>Password</label>
       </div>
       <a href="#">

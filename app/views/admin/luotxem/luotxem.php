@@ -24,31 +24,40 @@
         </a>
       </div>
     </div>
-    <table class="table table-hover">
-      <thead>
-        <tr class="tr_table">
-          <th scope="col">STT</th>
-          <th scope="col">Tên sản phẩm</th>
-          <th scope="col">Số lượt xem</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-          $i=0;
-          foreach($data['luotxem'] as $key => $lx){
-            $i++;
-            ?>
-              <tr>
-                <th scope="row"><?php echo $i ?></th>
-                <td><?php echo $lx['ten_sp'] ?></td>
-                <td><?php echo $lx['so_lx'] ?></td>
+    <div class="row ">
+      <div class="col-md-12">
+        <div class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#lex" id="work"
+          data-offset="20" style="height: 650px; overflow: auto;">
+          <p>
+          <table class="table table-hover">
+            <thead>
+              <tr class="tr_table">
+                <th scope="col">STT</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Số lượt xem</th>
               </tr>
-            <?php
-          }
-          echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.'</p>';
-        ?>
-      </tbody>
-    </table>
+            </thead>
+            <tbody>
+              <?php
+                $i=0;
+                foreach($data['luotxem'] as $key => $lx){
+                  $i++;
+                  ?>
+                    <tr>
+                      <th scope="row"><?php echo $i ?></th>
+                      <td><?php echo $lx['ten_sp'] ?></td>
+                      <td><?php echo $lx['so_lx'] ?></td>
+                    </tr>
+                  <?php
+                }
+                echo '<p class="text-warning" style="font-weight: bold;">Tổng: '.$i.'</p>';
+              ?>
+            </tbody>
+          </table>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Vendor js -->
   <script src="<?php echo BASE_URL ?>public/assets\js\vendor.min.js"></script>

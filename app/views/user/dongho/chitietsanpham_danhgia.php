@@ -738,7 +738,7 @@
                       }
                     ?>
                     <p class="mt-3">Nội dung</p>
-                    <textarea class="form-control" name="noidung_dg" minlength="10" required rows="5"></textarea>
+                    <textarea class="form-control" name="noidung_dg" rows="5"></textarea>
                     <button type="submit" class="btn btn-primary mt-3 float-end" style="background-color: #16511a;"> <i class="fa-solid fa-paper-plane"></i>&ensp;Gửi</button>
                   </div>
                 </div>
